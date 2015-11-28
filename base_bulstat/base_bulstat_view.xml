@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_partner_form" model="ir.ui.view">
+            <field name="name">partner.myform</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="account.view_partner_property_form"/>
+            <field name="arch" type="xml">
+                <field name="property_account_position_id" position="after">
+                    <label for="bulstat" string="BULSTAT" attrs="{'invisible': [('is_company','=',False)]}"/>
+                    <div name="bulstat_info" class="o_row" attrs="{'invisible': [('is_company','=',False)]}">
+                        <field name="bulstat" placeholder="e.g. 200808368"/>
+                    </div>
+                </field>
+            </field>
+        </record>
+
+        
+
+    </data>
+</openerp>
+
