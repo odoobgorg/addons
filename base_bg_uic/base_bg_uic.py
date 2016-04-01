@@ -18,6 +18,7 @@ class res_partner(osv.osv):
  
     _columns = {
            'bg_uic':fields.char(string=_('UIC'),size=13,help=_('UIC by Bulgarian register agency')),
+           'bg_mol':fields.char(string=_('MOL'),size=100,help=_('MOL')),
     }
     
     _sql_constraints = [
