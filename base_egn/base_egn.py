@@ -21,10 +21,11 @@ class res_partner(osv.osv):
     }
     @api.one
     @api.constrains('egn')
-    def _check_egn(self):		
-            if not egn_checker(self.egn):
-                _logger.info("Egn Problem")
-                raise Exception("EGN isn't valid.")
+    def _check_egn(self):
+            if(self.egn):
+                if not egn_checker(self.egn):
+                    _logger.info("Egn Problem")
+                    raise Exception("EGN isn't valid.")
 
 def egn_checker(egn):
     _logger.info(egn)
