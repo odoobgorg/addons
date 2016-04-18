@@ -9,7 +9,7 @@ class AccountInvoice(models.Model):
     def _compute_text(self):
         self.amount_in_word = amount_to_text_bg(self.amount_total, self.currency_id.name)
 
-    amount_in_word = fields.Char(string=u'Словом: ',
+    amount_in_word = fields.Char(
                                  readonly=True,
                                  default=False, copy=False, compute='_compute_text'
                                  )
