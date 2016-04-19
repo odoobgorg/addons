@@ -1,4 +1,5 @@
 from openerp import models, fields, api, _
+from openerp.tools.amount_to_text_bg import *
 
 
 class AccountInvoice(models.Model):
