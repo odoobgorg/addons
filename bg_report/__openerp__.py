@@ -20,7 +20,7 @@ Manage your reports
         'views/report_footer.xml',
         'views/report_invoice_amount_to_text.xml',
         'views/taxes.xml',
-        'views/account_fiscal_position.xml',
+        #'views/account_fiscal_position.xml',
     ],
     'installable': True,
     'auto_install': False,
