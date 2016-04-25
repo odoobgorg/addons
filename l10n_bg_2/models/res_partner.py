@@ -23,7 +23,7 @@ class res_partner(osv.osv):
         ('bg_uic_uniq', 'unique("bg_uic")', 'The company register number must be unique !')
     ]
 
-    @api.multi
+    @api.one
     @api.constrains('bg_egn')
     def _check_egn(self):
         if not self.egn_checker(self.bg_egn):
@@ -54,7 +54,7 @@ class res_partner(osv.osv):
 
         return True
 
-    @api.multi
+    @api.one
     @api.constrains('bg_uic')
     def _check_uic(self):
         if not self.bg_uic_checker(self.bg_uic):

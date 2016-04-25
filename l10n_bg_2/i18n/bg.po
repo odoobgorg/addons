@@ -50,4 +50,3 @@ msgstr "ЕИК от Агенцията по вписвания"
 #: model:ir.ui.view,arch_db:base_bg_uic.view_partner_form
 msgid "e.g. BULSTAT or EIK"
 msgstr "e.g. БУЛСТАТ или ЕИК"
-
