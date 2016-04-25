@@ -40,7 +40,7 @@ This module is in development. Please be patient.
         'views/account_chart_template.yml',
         'views/account_tax_template.xml',
         'views/res_partner_view.xml',
-        'views/res_company_view.xml',
+        #'views/res_company_view.xml',
         #'views/fiscal_position_template.xml',
     ],
     'sequence': 1,
