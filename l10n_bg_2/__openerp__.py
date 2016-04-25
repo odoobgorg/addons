@@ -42,6 +42,7 @@ This module is in development. Please be patient.
         'views/res_partner_view.xml',
         'views/res_company_view.xml',
         #'views/fiscal_position_template.xml',
+
     ],
     'sequence': 1,
     'installable': True,
