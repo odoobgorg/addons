@@ -2,7 +2,6 @@
 <openerp>
     <data>
         <template id="external_layout_header_bg" inherit_id="report.external_layout_header">
-
             <xpath expr="//div[@class='header']" position="replace">
                 <div class="header">
                     <div class="row">
@@ -40,7 +39,6 @@
                     <p></p>
                 </div>
             </xpath>
-
         </template>
     </data>
 </openerp>

@@ -5,7 +5,7 @@
     'name': 'BG Report',
     'version': '1.0',
     'sequence': 14,
-    'summary': 'Sale Layout, page-break, subtotals, separators, report',
+    'summary': 'Accounting & Finance',
     'description': """
 Manage your reports
 =========================

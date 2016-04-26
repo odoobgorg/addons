@@ -30,10 +30,7 @@ This module is in development. Please be patient.
     'author': 'BGO Team 2016',
     'website': 'http://bgosoftware.com',
     'images': ['static/description/icon.png', 'images/main_screenshot.png'],
-    'depends': ['account',
-                'base_vat',
-                'bg_report',
-                ],
+    'depends': ['account', 'base_vat'],
     'demo': [],
     'data': [
         'views/account_chart.xml',
@@ -42,7 +39,6 @@ This module is in development. Please be patient.
         'views/res_partner_view.xml',
         'views/res_company_view.xml',
         #'views/fiscal_position_template.xml',
-
     ],
     'sequence': 1,
     'installable': True,
