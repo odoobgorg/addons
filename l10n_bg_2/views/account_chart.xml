@@ -12,7 +12,7 @@
         </record>
     </data>
 
-<data noupdate="False">
+<data noupdate="1">
     <record id="pcg_581" model="account.account.template">
         <field name="name">Вътрешни Трансфери</field>
         <field name="code">581</field>
