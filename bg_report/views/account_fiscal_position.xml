@@ -13,6 +13,7 @@
             <!--<field name="company_id"></field>-->
             <!--<field name="note"></field>-->
             <!--<field name="vat_required"></field>-->
+            <field name="children_tax_ids" eval="[(6,0,[ref('account_tax_bg_1'), ref('account_tax_bg_2')])]"/>
         </record>
 
         <record id="account_fiscal_position_bg_2" model="account.fiscal.position">
@@ -33,7 +34,7 @@
         </record>
 
         <record id="account_fiscal_position_bg_4" model="account.fiscal.position">
-            <field name="name">Туристически услуги 9%</field>
+            <field name="name">Необлагаеми сделки и без право на ДК</field>
             <field name="country_id">23</field>
             <field name="auto_apply">TRUE</field>
             <field name="sequence">40</field>
