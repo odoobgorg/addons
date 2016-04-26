@@ -4,14 +4,59 @@
 
         <record id="account_fiscal_position_bg_1" model="account.fiscal.position">
             <field name="name">Доставки по глава трета от ЗДДС внос/износ</field>
-            <field name="country_id">254</field>
             <field name="auto_apply">TRUE</field>
+            <field name="sequence">0</field>
+            <field name="country_id">23</field>
+            <field name="active">TRUE</field>
+            <!--<field name="zip_to">TRUE</field>-->
+            <!--<field name="zip_from">TRUE</field>-->
+            <!--<field name="company_id"></field>-->
+            <!--<field name="note"></field>-->
+            <!--<field name="vat_required"></field>-->
         </record>
 
         <record id="account_fiscal_position_bg_2" model="account.fiscal.position">
             <field name="name">Облагаеми сделки 20%</field>
-            <field name="country_id">254</field>
+            <field name="country_id">23</field>
             <field name="auto_apply">TRUE</field>
+            <field name="sequence">10</field>
+            <field name="country_id">23</field>
+            <field name="active">TRUE</field>
+        </record>
+
+        <record id="account_fiscal_position_bg_3" model="account.fiscal.position">
+            <field name="name">Вътреобщностностни сделки (0%)</field>
+            <field name="auto_apply">TRUE</field>
+            <field name="sequence">20</field>
+            <field name="country_id">23</field>
+            <field name="active">TRUE</field>
+        </record>
+
+        <record id="account_fiscal_position_bg_4" model="account.fiscal.position">
+            <field name="name">Туристически услуги 9%</field>
+            <field name="country_id">23</field>
+            <field name="auto_apply">TRUE</field>
+            <field name="sequence">40</field>
+            <field name="country_id">23</field>
+            <field name="active">TRUE</field>
+        </record>
+
+        <record id="account_fiscal_position_bg_5" model="account.fiscal.position">
+            <field name="name">Туристически услуги 9%</field>
+            <field name="country_id">23</field>
+            <field name="auto_apply">TRUE</field>
+            <field name="sequence">50</field>
+            <field name="country_id">23</field>
+            <field name="active">TRUE</field>
+        </record>
+
+        <record id="account_fiscal_position_bg_6" model="account.fiscal.position">
+            <field name="name">Облагаеми доставки с нулева ставка (глава 3)</field>
+            <field name="country_id">23</field>
+            <field name="auto_apply">TRUE</field>
+            <field name="sequence">60</field>
+            <field name="country_id">23</field>
+            <field name="active">TRUE</field>
         </record>
 
     </data>
