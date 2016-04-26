@@ -30,7 +30,7 @@ This module is in development. Please be patient.
     'author': 'BGO Team 2016',
     'website': 'http://bgosoftware.com',
     'images': ['static/description/icon.png', 'images/main_screenshot.png'],
-    'depends': ['account', 'base_vat'],
+    'depends': ['account', 'base_vat', 'bg_report'],
     'demo': [],
     'data': [
         'views/account_chart.xml',
