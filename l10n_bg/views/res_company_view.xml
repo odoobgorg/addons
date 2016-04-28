@@ -13,6 +13,7 @@
 					<field name="bg_mol" placeholder="e.g. Иван Иванов"/>
 				</field>
 			</field>
+
 		</record>
 	</data>
 </openerp>
