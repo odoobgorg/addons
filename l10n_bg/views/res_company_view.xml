@@ -7,9 +7,12 @@
 			<field name="model">res.company</field>
 			<field name="inherit_id" ref="base.view_company_form"/>
 			<field name="arch" type="xml">
-			<field position="after" name="email">
-				<field name="bg_uic" placeholder="e.g. BULSTAT or EIK"/>
-			</field>
+				<field position="after" name="company_registry">
+					<field name="bg_uic" placeholder="e.g. BULSTAT or EIK"/>
+				</field>
+				<field position="after" name="bg_uic">
+					<field name="bg_mol" placeholder="e.g. Иван Иванов"/>
+				</field>
 			</field>
 		</record>
 

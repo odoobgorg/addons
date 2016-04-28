@@ -26,4 +26,5 @@ class res_company(osv.osv):
 
 	_columns = {
 		'bg_uic': fields.related('partner_id', 'bg_uic', string=_('UIC'), type="char", size=13, required=True, help=_('UIC by Bulgarian register agency')),
+		'bg_mol': fields.related('partner_id', 'bg_mol', string=_('MOL'), type="char", size=100, required=True, help=_('MOL')),
 	}

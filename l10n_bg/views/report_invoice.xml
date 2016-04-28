@@ -95,18 +95,16 @@
                                 <td><strong>Град/Село: </strong></td>
                                 <td><span t-field="o.company_id.zip"/> <span t-field="o.company_id.city"/><span t-if="o.company_id.country_id">, <span t-field="o.company_id.country_id"/></span></td>
                             </tr>
-
                             <tr>
-                                <td/>
+                                <td></td>
                                 <td><strong>Адрес: </strong></td>
                                 <td><span t-field="o.partner_id.street"/></td>
-
                                 <td><strong>Адрес: </strong></td>
                                 <td><span t-field="o.company_id.street"/></td>
                             </tr>
                             <tr>
-                                <td/>
-                                <td/>
+                                <td></td>
+                                <td></td>
                                 <td><span t-field="o.partner_id.street2"/></td>
                                 <td></td>
                                 <td><span t-field="o.company_id.street2"/></td>
@@ -114,10 +112,9 @@
                             <tr>
                                 <td/>
                                 <td><strong>МОЛ: </strong></td>
-                                <!--<td><span t-field="o.partner_id.street3"/></td>-->
                                 <td><span t-field="o.partner_id.bg_mol"/></td>
                                 <td><strong>МОЛ: </strong></td>
-                                <td><span t-field="o.company_id.company_registry"/></td>
+                                <td><span t-field="o.company_id.bg_mol"/></td>
                             </tr>
                             <tr>
                                 <td/>
