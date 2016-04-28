@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<openerp>
+    <data noupdate="0">
+
+        <record id="account_fiscal_position_bg_1" model="account.fiscal.position">
+            <field name="name">Доставки по глава трета от ЗДДС внос/износ</field>
+            <field name="auto_apply">TRUE</field>
+            <field name="sequence">0</field>
+            <field name="country_id">23</field>
+            <field name="active">TRUE</field>
+            <!--<field name="zip_to">TRUE</field>-->
+            <!--<field name="zip_from">TRUE</field>-->
+            <!--<field name="company_id"></field>-->
+            <!--<field name="note"></field>-->
+            <!--<field name="vat_required"></field>-->
+            <!--<field name="children_tax_ids" eval="[(6,0,[ref('account_tax_bg_1'), ref('account_tax_bg_2')])]"/>-->
+            <!--<field name="tag_ids" eval="[(6,0,[ref('')])]"/>-->
+        </record>
+
+        <record id="account_fiscal_position_tax_bg_1" model="account.fiscal.position.tax">
+            <field name="position_id" ref="account_fiscal_position_bg_1"/>
+            <field name="tax_src_id" ref="account_tax_bg_7"/>
+            <field name="tax_dest_id" ref="account_tax_bg_8"/>
+        </record>
+
+
+        <record id="account_fiscal_position_bg_2" model="account.fiscal.position">
+            <field name="name">Облагаеми сделки 20%</field>
+            <field name="country_id">23</field>
+            <field name="auto_apply">TRUE</field>
+            <field name="sequence">10</field>
+            <field name="country_id">23</field>
+            <field name="active">TRUE</field>
+        </record>
+
+        <record id="account_fiscal_position_tax_bg_2" model="account.fiscal.position.tax">
+            <field name="position_id" ref="account_fiscal_position_bg_2"/>
+            <field name="tax_src_id" ref="account_tax_bg_1"/>
+            <field name="tax_dest_id" ref="account_tax_bg_1"/>
+        </record>
+        <record id="account_fiscal_position_tax_bg_3" model="account.fiscal.position.tax">
+            <field name="position_id" ref="account_fiscal_position_bg_2"/>
+            <field name="tax_src_id" ref="account_tax_bg_7"/>
+            <field name="tax_dest_id" ref="account_tax_bg_7"/>
+        </record>
+
+
+        <record id="account_fiscal_position_bg_3" model="account.fiscal.position">
+            <field name="name">Вътреобщностностни сделки (0%)</field>
+            <field name="auto_apply">TRUE</field>
+            <field name="sequence">20</field>
+            <field name="country_id">23</field>
+            <field name="active">TRUE</field>
+        </record>
+
+        <record id="account_fiscal_position_tax_bg_3" model="account.fiscal.position.tax">
+            <field name="position_id" ref="account_fiscal_position_bg_3"/>
+            <field name="tax_src_id" ref="account_tax_bg_1"/>
+            <field name="tax_dest_id" ref="account_tax_bg_2"/>
+        </record>
+        <record id="account_fiscal_position_tax_bg_4" model="account.fiscal.position.tax">
+            <field name="position_id" ref="account_fiscal_position_bg_3"/>
+            <field name="tax_src_id" ref="account_tax_bg_7"/>
+            <field name="tax_dest_id" ref="account_tax_bg_4"/>
+        </record>
+
+
+        <record id="account_fiscal_position_bg_4" model="account.fiscal.position">
+            <field name="name">Необлагаеми сделки и без право на ДК</field>
+            <field name="country_id">23</field>
+            <field name="auto_apply">TRUE</field>
+            <field name="sequence">40</field>
+            <field name="country_id">23</field>
+            <field name="active">TRUE</field>
+        </record>
+
+        <record id="account_fiscal_position_tax_bg_5" model="account.fiscal.position.tax">
+            <field name="position_id" ref="account_fiscal_position_bg_4"/>
+            <field name="tax_src_id" ref="account_tax_bg_1"/>
+            <field name="tax_dest_id" ref="account_tax_bg_1"/>
+        </record>
+        <record id="account_fiscal_position_tax_bg_6" model="account.fiscal.position.tax">
+            <field name="position_id" ref="account_fiscal_position_bg_4"/>
+            <field name="tax_src_id" ref="account_tax_bg_7"/>
+            <field name="tax_dest_id" ref="account_tax_bg_6"/>
+        </record>
+
+
+        <record id="account_fiscal_position_bg_5" model="account.fiscal.position">
+            <field name="name">Туристически услуги 9%</field>
+            <field name="country_id">23</field>
+            <field name="auto_apply">TRUE</field>
+            <field name="sequence">50</field>
+            <field name="country_id">23</field>
+            <field name="active">TRUE</field>
+        </record>
+
+        <record id="account_fiscal_position_tax_bg_7" model="account.fiscal.position.tax">
+            <field name="position_id" ref="account_fiscal_position_bg_5"/>
+            <field name="tax_src_id" ref="account_tax_bg_1"/>
+            <field name="tax_dest_id" ref="account_tax_bg_3"/>
+        </record>
+        <record id="account_fiscal_position_tax_bg_8" model="account.fiscal.position.tax">
+            <field name="position_id" ref="account_fiscal_position_bg_5"/>
+            <field name="tax_src_id" ref="account_tax_bg_7"/>
+            <field name="tax_dest_id" ref="account_tax_bg_7"/>
+        </record>
+
+
+        <record id="account_fiscal_position_bg_6" model="account.fiscal.position">
+            <field name="name">Облагаеми доставки с нулева ставка (глава 3)</field>
+            <field name="country_id">23</field>
+            <field name="auto_apply">TRUE</field>
+            <field name="sequence">60</field>
+            <field name="country_id">23</field>
+            <field name="active">TRUE</field>
+        </record>
+
+        <record id="account_fiscal_position_tax_bg_9" model="account.fiscal.position.tax">
+            <field name="position_id" ref="account_fiscal_position_bg_6"/>
+            <field name="tax_src_id" ref="account_tax_bg_1"/>
+            <field name="tax_dest_id" ref="account_tax_bg_5"/>
+        </record>
+        <record id="account_fiscal_position_tax_bg_10" model="account.fiscal.position.tax">
+            <field name="position_id" ref="account_fiscal_position_bg_6"/>
+            <field name="tax_src_id" ref="account_tax_bg_7"/>
+            <field name="tax_dest_id" ref="account_tax_bg_7"/>
+        </record>
+
+    </data>
+</openerp>

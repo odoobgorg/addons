@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data noupdate="0">
+        <record id="bg_account_invoice_form_amount_text" model="ir.ui.view">
+            <field name="name">account.invoice_form_amount_text</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='user_id']" position="after">
+                    <field name="amount_in_word"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

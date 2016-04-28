@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+        <template id="report_invoice_bg_amount_to_text" inherit_id="report_invoice_bg">
+            <xpath expr="//table[@class='table table-condensed']/following-sibling::div[1]" position="after">
+                <span><strong >Словом: </strong><span t-esc="o.amount_in_word" /></span>
+            </xpath>
+        </template>
+    </data>
+</openerp>
