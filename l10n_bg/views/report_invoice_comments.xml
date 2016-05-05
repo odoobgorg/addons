@@ -9,9 +9,9 @@
         </p>
       </xpath>
       <xpath expr="//p[@t-if='o.comment']" position="after">
-        <p t-if="o.note1">
+        <p t-if="o.note2">
             <strong>Начин на плащане:</strong>
-            <span t-field="o.note1"/>
+            <span t-field="o.note2"/>
         </p>
       </xpath>
     </template>
