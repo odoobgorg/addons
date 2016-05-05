@@ -269,3 +269,63 @@ msgstr ""
 #: model:ir.ui.view,arch_db:sale_layout.report_sale_layouted
 msgid "Unit Price"
 msgstr "Единична цена"
+
+#. module: base_comment_template
+#: selection:base.comment.template,position:0
+msgid "After lines"
+msgstr "After lines"
+
+#. module: base_comment_template
+#: model:ir.model,name:base_comment_template.model_base_comment_template
+msgid "Base comment template"
+msgstr "Base comment template"
+
+#. module: base_comment_template
+#: selection:base.comment.template,position:0
+msgid "Before lines"
+msgstr "Before lines"
+
+#. module: base_comment_template
+#: field:base.comment.template,text:0
+msgid "Comment"
+msgstr "Коментар"
+
+#: view:base.comment.template:base_comment_template.view_base_comment_template_form
+#: view:base.comment.template:base_comment_template.view_base_comment_template_search
+#: view:base.comment.template:base_comment_template.view_base_comment_template_tree
+#: model:ir.actions.act_window,name:base_comment_template.action_base_comment_template
+msgid "Comment Templates"
+msgstr "Comment Templates"
+
+#: field:base.comment.template,name:0
+msgid "Comment summary"
+msgstr "Comment summary"
+
+#: field:base.comment.template,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#: field:base.comment.template,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#: field:base.comment.template,id:0
+msgid "ID"
+msgstr "ID"
+
+#: field:base.comment.template,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#: field:base.comment.template,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#: field:base.comment.template,position:0
+msgid "Position"
+msgstr "Позиция"
+
+#. module: base_comment_template
+#: help:base.comment.template,position:0
+msgid "Position on document"
+msgstr "Позиция на документа"

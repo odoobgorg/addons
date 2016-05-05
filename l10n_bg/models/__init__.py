@@ -2,3 +2,4 @@ import res_partner
 import res_company
 import account_invoice
 import amount_to_text_bg
+import comment

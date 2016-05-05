@@ -48,6 +48,8 @@ This module is in development. Please be patient.
         'views/report_invoice_amount_to_text.xml',
         'views/account_tax.xml',
         'views/account_fiscal_position.xml',
+        'views/comment_view.xml',
+        'views/report_invoice_comments.xml',
     ],
     'sequence': 1,
     'installable': True,

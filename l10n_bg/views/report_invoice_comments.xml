@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data noupdate="0">
+    <template id="report_invoice_bg_document_comments" inherit_id="report_invoice_bg" >
+      <xpath expr="//p[@t-if='o.comment']" position="after">
+        <p t-if="o.note1">
+            <strong>Основание за неначисляване на ДДС:</strong>
+            <span t-field="o.note1"/>
+        </p>
+      </xpath>
+      <xpath expr="//p[@t-if='o.comment']" position="after">
+        <p t-if="o.note1">
+            <strong>Начин на плащане:</strong>
+            <span t-field="o.note1"/>
+        </p>
+      </xpath>
+    </template>
+  </data>
+</openerp>

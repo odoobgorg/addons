@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
     <data noupdate="0">
+
         <record id="bg_account_invoice_form_amount_text" model="ir.ui.view">
             <field name="name">account.invoice_form_amount_text</field>
             <field name="model">account.invoice</field>
@@ -11,5 +12,34 @@
                 </xpath>
             </field>
         </record>
+
+        <record id="bg_invoice_form_add_comment" model="ir.ui.view">
+          <field name="name">account.invoice_form_base_comment</field>
+          <field name="model">account.invoice</field>
+          <field name="inherit_id" ref="account.invoice_form"/>
+          <field name="arch" type="xml">
+            <xpath expr="/form/sheet/notebook/page[2]" position="inside">
+              <page string="Comments" name="comments">
+                <!--<label string="The comments will be displayed on the printed document. You can load a predefined template, write your own text or load a template and then modify it only for this document." colspan="2"/>-->
+                <label string="Условията ще бъдат показани на отпечатания документ. Можете да заредите предварително определен шаблон, да напишете собствен текст или да заредите шаблон и след това да го промените само за този документ." colspan="2"/>
+                <group string="Основание за неначисляване на ДДС">
+                  <field name="comment_template1_id"
+                    string="Load a template"
+                    domain="[('position','=','comment_1')]"
+                    context="{'default_position': 'comment_1'}"/>
+                  <field name="note1" nolabel="1" colspan="2"/>
+                </group>
+                <group string="Начин на плащане">
+                  <field name="comment_template2_id"
+                    string="Load a template"
+                    context="{'default_position': 'comment_2'}"
+                    domain="[('position','=','comment_2')]"/>
+                  <field name="note2" nolabel="1" colspan="2"/>
+                </group>
+              </page>
+            </xpath>
+          </field>
+        </record>
+
     </data>
 </openerp>

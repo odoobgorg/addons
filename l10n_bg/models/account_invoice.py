@@ -16,3 +16,22 @@ class AccountInvoice(models.Model):
                                  copy=False,
                                  compute='_compute_text'
                                  )
+
+    comment_template1_id = fields.Many2one('base.comment.template',
+                                           string='Comment Template 1')
+    comment_template2_id = fields.Many2one('base.comment.template',
+                                           string='Comment Template 2')
+    note1 = fields.Html('Comment 1')
+    note2 = fields.Html('Comment 2')
+
+    @api.onchange('comment_template1_id')
+    def _set_note1(self):
+        comment = self.comment_template1_id
+        if comment:
+            self.note1 = comment.get_value(self.partner_id.id)
+
+    @api.onchange('comment_template2_id')
+    def _set_note2(self):
+        comment = self.comment_template2_id
+        if comment:
+            self.note2 = comment.get_value(self.partner_id.id)
