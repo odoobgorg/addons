@@ -36,7 +36,7 @@
                     <div class="row" style="font-size:9px;">
                         <div class="col-xs-2">
                             <strong>Място на сделката:</strong>
-                            <p  t-field="o.user_id.city"/>
+                            <p t-field="o.user_id.city"/>
                         </div>
                         <div class="col-xs-2">
                             <strong>Дан. събитие:</strong>
