@@ -1332,15 +1332,16 @@
             <field name="chart_template_id" ref="bg_chart_template"/>
         </record>
 
+
         <!-- Chart template -->
-        <record id="bg_chart_template" model="account.chart.template">
-            <field name="property_account_receivable_id" ref="pcg_411"/> <!-- 411 -->
-            <field name="property_account_payable_id" ref="pcg_401"/> <!-- 401 -->
-            <field name="property_account_expense_categ_id" ref="pcg_602"/> <!-- 602 -->
-            <field name="property_account_other_income_categ_id" ref="pcg_702"/> <!-- 702 Приходи от продажби на стоки -->
-            <field name="property_account_income_id" ref="pcg_702"/> <!-- 702 Приходи от продажби на стоки -->
-            <field name="other_income_currency_exchange_account_id" ref="pcg_724"/>
-            <field name="expense_currency_exchange_account_id" ref="pcg_624"/>
-        </record>
+        <!--<record id="bg_chart_template" model="account.chart.template">-->
+            <!--<field name="property_account_receivable_id" ref="pcg_411"/> &lt;!&ndash; 411 &ndash;&gt;-->
+            <!--<field name="property_account_payable_id" ref="pcg_401"/> &lt;!&ndash; 401 &ndash;&gt;-->
+            <!--<field name="property_account_expense_categ_id" ref="pcg_602"/> &lt;!&ndash; 602 &ndash;&gt;-->
+            <!--<field name="property_account_other_income_categ_id" ref="pcg_702"/> &lt;!&ndash; 702 Приходи от продажби на стоки &ndash;&gt;-->
+            <!--<field name="property_account_income_id" ref="pcg_702"/> &lt;!&ndash; 702 Приходи от продажби на стоки &ndash;&gt;-->
+            <!--<field name="other_income_currency_exchange_account_id" ref="pcg_724"/>-->
+            <!--<field name="expense_currency_exchange_account_id" ref="pcg_624"/>-->
+        <!--</record>-->
     </data>
 </odoo>
