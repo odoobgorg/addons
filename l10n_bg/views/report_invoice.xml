@@ -107,7 +107,7 @@
                                 <td></td>
                                 <td><span t-field="o.partner_id.street2"/></td>
                                 <td></td>
-                                <td><span t-field="o.company_id.street2"/></td>
+                                <td><span t-if="o.company_id.street2" t-field="o.company_id.street2"/></td>
                             </tr>
                             <tr>
                                 <td/>
@@ -123,13 +123,15 @@
                                 <td><strong>Идент. №: </strong></td>
                                 <td><span t-field="o.company_id.bg_uic"/></td>
                             </tr>
+
                             <tr>
                                 <td/>
-                                <span t-if="o.partner_id.vat"><td ><strong>ИН по ДДС:</strong> </td> </span>
-                                <td ><span t-field="o.partner_id.vat"/></td>
-                                <span t-if="o.company_id.vat"><td ><strong>ИН по ДДС:</strong> </td> </span>
-                                <td><span t-if="o.company_id.vat"><span t-field="o.company_id.vat"/></span></td>
+                                <td><span t-if="o.partner_id.vat"><strong>ИН по ДДС: </strong></span></td>
+                                <td><span t-if="o.partner_id.vat" t-field="o.partner_id.vat"/></td>
+                                <td><span t-if="o.company_id.vat"><strong>ИН по ДДС: </strong></span></td>
+                                <td><span t-if="o.company_id.vat" t-field="o.company_id.vat"/></td>
                             </tr>
+
                         </tbody>
                     </table>
                     <br />
