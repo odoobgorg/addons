@@ -50,7 +50,7 @@ This module is in development. Please be patient.
         'views/account_fiscal_position.xml',
         'views/comment_view.xml',
         'views/report_invoice_comments.xml',
-        'security/ir.model.access.csv',
+        #'security/ir.model.access.csv',
     ],
     'sequence': 1,
     'installable': True,

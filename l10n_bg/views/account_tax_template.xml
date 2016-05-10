@@ -110,6 +110,5 @@
             <!--<field name="tag_ids" eval="[(6,0,[ref('tax_tag_purchase_dds_20')])]"/>-->
         <!--</record>-->
 
-
     </data>
 </odoo>

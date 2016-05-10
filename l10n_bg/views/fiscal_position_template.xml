@@ -1,217 +1,217 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
-<data noupdate="0">
+    <data noupdate="0">
 
-    <!-- Fiscal Position Templates -->
-    <!--<record id="fiscal_position_template_1" model="account.fiscal.position.template">-->
-        <!--<field name="name">Националната схема</field>-->
-        <!--<field name="chart_template_id" ref="bg_chart_template"/>-->
-    <!--</record>-->
+        <!-- Fiscal Position Templates -->
+        <!--<record id="fiscal_position_template_1" model="account.fiscal.position.template">-->
+            <!--<field name="name">Националната схема</field>-->
+            <!--<field name="chart_template_id" ref="bg_chart_template"/>-->
+        <!--</record>-->
 
-    <!--<record id="fiscal_position_template_2" model="account.fiscal.position.template">-->
-        <!--<field name="name">Схема за сторниране</field>-->
-        <!--<field name="chart_template_id" ref="bg_chart_template"/>-->
-    <!--</record>-->
+        <!--<record id="fiscal_position_template_2" model="account.fiscal.position.template">-->
+            <!--<field name="name">Схема за сторниране</field>-->
+            <!--<field name="chart_template_id" ref="bg_chart_template"/>-->
+        <!--</record>-->
 
-    <!--<record id="fiscal_position_template_3" model="account.fiscal.position.template">-->
-        <!--<field name="name">Вътреобщностно схема стоки</field>-->
-        <!--<field name="chart_template_id" ref="bg_chart_template"/>-->
-    <!--</record>-->
+        <!--<record id="fiscal_position_template_3" model="account.fiscal.position.template">-->
+            <!--<field name="name">Вътреобщностно схема стоки</field>-->
+            <!--<field name="chart_template_id" ref="bg_chart_template"/>-->
+        <!--</record>-->
 
-    <!--<record id="fiscal_position_template_4" model="account.fiscal.position.template">-->
-        <!--<field name="name">Вътреобщностно схема услуги</field>-->
-        <!--<field name="chart_template_id" ref="bg_chart_template"/>-->
-    <!--</record>-->
+        <!--<record id="fiscal_position_template_4" model="account.fiscal.position.template">-->
+            <!--<field name="name">Вътреобщностно схема услуги</field>-->
+            <!--<field name="chart_template_id" ref="bg_chart_template"/>-->
+        <!--</record>-->
 
-    <!--<record id="fiscal_position_template_5" model="account.fiscal.position.template">-->
-        <!--<field name="name">Свободен режим</field>-->
-        <!--<field name="chart_template_id" ref="bg_chart_template"/>-->
-        <!--<field name="note">Позиция се отнася както за доставки / придобивания и допълнително освободени</field>-->
-    <!--</record>-->
+        <!--<record id="fiscal_position_template_5" model="account.fiscal.position.template">-->
+            <!--<field name="name">Свободен режим</field>-->
+            <!--<field name="chart_template_id" ref="bg_chart_template"/>-->
+            <!--<field name="note">Позиция се отнася както за доставки / придобивания и допълнително освободени</field>-->
+        <!--</record>-->
 
-    <!--<record id="fiscal_position_template_6" model="account.fiscal.position.template">-->
-        <!--<field name="name">Режим в рамките на Общността необложени</field>-->
-        <!--<field name="chart_template_id" ref="bg_chart_template"/>-->
-    <!--</record>-->
+        <!--<record id="fiscal_position_template_6" model="account.fiscal.position.template">-->
+            <!--<field name="name">Режим в рамките на Общността необложени</field>-->
+            <!--<field name="chart_template_id" ref="bg_chart_template"/>-->
+        <!--</record>-->
 
-    <!--<record id="fiscal_position_template_7" model="account.fiscal.position.template">-->
-        <!--<field name="name">Извън ЕС схема</field>-->
-        <!--<field name="chart_template_id" ref="bg_chart_template"/>-->
-        <!--<field name="note">Позиция отнася за допълнителни доставки ,които са облагаеми.</field>-->
-    <!--</record>-->
+        <!--<record id="fiscal_position_template_7" model="account.fiscal.position.template">-->
+            <!--<field name="name">Извън ЕС схема</field>-->
+            <!--<field name="chart_template_id" ref="bg_chart_template"/>-->
+            <!--<field name="note">Позиция отнася за допълнителни доставки ,които са облагаеми.</field>-->
+        <!--</record>-->
 
-    <!--&lt;!&ndash; account.fiscal.position.tax.template &ndash;&gt;-->
-    <!--&lt;!&ndash; Sales &ndash;&gt;-->
-    <!--<record id="afptt_inverse_1" model="account.fiscal.position.tax.template">-->
-        <!--<field name="position_id" ref="fiscal_position_template_2"/>-->
-        <!--<field name="tax_src_id" ref="ddss_00"/>-->
-        <!--<field name="tax_dest_id" ref="tvati"/>-->
-    <!--</record>-->
+        <!--&lt;!&ndash; account.fiscal.position.tax.template &ndash;&gt;-->
+        <!--&lt;!&ndash; Sales &ndash;&gt;-->
+        <!--<record id="afptt_inverse_1" model="account.fiscal.position.tax.template">-->
+            <!--<field name="position_id" ref="fiscal_position_template_2"/>-->
+            <!--<field name="tax_src_id" ref="ddss_00"/>-->
+            <!--<field name="tax_dest_id" ref="tvati"/>-->
+        <!--</record>-->
 
-    <!--<record id="afptt_inverse_2" model="account.fiscal.position.tax.template">-->
-        <!--<field name="position_id" ref="fiscal_position_template_2"/>-->
-        <!--<field name="tax_src_id" ref="ddss_09"/>-->
-        <!--<field name="tax_dest_id" ref="tvati"/>-->
-    <!--</record>-->
-    <!--<record id="afptt_inverse_3" model="account.fiscal.position.tax.template">-->
-        <!--<field name="position_id" ref="fiscal_position_template_2"/>-->
-        <!--<field name="tax_src_id" ref="ddss_20"/>-->
-        <!--<field name="tax_dest_id" ref="tvati"/>-->
-    <!--</record>-->
+        <!--<record id="afptt_inverse_2" model="account.fiscal.position.tax.template">-->
+            <!--<field name="position_id" ref="fiscal_position_template_2"/>-->
+            <!--<field name="tax_src_id" ref="ddss_09"/>-->
+            <!--<field name="tax_dest_id" ref="tvati"/>-->
+        <!--</record>-->
+        <!--<record id="afptt_inverse_3" model="account.fiscal.position.tax.template">-->
+            <!--<field name="position_id" ref="fiscal_position_template_2"/>-->
+            <!--<field name="tax_src_id" ref="ddss_20"/>-->
+            <!--<field name="tax_dest_id" ref="tvati"/>-->
+        <!--</record>-->
 
-    <!--&lt;!&ndash; Purchases &ndash;&gt;-->
-    <!--<record id="afptt_inverse_6" model="account.fiscal.position.tax.template">-->
-        <!--<field name="position_id" ref="fiscal_position_template_2"/>-->
-        <!--<field name="tax_src_id" ref="ddsp_00"/>-->
-        <!--<field name="tax_dest_id" ref="tvatip00"/>-->
-    <!--</record>-->
-    <!--<record id="afptt_inverse_7" model="account.fiscal.position.tax.template">-->
-        <!--<field name="position_id" ref="fiscal_position_template_2"/>-->
-        <!--<field name="tax_src_id" ref="ddsp_09"/>-->
-        <!--<field name="tax_dest_id" ref="tvatip09"/>-->
-    <!--</record>-->
-    <!--<record id="afptt_inverse_8" model="account.fiscal.position.tax.template">-->
-        <!--<field name="position_id" ref="fiscal_position_template_2"/>-->
-        <!--<field name="tax_src_id" ref="ddsp_20"/>-->
-        <!--<field name="tax_dest_id" ref="tvatip20"/>-->
-    <!--</record>-->
+        <!--&lt;!&ndash; Purchases &ndash;&gt;-->
+        <!--<record id="afptt_inverse_6" model="account.fiscal.position.tax.template">-->
+            <!--<field name="position_id" ref="fiscal_position_template_2"/>-->
+            <!--<field name="tax_src_id" ref="ddsp_00"/>-->
+            <!--<field name="tax_dest_id" ref="tvatip00"/>-->
+        <!--</record>-->
+        <!--<record id="afptt_inverse_7" model="account.fiscal.position.tax.template">-->
+            <!--<field name="position_id" ref="fiscal_position_template_2"/>-->
+            <!--<field name="tax_src_id" ref="ddsp_09"/>-->
+            <!--<field name="tax_dest_id" ref="tvatip09"/>-->
+        <!--</record>-->
+        <!--<record id="afptt_inverse_8" model="account.fiscal.position.tax.template">-->
+            <!--<field name="position_id" ref="fiscal_position_template_2"/>-->
+            <!--<field name="tax_src_id" ref="ddsp_20"/>-->
+            <!--<field name="tax_dest_id" ref="tvatip20"/>-->
+        <!--</record>-->
 
-    <!--&lt;!&ndash; Sales &ndash;&gt;-->
-    <!--<record id="afptt_intracom_1" model="account.fiscal.position.tax.template">-->
-        <!--<field name="position_id" ref="fiscal_position_template_3"/>-->
-        <!--<field name="tax_src_id" ref="ddss_00"/>-->
-        <!--<field name="tax_dest_id" ref="tvati_intras"/>-->
-    <!--</record>-->
-    <!--<record id="afptt_intracom_2" model="account.fiscal.position.tax.template">-->
-        <!--<field name="position_id" ref="fiscal_position_template_3"/>-->
-        <!--<field name="tax_src_id" ref="ddss_09"/>-->
-        <!--<field name="tax_dest_id" ref="tvati_intras"/>-->
-    <!--</record>-->
-    <!--<record id="afptt_intracom_3" model="account.fiscal.position.tax.template">-->
-        <!--<field name="position_id" ref="fiscal_position_template_3"/>-->
-        <!--<field name="tax_src_id" ref="ddss_20"/>-->
-        <!--<field name="tax_dest_id" ref="tvati_intras"/>-->
-    <!--</record>-->
+        <!--&lt;!&ndash; Sales &ndash;&gt;-->
+        <!--<record id="afptt_intracom_1" model="account.fiscal.position.tax.template">-->
+            <!--<field name="position_id" ref="fiscal_position_template_3"/>-->
+            <!--<field name="tax_src_id" ref="ddss_00"/>-->
+            <!--<field name="tax_dest_id" ref="tvati_intras"/>-->
+        <!--</record>-->
+        <!--<record id="afptt_intracom_2" model="account.fiscal.position.tax.template">-->
+            <!--<field name="position_id" ref="fiscal_position_template_3"/>-->
+            <!--<field name="tax_src_id" ref="ddss_09"/>-->
+            <!--<field name="tax_dest_id" ref="tvati_intras"/>-->
+        <!--</record>-->
+        <!--<record id="afptt_intracom_3" model="account.fiscal.position.tax.template">-->
+            <!--<field name="position_id" ref="fiscal_position_template_3"/>-->
+            <!--<field name="tax_src_id" ref="ddss_20"/>-->
+            <!--<field name="tax_dest_id" ref="tvati_intras"/>-->
+        <!--</record>-->
 
-    <!--&lt;!&ndash; Purchases &ndash;&gt;-->
-    <!--<record id="afptt_intracom_6" model="account.fiscal.position.tax.template">-->
-        <!--<field name="position_id" ref="fiscal_position_template_3"/>-->
-        <!--<field name="tax_src_id" ref="ddsp_00"/>-->
-        <!--<field name="tax_dest_id" ref="tvati_intrap0"/>-->
-    <!--</record>-->
-    <!--<record id="afptt_intracom_8" model="account.fiscal.position.tax.template">-->
-        <!--<field name="position_id" ref="fiscal_position_template_3"/>-->
-        <!--<field name="tax_src_id" ref="ddsp_09"/>-->
-        <!--<field name="tax_dest_id" ref="tvati_intrap5"/>-->
-    <!--</record>-->
-    <!--<record id="afptt_intracom_10" model="account.fiscal.position.tax.template">-->
-        <!--<field name="position_id" ref="fiscal_position_template_3"/>-->
-        <!--<field name="tax_src_id" ref="ddsp_20"/>-->
-        <!--<field name="tax_dest_id" ref="tvati_intrap9"/>-->
-    <!--</record>-->
+        <!--&lt;!&ndash; Purchases &ndash;&gt;-->
+        <!--<record id="afptt_intracom_6" model="account.fiscal.position.tax.template">-->
+            <!--<field name="position_id" ref="fiscal_position_template_3"/>-->
+            <!--<field name="tax_src_id" ref="ddsp_00"/>-->
+            <!--<field name="tax_dest_id" ref="tvati_intrap0"/>-->
+        <!--</record>-->
+        <!--<record id="afptt_intracom_8" model="account.fiscal.position.tax.template">-->
+            <!--<field name="position_id" ref="fiscal_position_template_3"/>-->
+            <!--<field name="tax_src_id" ref="ddsp_09"/>-->
+            <!--<field name="tax_dest_id" ref="tvati_intrap5"/>-->
+        <!--</record>-->
+        <!--<record id="afptt_intracom_10" model="account.fiscal.position.tax.template">-->
+            <!--<field name="position_id" ref="fiscal_position_template_3"/>-->
+            <!--<field name="tax_src_id" ref="ddsp_20"/>-->
+            <!--<field name="tax_dest_id" ref="tvati_intrap9"/>-->
+        <!--</record>-->
 
-    <!--&lt;!&ndash; Sales &ndash;&gt;-->
-    <!--<record id="afptt_intracoms_1" model="account.fiscal.position.tax.template">-->
-        <!--<field name="position_id" ref="fiscal_position_template_4"/>-->
-        <!--<field name="tax_src_id" ref="ddss_00"/>-->
-        <!--<field name="tax_dest_id" ref="tvati_intras"/>-->
-    <!--</record>-->
-    <!--<record id="afptt_intracoms_2" model="account.fiscal.position.tax.template">-->
-        <!--<field name="position_id" ref="fiscal_position_template_4"/>-->
-        <!--<field name="tax_src_id" ref="ddss_09"/>-->
-        <!--<field name="tax_dest_id" ref="tvati_intras"/>-->
-    <!--</record>-->
-    <!--<record id="afptt_intracoms_3" model="account.fiscal.position.tax.template">-->
-        <!--<field name="position_id" ref="fiscal_position_template_4"/>-->
-        <!--<field name="tax_src_id" ref="ddss_20"/>-->
-        <!--<field name="tax_dest_id" ref="tvati_intras"/>-->
-    <!--</record>-->
+        <!--&lt;!&ndash; Sales &ndash;&gt;-->
+        <!--<record id="afptt_intracoms_1" model="account.fiscal.position.tax.template">-->
+            <!--<field name="position_id" ref="fiscal_position_template_4"/>-->
+            <!--<field name="tax_src_id" ref="ddss_00"/>-->
+            <!--<field name="tax_dest_id" ref="tvati_intras"/>-->
+        <!--</record>-->
+        <!--<record id="afptt_intracoms_2" model="account.fiscal.position.tax.template">-->
+            <!--<field name="position_id" ref="fiscal_position_template_4"/>-->
+            <!--<field name="tax_src_id" ref="ddss_09"/>-->
+            <!--<field name="tax_dest_id" ref="tvati_intras"/>-->
+        <!--</record>-->
+        <!--<record id="afptt_intracoms_3" model="account.fiscal.position.tax.template">-->
+            <!--<field name="position_id" ref="fiscal_position_template_4"/>-->
+            <!--<field name="tax_src_id" ref="ddss_20"/>-->
+            <!--<field name="tax_dest_id" ref="tvati_intras"/>-->
+        <!--</record>-->
 
-    <!--<record id="afptt_intracoms_6" model="account.fiscal.position.tax.template">-->
-        <!--<field name="position_id" ref="fiscal_position_template_4"/>-->
-        <!--<field name="tax_src_id" ref="ddsp_00"/>-->
-        <!--<field name="tax_dest_id" ref="tvati_intrap0"/>-->
-    <!--</record>-->
-    <!--<record id="afptt_intracoms_8" model="account.fiscal.position.tax.template">-->
-        <!--<field name="position_id" ref="fiscal_position_template_4"/>-->
-        <!--<field name="tax_src_id" ref="ddsp_09"/>-->
-        <!--<field name="tax_dest_id" ref="tvati_intrap9"/>-->
-    <!--</record>-->
-    <!--<record id="afptt_intracoms_10" model="account.fiscal.position.tax.template">-->
-        <!--<field name="position_id" ref="fiscal_position_template_4"/>-->
-        <!--<field name="tax_src_id" ref="ddsp_20"/>-->
-        <!--<field name="tax_dest_id" ref="tvati_intrap20"/>-->
-    <!--</record>-->
+        <!--<record id="afptt_intracoms_6" model="account.fiscal.position.tax.template">-->
+            <!--<field name="position_id" ref="fiscal_position_template_4"/>-->
+            <!--<field name="tax_src_id" ref="ddsp_00"/>-->
+            <!--<field name="tax_dest_id" ref="tvati_intrap0"/>-->
+        <!--</record>-->
+        <!--<record id="afptt_intracoms_8" model="account.fiscal.position.tax.template">-->
+            <!--<field name="position_id" ref="fiscal_position_template_4"/>-->
+            <!--<field name="tax_src_id" ref="ddsp_09"/>-->
+            <!--<field name="tax_dest_id" ref="tvati_intrap9"/>-->
+        <!--</record>-->
+        <!--<record id="afptt_intracoms_10" model="account.fiscal.position.tax.template">-->
+            <!--<field name="position_id" ref="fiscal_position_template_4"/>-->
+            <!--<field name="tax_src_id" ref="ddsp_20"/>-->
+            <!--<field name="tax_dest_id" ref="tvati_intrap20"/>-->
+        <!--</record>-->
 
-    <!--&lt;!&ndash; Sales &ndash;&gt;-->
-    <!--<record id="afptt_intracomsc_1" model="account.fiscal.position.tax.template">-->
-        <!--<field name="position_id" ref="fiscal_position_template_5"/>-->
-        <!--<field name="tax_src_id" ref="ddss_00"/>-->
-        <!--<field name="tax_dest_id" ref="tvatisc"/>-->
-    <!--</record>-->
-    <!--<record id="afptt_intracomsc_2" model="account.fiscal.position.tax.template">-->
-        <!--<field name="position_id" ref="fiscal_position_template_5"/>-->
-        <!--<field name="tax_src_id" ref="ddss_09"/>-->
-        <!--<field name="tax_dest_id" ref="tvatisc"/>-->
-    <!--</record>-->
-    <!--<record id="afptt_intracomsc_3" model="account.fiscal.position.tax.template">-->
-        <!--<field name="position_id" ref="fiscal_position_template_5"/>-->
-        <!--<field name="tax_src_id" ref="ddss_20"/>-->
-        <!--<field name="tax_dest_id" ref="tvatisc"/>-->
-    <!--</record>-->
+        <!--&lt;!&ndash; Sales &ndash;&gt;-->
+        <!--<record id="afptt_intracomsc_1" model="account.fiscal.position.tax.template">-->
+            <!--<field name="position_id" ref="fiscal_position_template_5"/>-->
+            <!--<field name="tax_src_id" ref="ddss_00"/>-->
+            <!--<field name="tax_dest_id" ref="tvatisc"/>-->
+        <!--</record>-->
+        <!--<record id="afptt_intracomsc_2" model="account.fiscal.position.tax.template">-->
+            <!--<field name="position_id" ref="fiscal_position_template_5"/>-->
+            <!--<field name="tax_src_id" ref="ddss_09"/>-->
+            <!--<field name="tax_dest_id" ref="tvatisc"/>-->
+        <!--</record>-->
+        <!--<record id="afptt_intracomsc_3" model="account.fiscal.position.tax.template">-->
+            <!--<field name="position_id" ref="fiscal_position_template_5"/>-->
+            <!--<field name="tax_src_id" ref="ddss_20"/>-->
+            <!--<field name="tax_dest_id" ref="tvatisc"/>-->
+        <!--</record>-->
 
-    <!--&lt;!&ndash; Purchases &ndash;&gt;-->
-    <!--<record id="afptt_intracomsc_6" model="account.fiscal.position.tax.template">-->
-        <!--<field name="position_id" ref="fiscal_position_template_5"/>-->
-        <!--<field name="tax_src_id" ref="ddsp_00"/>-->
-        <!--<field name="tax_dest_id" ref="tvatisca"/>-->
-    <!--</record>-->
-    <!--<record id="afptt_intracomsc_7" model="account.fiscal.position.tax.template">-->
-        <!--<field name="position_id" ref="fiscal_position_template_5"/>-->
-        <!--<field name="tax_src_id" ref="ddsp_09"/>-->
-        <!--<field name="tax_dest_id" ref="tvatisca"/>-->
-    <!--</record>-->
-    <!--<record id="afptt_intracomsc_8" model="account.fiscal.position.tax.template">-->
-        <!--<field name="position_id" ref="fiscal_position_template_5"/>-->
-        <!--<field name="tax_src_id" ref="ddsp_20"/>-->
-        <!--<field name="tax_dest_id" ref="tvatisca"/>-->
-    <!--</record>-->
+        <!--&lt;!&ndash; Purchases &ndash;&gt;-->
+        <!--<record id="afptt_intracomsc_6" model="account.fiscal.position.tax.template">-->
+            <!--<field name="position_id" ref="fiscal_position_template_5"/>-->
+            <!--<field name="tax_src_id" ref="ddsp_00"/>-->
+            <!--<field name="tax_dest_id" ref="tvatisca"/>-->
+        <!--</record>-->
+        <!--<record id="afptt_intracomsc_7" model="account.fiscal.position.tax.template">-->
+            <!--<field name="position_id" ref="fiscal_position_template_5"/>-->
+            <!--<field name="tax_src_id" ref="ddsp_09"/>-->
+            <!--<field name="tax_dest_id" ref="tvatisca"/>-->
+        <!--</record>-->
+        <!--<record id="afptt_intracomsc_8" model="account.fiscal.position.tax.template">-->
+            <!--<field name="position_id" ref="fiscal_position_template_5"/>-->
+            <!--<field name="tax_src_id" ref="ddsp_20"/>-->
+            <!--<field name="tax_dest_id" ref="tvatisca"/>-->
+        <!--</record>-->
 
-    <!--&lt;!&ndash; Sales &ndash;&gt;-->
-    <!--<record id="afptt_intracomne_1" model="account.fiscal.position.tax.template">-->
-        <!--<field name="position_id" ref="fiscal_position_template_6"/>-->
-        <!--<field name="tax_src_id" ref="ddss_00"/>-->
-        <!--<field name="tax_dest_id" ref="tvatine"/>-->
-    <!--</record>-->
-    <!--<record id="afptt_intracomne_2" model="account.fiscal.position.tax.template">-->
-        <!--<field name="position_id" ref="fiscal_position_template_6"/>-->
-        <!--<field name="tax_src_id" ref="ddss_09"/>-->
-        <!--<field name="tax_dest_id" ref="tvatine"/>-->
-    <!--</record>-->
-    <!--<record id="afptt_intracomne_3" model="account.fiscal.position.tax.template">-->
-        <!--<field name="position_id" ref="fiscal_position_template_6"/>-->
-        <!--<field name="tax_src_id" ref="ddss_20"/>-->
-        <!--<field name="tax_dest_id" ref="tvatine"/>-->
-    <!--</record>-->
+        <!--&lt;!&ndash; Sales &ndash;&gt;-->
+        <!--<record id="afptt_intracomne_1" model="account.fiscal.position.tax.template">-->
+            <!--<field name="position_id" ref="fiscal_position_template_6"/>-->
+            <!--<field name="tax_src_id" ref="ddss_00"/>-->
+            <!--<field name="tax_dest_id" ref="tvatine"/>-->
+        <!--</record>-->
+        <!--<record id="afptt_intracomne_2" model="account.fiscal.position.tax.template">-->
+            <!--<field name="position_id" ref="fiscal_position_template_6"/>-->
+            <!--<field name="tax_src_id" ref="ddss_09"/>-->
+            <!--<field name="tax_dest_id" ref="tvatine"/>-->
+        <!--</record>-->
+        <!--<record id="afptt_intracomne_3" model="account.fiscal.position.tax.template">-->
+            <!--<field name="position_id" ref="fiscal_position_template_6"/>-->
+            <!--<field name="tax_src_id" ref="ddss_20"/>-->
+            <!--<field name="tax_dest_id" ref="tvatine"/>-->
+        <!--</record>-->
 
-    <!--&lt;!&ndash; Purchases &ndash;&gt;-->
-    <!--<record id="afptt_intracomne_6" model="account.fiscal.position.tax.template">-->
-        <!--<field name="position_id" ref="fiscal_position_template_6"/>-->
-        <!--<field name="tax_src_id" ref="ddsp_00"/>-->
-        <!--<field name="tax_dest_id" ref="tvatinea"/>-->
-    <!--</record>-->
+        <!--&lt;!&ndash; Purchases &ndash;&gt;-->
+        <!--<record id="afptt_intracomne_6" model="account.fiscal.position.tax.template">-->
+            <!--<field name="position_id" ref="fiscal_position_template_6"/>-->
+            <!--<field name="tax_src_id" ref="ddsp_00"/>-->
+            <!--<field name="tax_dest_id" ref="tvatinea"/>-->
+        <!--</record>-->
 
-    <!--<record id="afptt_intracomne_7" model="account.fiscal.position.tax.template">-->
-        <!--<field name="position_id" ref="fiscal_position_template_6"/>-->
-        <!--<field name="tax_src_id" ref="ddsp_9"/>-->
-        <!--<field name="tax_dest_id" ref="tvatinea"/>-->
-    <!--</record>-->
+        <!--<record id="afptt_intracomne_7" model="account.fiscal.position.tax.template">-->
+            <!--<field name="position_id" ref="fiscal_position_template_6"/>-->
+            <!--<field name="tax_src_id" ref="ddsp_9"/>-->
+            <!--<field name="tax_dest_id" ref="tvatinea"/>-->
+        <!--</record>-->
 
-    <!--<record id="afptt_intracomne_8" model="account.fiscal.position.tax.template">-->
-        <!--<field name="position_id" ref="fiscal_position_template_6"/>-->
-        <!--<field name="tax_src_id" ref="ddsp_20"/>-->
-        <!--<field name="tax_dest_id" ref="tvatinea"/>-->
-    <!--</record>-->
+        <!--<record id="afptt_intracomne_8" model="account.fiscal.position.tax.template">-->
+            <!--<field name="position_id" ref="fiscal_position_template_6"/>-->
+            <!--<field name="tax_src_id" ref="ddsp_20"/>-->
+            <!--<field name="tax_dest_id" ref="tvatinea"/>-->
+        <!--</record>-->
 
-</data>
+    </data>
 </openerp>

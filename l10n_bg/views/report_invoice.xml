@@ -43,7 +43,7 @@
                            <span  t-field="o.date_invoice"/>
                         </div>
                         <div class="col-xs-2" t-if="o.payment_term_id">
-                            <strong>Payment Term:</strong>
+                            <!--<strong>Payment Term:</strong>-->
                             <p t-field="o.payment_term_id.note"/>
                         </div>
                         <div class="col-xs-2">

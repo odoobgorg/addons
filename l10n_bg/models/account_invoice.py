@@ -1,5 +1,5 @@
 from openerp import models, fields, api, _
-#from openerp.tools.amount_to_text_bg import *
+# from openerp.tools.amount_to_text_bg import *
 from amount_to_text_bg import *
 
 
@@ -35,3 +35,6 @@ class AccountInvoice(models.Model):
         comment = self.comment_template2_id
         if comment:
             self.note2 = comment.get_value(self.partner_id.id)
+
+    place_of_deal_id = fields.Many2one(comodel_name='res.partner', store=True, required=False, string="Place of deal",
+                                       default=lambda self: self.env.user.partner_id)

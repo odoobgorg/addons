@@ -41,5 +41,16 @@
           </field>
         </record>
 
+        <record id="bg_account_invoice_form_place_of_deal" model="ir.ui.view">
+            <field name="name">account.invoice_form_place_of_deal</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='payment_term_id']" position="after">
+                    <field name="place_of_deal_id" />
+                </xpath>
+            </field>
+        </record>
+
     </data>
 </openerp>

@@ -36,6 +36,10 @@
                             <span t-field="o.company_id.street"/><br />
                        </div>
                     </div>
+                    <div class="row">
+                       <div class="col-xs-4" name="company_address">
+                       </div>
+                    </div>
                     <p></p>
                 </div>
             </xpath>
