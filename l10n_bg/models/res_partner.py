@@ -20,9 +20,10 @@ class res_partner(osv.osv):
         'bg_mol': fields.char(string=_('MOL'), size=100, help=_('MOL')),
     }
 
-    _sql_constraints = [
-        ('bg_uic_uniq', 'unique("bg_uic")', 'The company register number must be unique !')
-    ]
+    # It is removed because we copy commercial fields to childs.
+    # _sql_constraints = [
+    #     ('bg_uic_uniq', 'unique("bg_uic")', 'The company register number must be unique !')
+    # ]
 
     @api.one
     @api.constrains('bg_egn')
@@ -202,3 +203,11 @@ class res_partner(osv.osv):
             address_format = '%(company_name)s\n' + address_format
 
         return address_format % args
+
+    def _commercial_fields(self, cr, uid, context=None):
+        """ Returns the list of fields that are managed by the commercial entity
+        to which a partner belongs. These fields are meant to be hidden on
+        partners that aren't `commercial entities` themselves, and will be
+        delegated to the parent `commercial entity`. The list is meant to be
+        extended by inheriting classes. """
+        return ['vat', 'credit_limit', 'bg_egn', 'bg_mol', 'bg_uic']
