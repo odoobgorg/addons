@@ -105,6 +105,7 @@ class res_partner(osv.osv):
         if isinstance(ids, (int, long)):
             ids = [ids]
         res = []
+
         cities = []
 
         users = self.pool.get('res.users')
@@ -116,8 +117,14 @@ class res_partner(osv.osv):
             if context.get('show_city'):
 
                 name = ''
-                #city = str(record.city) + str(record.country_id)
+
+                if not record.city:
+                    continue
+
                 city = record.city
+
+                if record.country_id:
+                    city += str(record.country_id)
 
                 if record.id == current_user.partner_id.id:
                     set_name = True
@@ -147,8 +154,10 @@ class res_partner(osv.osv):
                     name = "%s <%s>" % (name, record.email)
                 if context.get('html_format'):
                     name = name.replace('\n', '<br/>')
+
             if name:
                 res.append((record.id, name))
+
         return res
 
     def _display_address(self, cr, uid, address, without_company=False, context=None):
