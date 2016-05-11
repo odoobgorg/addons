@@ -116,7 +116,8 @@ class res_partner(osv.osv):
             if context.get('show_city'):
 
                 name = ''
-                city = str(record.city) + str(record.country_id)
+                #city = str(record.city) + str(record.country_id)
+                city = record.city
 
                 if record.id == current_user.partner_id.id:
                     set_name = True
