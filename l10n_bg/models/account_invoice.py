@@ -1,7 +1,13 @@
+# -*- coding: utf-8 -*-
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
+
 from openerp import models, fields, api, _
 # from openerp.tools.amount_to_text_bg import *
 from amount_to_text_bg import *
 
+import logging
+
+_logger = logging.getLogger(__name__)
 
 class AccountInvoice(models.Model):
     _inherit = 'account.invoice'
@@ -37,4 +43,4 @@ class AccountInvoice(models.Model):
             self.note2 = comment.get_value(self.partner_id.id)
 
     place_of_deal_id = fields.Many2one(comodel_name='res.partner', store=True, required=False, string="Place of deal",
-                                       default=lambda self: self.env.user.partner_id)
+                                      default=lambda self: self.env.user.partner_id)

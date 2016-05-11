@@ -47,7 +47,8 @@
             <field name="inherit_id" ref="account.invoice_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='payment_term_id']" position="after">
-                    <field name="place_of_deal_id" />
+                    <!--<field name="place_of_deal_id" context="{'show_city': True}" domain="[('parent_id', '!=', partner_id)]" />-->
+                    <field name="place_of_deal_id" context="{'show_city': True}" />
                 </xpath>
             </field>
         </record>

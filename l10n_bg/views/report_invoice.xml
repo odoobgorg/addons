@@ -36,10 +36,11 @@
                     <div class="row" style="font-size:9px;">
                         <div class="col-xs-2">
                             <strong>Място на сделката:</strong>
-                            <p t-field="o.user_id.city"/>
+                            <span t-field="o.place_of_deal_id.city"/>,
+                            <span t-field="o.place_of_deal_id.country_id.name"/>
                         </div>
                         <div class="col-xs-2">
-                            <strong>Дан. събитие:</strong>
+                           <strong>Дан. събитие:</strong>
                            <span  t-field="o.date_invoice"/>
                         </div>
                         <div class="col-xs-2" t-if="o.payment_term_id">

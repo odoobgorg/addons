@@ -7,6 +7,7 @@ from openerp.tools.translate import _
 from openerp.exceptions import UserError, ValidationError
 
 import logging
+
 _logger = logging.getLogger(__name__)
 
 
@@ -97,3 +98,97 @@ class res_partner(osv.osv):
             return False
 
         return True
+
+    def name_get(self, cr, uid, ids, context=None):
+        if context is None:
+            context = {}
+        if isinstance(ids, (int, long)):
+            ids = [ids]
+        res = []
+        cities = []
+
+        users = self.pool.get('res.users')
+        current_user = users.browse(cr, uid, uid, context=context)
+
+        types_dict = dict(self.fields_get(cr, uid, context=context)['type']['selection'])
+        for record in self.browse(cr, uid, ids, context=context):
+            name = record.name or ''
+            if context.get('show_city'):
+
+                name = ''
+                city = record.city + str(record.country_id)
+
+                if record.id == current_user.partner_id.id:
+                    set_name = True
+                elif record.id == current_user.company_id.id:
+                    set_name = True
+                elif record.parent_id.id == current_user.company_id.id:
+                    set_name = True
+                else:
+                    set_name = False
+
+                if set_name and city not in cities:
+                    name = self._display_address(cr, uid, record, without_company=True, context=context)
+
+                cities.append(city)
+            else:
+                if record.parent_id and not record.is_company:
+                    if not name and record.type in ['invoice', 'delivery', 'other']:
+                        name = types_dict[record.type]
+                    name = "%s, %s" % (record.parent_name, name)
+                if context.get('show_address_only'):
+                    name = self._display_address(cr, uid, record, without_company=True, context=context)
+                if context.get('show_address'):
+                    name = name + "\n" + self._display_address(cr, uid, record, without_company=True, context=context)
+                name = name.replace('\n\n', '\n')
+                name = name.replace('\n\n', '\n')
+                if context.get('show_email') and record.email:
+                    name = "%s <%s>" % (name, record.email)
+                if context.get('html_format'):
+                    name = name.replace('\n', '<br/>')
+            if name:
+                res.append((record.id, name))
+        return res
+
+    def _display_address(self, cr, uid, address, without_company=False, context=None):
+
+        '''
+        The purpose of this function is to build and return an address formatted accordingly to the
+        standards of the country where it belongs.
+
+        :param address: browse record of the res.partner to format
+        :returns: the address formatted in a display that fit its country habits (or the default ones
+            if not country is specified)
+        :rtype: string
+        '''
+
+        # get the information that will be injected into the display format
+        # get the address format
+        if context.get('show_city'):
+            address_format = "%(city)s, %(country_name)s"
+        else:
+            address_format = address.country_id.address_format or \
+                             "%(street)s\n%(street2)s\n%(city)s %(state_code)s %(zip)s\n%(country_name)s"
+
+        args = {
+            'state_code': address.state_id.code or '',
+            'state_name': address.state_id.name or '',
+            'country_code': address.country_id.code or '',
+            'country_name': address.country_id.name or '',
+            'company_name': address.parent_name or '',
+        }
+
+        for field in self._address_fields(cr, uid, context=context):
+            args[field] = getattr(address, field) or ''
+
+        if context.get('show_city'):
+            args['state_code'] = ''
+            args['state_name'] = ''
+            args['country_code'] = ''
+            args['company_name'] = ''
+        if without_company:
+            args['company_name'] = ''
+        elif address.parent_id:
+            address_format = '%(company_name)s\n' + address_format
+
+        return address_format % args
