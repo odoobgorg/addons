@@ -1,13 +1,13 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* base_bg_uic
+#	* l10n_bg
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 9.0-20151006\n"
+"Project-Id-Version: Odoo Server 9.0c-20160411\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-30 11:58+0000\n"
-"PO-Revision-Date: 2015-10-30 11:58+0000\n"
+"POT-Creation-Date: 2016-05-12 08:48+0000\n"
+"PO-Revision-Date: 2016-05-12 08:48+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -15,317 +15,368 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
-#. module: base_bg_uic
-#: code:addons/base_bg_uic/base_bg_uic.py:32
-#, python-format
-msgid "BULSTAT isn't valid"
-msgstr "Грешен Булстат"
-
-#. module: base_bg_uic
-#: model:ir.model,name:base_bg_uic.model_res_partner
-msgid "Partner"
-msgstr "Партньор"
-
-#. module: base_bg_uic
-#: sql_constraint:res.partner:0
-msgid "The company register number must be unique !"
-msgstr "Булстат на фирма трябва да бъде уникален !"
-
-#. module: base_bg_uic
-#: code:addons/base_bg_uic/base_bg_uic.py:20
-#: model:ir.model.fields,field_description:base_bg_uic.field_res_partner_bg_uic
-#: model:ir.ui.view,arch_db:base_bg_uic.view_partner_form
-#, python-format
-msgid "UIC"
-msgstr "БУЛСТАТ/ЕИК"
-
-#. module: base_bg_uic
-#: code:addons/base_bg_uic/base_bg_uic.py:20
-#: model:ir.model.fields,help:base_bg_uic.field_res_partner_bg_uic
-#, python-format
-msgid "UIC by Bulgarian register agency"
-msgstr "ЕИК от Агенцията по вписвания"
-
-#. module: base_bg_uic
-#: model:ir.ui.view,arch_db:base_bg_uic.view_partner_form
-msgid "e.g. BULSTAT or EIK"
-msgstr "e.g. БУЛСТАТ или ЕИК"
-
-#. module: sale_layout
-#: model:ir.ui.view,arch_db:sale_layout.category_template
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.external_layout_footer_bg
 msgid "&amp;bull;"
-msgstr ""
+msgstr "&amp;bull;"
 
-#. module: sale_layout
-#: model:ir.ui.view,arch_db:sale_layout.report_sale_layouted
-msgid ""
-"&lt;/tbody&gt;\n"
-"                            &lt;/table&gt;\n"
-"                            &lt;p style=\"page-break-before:always;\"&gt; &lt;/p&gt;\n"
-"                            &lt;table class=\"table table-condensed\"&gt;"
-msgstr ""
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "(ID"
+msgstr "(ID"
 
-#. module: sale_layout
-#: model:ir.ui.view,arch_db:sale_layout.report_invoice_layouted
-msgid ""
-"&lt;/tbody&gt;\n"
-"                    &lt;/table&gt;\n"
-"                    &lt;p style=\"page-break-before:always;\"&gt; &lt;/p&gt;\n"
-"                    &lt;table class=\"table table-condensed\"&gt;"
-msgstr ""
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.external_layout_header_bg
+msgid "<br/>\n"
+"                            e-mail:"
+msgstr "<br/>\n"
+"                            e-mail:"
 
-#. module: sale_layout
-#: model:ir.ui.view,arch_db:sale_layout.report_invoice_layouted
-#: model:ir.ui.view,arch_db:sale_layout.report_sale_layouted
-msgid "&lt;tbody&gt;"
-msgstr ""
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "<strong>Comment:</strong>"
+msgstr "<strong>Коментар:</strong>"
 
-#. module: sale_layout
-#: model:ir.ui.view,arch_db:sale_layout.report_sale_layouted
-msgid "<span>Disc.(%)</span>"
-msgstr ""
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "<strong>Fiscal Position Remark:</strong>"
+msgstr "<strong>Фискална позиция отбелязване:</strong>"
 
-#. module: sale_layout
-#: model:ir.ui.view,arch_db:sale_layout.subtotal_template
-msgid "<strong>Subtotal: </strong>"
-msgstr ""
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "<strong>Incoterms:</strong>"
+msgstr "<strong>Incoterms:</strong>"
 
-#. module: sale_layout
-#: model:ir.model.fields,field_description:sale_layout.field_sale_layout_category_pagebreak
-msgid "Add pagebreak"
-msgstr ""
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "<strong>Payment Term:</strong>"
+msgstr "<strong>Payment Term:</strong>"
 
-#. module: sale_layout
-#: model:ir.model.fields,field_description:sale_layout.field_sale_layout_category_separator
-msgid "Add separator"
-msgstr ""
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "<strong>Reference:</strong>"
+msgstr "<strong>Справка:</strong>"
 
-#. module: sale_layout
-#: model:ir.model.fields,field_description:sale_layout.field_sale_layout_category_subtotal
-msgid "Add subtotal"
-msgstr ""
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "<strong>Source:</strong>"
+msgstr "<strong>Източник:</strong>"
 
-#. module: sale_layout
-#: model:ir.ui.view,arch_db:sale_layout.report_configuration_search_view
-msgid "Break"
-msgstr ""
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "<strong>Total Without Taxes</strong>"
+msgstr "<strong>Total Without Taxes</strong>"
 
-#. module: sale_layout
-#: model:ir.model.fields,field_description:sale_layout.field_sale_layout_category_create_uid
-msgid "Created by"
-msgstr "Създадено от"
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "<strong>Total</strong>"
+msgstr "<strong>Общо</strong>"
 
-#. module: sale_layout
-#: model:ir.model.fields,field_description:sale_layout.field_sale_layout_category_create_date
-msgid "Created on"
-msgstr "Създадено на"
-
-#. module: sale_layout
-#: model:ir.ui.view,arch_db:sale_layout.report_invoice_layouted
-#: model:ir.ui.view,arch_db:sale_layout.report_sale_layouted
-msgid "Description"
-msgstr "Описание"
-
-#. module: sale_layout
-#: model:ir.ui.view,arch_db:sale_layout.report_invoice_layouted
-msgid "Disc.(%)"
-msgstr "Отстъпка (%)"
-
-#. module: sale_layout
-#: model:ir.model.fields,field_description:sale_layout.field_sale_layout_category_display_name
-msgid "Display Name"
-msgstr ""
-
-#. module: sale_layout
-#: model:ir.ui.view,arch_db:sale_layout.report_configuration_search_view
-msgid "Group By Name"
-msgstr ""
-
-#. module: sale_layout
-#: model:ir.model.fields,field_description:sale_layout.field_sale_layout_category_id
-msgid "ID"
-msgstr "ID"
-
-#. module: sale_layout
-#: model:ir.model,name:sale_layout.model_account_invoice
-msgid "Invoice"
-msgstr "Фактура"
-
-#. module: sale_layout
-#: model:ir.model,name:sale_layout.model_account_invoice_line
-msgid "Invoice Line"
-msgstr "Ред от фактура"
-
-#. module: sale_layout
-#: model:ir.model.fields,field_description:sale_layout.field_sale_layout_category___last_update
-msgid "Last Modified on"
-msgstr ""
-
-#. module: sale_layout
-#: model:ir.model.fields,field_description:sale_layout.field_sale_layout_category_write_uid
-msgid "Last Updated by"
-msgstr "Последно обновено от"
-
-#. module: sale_layout
-#: model:ir.model.fields,field_description:sale_layout.field_sale_layout_category_write_date
-msgid "Last Updated on"
-msgstr "Последно обновено на"
-
-#. module: sale_layout
-#: model:ir.model.fields,field_description:sale_layout.field_account_invoice_line_categ_sequence
-#: model:ir.model.fields,field_description:sale_layout.field_sale_order_line_categ_sequence
-msgid "Layout Sequence"
-msgstr ""
-
-#. module: sale_layout
-#: model:sale_layout.category,name:sale_layout.sale_layout_cat_2
-msgid "Material"
-msgstr "Материал"
-
-#. module: sale_layout
-#: model:ir.model.fields,field_description:sale_layout.field_sale_layout_category_name
-#: model:ir.ui.view,arch_db:sale_layout.report_configuration_search_view
-msgid "Name"
-msgstr "Име"
-
-#. module: sale_layout
-#: model:ir.ui.view,arch_db:sale_layout.report_invoice_layouted
-#: model:ir.ui.view,arch_db:sale_layout.report_sale_layouted
-msgid "Price"
-msgstr "Цена"
-
-#. module: sale_layout
-#: model:ir.ui.view,arch_db:sale_layout.report_invoice_layouted
-#: model:ir.ui.view,arch_db:sale_layout.report_sale_layouted
-msgid "Quantity"
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "Amount"
 msgstr "Количество"
 
-#. module: sale_layout
-#: model:ir.actions.act_window,name:sale_layout.report_configuration_action
-#: model:ir.ui.view,arch_db:sale_layout.report_configuration_form_view
-#: model:ir.ui.view,arch_db:sale_layout.report_configuration_tree_view
-msgid "Report Configuration"
-msgstr ""
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_account_invoice_amount_in_word
+msgid "Amount in word"
+msgstr "Amount in word"
 
-#. module: sale_layout
-#: model:ir.ui.menu,name:sale_layout.Report_configuration
-msgid "Report Layout Categories"
-msgstr ""
+#. module: l10n_bg
+#: code:addons/l10n_bg/models/res_partner.py:63
+#, python-format
+msgid "BULSTAT/EIK isn't valid"
+msgstr "BULSTAT/EIK isn't valid"
 
-#. module: sale_layout
-#: model:ir.model,name:sale_layout.model_sale_order
-msgid "Sales Order"
-msgstr "Нареждане за продажба"
+#. module: l10n_bg
+#: model:ir.model,name:l10n_bg.model_base_comment_template
+msgid "Base Comment template"
+msgstr "Base Comment template"
 
-#. module: sale_layout
-#: model:ir.model,name:sale_layout.model_sale_order_line
-msgid "Sales Order Line"
-msgstr "Ред от нареждане за продажба"
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "Cancelled Invoice"
+msgstr "Отменена фактура"
 
-#. module: sale_layout
-#: model:ir.ui.view,arch_db:sale_layout.report_configuration_search_view
-msgid "Search Name"
-msgstr ""
-
-#. module: sale_layout
-#: model:ir.model.fields,field_description:sale_layout.field_account_invoice_line_sale_layout_cat_id
-#: model:ir.model.fields,field_description:sale_layout.field_sale_order_line_sale_layout_cat_id
-msgid "Section"
-msgstr "Секция"
-
-#. module: sale_layout
-#: model:ir.ui.view,arch_db:sale_layout.report_configuration_search_view
-msgid "Separator"
-msgstr ""
-
-#. module: sale_layout
-#: model:ir.model.fields,field_description:sale_layout.field_sale_layout_category_sequence
-msgid "Sequence"
-msgstr "Последователност"
-
-#. module: sale_layout
-#: model:sale_layout.category,name:sale_layout.sale_layout_cat_1
-msgid "Services"
-msgstr "Услуги"
-
-#. module: sale_layout
-#: model:ir.ui.view,arch_db:sale_layout.report_invoice_layouted
-#: model:ir.ui.view,arch_db:sale_layout.report_sale_layouted
-msgid "Taxes"
-msgstr "Данъци"
-
-#. module: sale_layout
-#: model:ir.ui.view,arch_db:sale_layout.report_configuration_search_view
-msgid "Total"
-msgstr "Общо"
-
-#. module: sale_layout
-#: model:ir.ui.view,arch_db:sale_layout.category_template
-msgid "Uncategorized"
-msgstr ""
-
-#. module: sale_layout
-#: model:ir.ui.view,arch_db:sale_layout.report_invoice_layouted
-#: model:ir.ui.view,arch_db:sale_layout.report_sale_layouted
-msgid "Unit Price"
-msgstr "Единична цена"
-
-#. module: base_comment_template
-#: selection:base.comment.template,position:0
-msgid "After lines"
-msgstr "After lines"
-
-#. module: base_comment_template
-#: model:ir.model,name:base_comment_template.model_base_comment_template
-msgid "Base comment template"
-msgstr "Base comment template"
-
-#. module: base_comment_template
-#: selection:base.comment.template,position:0
-msgid "Before lines"
-msgstr "Before lines"
-
-#. module: base_comment_template
-#: field:base.comment.template,text:0
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_base_comment_template_text
 msgid "Comment"
 msgstr "Коментар"
 
-#: view:base.comment.template:base_comment_template.view_base_comment_template_form
-#: view:base.comment.template:base_comment_template.view_base_comment_template_search
-#: view:base.comment.template:base_comment_template.view_base_comment_template_tree
-#: model:ir.actions.act_window,name:base_comment_template.action_base_comment_template
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_account_invoice_note1
+msgid "Comment 1"
+msgstr "Comment 1"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_account_invoice_note2
+msgid "Comment 2"
+msgstr "Comment 2"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_account_invoice_comment_template1_id
+msgid "Comment Template 1"
+msgstr "Comment Template 1"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_account_invoice_comment_template2_id
+msgid "Comment Template 2"
+msgstr "Comment Template 2"
+
+#. module: l10n_bg
+#: model:ir.actions.act_window,name:l10n_bg.action_base_comment_template
+#: model:ir.ui.view,arch_db:l10n_bg.view_base_comment_template_form
+#: model:ir.ui.view,arch_db:l10n_bg.view_base_comment_template_search
+#: model:ir.ui.view,arch_db:l10n_bg.view_base_comment_template_tree
 msgid "Comment Templates"
 msgstr "Comment Templates"
 
-#: field:base.comment.template,name:0
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_base_comment_template_name
 msgid "Comment summary"
 msgstr "Comment summary"
 
-#: field:base.comment.template,create_uid:0
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.bg_invoice_form_add_comment
+msgid "Comments"
+msgstr "Коментари"
+
+#. module: l10n_bg
+#: model:ir.model,name:l10n_bg.model_res_company
+msgid "Companies"
+msgstr "Компании"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_base_comment_template_create_uid
 msgid "Created by"
-msgstr "Created by"
+msgstr "Създадено от"
 
-#: field:base.comment.template,create_date:0
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_base_comment_template_create_date
 msgid "Created on"
-msgstr "Created on"
+msgstr "Създадено на"
 
-#: field:base.comment.template,id:0
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "Description"
+msgstr "Описание"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "Disc.(%)"
+msgstr "Отстъпка (%)"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_base_comment_template_display_name
+msgid "Display Name"
+msgstr "Име за показване"
+
+#. module: l10n_bg
+#: model:ir.ui.menu,name:l10n_bg.base_comment_template_menu
+msgid "Document Comments"
+msgstr "Document Comments"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "Draft Invoice"
+msgstr " Фактура - Чернова"
+
+#. module: l10n_bg
+#: code:addons/l10n_bg/models/res_partner.py:18
+#: model:ir.model.fields,field_description:l10n_bg.field_res_partner_bg_egn
+#: model:ir.model.fields,help:l10n_bg.field_res_partner_bg_egn
+#: model:ir.ui.view,arch_db:l10n_bg.view_partner_form_1
+#, python-format
+msgid "EGN"
+msgstr "EGN"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.external_layout_footer_bg
+msgid "Email:"
+msgstr "Email:"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.external_layout_footer_bg
+msgid "Fax:"
+msgstr "Факс:"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_base_comment_template_id
 msgid "ID"
 msgstr "ID"
 
-#: field:base.comment.template,write_uid:0
+#. module: l10n_bg
+#: model:ir.model,name:l10n_bg.model_account_invoice
+msgid "Invoice"
+msgstr "Фактура"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "Invoice<span> N° </span>"
+msgstr "Invoice<span> N° </span>"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_base_comment_template___last_update
+msgid "Last Modified on"
+msgstr "Последно променено на"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_base_comment_template_write_uid
 msgid "Last Updated by"
-msgstr "Last Updated by"
+msgstr "Последно обновено от"
 
-#: field:base.comment.template,write_date:0
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_base_comment_template_write_date
 msgid "Last Updated on"
-msgstr "Last Updated on"
+msgstr "Последно обновено на"
 
-#: field:base.comment.template,position:0
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.bg_invoice_form_add_comment
+msgid "Load a template"
+msgstr "Load a template"
+
+#. module: l10n_bg
+#: code:addons/l10n_bg/models/res_company.py:30
+#: code:addons/l10n_bg/models/res_company.py:31
+#: code:addons/l10n_bg/models/res_partner.py:20
+#: model:ir.model.fields,field_description:l10n_bg.field_res_company_bg_mol
+#: model:ir.model.fields,field_description:l10n_bg.field_res_partner_bg_mol
+#: model:ir.model.fields,help:l10n_bg.field_res_company_bg_mol
+#: model:ir.model.fields,help:l10n_bg.field_res_partner_bg_mol
+#: model:ir.ui.view,arch_db:l10n_bg.view_partner_form_2
+#, python-format
+msgid "MOL"
+msgstr "MOL"
+
+#. module: l10n_bg
+#: selection:base.comment.template,position:0
+msgid "Method of payment"
+msgstr "Method of payment"
+
+#. module: l10n_bg
+#: model:ir.actions.client,name:l10n_bg.action_client_l10n_bg_menu
+msgid "Open Account Dashboard Menu"
+msgstr "Open Account Dashboard Menu"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "PRO-FORMA<span> N° </span>"
+msgstr "PRO-FORMA<span> N° </span>"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.external_layout_footer_bg
+msgid "Page: <span class=\"page\"/>/<span class=\"topage\"/>"
+msgstr "Page: <span class=\"page\"/>/<span class=\"topage\"/>"
+
+#. module: l10n_bg
+#: model:ir.model,name:l10n_bg.model_res_partner
+msgid "Partner"
+msgstr "Партньор"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.external_layout_footer_bg
+msgid "Phone:"
+msgstr "Телефон:"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_account_invoice_place_of_deal_id
+msgid "Place of deal"
+msgstr "Място на сделка"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_base_comment_template_position
 msgid "Position"
 msgstr "Позиция"
 
-#. module: base_comment_template
-#: help:base.comment.template,position:0
+#. module: l10n_bg
+#: model:ir.model.fields,help:l10n_bg.field_base_comment_template_position
 msgid "Position on document"
 msgstr "Позиция на документа"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "Price"
+msgstr "Цена"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "Quantity"
+msgstr "Количество"
+
+#. module: l10n_bg
+#: selection:base.comment.template,position:0
+msgid "Reason for not charging VAT"
+msgstr "Reason for not charging VAT"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "Refund"
+msgstr "Refund"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "Supplier Invoice<span> N° </span>"
+msgstr "Supplier Invoice<span> N° </span>"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "Supplier Refund<span> N° </span>"
+msgstr "Supplier Refund<span> N° </span>"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "Tax"
+msgstr "Tax"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "Taxes"
+msgstr "Taxes"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.view_partner_form_1
+msgid "Type Bulgarian EGN"
+msgstr "Въведи ЕГН"
+
+#. module: l10n_bg
+#: code:addons/l10n_bg/models/res_company.py:28
+#: code:addons/l10n_bg/models/res_partner.py:19
+#: model:ir.model.fields,field_description:l10n_bg.field_res_company_bg_uic
+#: model:ir.model.fields,field_description:l10n_bg.field_res_partner_bg_uic
+#: model:ir.ui.view,arch_db:l10n_bg.view_partner_form_2
+#, python-format
+msgid "UIC"
+msgstr "UIC"
+
+#. module: l10n_bg
+#: code:addons/l10n_bg/models/res_company.py:29
+#: code:addons/l10n_bg/models/res_partner.py:19
+#: model:ir.model.fields,help:l10n_bg.field_res_company_bg_uic
+#: model:ir.model.fields,help:l10n_bg.field_res_partner_bg_uic
+#, python-format
+msgid "UIC by Bulgarian register agency"
+msgstr "UIC by Bulgarian register agency"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "Unit Price"
+msgstr "Unit Price"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.external_layout_footer_bg
+msgid "Website:"
+msgstr "Уеб сайт:"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.view_company_form_1
+#: model:ir.ui.view,arch_db:l10n_bg.view_partner_form_2
+msgid "e.g. BULSTAT or EIK"
+msgstr "e.g. Булстат или Единен идентификационен код."
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.view_company_form_1
+#: model:ir.ui.view,arch_db:l10n_bg.view_partner_form_2
+msgid "e.g. Ivan Ivanov"
+msgstr "e.g. Иван Иванов"
+
+
