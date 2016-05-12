@@ -1,0 +1,251 @@
+<?xml version="1.0"?>
+<openerp>
+    <data noupdate="0">
+
+        <!--Начин на плащане-->
+        <record id="base_comment_template_x1" model="base.comment.template">
+            <field name="name">Фактура - Начин на плащане: в брой (издайте касова бележка)</field>
+            <field name="text">Начин на плащане: в брой</field>
+            <field name="position">comment_2</field>
+        </record>
+
+        <record id="base_comment_template_x2" model="base.comment.template">
+            <field name="name">Фактура - Начин на плащане: с наложен платеж в брой (издайте касова бележка)</field>
+            <field name="text">Начин на плащане: с наложен платеж</field>
+            <field name="position">comment_2</field>
+        </record>
+
+        <record id="base_comment_template_x3" model="base.comment.template">
+            <field name="name">Фактура - Начин на плащане: По банков път (BGN)</field>
+            <field name="text">Начин на плащане: По банков път (BGN)</field>
+            <field name="position">comment_2</field>
+        </record>
+
+        <record id="base_comment_template_x4" model="base.comment.template">
+            <field name="name">Фактура - Начин на плащане: с наложен платеж по сметка (ППП)</field>
+            <field name="text">Начин на плащане: с наложен платеж с ППП</field>
+            <field name="position">comment_2</field>
+        </record>
+
+        <record id="base_comment_template_x5" model="base.comment.template">
+            <field name="name">Фактура - Начин на плащане: с наложен платеж по сметка (ППП)</field>
+            <field name="text">Начин на плащане: с наложен платеж с ППП</field>
+            <field name="position">comment_2</field>
+        </record>
+
+        <!--Основание на сделка по ЗДДС-->
+        <record id="base_comment_template_y1" model="base.comment.template">
+            <field name="name">Фактура - Основание на сделка по ЗДДС: чл.113, ал.9 от ЗДДС – лицето не е регистрирано по ЗДДС</field>
+            <field name="text">чл.113, ал.9 от ЗДДС – лицето не е регистрирано по ЗДДС</field>
+            <field name="position">comment_1</field>
+        </record>
+
+        <record id="base_comment_template_y2" model="base.comment.template">
+            <field name="name">Фактура - Основание на сделка по ЗДДС: чл.21 от ЗДДС – услугата е извън територията на България</field>
+            <field name="text">чл.21 от ЗДДС – услугата е извън територията на България</field>
+            <field name="position">comment_1</field>
+        </record>
+
+        <record id="base_comment_template_y3" model="base.comment.template">
+            <field name="name">Фактура - Основание на сделка по ЗДДС: чл.22 от ЗДДС – транспортната услуга е извън територията на България</field>
+            <field name="text">чл.22 от ЗДДС – транспортната услуга е извън територията на България</field>
+            <field name="position">comment_1</field>
+        </record>
+
+        <record id="base_comment_template_y4" model="base.comment.template">
+            <field name="name">Фактура - Основание на сделка по ЗДДС: чл.163а, ал. 2 от ЗДДС – обратно начисляване</field>
+            <field name="text">чл.163а, ал. 2 от ЗДДС – обратно начисляване</field>
+            <field name="position">comment_1</field>
+        </record>
+
+        <record id="base_comment_template_y5" model="base.comment.template">
+            <field name="name">Фактура - Основание на сделка по ЗДДС: чл.142, ал.1 от ЗДДС - режим на облагане на маржа - туристически услуги</field>
+            <field name="text">чл.142, ал.1 от ЗДДС - режим на облагане на маржа - туристически услуги</field>
+            <field name="position">comment_1</field>
+        </record>
+
+        <record id="base_comment_template_y6" model="base.comment.template">
+            <field name="name">Фактура - Основание на сделка по ЗДДС: чл.82, ал. 2 от ЗДДС - обратно начисляване</field>
+            <field name="text">чл.82, ал. 2 от ЗДДС - обратно начисляване</field>
+            <field name="position">comment_1</field>
+        </record>
+
+        <record id="base_comment_template_y7" model="base.comment.template">
+            <field name="name">Фактура - Основание на сделка по ЗДДС: чл.143 от ЗДДС - режим на облагане на маржа - стоки втора употреба</field>
+            <field name="text">чл.143 от ЗДДС - режим на облагане на маржа - стоки втора употреба</field>
+            <field name="position">comment_1</field>
+        </record>
+
+        <record id="base_comment_template_y8" model="base.comment.template">
+            <field name="name">Фактура - Основание на сделка по ЗДДС: чл.141 2006/112/ЕО - за доставки на стоки като посредник в тристранна операция</field>
+            <field name="text">чл.141 2006/112/ЕО - за доставки на стоки като посредник в тристранна операция</field>
+            <field name="position">comment_1</field>
+        </record>
+
+        <record id="base_comment_template_y9" model="base.comment.template">
+            <field name="name">Фактура - Основание на сделка по ЗДДС: чл. 30 ал. 1 т. 2 от ЗДДС – транспортна услуга</field>
+            <field name="text">чл. 30 ал. 1 т. 2 от ЗДДС – транспортна услуга</field>
+            <field name="position">comment_1</field>
+        </record>
+
+        <record id="base_comment_template_y10" model="base.comment.template">
+            <field name="name">Фактура - Основание на сделка по ЗДДС: чл.113, ал.9 от ЗДДС – лицето е регистрирано само на основание чл.97а от ЗДДС</field>
+            <field name="text">чл.113, ал.9 от ЗДДС – лицето е регистрирано само на основание чл.97а от ЗДДС</field>
+            <field name="position">comment_1</field>
+        </record>
+
+        <record id="base_comment_template_y11" model="base.comment.template">
+            <field name="name">Фактура - Основание на сделка по ЗДДС: чл.113, ал.9 от ЗДДС – лицето е регистрирано само на основание чл.99 от ЗДДС</field>
+            <field name="text">чл.113, ал.9 от ЗДДС – лицето е регистрирано само на основание чл.99 от ЗДДС</field>
+            <field name="position">comment_1</field>
+        </record>
+
+
+        <record id="base_comment_template_y12" model="base.comment.template">
+            <field name="name">Фактура - Основание на сделка по ЗДДС: чл.113, ал.9 от ЗДДС – лицето е регистрирано само на основание чл.100, ал.2 от ЗДДС</field>
+            <field name="text">чл.113, ал.9 от ЗДДС – лицето е регистрирано само на основание чл.100, ал.2 от ЗДДС</field>
+            <field name="position">comment_1</field>
+        </record>
+
+
+        <record id="base_comment_template_y13" model="base.comment.template">
+            <field name="name">Фактура - Основание на сделка по ЗДДС: чл.86, ал.1 от ППЗДДС – доставка на обща туристическа услуга</field>
+            <field name="text">чл.86, ал.1 от ППЗДДС – доставка на обща туристическа услуга</field>
+            <field name="position">comment_1</field>
+        </record>
+
+
+        <!--<record id="base_comment_template_y14" model="base.comment.template">-->
+            <!--<field name="name"></field>-->
+            <!--<field name="text"></field>-->
+            <!--<field name="position">comment_1</field>-->
+        <!--</record>-->
+
+
+        <record id="base_comment_template_y15" model="base.comment.template">
+            <field name="name">Фактура - Основание на сделка по ЗДДС: чл.39 от ЗДДС – доставка свързана със здравеопазване</field>
+            <field name="text">чл.39 от ЗДДС – доставка свързана със здравеопазване</field>
+            <field name="position">comment_1</field>
+        </record>
+
+
+        <record id="base_comment_template_y16" model="base.comment.template">
+            <field name="name">Фактура - Основание на сделка по ЗДДС: чл.40 от ЗДДС – доставка свързана със социални грижи и осигуряване</field>
+            <field name="text">чл.40 от ЗДДС – доставка свързана със социални грижи и осигуряване</field>
+            <field name="position">comment_1</field>
+        </record>
+
+
+        <record id="base_comment_template_y17" model="base.comment.template">
+            <field name="name">Фактура - Основание на сделка по ЗДДС: чл.40 от ЗДДС – доставка свързана със социални грижи и осигуряване</field>
+            <field name="text">чл.40 от ЗДДС – доставка свързана със социални грижи и осигуряване</field>
+            <field name="position">comment_1</field>
+        </record>
+
+
+        <record id="base_comment_template_y18" model="base.comment.template">
+            <field name="name">Фактура - Основание на сделка по ЗДДС: чл.66, ал. 2 от ЗДДС – хотелско настаняване</field>
+            <field name="text">чл.66, ал. 2 от ЗДДС – хотелско настаняване</field>
+            <field name="position">comment_1</field>
+        </record>
+
+
+        <record id="base_comment_template_y19" model="base.comment.template">
+            <field name="name">Фактура - Основание на сделка по ЗДДС: чл.41 от ЗДДС – доставка свързана с образование, спорт и физическо възпитание</field>
+            <field name="text">чл.41 от ЗДДС – доставка свързана с образование, спорт и физическо възпитание</field>
+            <field name="position">comment_1</field>
+        </record>
+
+
+        <record id="base_comment_template_y20" model="base.comment.template">
+            <field name="name">Фактура - Основание на сделка по ЗДДС: чл.42 от ЗДДС – доставка свързана с култура</field>
+            <field name="text">чл.42 от ЗДДС – доставка свързана с култура</field>
+            <field name="position">comment_1</field>
+        </record>
+
+
+        <record id="base_comment_template_y21" model="base.comment.template">
+            <field name="name">Фактура - Основание на сделка по ЗДДС: чл.43 от ЗДДС – доставка свързана с вероизповедания</field>
+            <field name="text">чл.43 от ЗДДС – доставка свързана с вероизповедания</field>
+            <field name="position">comment_1</field>
+        </record>
+
+
+        <record id="base_comment_template_y22" model="base.comment.template">
+            <field name="name">Фактура - Основание на сделка по ЗДДС: чл.44 от ЗДДС – доставка с нестопански характер</field>
+            <field name="text">чл.44 от ЗДДС – доставка с нестопански характер</field>
+            <field name="position">comment_1</field>
+        </record>
+
+
+        <!--<record id="base_comment_template_y23" model="base.comment.template">-->
+            <!--<field name="name"></field>-->
+            <!--<field name="text"></field>-->
+            <!--<field name="position">comment_1</field>-->
+        <!--</record>-->
+
+
+        <record id="base_comment_template_y24" model="base.comment.template">
+            <field name="name">Фактура - Основание на сделка по ЗДДС: чл.45 от ЗДДС – земя и сгради</field>
+            <field name="text">чл.45 от ЗДДС – земя и сгради</field>
+            <field name="position">comment_1</field>
+        </record>
+
+
+        <record id="base_comment_template_y25" model="base.comment.template">
+            <field name="name">Фактура - Основание на сделка по ЗДДС: чл.49 от ЗДДС – пощенски марки и пощенски услуги</field>
+            <field name="text">чл.49 от ЗДДС – пощенски марки и пощенски услуги</field>
+            <field name="position">comment_1</field>
+        </record>
+
+
+        <record id="base_comment_template_y26" model="base.comment.template">
+            <field name="name">Фактура - Основание на сделка по ЗДДС: чл.50 от ЗДДС – освободена доставка при неползван данъчен кредит</field>
+            <field name="text">чл.50 от ЗДДС – освободена доставка при неползван данъчен кредит</field>
+            <field name="position">comment_1</field>
+        </record>
+
+
+        <record id="base_comment_template_y27" model="base.comment.template">
+            <field name="name">Фактура - Основание на сделка по ЗДДС: чл.18 от ЗДДС – доставка на стоки и услуги, извършвани на борда на кораби, самолети и влакове извън територията на България</field>
+            <field name="text">чл.18 от ЗДДС – доставка на стоки и услуги, извършвани на борда на кораби, самолети и влакове извън територията на България</field>
+            <field name="position">comment_1</field>
+        </record>
+
+
+        <record id="base_comment_template_y28" model="base.comment.template">
+            <field name="name">Фактура - Основание на сделка по ЗДДС: чл.19 от ЗДДС – доставка на природен газ или електрическа енергия извън територията на България</field>
+            <field name="text">чл.19 от ЗДДС – доставка на природен газ или електрическа енергия извън територията на България</field>
+            <field name="position">comment_1</field>
+        </record>
+
+
+        <record id="base_comment_template_y29" model="base.comment.template">
+            <field name="name">Фактура - Основание на сделка по ЗДДС: чл.28с(Е)(3) 77/388/ЕЕС – посредник в тристранна операция</field>
+            <field name="text">чл.28с(Е)(3) 77/388/ЕЕС – посредник в тристранна операция</field>
+            <field name="position">comment_1</field>
+        </record>
+
+        <record id="base_comment_template_y30" model="base.comment.template">
+            <field name="name">Фактура - Основание на сделка по ЗДДС: чл.46 от ЗДДС – финансови услуги</field>
+            <field name="text">чл.46 от ЗДДС – финансови услуги</field>
+            <field name="position">comment_1</field>
+        </record>
+
+
+        <record id="base_comment_template_y31" model="base.comment.template">
+            <field name="name">Фактура - Основание на сделка по ЗДДС: чл.47 от ЗДДС – застрахователни услуги</field>
+            <field name="text">чл.47 от ЗДДС – застрахователни услуги</field>
+            <field name="position">comment_1</field>
+        </record>
+
+
+        <record id="base_comment_template_y32" model="base.comment.template">
+            <field name="name">Фактура - Основание на сделка по ЗДДС: чл.17 от ЗДДС – доставката на стоки извън територията на България</field>
+            <field name="text">чл.17 от ЗДДС – доставката на стоки извън територията на България</field>
+            <field name="position">comment_1</field>
+        </record>
+
+
+    </data>
+</openerp>
