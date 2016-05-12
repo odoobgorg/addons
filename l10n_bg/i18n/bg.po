@@ -379,4 +379,3 @@ msgstr "e.g. Булстат или Единен идентификационен
 msgid "e.g. Ivan Ivanov"
 msgstr "e.g. Иван Иванов"
 
-
