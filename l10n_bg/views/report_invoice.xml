@@ -10,23 +10,23 @@
                             <tr>
                                 <td>
                                      <h2>
-                                        <span t-if="o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')">Invoice<span> N° </span></span>
-                                        <span t-if="o.type == 'out_invoice' and o.state == 'proforma2'">PRO-FORMA<span> N° </span></span>
-                                        <span t-if="o.type == 'out_invoice' and o.state == 'draft'">Draft Invoice</span>
-                                        <span t-if="o.type == 'out_invoice' and o.state == 'cancel'">Cancelled Invoice</span>
-                                        <span t-if="o.type == 'out_refund'">Refund</span>
-                                        <span t-if="o.type == 'in_refund'">Supplier Refund<span> N° </span></span>
-                                        <span t-if="o.type == 'in_invoice'">Supplier Invoice<span> N° </span></span>
-                                        <span t-field="o.number"/>
-                                        <span t-if="o.type == 'out_invoice' and o.state == 'proforma2'"><span t-field="o.origin"/></span>
-                                        <span style="font-size:16px;">
-                                        <span t-if="o.date_invoice"> от <span t-field="o.date_invoice"/></span>
-                                        <span t-if="o.type == 'out_invoice' and o.state == 'proforma2'"> от <span t-usertime="%d.%m.%Y" /></span></span>
+                                         <span t-if="o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')">Invoice<span> N° </span></span>
+                                         <span t-if="o.type == 'out_invoice' and o.state == 'proforma2'">PRO-FORMA<span> N° </span></span>
+                                         <span t-if="o.type == 'out_invoice' and o.state == 'draft'">Draft Invoice</span>
+                                         <span t-if="o.type == 'out_invoice' and o.state == 'cancel'">Cancelled Invoice</span>
+                                         <span t-if="o.type == 'out_refund'">Refund</span>
+                                         <span t-if="o.type == 'in_refund'">Supplier Refund<span> N° </span></span>
+                                         <span t-if="o.type == 'in_invoice'">Supplier Invoice<span> N° </span></span>
+                                         <span t-field="o.number"/>
+                                         <span t-if="o.type == 'out_invoice' and o.state == 'proforma2'"><span t-field="o.origin"/></span>
+                                         <span style="font-size:16px;">
+                                         <span t-if="o.date_invoice"> от <span t-field="o.date_invoice"/></span>
+                                         <span t-if="o.type == 'out_invoice' and o.state == 'proforma2'"> от <span t-usertime="%d.%m.%Y" /></span></span>
                                      </h2>
                                 </td>
                                 <td style="text-align:right; width:15%;">
                                      <h2>
-                                        <span style="text-align:right;" t-if="o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')"> ОРИГИНАЛ</span>
+                                         <span style="text-align:right;" t-if="o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')"> ORIGINAL</span>
                                      </h2>
                                 </td>
                             </tr>
@@ -35,12 +35,12 @@
 
                     <div class="row" style="font-size:9px;">
                         <div class="col-xs-2">
-                            <strong>Място на сделката:</strong>
+                            <strong>Place of deal:</strong>
                             <span t-field="o.place_of_deal_id.city"/>,
                             <span t-field="o.place_of_deal_id.country_id.name"/>
                         </div>
                         <div class="col-xs-2">
-                           <strong>Дан. събитие:</strong>
+                           <strong>Tax event:</strong>
                            <span  t-field="o.date_invoice"/>
                         </div>
                         <div class="col-xs-2" t-if="o.payment_term_id">
@@ -48,7 +48,7 @@
                             <p t-field="o.payment_term_id.note"/>
                         </div>
                         <div class="col-xs-2">
-                            <strong>Падеж:</strong>
+                            <strong>Date of payment:</strong>
                             <p t-field="o.date_due"/>
                         </div>
                         <div class="col-xs-2">
@@ -73,34 +73,32 @@
                         <thead>
                            <tr style="background-color:#000; color:#fff;padding-left:0px;">
                                 <td style="width:5px;"></td>
-                                <td style="width:13%;"><strong>ПОЛУЧАТЕЛ</strong></td>
+                                <td style="width:13%;"><strong>RECIPIENT</strong></td>
                                 <td style="width:36%;"></td>
-                                <td style="width:13%;"><strong>ИЗПЪЛНИТЕЛ</strong></td>
+                                <td style="width:13%;"><strong>CONTRACTOR</strong></td>
                                 <td style="width:36%;"></td>
                            </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                 <td/>
-                                <td><strong>Фирма/Име: </strong></td>
+                                <td></td>
+                                <td><strong>Company/Name</strong></td>
                                 <td><span t-field="o.partner_id.name"/></td>
-
-                                <td><strong>Фирма/Име: </strong></td>
+                                <td><strong>Company/Name</strong></td>
                                 <td><span t-field="o.company_id.name"/></td>
                             </tr>
                             <tr>
-                                 <td/>
-                                <td><strong>Град/Село: </strong></td>
+                                <td></td>
+                                <td><strong>City/Village </strong></td>
                                 <td><span t-field="o.partner_id.zip"/> <span t-field="o.partner_id.city"/><span t-if="o.partner_id.country_id">, <span t-field="o.partner_id.country_id"/></span></td>
-
-                                <td><strong>Град/Село: </strong></td>
+                                <td><strong>City/Village </strong></td>
                                 <td><span t-field="o.company_id.zip"/> <span t-field="o.company_id.city"/><span t-if="o.company_id.country_id">, <span t-field="o.company_id.country_id"/></span></td>
                             </tr>
                             <tr>
                                 <td></td>
-                                <td><strong>Адрес: </strong></td>
+                                <td><strong>Address: </strong></td>
                                 <td><span t-field="o.partner_id.street"/></td>
-                                <td><strong>Адрес: </strong></td>
+                                <td><strong>Address: </strong></td>
                                 <td><span t-field="o.company_id.street"/></td>
                             </tr>
                             <tr>
@@ -112,23 +110,23 @@
                             </tr>
                             <tr>
                                 <td/>
-                                <td><strong>МОЛ: </strong></td>
+                                <td><strong>MOL: </strong></td>
                                 <td><span t-field="o.partner_id.bg_mol"/></td>
-                                <td><strong>МОЛ: </strong></td>
+                                <td><strong>MOL: </strong></td>
                                 <td><span t-field="o.company_id.bg_mol"/></td>
                             </tr>
                             <tr>
                                 <td/>
-                                <td><strong>Идент. №: </strong></td>
+                                <td><strong>IdentNum </strong></td>
                                 <td><span t-field="o.partner_id.bg_uic"/></td>
-                                <td><strong>Идент. №: </strong></td>
+                                <td><strong>IdentNum </strong></td>
                                 <td><span t-field="o.company_id.bg_uic"/></td>
                             </tr>
                             <tr>
                                 <td/>
-                                <td><span t-if="o.partner_id.vat"><strong>ИН по ДДС: </strong></span></td>
+                                <td><span t-if="o.partner_id.vat"><strong>IN_DDS </strong></span></td>
                                 <td><span t-if="o.partner_id.vat" t-field="o.partner_id.vat"/></td>
-                                <td><span t-if="o.company_id.vat"><strong>ИН по ДДС: </strong></span></td>
+                                <td><span t-if="o.company_id.vat"><strong>IN_DDS </strong></span></td>
                                 <td><span t-if="o.company_id.vat" t-field="o.company_id.vat"/></td>
                             </tr>
                         </tbody>
@@ -233,10 +231,9 @@
                         <table border="0" cellpadding="1" cellspacing="1" style="width:100%">
                             <tbody>
                                 <tr>
-                                    <td style="width:10%"><strong>Получил:</strong></td>
-                                    <!--<td style="width:40%"><span t-field="o.partner_id.street3"/></td>-->
+                                    <td style="width:10%"><strong>Received</strong></td>
                                     <td style="width:40%"><span t-field="o.partner_id.bg_mol"/></td>
-                                    <td style="width:10%"><strong>Съставил: </strong></td>
+                                    <td style="width:10%"><strong>Created</strong></td>
                                     <td style="width:40%"><span t-field="o.user_id.name"/> </td>
                                 </tr>
                                 <tr>
@@ -246,15 +243,15 @@
                                     <td><br /></td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Подпис: </strong></td>
+                                    <td><strong>Signature</strong></td>
                                     <td> </td>
-                                    <td><strong>Подпис: </strong></td>
+                                    <td><strong>Signature</strong></td>
                                     <td>(ID <span t-field="o.user_id.id"/>)</td>
                                 </tr>
                             </tbody>
                         </table>
                         <div style="font-size:10px;">
-                            <p><center> Съгласно чл.7, ал 1 от Закона за счетоводството, чл.114 от ЗДДС и чл.78 от ППЗДДС печатът и подписът не са задължителни реквизити на фактурата.</center></p>
+                            <p><center> TEXT_BOTTOM_LAW </center></p>
                         </div>
                     </div>
                 </div>

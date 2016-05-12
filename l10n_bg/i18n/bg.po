@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0c-20160411\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-12 08:48+0000\n"
-"PO-Revision-Date: 2016-05-12 08:48+0000\n"
+"POT-Creation-Date: 2016-05-12 11:13+0000\n"
+"PO-Revision-Date: 2016-05-12 11:13+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -34,8 +34,43 @@ msgstr "<br/>\n"
 
 #. module: l10n_bg
 #: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "<strong>Address: </strong>"
+msgstr "<strong>Адрес: </strong>"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg_amount_to_text
+msgid "<strong>Amount in word: </strong>"
+msgstr "<strong>Словом: </strong>"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "<strong>CONTRACTOR</strong>"
+msgstr "<strong>ИЗПЪЛНИТЕЛ</strong>"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "<strong>City/Village </strong>"
+msgstr "<strong>Град/Село </strong>"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
 msgid "<strong>Comment:</strong>"
 msgstr "<strong>Коментар:</strong>"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "<strong>Company/Name</strong>"
+msgstr "<strong>Фирма/Име: </strong>"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "<strong>Created</strong>"
+msgstr "<strong>Съставил:</strong>"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "<strong>Date of payment:</strong>"
+msgstr "<strong>Дата на плащане:</strong>"
 
 #. module: l10n_bg
 #: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
@@ -44,13 +79,53 @@ msgstr "<strong>Фискална позиция отбелязване:</strong>
 
 #. module: l10n_bg
 #: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "<strong>IN_DDS </strong>"
+msgstr "<strong>ИН по ДДС: </strong>"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "<strong>IdentNum </strong>"
+msgstr "<strong>Идент. №: </strong>"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
 msgid "<strong>Incoterms:</strong>"
 msgstr "<strong>Incoterms:</strong>"
 
 #. module: l10n_bg
 #: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "<strong>MOL: </strong>"
+msgstr "<strong>МОЛ: </strong>"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg_document_comments
+msgid "<strong>Pay method:</strong>"
+msgstr "<strong>Начин на плащане:</strong>"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
 msgid "<strong>Payment Term:</strong>"
-msgstr "<strong>Payment Term:</strong>"
+msgstr "<strong>Условия за плащане:</strong>"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "<strong>Place of deal:</strong>"
+msgstr "<strong>Място на стелка:</strong>"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "<strong>RECIPIENT</strong>"
+msgstr "<strong>ИЗПЪЛНИТЕЛ</strong>"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg_document_comments
+msgid "<strong>Reason for not charging VAT</strong>"
+msgstr "<strong>Основание за неначисляване на ДДС:</strong>"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "<strong>Received</strong>"
+msgstr "<strong>Получил:</strong>"
 
 #. module: l10n_bg
 #: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
@@ -59,13 +134,23 @@ msgstr "<strong>Справка:</strong>"
 
 #. module: l10n_bg
 #: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "<strong>Signature</strong>"
+msgstr "<strong>Подпис:</strong>"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
 msgid "<strong>Source:</strong>"
 msgstr "<strong>Източник:</strong>"
 
 #. module: l10n_bg
 #: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "<strong>Tax event:</strong>"
+msgstr "<strong>Дан. събитие:</strong>"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
 msgid "<strong>Total Without Taxes</strong>"
-msgstr "<strong>Total Without Taxes</strong>"
+msgstr "<strong>Общо без данъци:</strong>"
 
 #. module: l10n_bg
 #: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
@@ -198,7 +283,7 @@ msgstr "Email:"
 #. module: l10n_bg
 #: model:ir.ui.view,arch_db:l10n_bg.external_layout_footer_bg
 msgid "Fax:"
-msgstr "Факс:"
+msgstr "Факс :"
 
 #. module: l10n_bg
 #: model:ir.model.fields,field_description:l10n_bg.field_base_comment_template_id
@@ -213,7 +298,7 @@ msgstr "Фактура"
 #. module: l10n_bg
 #: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
 msgid "Invoice<span> N° </span>"
-msgstr "Invoice<span> N° </span>"
+msgstr "Фактура<span> N° </span>"
 
 #. module: l10n_bg
 #: model:ir.model.fields,field_description:l10n_bg.field_base_comment_template___last_update
@@ -233,7 +318,7 @@ msgstr "Последно обновено на"
 #. module: l10n_bg
 #: model:ir.ui.view,arch_db:l10n_bg.bg_invoice_form_add_comment
 msgid "Load a template"
-msgstr "Load a template"
+msgstr "Зареди темплейт"
 
 #. module: l10n_bg
 #: code:addons/l10n_bg/models/res_company.py:30
@@ -254,6 +339,11 @@ msgid "Method of payment"
 msgstr "Method of payment"
 
 #. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "ORIGINAL"
+msgstr "Оригинал"
+
+#. module: l10n_bg
 #: model:ir.actions.client,name:l10n_bg.action_client_l10n_bg_menu
 msgid "Open Account Dashboard Menu"
 msgstr "Open Account Dashboard Menu"
@@ -261,12 +351,12 @@ msgstr "Open Account Dashboard Menu"
 #. module: l10n_bg
 #: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
 msgid "PRO-FORMA<span> N° </span>"
-msgstr "PRO-FORMA<span> N° </span>"
+msgstr "Проформа<span> N° </span>"
 
 #. module: l10n_bg
 #: model:ir.ui.view,arch_db:l10n_bg.external_layout_footer_bg
 msgid "Page: <span class=\"page\"/>/<span class=\"topage\"/>"
-msgstr "Page: <span class=\"page\"/>/<span class=\"topage\"/>"
+msgstr "Страница: <span class=\"page\"/>/<span class=\"topage\"/>"
 
 #. module: l10n_bg
 #: model:ir.model,name:l10n_bg.model_res_partner
@@ -311,7 +401,7 @@ msgstr "Reason for not charging VAT"
 #. module: l10n_bg
 #: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
 msgid "Refund"
-msgstr "Refund"
+msgstr "Възстановяване"
 
 #. module: l10n_bg
 #: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
@@ -325,13 +415,18 @@ msgstr "Supplier Refund<span> N° </span>"
 
 #. module: l10n_bg
 #: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "TEXT_BOTTOM_LAW"
+msgstr "Съгласно чл.7, ал 1 от Закона за счетоводството, чл.114 от ЗДДС и чл.78 от ППЗДДС печатът и подписът не са задължителни реквизити на фактурата."
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
 msgid "Tax"
 msgstr "Tax"
 
 #. module: l10n_bg
 #: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
 msgid "Taxes"
-msgstr "Taxes"
+msgstr "Данъци"
 
 #. module: l10n_bg
 #: model:ir.ui.view,arch_db:l10n_bg.view_partner_form_1
@@ -360,7 +455,7 @@ msgstr "UIC by Bulgarian register agency"
 #. module: l10n_bg
 #: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
 msgid "Unit Price"
-msgstr "Unit Price"
+msgstr "Единична цена"
 
 #. module: l10n_bg
 #: model:ir.ui.view,arch_db:l10n_bg.external_layout_footer_bg
@@ -376,6 +471,5 @@ msgstr "e.g. Булстат или Единен идентификационен
 #. module: l10n_bg
 #: model:ir.ui.view,arch_db:l10n_bg.view_company_form_1
 #: model:ir.ui.view,arch_db:l10n_bg.view_partner_form_2
-msgid "e.g. Ivan Ivanov"
+msgid "e.g. Иван Иванов"
 msgstr "e.g. Иван Иванов"
-
