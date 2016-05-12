@@ -22,9 +22,11 @@ from openerp.tools.translate import _
 
 
 class res_company(osv.osv):
-	_inherit = "res.company"
+    _inherit = "res.company"
 
-	_columns = {
-		'bg_uic': fields.related('partner_id', 'bg_uic', string=_('UIC'), type="char", size=13, required=True, help=_('UIC by Bulgarian register agency')),
-		'bg_mol': fields.related('partner_id', 'bg_mol', string=_('MOL'), type="char", size=100, required=True, help=_('MOL')),
-	}
+    _columns = {
+        'bg_uic': fields.related('partner_id', 'bg_uic', string=_('UIC'), type="char", size=13, required=True,
+                                 help=_('UIC by Bulgarian register agency')),
+        'bg_mol': fields.related('partner_id', 'bg_mol', string=_('MOL'), type="char", size=100, required=True,
+                                 help=_('MOL')),
+    }

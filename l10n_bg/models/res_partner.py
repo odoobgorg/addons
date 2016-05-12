@@ -100,6 +100,17 @@ class res_partner(osv.osv):
 
         return True
 
+    def _display_name_compute(self, cr, uid, ids, name, args, context=None):
+        context = dict(context or {})
+        context.pop('show_address', None)
+        context.pop('show_address_only', None)
+        context.pop('show_email', None)
+        context.pop('show_city', None)
+
+        _logger.critical(context)
+
+        return dict(self.name_get(cr, uid, ids, context=context))
+
     def name_get(self, cr, uid, ids, context=None):
         if context is None:
             context = {}

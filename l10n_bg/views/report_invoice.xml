@@ -44,7 +44,7 @@
                            <span  t-field="o.date_invoice"/>
                         </div>
                         <div class="col-xs-2" t-if="o.payment_term_id">
-                            <!--<strong>Payment Term:</strong>-->
+                            <strong>Payment Term:</strong>
                             <p t-field="o.payment_term_id.note"/>
                         </div>
                         <div class="col-xs-2">
@@ -106,7 +106,7 @@
                             <tr>
                                 <td></td>
                                 <td></td>
-                                <td><span t-field="o.partner_id.street2"/></td>
+                                <td><span t-if="o.partner_id.street2" t-field="o.partner_id.street2"/></td>
                                 <td></td>
                                 <td><span t-if="o.company_id.street2" t-field="o.company_id.street2"/></td>
                             </tr>
@@ -124,7 +124,6 @@
                                 <td><strong>Идент. №: </strong></td>
                                 <td><span t-field="o.company_id.bg_uic"/></td>
                             </tr>
-
                             <tr>
                                 <td/>
                                 <td><span t-if="o.partner_id.vat"><strong>ИН по ДДС: </strong></span></td>
@@ -132,7 +131,6 @@
                                 <td><span t-if="o.company_id.vat"><strong>ИН по ДДС: </strong></span></td>
                                 <td><span t-if="o.company_id.vat" t-field="o.company_id.vat"/></td>
                             </tr>
-
                         </tbody>
                     </table>
                     <br />
