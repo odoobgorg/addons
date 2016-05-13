@@ -132,14 +132,9 @@ class res_partner(osv.osv):
                 if record.country_id:
                     city += str(record.country_id)
 
-                if current_user.partner_id.id == record.id:
+                set_name = False
+                if current_user.partner_id.id == record.id or current_user.company_id.partner_id.id == record.id or current_user.company_id.partner_id.id == record.parent_id.id:
                     set_name = True
-                elif current_user.company_id.partner_id.id == record.id:
-                    set_name = True
-                elif current_user.company_id.partner_id.id == record.parent_id.id:
-                    set_name = True
-                else:
-                    set_name = False
 
                 if set_name and city not in cities:
                     name = self._display_address(cr, uid, record, without_company=True, context=context)
