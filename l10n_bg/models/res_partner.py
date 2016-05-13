@@ -20,11 +20,6 @@ class res_partner(osv.osv):
         'bg_mol': fields.char(string=_('MOL'), size=100, help=_('MOL')),
     }
 
-    # It is removed because we copy commercial fields to childs.
-    # _sql_constraints = [
-    #     ('bg_uic_uniq', 'unique("bg_uic")', 'The company register number must be unique !')
-    # ]
-
     @api.one
     @api.constrains('bg_egn')
     def _check_egn(self):
@@ -132,8 +127,7 @@ class res_partner(osv.osv):
                     if current_user.parent_id.id and city not in cities:
                         parent_name = self._display_address(cr, uid, current_user.parent_id, without_company=True, context=context)
                         res.append((current_user.parent_id.id, parent_name))
-                        cities.append(city)
-                        _logger.critical(parent_name)
+                        cities.append(current_user.parent_id.city)
 
                 elif record.id == current_user.company_id.partner_id.id:
                     set_city = True
@@ -144,7 +138,7 @@ class res_partner(osv.osv):
                     name = self._display_address(cr, uid, record, without_company=True, context=context)
                     res.append((record.id, name))
                     cities.append(city)
-                    _logger.critical(name)
+
             else:
                 name = record.name or ''
 
