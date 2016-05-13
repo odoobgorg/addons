@@ -104,44 +104,46 @@ class res_partner(osv.osv):
 
         if context.get('show_city'):
             cities = []
+
+            res_parent_id = False
+
             users = self.pool.get('res.users')
             current_user = users.browse(cr, uid, uid, context=context)
 
-        types_dict = dict(self.fields_get(cr, uid, context=context)['type']['selection'])
-        for record in self.browse(cr, uid, ids, context=context):
-
-            if context.get('show_city'):
+            for record in self.browse(cr, uid, ids, context=context):
                 if not record.city:
-                    #_logger.warning("The user: %s, %s is not okay for us (no city)!" % (record.id, record.name))
                     continue
-
                 city = record.city
-
                 if record.country_id:
                     city += str(record.country_id)
-
                 set_city = False
                 if record.id == current_user.partner_id.id:
                     set_city = True
-
                     if current_user.parent_id.id and city not in cities:
                         parent_name = self._display_address(cr, uid, current_user.parent_id, without_company=True, context=context)
                         res.append((current_user.parent_id.id, parent_name))
                         cities.append(current_user.parent_id.city)
+                        res_parent_id = current_user.parent_id.id
 
                 elif record.id == current_user.company_id.partner_id.id:
                     set_city = True
                 elif record.parent_id.id == current_user.company_id.partner_id.id:
                     set_city = True
-
                 if set_city and city not in cities:
                     name = self._display_address(cr, uid, record, without_company=True, context=context)
                     res.append((record.id, name))
                     cities.append(city)
 
-            else:
+            if res_parent_id:
+                for record in self.browse(cr, uid, ids, context=context):
+                    if res_parent_id == record.parent_id.id and city not in cities:
+                        name = self._display_address(cr, uid, record, without_company=True, context=context)
+                        res.append((record.id, name))
+                        cities.append(city)
+        else:
+            types_dict = dict(self.fields_get(cr, uid, context=context)['type']['selection'])
+            for record in self.browse(cr, uid, ids, context=context):
                 name = record.name or ''
-
                 if record.parent_id and not record.is_company:
                     if not name and record.type in ['invoice', 'delivery', 'other']:
                         name = types_dict[record.type]
@@ -156,7 +158,6 @@ class res_partner(osv.osv):
                     name = "%s <%s>" % (name, record.email)
                 if context.get('html_format'):
                     name = name.replace('\n', '<br/>')
-
                 res.append((record.id, name))
 
         return res
