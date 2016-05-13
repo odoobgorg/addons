@@ -140,6 +140,7 @@ class res_partner(osv.osv):
                         name = self._display_address(cr, uid, record, without_company=True, context=context)
                         res.append((record.id, name))
                         cities.append(city)
+
         else:
             types_dict = dict(self.fields_get(cr, uid, context=context)['type']['selection'])
             for record in self.browse(cr, uid, ids, context=context):
