@@ -100,17 +100,6 @@ class res_partner(osv.osv):
 
         return True
 
-    def _display_name_compute(self, cr, uid, ids, name, args, context=None):
-        context = dict(context or {})
-        context.pop('show_address', None)
-        context.pop('show_address_only', None)
-        context.pop('show_email', None)
-        context.pop('show_city', None)
-
-        _logger.critical(context)
-
-        return dict(self.name_get(cr, uid, ids, context=context))
-
     def name_get(self, cr, uid, ids, context=None):
         if context is None:
             context = {}
@@ -120,8 +109,9 @@ class res_partner(osv.osv):
 
         cities = []
 
-        users = self.pool.get('res.users')
-        current_user = users.browse(cr, uid, uid, context=context)
+        if context.get('show_city'):
+            users = self.pool.get('res.users')
+            current_user = users.browse(cr, uid, uid, context=context)
 
         types_dict = dict(self.fields_get(cr, uid, context=context)['type']['selection'])
         for record in self.browse(cr, uid, ids, context=context):
@@ -131,6 +121,8 @@ class res_partner(osv.osv):
                 name = ''
 
                 if not record.city:
+                    _logger.warning(
+                        "The user '" + str(record.id) + ': ' + str(record.name) + "' is not okay for us (no city)!")
                     continue
 
                 city = record.city
@@ -138,11 +130,11 @@ class res_partner(osv.osv):
                 if record.country_id:
                     city += str(record.country_id)
 
-                if record.id == current_user.partner_id.id:
+                if current_user.partner_id.id == record.id:
                     set_name = True
-                elif record.id == current_user.company_id.id:
+                elif current_user.company_id.partner_id.id == record.id:
                     set_name = True
-                elif record.parent_id.id == current_user.company_id.id:
+                elif current_user.company_id.partner_id.id == record.parent_id.id:
                     set_name = True
                 else:
                     set_name = False
@@ -208,7 +200,7 @@ class res_partner(osv.osv):
             args['state_name'] = ''
             args['country_code'] = ''
             args['company_name'] = ''
-        if without_company:
+        elif without_company:
             args['company_name'] = ''
         elif address.parent_id:
             address_format = '%(company_name)s\n' + address_format
@@ -222,3 +214,12 @@ class res_partner(osv.osv):
         delegated to the parent `commercial entity`. The list is meant to be
         extended by inheriting classes. """
         return ['vat', 'credit_limit', 'bg_egn', 'bg_mol', 'bg_uic']
+
+    def _display_name_compute(self, cr, uid, ids, name, args, context=None):
+        context = dict(context or {})
+        context.pop('show_address', None)
+        context.pop('show_address_only', None)
+        context.pop('show_email', None)
+        context.pop('show_city', None)
+
+        return dict(self.name_get(cr, uid, ids, context=context))
