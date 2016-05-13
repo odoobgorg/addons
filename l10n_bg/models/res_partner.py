@@ -122,7 +122,8 @@ class res_partner(osv.osv):
 
                 if not record.city:
                     _logger.warning(
-                        "The user '" + str(record.id) + ': ' + str(record.name) + "' is not okay for us (no city)!")
+                        "The user '" + str(record.id) + ': ' + str(
+                            unicode(record.name, 'utf-8')) + "' is not okay for us (no city)!")
                     continue
 
                 city = record.city
