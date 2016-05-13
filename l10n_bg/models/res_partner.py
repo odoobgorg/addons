@@ -95,6 +95,14 @@ class res_partner(osv.osv):
 
         return True
 
+    def apple(self, res, cr, uid, record, context, cities):
+        city = record.city
+        if record.country_id:
+            city += str(record.country_id)
+        if city not in cities:
+            res.append((record.id, self._display_address(cr, uid, record, without_company=True, context=context)))
+            cities.append(city)
+
     def name_get(self, cr, uid, ids, context=None):
         if context is None:
             context = {}
@@ -104,7 +112,6 @@ class res_partner(osv.osv):
 
         if context.get('show_city'):
             cities = []
-
             res_parent_id = False
 
             users = self.pool.get('res.users')
@@ -113,34 +120,27 @@ class res_partner(osv.osv):
             for record in self.browse(cr, uid, ids, context=context):
                 if not record.city:
                     continue
-                city = record.city
-                if record.country_id:
-                    city += str(record.country_id)
                 set_city = False
+                set_parent_city = False
                 if record.id == current_user.partner_id.id:
                     set_city = True
-                    if current_user.parent_id.id and city not in cities:
-                        parent_name = self._display_address(cr, uid, current_user.parent_id, without_company=True, context=context)
-                        res.append((current_user.parent_id.id, parent_name))
-                        cities.append(current_user.parent_id.city)
-                        res_parent_id = current_user.parent_id.id
-
+                    if current_user.parent_id.id:
+                        set_parent_city = True
                 elif record.id == current_user.company_id.partner_id.id:
                     set_city = True
                 elif record.parent_id.id == current_user.company_id.partner_id.id:
                     set_city = True
-                if set_city and city not in cities:
-                    name = self._display_address(cr, uid, record, without_company=True, context=context)
-                    res.append((record.id, name))
-                    cities.append(city)
+
+                if set_city:
+                    self.apple(res, cr, uid, record, context, cities)
+                if set_parent_city:
+                    self.apple(res, cr, uid, current_user.parent_id, context, cities)
+                    res_parent_id = current_user.parent_id.id
 
             if res_parent_id:
                 for record in self.browse(cr, uid, ids, context=context):
-                    if res_parent_id == record.parent_id.id and city not in cities:
-                        name = self._display_address(cr, uid, record, without_company=True, context=context)
-                        res.append((record.id, name))
-                        cities.append(city)
-
+                    if res_parent_id == record.parent_id.id:
+                        self.apple(res, cr, uid, record, context, cities)
         else:
             types_dict = dict(self.fields_get(cr, uid, context=context)['type']['selection'])
             for record in self.browse(cr, uid, ids, context=context):
