@@ -117,7 +117,7 @@ class res_partner(osv.osv):
 
             if context.get('show_city'):
                 if not record.city:
-                    _logger.warning("The user: %s, %s is not okay for us (no city)!" % (record.id, record.name))
+                    #_logger.warning("The user: %s, %s is not okay for us (no city)!" % (record.id, record.name))
                     continue
 
                 city = record.city
@@ -133,6 +133,7 @@ class res_partner(osv.osv):
                         parent_name = self._display_address(cr, uid, current_user.parent_id, without_company=True, context=context)
                         res.append((current_user.parent_id.id, parent_name))
                         cities.append(city)
+                        _logger.critical(parent_name)
 
                 elif record.id == current_user.company_id.partner_id.id:
                     set_city = True
@@ -143,6 +144,7 @@ class res_partner(osv.osv):
                     name = self._display_address(cr, uid, record, without_company=True, context=context)
                     res.append((record.id, name))
                     cities.append(city)
+                    _logger.critical(parent_name)
             else:
                 name = record.name or ''
 
