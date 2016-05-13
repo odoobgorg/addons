@@ -144,7 +144,7 @@ class res_partner(osv.osv):
                     name = self._display_address(cr, uid, record, without_company=True, context=context)
                     res.append((record.id, name))
                     cities.append(city)
-                    _logger.critical(parent_name)
+                    _logger.critical(name)
             else:
                 name = record.name or ''
 
