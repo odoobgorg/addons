@@ -1,11 +1,12 @@
 ﻿# -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    OpenERP, Open Source Management Solution
-#    Copyright (C) 2016 BGO software (<http://bgosoftware.com>).
+#    Odoo Bulgaria Accounting, Open Source Accounting and Invoiceing Module
+#    Copyright (C) 2016 BGO software LTD, Lumnus LTD, Prodax LTD
+#    (http://www.bgosoftware.com, http://www.lumnus.net, http://www.prodax.bg)
 #
 #    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
+#    it under the terms of the GNU Lesser General Public License as
 #    published by the Free Software Foundation, either version 3 of the
 #    License, or (at your option) any later version.
 #
@@ -24,15 +25,17 @@
     'version': '2.0',
     'category': 'Localization/Account',
     'description': """
-This is the base module to manage the accounting chart for Bulgaria in OpenERP (Odoo).
-This module is in development. Please be patient.
+This module holds the Bulgarian Chart of Accounts and Invoicing in Odoo v9. It adds all the needed attributes to the invoice,
+the tax templates and the fiscal positions, as per the Bulgarian law.
+This module is still in development. If you would like to assist the testing, please do. Issue are tracked under:
+https://github.com/odoobgorg/addons/issues
     """,
-    'author': 'BGO Team 2016',
-    'website': 'http://bgosoftware.com',
+    'author': 'BGO Software, Lumnus LTD, Prodax LTD',
+    'website': 'http://bgosoftware.com, http://www.lumnus.net, http://www.prodax.bg',
     'images': ['static/description/icon.png', 'images/main_screenshot.png'],
     'depends': ['account',
                 'base_vat',
-               ],
+                ],
     'demo': [],
     'data': [
         'views/account_chart.xml',

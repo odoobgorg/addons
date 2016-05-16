@@ -43,5 +43,39 @@ class AccountInvoice(models.Model):
         if comment:
             self.note2 = comment.get_value(self.partner_id.id)
 
-    place_of_deal_id = fields.Many2one(comodel_name='res.partner', store=True, required=False, string="Place of deal",
+    place_of_deal_id = fields.Many2one(comodel_name='res.partner', store=True, required=False,
+                                       string="Place of deal",
                                        default=lambda self: self.env.user.partner_id)
+
+    place_of_deal = fields.Char(store=True, required=False)
+
+    @api.onchange('place_of_deal_id')
+    def _set_place_of_deal(self):
+        place = self.place_of_deal_id
+        _logger.info("Place of deal partner_id: %s" % place.id)
+        if place:
+            self.place_of_deal = self.place_of_deal_id.city
+            if self.place_of_deal_id.country_id.name:
+                self.place_of_deal += ", "
+                self.place_of_deal += self.place_of_deal_id.country_id.name
+            _logger.info("Place of deal: %s" % self.place_of_deal)
+
+    @api.model
+    def tax_line_move_line_get(self):
+        # _logger.critical("TEST: %s" % self.tax_line_ids)
+        res = []
+        for tax_line in self.tax_line_ids:
+            if tax_line.amount:
+                _logger.critical("amount: %s" % tax_line.amount)
+                res.append({
+                    'tax_line_id': tax_line.tax_id.id,
+                    'type': 'tax',
+                    'name': tax_line.name,
+                    'price_unit': tax_line.amount,
+                    'quantity': 1,
+                    'price': tax_line.amount,
+                    'account_id': tax_line.account_id.id,
+                    'account_analytic_id': tax_line.account_analytic_id.id,
+                    'invoice_id': self.id,
+                })
+        return res

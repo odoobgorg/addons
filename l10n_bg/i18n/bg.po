@@ -421,7 +421,7 @@ msgstr "Съгласно чл.7, ал 1 от Закона за счетовод�
 #. module: l10n_bg
 #: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
 msgid "Tax"
-msgstr "Tax"
+msgstr "Данъци"
 
 #. module: l10n_bg
 #: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg

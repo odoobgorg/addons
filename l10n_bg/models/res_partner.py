@@ -95,7 +95,7 @@ class res_partner(osv.osv):
 
         return True
 
-    def apple(self, res, cr, uid, record, context, cities):
+    def generate_place_of_deal(self, res, cr, uid, record, context, cities):
         city = record.city
         if record.country_id:
             city += str(record.country_id)
@@ -132,15 +132,15 @@ class res_partner(osv.osv):
                     set_city = True
 
                 if set_city:
-                    self.apple(res, cr, uid, record, context, cities)
+                    self.generate_place_of_deal(res, cr, uid, record, context, cities)
                 if set_parent_city:
-                    self.apple(res, cr, uid, current_user.parent_id, context, cities)
+                    self.generate_place_of_deal(res, cr, uid, current_user.parent_id, context, cities)
                     res_parent_id = current_user.parent_id.id
 
             if res_parent_id:
                 for record in self.browse(cr, uid, ids, context=context):
                     if res_parent_id == record.parent_id.id:
-                        self.apple(res, cr, uid, record, context, cities)
+                        self.generate_place_of_deal(res, cr, uid, record, context, cities)
         else:
             types_dict = dict(self.fields_get(cr, uid, context=context)['type']['selection'])
             for record in self.browse(cr, uid, ids, context=context):

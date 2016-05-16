@@ -36,8 +36,9 @@
                     <div class="row" style="font-size:9px;">
                         <div class="col-xs-2">
                             <strong>Place of deal:</strong>
-                            <span t-field="o.place_of_deal_id.city"/>,
-                            <span t-field="o.place_of_deal_id.country_id.name"/>
+                            <span t-field="o.place_of_deal"/>
+                            <!--<span t-field="o.place_of_deal_id.city"/>,-->
+                            <!--<span t-field="o.place_of_deal_id.country_id.name"/>-->
                         </div>
                         <div class="col-xs-2">
                            <strong>Tax event:</strong>
@@ -161,7 +162,8 @@
                                     <span t-field="l.discount"/>
                                 </td>
                                 <td class="text-right">
-                                    <span t-esc="', '.join(map(lambda x: (x.description or x.name), l.invoice_line_tax_ids))"/>
+                                    <!--<span t-esc="', '.join(map(lambda x: (x.description or x.name), l.invoice_line_tax_ids))"/>-->
+                                    <span t-esc="', '.join(map(lambda x: str(x.amount), l.invoice_line_tax_ids))"/>%
                                 </td>
                                 <td class="text-right">
                                     <span t-field="l.price_subtotal"
