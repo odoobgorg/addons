@@ -1,11 +1,12 @@
 ﻿# -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    OpenERP, Open Source Management Solution
-#    Copyright (C) 2016 Bgoo Software (<http://bgosoftware.com>).
+#    Odoo Bulgaria Accounting, Open Source Accounting and Invoiceing Module
+#    Copyright (C) 2016 BGO software LTD, Lumnus LTD, Prodax LTD
+#    (http://www.bgosoftware.com, http://www.lumnus.net, http://www.prodax.bg)
 #
 #    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
+#    it under the terms of the GNU Lesser General Public License as
 #    published by the Free Software Foundation, either version 3 of the
 #    License, or (at your option) any later version.
 #
