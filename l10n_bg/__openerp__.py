@@ -22,14 +22,9 @@
 
 {
     'name': 'Bulgaria - Accounting',
-    'version': '2.0',
+    'version': '1.1',
     'category': 'Localization/Account',
-    'description': """
-This module holds the Bulgarian Chart of Accounts and Invoicing in Odoo v9. It adds all the needed attributes to the invoice,
-the tax templates and the fiscal positions, as per the Bulgarian law.
-This module is still in development. If you would like to assist the testing, please do. Issue are tracked under:
-https://github.com/odoobgorg/addons/issues
-    """,
+    'description': """Bulgarian Chart of Accounts and Invoicing in Odoo v9""",
     'author': 'BGO Software, Lumnus LTD, Prodax LTD',
     'website': 'http://bgosoftware.com, http://www.lumnus.net, http://www.prodax.bg',
     'images': ['static/description/icon.png', 'images/main_screenshot.png'],
