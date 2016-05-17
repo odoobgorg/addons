@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Odoo Bulgaria Accounting, Open Source Accounting and Invoiceing Module
@@ -22,7 +22,7 @@
 
 {
     'name': 'Bulgaria - Accounting',
-    'version': '1.1',
+    'version': '2.1',
     'category': 'Localization/Account',
     'description': """Bulgarian Chart of Accounts and Invoicing in Odoo v9""",
     'author': 'BGO Software, Lumnus LTD, Prodax LTD',
