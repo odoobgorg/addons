@@ -115,7 +115,7 @@ msgstr "<strong>Място на стелка:</strong>"
 #. module: l10n_bg
 #: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
 msgid "<strong>RECIPIENT</strong>"
-msgstr "<strong>ИЗПЪЛНИТЕЛ</strong>"
+msgstr "<strong>ПОЛУЧАТЕЛ</strong>"
 
 #. module: l10n_bg
 #: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg_document_comments
