@@ -21,8 +21,8 @@
 ##############################################################################
 
 from openerp import models, fields, api, _
-# from openerp.tools.amount_to_text_bg import *
 from amount_to_text_bg import *
+from openerp.tools import amount_to_text_en
 
 import logging
 
@@ -35,20 +35,24 @@ class AccountInvoice(models.Model):
     @api.one
     @api.depends('amount_total')
     def _compute_text(self):
-        self.amount_in_word = amount_to_text_bg(self.amount_total, self.currency_id.name)
+        self.amount_in_word_bg = amount_to_text_bg(self.amount_total, self.currency_id.name)
 
-    amount_in_word = fields.Char(readonly=True,
-                                 default=False,
-                                 copy=False,
-                                 compute='_compute_text'
-                                 )
+    amount_in_word = fields.Char(readonly=True, default=False, copy=False, compute='_compute_text')
 
-    comment_template1_id = fields.Many2one('base.comment.template',
-                                           string='Comment Template 1')
-    comment_template2_id = fields.Many2one('base.comment.template',
-                                           string='Comment Template 2')
+    # def _compute_text_bg(self):
+    #     self.amount_in_word_bg = amount_to_text_bg(self.amount_total, self.currency_id.name)
+    #
+    # def _compute_text_en(self):
+    #     self.amount_in_word_en = amount_to_text_en.amount_to_text(self.amount_total, lang='en', currency='')
+    #
+    # amount_in_word_bg = fields.Char(readonly=True, default=False, copy=False, compute='_compute_text_bg')
+    # amount_in_word_en = fields.Char(readonly=True, default=False, copy=False, compute='_compute_text_en')
+
+    comment_template1_id = fields.Many2one('base.comment.template', string='Comment Template 1')
+    comment_template2_id = fields.Many2one('base.comment.template', string='Comment Template 2')
     note1 = fields.Html('Comment 1')
     note2 = fields.Html('Comment 2')
+    comment = fields.Text(translate=True)
 
     @api.onchange('comment_template1_id')
     def _set_note1(self):
@@ -71,30 +75,8 @@ class AccountInvoice(models.Model):
     @api.onchange('place_of_deal_id')
     def _set_place_of_deal(self):
         place = self.place_of_deal_id
-        #_logger.info("Place of deal partner_id: %s" % place.id)
         if place:
             self.place_of_deal = self.place_of_deal_id.city
             if self.place_of_deal_id.country_id.name:
                 self.place_of_deal += ", "
                 self.place_of_deal += self.place_of_deal_id.country_id.name
-            #_logger.info("Place of deal: %s" % self.place_of_deal)
-
-    # @api.model
-    # def tax_line_move_line_get(self):
-    #     _logger.critical("TEST: %s" % self.tax_line_ids)
-    #     res = []
-    #     for tax_line in self.tax_line_ids:
-    #         if tax_line.amount:
-    #             _logger.critical("amount: %s" % tax_line.amount)
-    #             res.append({
-    #                 'tax_line_id': tax_line.tax_id.id,
-    #                 'type': 'tax',
-    #                 'name': tax_line.name,
-    #                 'price_unit': tax_line.amount,
-    #                 'quantity': 1,
-    #                 'price': tax_line.amount,
-    #                 'account_id': tax_line.account_id.id,
-    #                 'account_analytic_id': tax_line.account_analytic_id.id,
-    #                 'invoice_id': self.id,
-    #             })
-    #     return res

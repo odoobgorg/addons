@@ -30,6 +30,7 @@
     'images': ['static/description/icon.png', 'images/main_screenshot.png'],
     'depends': ['account',
                 'base_vat',
+                # 'l10n_multilang',
                 ],
     'demo': [],
     'data': [
@@ -49,6 +50,7 @@
         'views/comment_view.xml',
         'views/report_invoice_comments.xml',
         'views/base_comment_template.xml',
+        # 'views/account_invoice_report_view.xml',
         'security/ir.model.access.csv',
     ],
     'sequence': 1,

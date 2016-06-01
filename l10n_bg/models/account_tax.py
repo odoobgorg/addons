@@ -1,5 +1,7 @@
-# -*- coding: utf-8 -*-
+# -*- encoding: utf-8 -*-
 ##############################################################################
+#
+# @author - Rosen Vladimirov, Terraros Commerce <vladimirov.rosen@gmail.com>
 #
 #    Odoo Bulgaria Accounting, Open Source Accounting and Invoiceing Module
 #    Copyright (C) 2016 BGO software LTD, Lumnus LTD, Prodax LTD
@@ -20,10 +22,14 @@
 #
 ##############################################################################
 
-import res_partner
-import res_company
-import account_invoice
-import amount_to_text_bg
-import comment
-# import account_tax
-import res_users
+from openerp import models, fields, api, _
+
+import logging
+
+_logger = logging.getLogger(__name__)
+
+
+class AccountTax(models.Model):
+    _inherit = "account.tax"
+
+    name = fields.Text(translate=True)

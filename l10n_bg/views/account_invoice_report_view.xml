@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data noupdate="0">
+
+        <report
+            id="account_invoice_action_report_l10n_bg"
+            model="account.invoice"
+            string="Invoices Company"
+            report_type="qweb-pdf"
+            name="l10n_bg.account_invoice_report_main_l10n_bg"
+            file="l10n_bg.report_invoice_l10n_bg"
+            attachment_use="False"
+        />
+
+        <template id="account_invoice_report_main_l10n_bg">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="account.report_invoice_document" t-lang="o.company_id.partner_id.lang"/>
+                </t>
+            </t>
+        </template>
+
+
+        <report
+            id="account_invoice_action_report_duplicate_l10n_bg"
+            model="account.invoice"
+            string="Duplicates Company"
+            report_type="qweb-pdf"
+            name="l10n_bg.account_invoice_report_duplicate_main_l10n_bg"
+            file="l10n_bg.report_invoice_duplicate_l10n_bg"
+            attachment_use="False"
+        />
+
+        <template id="account_invoice_report_duplicate_l10n_bg" inherit_id="account.report_invoice_document" primary="True">
+            <xpath expr="//h2" position="replace">
+                <h2>
+                    <span>Duplicate</span>
+                    <span t-field="o.number"/>
+                </h2>
+            </xpath>
+        </template>
+
+        <template id="account_invoice_report_duplicate_main_l10n_bg">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="account.account_invoice_report_duplicate" t-lang="o.company_id.partner_id.lang"/>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</openerp>

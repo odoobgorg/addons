@@ -20,25 +20,30 @@
 #
 ##############################################################################
 
-
-from openerp import api
-from openerp.osv import osv, fields
-from openerp.tools.translate import _
-from openerp.exceptions import UserError, ValidationError
+from openerp import models, fields, api, _
 
 import logging
 
 _logger = logging.getLogger(__name__)
 
 
-class res_partner(osv.osv):
+class ResPartner(models.Model):
     _inherit = "res.partner"
 
-    _columns = {
-        'bg_egn': fields.char(string=_('EGN'), size=10, help=_('EGN')),
-        'bg_uic': fields.char(string=_('UIC'), size=13, help=_('UIC by Bulgarian register agency')),
-        'bg_mol': fields.char(string=_('MOL'), size=100, help=_('MOL')),
-    }
+    # _columns = {
+    #     'bg_egn': fields.char(string=_('EGN'), size=10, help=_('EGN')),
+    #     'bg_uic': fields.char(string=_('UIC'), size=13, help=_('UIC by Bulgarian register agency')),
+    #     'bg_mol': fields.char(string=_('MOL'), size=100, help=_('MOL')),
+    # }
+
+    bg_egn = fields.Char(string=_('EGN'), store=True, size=10, help=_('EGN'))
+    bg_uic = fields.Char(string=_('BULSTAT'), store=True, size=13, help=_('BULSTAT by Bulgarian register agency'))
+    bg_mol = fields.Char(string=_('MOL'), translate=True, store=True, size=100, help=_('MOL'))
+    # bg_invoice_name = fields.Char(string=_('NAME_FOR_INVOICE'), translate=True, store=True, help=_('Name for Invoice'))
+    zip = fields.Char(translate=True)
+    city = fields.Char(translate=True)
+    street = fields.Char(translate=True)
+    street2 = fields.Char(translate=True)
 
     @api.one
     @api.constrains('bg_egn')
@@ -232,6 +237,7 @@ class res_partner(osv.osv):
         partners that aren't `commercial entities` themselves, and will be
         delegated to the parent `commercial entity`. The list is meant to be
         extended by inheriting classes. """
+        # return ['vat', 'credit_limit', 'bg_egn', 'bg_mol', 'bg_uic', 'bg_invoice_name']
         return ['vat', 'credit_limit', 'bg_egn', 'bg_mol', 'bg_uic']
 
     def _display_name_compute(self, cr, uid, ids, name, args, context=None):

@@ -27,14 +27,14 @@
                     string="Load a template"
                     domain="[('position','=','comment_1')]"
                     context="{'default_position': 'comment_1'}"/>
-                  <field name="note1" nolabel="1" colspan="2"/>
+                  <field name="note1" nolabel="1" colspan="2" attrs="{'readonly': True}" />
                 </group>
                 <group string="Начин на плащане">
                   <field name="comment_template2_id"
                     string="Load a template"
                     context="{'default_position': 'comment_2'}"
                     domain="[('position','=','comment_2')]"/>
-                  <field name="note2" nolabel="1" colspan="2"/>
+                  <field name="note2" nolabel="1" colspan="2" attrs="{'readonly': True}" />
                 </group>
               </page>
             </xpath>

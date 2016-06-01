@@ -50,7 +50,7 @@ msgstr "<strong>ИЗПЪЛНИТЕЛ</strong>"
 #. module: l10n_bg
 #: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
 msgid "<strong>City/Village </strong>"
-msgstr "<strong>Град/Село </strong>"
+msgstr "<strong>Град/Село: </strong>"
 
 #. module: l10n_bg
 #: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
@@ -440,8 +440,8 @@ msgstr "Въведи ЕГН"
 #: model:ir.model.fields,field_description:l10n_bg.field_res_partner_bg_uic
 #: model:ir.ui.view,arch_db:l10n_bg.view_partner_form_2
 #, python-format
-msgid "UIC"
-msgstr "UIC"
+msgid "BULSTAT"
+msgstr "Булстат"
 
 #. module: l10n_bg
 #: code:addons/l10n_bg/models/res_company.py:29
@@ -449,8 +449,8 @@ msgstr "UIC"
 #: model:ir.model.fields,help:l10n_bg.field_res_company_bg_uic
 #: model:ir.model.fields,help:l10n_bg.field_res_partner_bg_uic
 #, python-format
-msgid "UIC by Bulgarian register agency"
-msgstr "UIC by Bulgarian register agency"
+msgid "Bulstat by Bulgarian register agency"
+msgstr "Bulstat by Bulgarian register agency"
 
 #. module: l10n_bg
 #: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg

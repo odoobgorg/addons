@@ -9,8 +9,9 @@
                             <img  t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo" style="max-height: 100px; vertical-align: bottom;"/>
                         </div>
                         <div class="col-xs-6"  style="text-align:right;">
-                               <br /><br /><strong>
-                               <span style="font-size:18px;" t-field="o.company_id.name"/>
+                               <br /><br />
+                               <strong>
+                                   <span style="font-size:18px;" t-field="o.company_id.name"/>
                                </strong><br />
                                <span t-field="company.rml_header1"/>
                         </div>
@@ -26,8 +27,8 @@
                             e-mail: <span t-field="o.company_id.email"/>
                        </div>
                        <div class="col-xs-4" style="text-align:center;">
-                            Тел.: <span t-field="o.company_id.phone"/><br />
-                            Факс: <span t-field="o.company_id.fax"/>
+                            Phone.: <span t-field="o.company_id.phone"/><br />
+                            Fax: <span t-field="o.company_id.fax"/>
                        </div>
                        <div class="col-xs-4" style="text-align:right">
                             <span t-field="o.company_id.zip"/>

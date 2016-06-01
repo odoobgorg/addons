@@ -22,16 +22,25 @@
 #
 ##############################################################################
 
-from openerp.osv import fields, osv
-from openerp.tools.translate import _
+from openerp import models, fields, api, _
+
+import logging
+
+_logger = logging.getLogger(__name__)
 
 
-class res_company(osv.osv):
+class ResCompany(models.Model):
     _inherit = "res.company"
 
-    _columns = {
-        'bg_uic': fields.related('partner_id', 'bg_uic', string=_('UIC'), type="char", size=13, required=True,
-                                 help=_('UIC by Bulgarian register agency')),
-        'bg_mol': fields.related('partner_id', 'bg_mol', string=_('MOL'), type="char", size=100, required=True,
-                                 help=_('MOL')),
-    }
+    # _columns = {
+    #     'bg_uic': fields.related('partner_id', 'bg_uic', string=_('UIC'), type="char", size=13, required=True,
+    #                              help=_('UIC by Bulgarian register agency')),
+    #     'bg_mol': fields.related('partner_id', 'bg_mol', string=_('MOL'), type="char", size=100, required=True,
+    #                              help=_('MOL')),
+    # }
+
+    bg_uic = fields.Char(related='partner_id.bg_uic')
+    bg_mol = fields.Char(related='partner_id.bg_mol')
+    # bg_invoice_name = fields.Char(related='partner_id.bg_invoice_name')
+    rml_header1 = fields.Char(translate=True)
+    rml_footer = fields.Text(translate=True)
