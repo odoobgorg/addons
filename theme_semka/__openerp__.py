@@ -5,7 +5,7 @@
   'author': 'BGO TEAM',
   'data': [
       'views/pages.xml',
-      'views/layout.xml',
+      # 'views/layout.xml',
       'views/assets.xml'
   ],
   # 'category': 'Theme/Creative',
