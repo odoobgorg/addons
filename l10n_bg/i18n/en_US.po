@@ -1,0 +1,705 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* l10n_bg
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-01 08:24+0000\n"
+"PO-Revision-Date: 2016-06-01 08:24+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_res_users_supplier_invoice_count
+msgid "# Vendor Bills"
+msgstr "# Vendor Bills"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_res_users_purchase_order_count
+msgid "# of Purchase Order"
+msgstr "# of Purchase Order"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_res_users_sale_order_count
+msgid "# of Sales Order"
+msgstr "# of Sales Order"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.external_layout_footer_bg
+msgid "&amp;bull;"
+msgstr "&amp;bull;"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "(ID"
+msgstr "(ID"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.external_layout_header_bg
+msgid "<br/>\n"
+"                            Fax:"
+msgstr "<br/>\n"
+"                            Fax:"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.external_layout_header_bg
+msgid "<br/>\n"
+"                            e-mail:"
+msgstr "<br/>\n"
+"                            e-mail:"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "<strong>Address: </strong>"
+msgstr "<strong>Address: </strong>"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg_amount_to_text
+msgid "<strong>Amount in word: </strong>"
+msgstr "<strong>Amount in word: </strong>"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "<strong>CONTRACTOR</strong>"
+msgstr "<strong>CONTRACTOR</strong>"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "<strong>City/Village </strong>"
+msgstr "<strong>City/Village </strong>"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "<strong>Comment:</strong>"
+msgstr "<strong>Comment:</strong>"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "<strong>Company/Name</strong>"
+msgstr "<strong>Company/Name</strong>"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "<strong>Created</strong>"
+msgstr "<strong>Created</strong>"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "<strong>Date of payment:</strong>"
+msgstr "<strong>Date of payment:</strong>"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "<strong>Fiscal Position Remark:</strong>"
+msgstr "<strong>Fiscal Position Remark:</strong>"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "<strong>IN_DDS: </strong>"
+msgstr "<strong>IN_DDS: </strong>"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "<strong>IdentNum: </strong>"
+msgstr "<strong>IdentNum: </strong>"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "<strong>Incoterms:</strong>"
+msgstr "<strong>Incoterms:</strong>"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "<strong>MOL: </strong>"
+msgstr "<strong>MOL: </strong>"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg_document_comments
+msgid "<strong>Pay method:</strong>"
+msgstr "<strong>Pay method:</strong>"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "<strong>Payment Term:</strong>"
+msgstr "<strong>Payment Term:</strong>"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "<strong>Place of deal:</strong>"
+msgstr "<strong>Place of deal:</strong>"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "<strong>RECIPIENT</strong>"
+msgstr "<strong>RECIPIENT</strong>"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg_document_comments
+msgid "<strong>Reason for not charging VAT</strong>"
+msgstr "<strong>Reason for not charging VAT</strong>"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "<strong>Received</strong>"
+msgstr "<strong>Received</strong>"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "<strong>Reference:</strong>"
+msgstr "<strong>Reference:</strong>"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "<strong>Signature</strong>"
+msgstr "<strong>Signature</strong>"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "<strong>Source:</strong>"
+msgstr "<strong>Source:</strong>"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "<strong>Tax event:</strong>"
+msgstr "<strong>Tax event:</strong>"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "<strong>Total Without Taxes</strong>"
+msgstr "<strong>Total Without Taxes</strong>"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "<strong>Total</strong>"
+msgstr "<strong>Total</strong>"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_res_users_property_account_payable_id
+msgid "Account Payable"
+msgstr "Account Payable"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_res_users_property_account_receivable_id
+msgid "Account Receivable"
+msgstr "Account Receivable"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "Amount"
+msgstr "Amount"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_account_invoice_amount_in_word
+msgid "Amount in word"
+msgstr "Amount in word"
+
+#. module: l10n_bg
+#: code:addons/l10n_bg/models/res_partner.py:40
+#: model:ir.model.fields,field_description:l10n_bg.field_res_company_bg_uic
+#: model:ir.model.fields,field_description:l10n_bg.field_res_partner_bg_uic
+#: model:ir.model.fields,field_description:l10n_bg.field_res_users_bg_uic
+#, python-format
+msgid "BULSTAT"
+msgstr "BULSTAT"
+
+#. module: l10n_bg
+#: code:addons/l10n_bg/models/res_partner.py:40
+#: model:ir.model.fields,help:l10n_bg.field_res_company_bg_uic
+#: model:ir.model.fields,help:l10n_bg.field_res_partner_bg_uic
+#: model:ir.model.fields,help:l10n_bg.field_res_users_bg_uic
+#, python-format
+msgid "BULSTAT by Bulgarian register agency"
+msgstr "BULSTAT by Bulgarian register agency"
+
+#. module: l10n_bg
+#: code:addons/l10n_bg/models/res_partner.py:83
+#, python-format
+msgid "BULSTAT/EIK isn't valid"
+msgstr "BULSTAT/EIK isn't valid"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_res_users_bank_account_count
+msgid "Bank"
+msgstr "Bank"
+
+#. module: l10n_bg
+#: model:ir.model,name:l10n_bg.model_base_comment_template
+msgid "Base Comment template"
+msgstr "Base Comment template"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "Cancelled Invoice"
+msgstr "Cancelled Invoice"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_base_comment_template_text
+msgid "Comment"
+msgstr "Comment"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_account_invoice_note1
+msgid "Comment 1"
+msgstr "Comment 1"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_account_invoice_note2
+msgid "Comment 2"
+msgstr "Comment 2"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_account_invoice_comment_template1_id
+msgid "Comment Template 1"
+msgstr "Comment Template 1"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_account_invoice_comment_template2_id
+msgid "Comment Template 2"
+msgstr "Comment Template 2"
+
+#. module: l10n_bg
+#: model:ir.actions.act_window,name:l10n_bg.action_base_comment_template
+#: model:ir.ui.view,arch_db:l10n_bg.view_base_comment_template_form
+#: model:ir.ui.view,arch_db:l10n_bg.view_base_comment_template_search
+#: model:ir.ui.view,arch_db:l10n_bg.view_base_comment_template_tree
+msgid "Comment Templates"
+msgstr "Comment Templates"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_base_comment_template_name
+msgid "Comment summary"
+msgstr "Comment summary"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.bg_invoice_form_add_comment
+msgid "Comments"
+msgstr "Comments"
+
+#. module: l10n_bg
+#: model:ir.model,name:l10n_bg.model_res_company
+msgid "Companies"
+msgstr "Companies"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_res_users_ref_company_ids
+msgid "Companies that refers to partner"
+msgstr "Companies that refers to partner"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_res_users_contract_ids
+#: model:ir.model.fields,field_description:l10n_bg.field_res_users_contracts_count
+msgid "Contracts"
+msgstr "Contracts"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_res_users_payment_method_count
+msgid "Count Payment Method"
+msgstr "Count Payment Method"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_base_comment_template_create_uid
+msgid "Created by"
+msgstr "Created by"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_base_comment_template_create_date
+msgid "Created on"
+msgstr "Created on"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_res_users_currency_id
+msgid "Currency"
+msgstr "Currency"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_res_users_property_stock_customer
+msgid "Customer Location"
+msgstr "Customer Location"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_res_users_property_payment_term_id
+msgid "Customer Payment Term"
+msgstr "Customer Payment Term"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "Description"
+msgstr "Description"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "Disc.(%)"
+msgstr "Disc.(%)"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_base_comment_template_display_name
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: l10n_bg
+#: model:ir.ui.menu,name:l10n_bg.base_comment_template_menu
+msgid "Document Comments"
+msgstr "Document Comments"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "Draft Invoice"
+msgstr "Draft Invoice"
+
+#. module: l10n_bg
+#: code:addons/l10n_bg/models/res_partner.py:39
+#: model:ir.model.fields,field_description:l10n_bg.field_res_partner_bg_egn
+#: model:ir.model.fields,field_description:l10n_bg.field_res_users_bg_egn
+#: model:ir.model.fields,help:l10n_bg.field_res_partner_bg_egn
+#: model:ir.model.fields,help:l10n_bg.field_res_users_bg_egn
+#: model:ir.ui.view,arch_db:l10n_bg.view_partner_form_1
+#, python-format
+msgid "EGN"
+msgstr "EGN"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.external_layout_footer_bg
+msgid "Email:"
+msgstr "Email:"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.external_layout_footer_bg
+msgid "Fax:"
+msgstr "Fax:"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_res_users_property_account_position_id
+msgid "Fiscal Position"
+msgstr "Fiscal Position"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_res_users_has_unreconciled_entries
+msgid "Has unreconciled entries"
+msgstr "Has unreconciled entries"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_base_comment_template_id
+msgid "ID"
+msgstr "ID"
+
+#. module: l10n_bg
+#: model:ir.model,name:l10n_bg.model_account_invoice
+msgid "Invoice"
+msgstr "Invoice"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "Invoice<span> N° </span>"
+msgstr "Invoice<span> N° </span>"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_res_users_invoice_ids
+msgid "Invoices"
+msgstr "Invoices"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_res_users_issued_total
+#: model:ir.model.fields,field_description:l10n_bg.field_res_users_journal_item_count
+msgid "Journal Items"
+msgstr "Journal Items"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_base_comment_template___last_update
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_base_comment_template_write_uid
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_base_comment_template_write_date
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: l10n_bg
+#: model:ir.model.fields,help:l10n_bg.field_res_users_last_time_entries_checked
+msgid "Last time the invoices & payments matching was performed for this partner. It is set either if there's not at least an unreconciled debit and an unreconciled credit or if you click the \"Done\" button."
+msgstr "Last time the invoices & payments matching was performed for this partner. It is set either if there's not at least an unreconciled debit and an unreconciled credit or if you click the \"Done\" button."
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_res_users_last_time_entries_checked
+msgid "Latest Invoices & Payments Matching Date"
+msgstr "Latest Invoices & Payments Matching Date"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.bg_invoice_form_add_comment
+msgid "Load a template"
+msgstr "Load a template"
+
+#. module: l10n_bg
+#: code:addons/l10n_bg/models/res_partner.py:41
+#: model:ir.model.fields,field_description:l10n_bg.field_res_company_bg_mol
+#: model:ir.model.fields,field_description:l10n_bg.field_res_partner_bg_mol
+#: model:ir.model.fields,field_description:l10n_bg.field_res_users_bg_mol
+#: model:ir.model.fields,help:l10n_bg.field_res_company_bg_mol
+#: model:ir.model.fields,help:l10n_bg.field_res_partner_bg_mol
+#: model:ir.model.fields,help:l10n_bg.field_res_users_bg_mol
+#: model:ir.ui.view,arch_db:l10n_bg.view_partner_form_2
+#, python-format
+msgid "MOL"
+msgstr "MOL"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "ORIGINAL"
+msgstr "ORIGINAL"
+
+#. module: l10n_bg
+#: model:ir.actions.client,name:l10n_bg.action_client_l10n_bg_menu
+msgid "Open Account Dashboard Menu"
+msgstr "Open Account Dashboard Menu"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "PRO-FORMA<span> N° </span>"
+msgstr "PRO-FORMA<span> N° </span>"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.external_layout_footer_bg
+msgid "Page: <span class=\"page\"/>/<span class=\"topage\"/>"
+msgstr "Page: <span class=\"page\"/>/<span class=\"topage\"/>"
+
+#. module: l10n_bg
+#: model:ir.model,name:l10n_bg.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: l10n_bg
+#: selection:base.comment.template,position:0
+msgid "Pay Method"
+msgstr "Pay Method"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_res_users_debit_limit
+msgid "Payable Limit"
+msgstr "Payable Limit"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_res_users_payment_method_ids
+msgid "Payment Methods"
+msgstr "Payment Methods"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.external_layout_header_bg
+msgid "Phone.:"
+msgstr "Phone.:"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.external_layout_footer_bg
+msgid "Phone:"
+msgstr "Phone:"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_account_invoice_place_of_deal
+#: model:ir.model.fields,field_description:l10n_bg.field_account_invoice_place_of_deal_id
+msgid "Place of deal"
+msgstr "Place of deal"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_base_comment_template_position
+msgid "Position"
+msgstr "Position"
+
+#. module: l10n_bg
+#: model:ir.model.fields,help:l10n_bg.field_base_comment_template_position
+msgid "Position on document"
+msgstr "Position on document"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "Price"
+msgstr "Price"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "Quantity"
+msgstr "Quantity"
+
+#. module: l10n_bg
+#: selection:base.comment.template,position:0
+msgid "Reason for not charging VAT"
+msgstr "Reason for not charging VAT"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "Refund"
+msgstr "Refund"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_res_users_sale_order_ids
+msgid "Sales Order"
+msgstr "Sales Order"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_res_users_property_purchase_currency_id
+msgid "Supplier Currency"
+msgstr "Supplier Currency"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "Supplier Invoice<span> N° </span>"
+msgstr "Supplier Invoice<span> N° </span>"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "Supplier Refund<span> N° </span>"
+msgstr "Supplier Refund<span> N° </span>"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "TEXT_BOTTOM_LAW"
+msgstr "TEXT_BOTTOM_LAW"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "Tax"
+msgstr "Tax"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "Taxes"
+msgstr "Taxes"
+
+#. module: l10n_bg
+#: model:ir.model.fields,help:l10n_bg.field_res_users_property_account_position_id
+msgid "The fiscal position will determine taxes and accounts used for the partner."
+msgstr "The fiscal position will determine taxes and accounts used for the partner."
+
+#. module: l10n_bg
+#: model:ir.model.fields,help:l10n_bg.field_res_users_has_unreconciled_entries
+msgid "The partner has at least one unreconciled debit and credit since last time the invoices & payments matching was performed."
+msgstr "The partner has at least one unreconciled debit and credit since last time the invoices & payments matching was performed."
+
+#. module: l10n_bg
+#: model:ir.model.fields,help:l10n_bg.field_res_users_property_account_payable_id
+msgid "This account will be used instead of the default one as the payable account for the current partner"
+msgstr "This account will be used instead of the default one as the payable account for the current partner"
+
+#. module: l10n_bg
+#: model:ir.model.fields,help:l10n_bg.field_res_users_property_account_receivable_id
+msgid "This account will be used instead of the default one as the receivable account for the current partner"
+msgstr "This account will be used instead of the default one as the receivable account for the current partner"
+
+#. module: l10n_bg
+#: model:ir.model.fields,help:l10n_bg.field_res_users_property_purchase_currency_id
+msgid "This currency will be used, instead of the default one, for purchases from the current partner"
+msgstr "This currency will be used, instead of the default one, for purchases from the current partner"
+
+#. module: l10n_bg
+#: model:ir.model.fields,help:l10n_bg.field_res_users_property_supplier_payment_term_id
+msgid "This payment term will be used instead of the default one for purchase orders and vendor bills"
+msgstr "This payment term will be used instead of the default one for purchase orders and vendor bills"
+
+#. module: l10n_bg
+#: model:ir.model.fields,help:l10n_bg.field_res_users_property_payment_term_id
+msgid "This payment term will be used instead of the default one for sale orders and customer invoices"
+msgstr "This payment term will be used instead of the default one for sale orders and customer invoices"
+
+#. module: l10n_bg
+#: model:ir.model.fields,help:l10n_bg.field_res_users_property_stock_customer
+msgid "This stock location will be used, instead of the default one, as the destination location for goods you send to this partner"
+msgstr "This stock location will be used, instead of the default one, as the destination location for goods you send to this partner"
+
+#. module: l10n_bg
+#: model:ir.model.fields,help:l10n_bg.field_res_users_property_stock_supplier
+msgid "This stock location will be used, instead of the default one, as the source location for goods you receive from the current partner"
+msgstr "This stock location will be used, instead of the default one, as the source location for goods you receive from the current partner"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_res_users_total_invoiced
+msgid "Total Invoiced"
+msgstr "Total Invoiced"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_res_users_debit
+msgid "Total Payable"
+msgstr "Total Payable"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_res_users_credit
+msgid "Total Receivable"
+msgstr "Total Receivable"
+
+#. module: l10n_bg
+#: model:ir.model.fields,help:l10n_bg.field_res_users_credit
+msgid "Total amount this customer owes you."
+msgstr "Total amount this customer owes you."
+
+#. module: l10n_bg
+#: model:ir.model.fields,help:l10n_bg.field_res_users_debit
+msgid "Total amount you have to pay to this vendor."
+msgstr "Total amount you have to pay to this vendor."
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.view_partner_form_1
+msgid "Type Bulgarian EGN"
+msgstr "Type Bulgarian EGN"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.view_partner_form_2
+msgid "UIC"
+msgstr "UIC"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "Unit Price"
+msgstr "Unit Price"
+
+#. module: l10n_bg
+#: model:ir.model,name:l10n_bg.model_res_users
+msgid "Users"
+msgstr "Users"
+
+#. module: l10n_bg
+#: model:ir.model.fields,help:l10n_bg.field_res_users_currency_id
+msgid "Utility field to express amount currency"
+msgstr "Utility field to express amount currency"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_res_users_property_stock_supplier
+msgid "Vendor Location"
+msgstr "Vendor Location"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_res_users_property_supplier_payment_term_id
+msgid "Vendor Payment Term"
+msgstr "Vendor Payment Term"
+
+#. module: l10n_bg
+#: model:ir.model.fields,field_description:l10n_bg.field_account_invoice_website_message_ids
+msgid "Website Messages"
+msgstr "Website Messages"
+
+#. module: l10n_bg
+#: model:ir.model.fields,help:l10n_bg.field_account_invoice_website_message_ids
+msgid "Website communication history"
+msgstr "Website communication history"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.external_layout_footer_bg
+msgid "Website:"
+msgstr "Website:"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.view_company_form_1
+#: model:ir.ui.view,arch_db:l10n_bg.view_partner_form_2
+msgid "e.g. BULSTAT or EIK"
+msgstr "e.g. BULSTAT or EIK"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.view_partner_form_2
+msgid "e.g. Ivan Ivanov"
+msgstr "e.g. Ivan Ivanov"
