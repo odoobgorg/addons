@@ -35,18 +35,10 @@ class AccountInvoice(models.Model):
     @api.one
     @api.depends('amount_total')
     def _compute_text(self):
-        self.amount_in_word_bg = amount_to_text_bg(self.amount_total, self.currency_id.name)
+        # self.amount_in_word_en = amount_to_text_en.amount_to_text(self.amount_total, lang='en', currency='')
+        self.amount_in_word = amount_to_text_bg(self.amount_total, self.currency_id.name)
 
     amount_in_word = fields.Char(readonly=True, default=False, copy=False, compute='_compute_text')
-
-    # def _compute_text_bg(self):
-    #     self.amount_in_word_bg = amount_to_text_bg(self.amount_total, self.currency_id.name)
-    #
-    # def _compute_text_en(self):
-    #     self.amount_in_word_en = amount_to_text_en.amount_to_text(self.amount_total, lang='en', currency='')
-    #
-    # amount_in_word_bg = fields.Char(readonly=True, default=False, copy=False, compute='_compute_text_bg')
-    # amount_in_word_en = fields.Char(readonly=True, default=False, copy=False, compute='_compute_text_en')
 
     comment_template1_id = fields.Many2one('base.comment.template', string='Comment Template 1')
     comment_template2_id = fields.Many2one('base.comment.template', string='Comment Template 2')
