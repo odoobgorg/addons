@@ -8,7 +8,8 @@
       'views/layout.xml',
       'views/assets.xml'
   ],
-  'category': 'Theme/Creative',
+  # 'category': 'Theme/Creative',
+  'category': 'Other',
   'depends': ['website'],
   'installable': True,
   'application': True,
