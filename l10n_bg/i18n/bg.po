@@ -65,7 +65,7 @@ msgstr "<strong>Фирма/Име: </strong>"
 #. module: l10n_bg
 #: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
 msgid "<strong>Created</strong>"
-msgstr "<strong>Съставил:</strong>"
+msgstr "<strong>Съставил: </strong>"
 
 #. module: l10n_bg
 #: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
