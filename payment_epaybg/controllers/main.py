@@ -40,4 +40,5 @@ class EpaybgController(http.Controller):
                 _logger.info('Notification from epaybg for the reference %s: received %s, state is %s', states)
             else:
                 _logger.warning('Notification from epaybg for the reference %s: received %s but state is %s', states)
+
         return '[accepted]'
