@@ -99,7 +99,8 @@ class AcquirerEpaybg(osv.Model):
         _logger.info(params)
         _logger.info("End Epay Params:")
 
-        encoded = base64.b64encode("\n".join(["%s=%s" % (k, v) for k, v in params.items()]))
+        # encoded = base64.b64encode("\n".join(["%s=%s" % (k, v) for k, v in params.items()]))
+        encoded = base64.b64encode("\n".join(["%s=%s" % (k, v) for k, v in params.items()]).encode('utf-8').strip())
 
         return_url = '%s' % urlparse.urljoin(base_url, EpaybgController._return_url)
 
