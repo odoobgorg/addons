@@ -93,7 +93,7 @@ class AcquirerEpaybg(osv.Model):
 
         params = {"MIN": acquirer.epaybg_merchant_kin or '', "INVOICE": item_number,
                   "AMOUNT": float_round(values['amount'], 2) or '', "EXP_TIME": tmp_date.strftime("%d.%m.%Y %H:%M"),
-                  "DESCR": item_name or '', "CURRENCY=": currency_code}
+                  "DESCR": item_name or '', "CURRENCY": currency_code}
 
         _logger.info("Start Epay Params:")
         _logger.info(params)
@@ -124,6 +124,34 @@ class TxEpaybg(osv.Model):
     # --------------------------------------------------
     # FORM RELATED METHODS
     # --------------------------------------------------
+
+    # def _epaybg_form_get_tx_from_data(self, cr, uid, data, context=None):
+    #     reference, pspReference = data.get('merchantReference'), data.get('pspReference')
+    #     if not reference or not pspReference:
+    #         error_msg = _('epaybg: received data with missing reference (%s) or missing pspReference (%s)') % (reference, pspReference)
+    #         _logger.info(error_msg)
+    #         raise ValidationError(error_msg)
+    #
+    #     # find tx -> @TDENOTE use pspReference ?
+    #     tx_ids = self.pool['payment.transaction'].search(cr, uid, [('reference', '=', reference)], context=context)
+    #     if not tx_ids or len(tx_ids) > 1:
+    #         error_msg = _('epaybg: received data for reference %s') % (reference)
+    #         if not tx_ids:
+    #             error_msg += _('; no order found')
+    #         else:
+    #             error_msg += _('; multiple order found')
+    #         _logger.info(error_msg)
+    #         raise ValidationError(error_msg)
+    #     tx = self.pool['payment.transaction'].browse(cr, uid, tx_ids[0], context=context)
+    #
+    #     # verify shasign
+    #     shasign_check = self.pool['payment.acquirer']._epaybg_generate_merchant_sig(tx.acquirer_id, 'out', data)
+    #     if shasign_check != data.get('merchantSig'):
+    #         error_msg = _('epaybg: invalid merchantSig, received %s, computed %s') % (data.get('merchantSig'), shasign_check)
+    #         _logger.warning(error_msg)
+    #         raise ValidationError(error_msg)
+    #
+    #     return tx
 
     def _epaybg_form_get_tx_from_data(self, cr, uid, data, context=None):
         reference, pspReference = data.get('merchantReference'), data.get('pspReference')
