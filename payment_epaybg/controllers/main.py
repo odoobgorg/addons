@@ -18,7 +18,7 @@ class EpaybgController(http.Controller):
         '/payment/epaybg/return',
     ], type='http', auth='none', csrf=False)
     def epaybg_return(self, **post):
-        _logger.info('Beginning epaybg form_feedback with post data %s', pprint.pformat(post))  # debug
+        _logger.warning('Beginning epaybg_return form_feedback with post data %s', pprint.pformat(post))  # debug
         if post.get('authResult') not in ['CANCELLED']:
             request.registry['payment.transaction'].form_feedback(request.cr, SUPERUSER_ID, post, 'epaybg', context=request.context)
         return_url = post.pop('return_url', '')
@@ -31,6 +31,7 @@ class EpaybgController(http.Controller):
         '/payment/epaybg/notification',
     ], type='http', auth='none', methods=['POST'], csrf=False)
     def epaybg_notification(self, **post):
+        _logger.warning('Beginning epaybg_notification form_feedback with post data %s', pprint.pformat(post))  # debug
         tx_id = post.get('merchantReference') and request.registry['payment.transaction'].search(request.cr, SUPERUSER_ID, [('reference', 'in', [post.get('merchantReference')])], limit=1, context=request.context)
         if post.get('eventCode') in ['AUTHORISATION'] and tx_id:
             tx = request.registry['payment.transaction'].browse(request.cr, SUPERUSER_ID, tx_id, context=request.context)
