@@ -162,7 +162,7 @@ class TxEpaybg(osv.Model):
         if epay_result['INVOICE']:
             tx = self.pool['payment.transaction'].browse(cr, uid, int(epay_result['INVOICE']), context=context)
 
-        _logger.critical(tx)
+        # _logger.critical(tx)
 
         return tx
 
