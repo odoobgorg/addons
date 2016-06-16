@@ -70,6 +70,15 @@ class AcquirerEpaybg(osv.Model):
     #
     #     return base64.b64encode(hmac.new(key, sign, sha1).digest())
 
+    def _epaybg_generate_merchant_encoded(self, params):
+        return base64.b64encode("\n".join(["%s=%s" % (k, v) for k, v in params.items()]).encode('utf-8').strip())
+
+    def _epaybg_generate_merchant_checksum(self, merchant_account, encoded):
+        return hmac.new(merchant_account, encoded, sha1).hexdigest()
+
+    def _epaybg_generate_merchant_decoded(self, encoded):
+        return base64.b64decode(encoded)
+
     def epaybg_form_generate_values(self, cr, uid, id, values, context=None):
         base_url = self.pool['ir.config_parameter'].get_param(cr, uid, 'web.base.url')
         acquirer = self.browse(cr, uid, id, context=context)
@@ -79,12 +88,14 @@ class AcquirerEpaybg(osv.Model):
         # tmp_date = datetime.date.today() + relativedelta.relativedelta(days=1)
         tmp_date = datetime.datetime.now() + relativedelta.relativedelta(days=1)
 
+        return_url = '%s' % urlparse.urljoin(base_url, EpaybgController._return_url)
+
         item_number = False
         if values['reference']:
-            item_number = self.pool['payment.transaction'].search(cr, uid, [('reference', '=', values['reference'])],
-                                                                  context=context)
-            if item_number and len(item_number):
-                item_number = item_number[0]
+            tx_id = self.pool['payment.transaction'].search(cr, uid, [('reference', '=', values['reference'])],
+                                                            context=context)
+            if tx_id and len(tx_id) == 1:
+                item_number = str(tx_id[0])
 
         item_name = '%s: %s /%s' % (
             acquirer.company_id.name,
@@ -101,15 +112,12 @@ class AcquirerEpaybg(osv.Model):
                   "AMOUNT": float_round(values['amount'], 2) or '', "EXP_TIME": tmp_date.strftime("%d.%m.%Y %H:%M"),
                   "DESCR": item_name or '', "CURRENCY": currency_code}
 
-        encoded = base64.b64encode("\n".join(["%s=%s" % (k, v) for k, v in params.items()]).encode('utf-8').strip())
-
-        return_url = '%s' % urlparse.urljoin(base_url, EpaybgController._return_url)
-
-        checksum = hmac.new(acquirer.epaybg_merchant_account.encode('utf-8'), encoded, sha1).hexdigest()
+        encoded = self._epaybg_generate_merchant_encoded(params)
 
         values.update({
             'encoded': encoded,
-            'checksum': checksum,
+            'checksum': self._epaybg_generate_merchant_checksum(acquirer.epaybg_merchant_account.encode('utf-8'),
+                                                                encoded),
             'urlOK': return_url,
             'urlCancel': return_url,
         })
@@ -156,33 +164,31 @@ class TxEpaybg(osv.Model):
     #
     #     return tx
 
+    def epay_decoded_result(self, encoded):
+        result = AcquirerEpaybg._epaybg_generate_merchant_decoded(encoded)
+        words = result.split(":")
+        dict1 = {}
+        if len(words) > 0:
+            for word in words:
+                w = word.split("=")
+                if len(w) > 0:
+                    dict1[w[0]] = w[1]
+        _logger.critical(dict1)
+        return dict1
+
     def _epaybg_form_get_tx_from_data(self, cr, uid, data, context=None):
-        reference, pspReference = data.get('merchantReference'), data.get('pspReference')
-        if not reference or not pspReference:
-            error_msg = _('epaybg: received data with missing reference (%s) or missing pspReference (%s)') % (
-            reference, pspReference)
+        encoded, checksum = data.get('encoded'), data.get('checksum')
+        if not encoded or not checksum:
+            error_msg = _('epaybg: received data with missing encoded (%s) or missing checksum (%s)') % (
+                encoded, checksum)
             _logger.info(error_msg)
             raise ValidationError(error_msg)
 
-        # find tx -> @TDENOTE use pspReference ?
-        tx_ids = self.pool['payment.transaction'].search(cr, uid, [('reference', '=', reference)], context=context)
-        if not tx_ids or len(tx_ids) > 1:
-            error_msg = _('epaybg: received data for reference %s') % (reference)
-            if not tx_ids:
-                error_msg += _('; no order found')
-            else:
-                error_msg += _('; multiple order found')
-            _logger.info(error_msg)
-            raise ValidationError(error_msg)
-        tx = self.pool['payment.transaction'].browse(cr, uid, tx_ids[0], context=context)
+        epay_result = self.epay_decoded_result(encoded)
+        if epay_result['INVOICE']:
+            tx = self.pool['payment.transaction'].browse(cr, uid, int(epay_result['INVOICE']), context=context)
 
-        # verify shasign
-        shasign_check = self.pool['payment.acquirer']._epaybg_generate_merchant_sig(tx.acquirer_id, 'out', data)
-        if shasign_check != data.get('merchantSig'):
-            error_msg = _('epaybg: invalid merchantSig, received %s, computed %s') % (
-            data.get('merchantSig'), shasign_check)
-            _logger.warning(error_msg)
-            raise ValidationError(error_msg)
+        _logger.critical(tx)
 
         return tx
 
