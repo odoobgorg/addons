@@ -65,7 +65,7 @@ class AcquirerEpaybg(osv.Model):
             tx_id = self.pool['payment.transaction'].search(cr, uid, [('reference', '=', values['reference'])],
                                                             context=context)
             if tx_id and len(tx_id) == 1:
-                item_number = str(tx_id[0])
+                item_number = str(tx_id[0]+1)
 
         item_name = '%s: %s /%s' % (
             acquirer.company_id.name,
