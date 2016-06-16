@@ -105,11 +105,6 @@ class AcquirerEpaybg(osv.Model):
                   "AMOUNT": float_round(values['amount'], 2) or '', "EXP_TIME": tmp_date.strftime("%d.%m.%Y %H:%M"),
                   "DESCR": item_name or '', "CURRENCY": currency_code}
 
-        _logger.info("Start Epay Params:")
-        _logger.info(params)
-        _logger.info("End Epay Params:")
-
-        # encoded = base64.b64encode("\n".join(["%s=%s" % (k, v) for k, v in params.items()]))
         encoded = base64.b64encode("\n".join(["%s=%s" % (k, v) for k, v in params.items()]).encode('utf-8').strip())
 
         return_url = '%s' % urlparse.urljoin(base_url, EpaybgController._return_url)
@@ -120,6 +115,8 @@ class AcquirerEpaybg(osv.Model):
             'urlOK': return_url,
             'urlCancel': return_url,
         })
+
+        # _logger.info("Start Epay Params:")
 
         return values
 
