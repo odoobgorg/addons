@@ -83,13 +83,22 @@ class AcquirerEpaybg(osv.Model):
         # tmp_date = datetime.date.today() + relativedelta.relativedelta(days=1)
         tmp_date = datetime.datetime.now() + relativedelta.relativedelta(days=1)
 
-        item_number = values['reference']
-        item_name = '%s: %s %s first name: %s last_name: %s' % (
-            acquirer.company_id.name, values['reference'],
+        item_number = False
+        if values['reference']:
+            item_number = self.pool['payment.transaction'].search(cr, uid, [('reference', '=', values['reference'])],
+                                                                  context=context)
+            if item_number and len(item_number):
+                item_number = item_number[0]
+
+        item_name = '%s: %s /%s' % (
+            acquirer.company_id.name,
+            values['reference'],
             values.get('partner_email'),
-            values.get('partner_first_name'),
-            values.get('partner_last_name')
         )
+
+        if item_name and len(item_name) > 100:
+            item_name = item_name[:100]
+
         currency_code = values['currency'] and values['currency'].name or ''
 
         params = {"MIN": acquirer.epaybg_merchant_kin or '', "INVOICE": item_number,
@@ -157,7 +166,8 @@ class TxEpaybg(osv.Model):
     def _epaybg_form_get_tx_from_data(self, cr, uid, data, context=None):
         reference, pspReference = data.get('merchantReference'), data.get('pspReference')
         if not reference or not pspReference:
-            error_msg = _('epaybg: received data with missing reference (%s) or missing pspReference (%s)') % (reference, pspReference)
+            error_msg = _('epaybg: received data with missing reference (%s) or missing pspReference (%s)') % (
+            reference, pspReference)
             _logger.info(error_msg)
             raise ValidationError(error_msg)
 
@@ -176,7 +186,8 @@ class TxEpaybg(osv.Model):
         # verify shasign
         shasign_check = self.pool['payment.acquirer']._epaybg_generate_merchant_sig(tx.acquirer_id, 'out', data)
         if shasign_check != data.get('merchantSig'):
-            error_msg = _('epaybg: invalid merchantSig, received %s, computed %s') % (data.get('merchantSig'), shasign_check)
+            error_msg = _('epaybg: invalid merchantSig, received %s, computed %s') % (
+            data.get('merchantSig'), shasign_check)
             _logger.warning(error_msg)
             raise ValidationError(error_msg)
 
