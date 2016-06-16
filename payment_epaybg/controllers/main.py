@@ -33,6 +33,13 @@ class EpaybgController(http.Controller):
     ], type='http', auth='none', methods=['POST'], csrf=False)
     def epaybg_notification(self, **post):
         _logger.info('Beginning epaybg_notification form_feedback with post data %s', pprint.pformat(post))  # debug
+
+        encoded, checksum = post.get('encoded'), post.get('checksum')
+        _logger.critical("START TEST")
+        _logger.critical(encoded)
+        _logger.critical(checksum)
+        _logger.critical("END TEST")
+
         tx_id = post.get('merchantReference') and request.registry['payment.transaction'].search(request.cr, SUPERUSER_ID, [('reference', 'in', [post.get('merchantReference')])], limit=1, context=request.context)
         if post.get('eventCode') in ['AUTHORISATION'] and tx_id:
             tx = request.registry['payment.transaction'].browse(request.cr, SUPERUSER_ID, tx_id, context=request.context)
