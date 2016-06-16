@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
 {
-    'name': 'epaybg Payment Acquirer',
+    'name': 'Epay.bg Payment Acquirer',
     'category': 'Hidden',
-    'summary': 'Payment Acquirer: epaybg Implementation',
+    'summary': 'Payment Acquirer: Epay.bg Implementation',
     'version': '1.0',
-    'description': """epaybg Payment Acquirer""",
+    'description': """Epay.bg Payment Acquirer""",
     'depends': ['payment'],
     'data': [
         'views/epaybg.xml',
