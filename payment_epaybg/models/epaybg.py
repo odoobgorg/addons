@@ -49,7 +49,7 @@ class AcquirerEpaybg(osv.Model):
     def _epaybg_generate_merchant_decoded(self, encoded):
         return base64.b64decode(encoded)
 
-    def epaybg_form_generate_values(self, cr, uid, id, values, environment, context=None):
+    def epaybg_form_generate_values(self, cr, uid, id, values, context=None):
         base_url = self.pool['ir.config_parameter'].get_param(cr, uid, 'web.base.url')
         acquirer = self.browse(cr, uid, id, context=context)
         # tmp
