@@ -148,6 +148,7 @@ class TxEpaybg(osv.Model):
 
     def _epaybg_form_get_tx_from_data(self, cr, uid, data, context=None):
 
+        _logger.critical('START _epaybg_form_get_tx_from_data')
         _logger.critical(data)
 
         encoded, checksum = data.get('encoded'), data.get('checksum')
@@ -162,12 +163,16 @@ class TxEpaybg(osv.Model):
         if epay_result['INVOICE']:
             tx = self.pool['payment.transaction'].browse(cr, uid, int(epay_result['INVOICE']), context=context)
 
-        # _logger.critical(tx)
+        _logger.critical(tx)
+        _logger.critical('END _epaybg_form_get_tx_from_data')
 
         return tx
 
     def _epaybg_form_get_invalid_parameters(self, cr, uid, tx, data, context=None):
         invalid_parameters = []
+
+        _logger.critical('START _epaybg_form_get_invalid_parameters')
+        _logger.critical(data)
 
         # # reference at acquirer: pspReference
         # if tx.acquirer_reference and data.get('pspReference') != tx.acquirer_reference:
@@ -179,25 +184,35 @@ class TxEpaybg(osv.Model):
         # if not data.get('authResult'):
         #     invalid_parameters.append(('authResult', data.get('authResult'), 'something'))
 
+        _logger.critical('END _epaybg_form_get_invalid_parameters')
+
         return invalid_parameters
 
     def _epaybg_form_validate(self, cr, uid, tx, data, context=None):
+
+        _logger.critical('START _epaybg_form_validate')
+        _logger.critical(data)
+
         status = data.get('authResult', 'PENDING')
         if status == 'AUTHORISED':
             tx.write({
                 'state': 'done',
                 'acquirer_reference': data.get('pspReference'),
             })
-            _logger.critical('_epaybg_form_validate')
+
             _logger.critical(tx)
+            _logger.critical('END _epaybg_form_validate')
+
             return True
         elif status == 'PENDING':
             tx.write({
                 'state': 'pending',
                 'acquirer_reference': data.get('pspReference'),
             })
-            _logger.critical('_epaybg_form_validate')
+
             _logger.critical(tx)
+            _logger.critical('END _epaybg_form_validate')
+
             return True
         else:
             error = _('epaybg: feedback error')
@@ -206,6 +221,8 @@ class TxEpaybg(osv.Model):
                 'state': 'error',
                 'state_message': error
             })
-            _logger.critical('_epaybg_form_validate')
+
             _logger.critical(tx)
+            _logger.critical('END _epaybg_form_validate')
+
             return False
