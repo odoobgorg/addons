@@ -70,10 +70,6 @@ class AcquirerEpaybg(osv.Model):
     #
     #     return base64.b64encode(hmac.new(key, sign, sha1).digest())
 
-    def _epaybg_generate_merchant_checksum(self, key, secret):
-        # return base64.b64encode(hmac.new(key, secret, sha1).digest())
-        return hmac.new(key, secret, sha1)
-
     def epaybg_form_generate_values(self, cr, uid, id, values, context=None):
         base_url = self.pool['ir.config_parameter'].get_param(cr, uid, 'web.base.url')
         acquirer = self.browse(cr, uid, id, context=context)
@@ -109,14 +105,14 @@ class AcquirerEpaybg(osv.Model):
 
         return_url = '%s' % urlparse.urljoin(base_url, EpaybgController._return_url)
 
+        checksum = hmac.new(acquirer.epaybg_merchant_account.encode('utf-8'), encoded, sha1).hexdigest()
+
         values.update({
             'encoded': encoded,
-            'checksum': self._epaybg_generate_merchant_checksum(str(acquirer.epaybg_merchant_account), encoded),
+            'checksum': checksum,
             'urlOK': return_url,
             'urlCancel': return_url,
         })
-
-        # _logger.info("Start Epay Params:")
 
         return values
 
