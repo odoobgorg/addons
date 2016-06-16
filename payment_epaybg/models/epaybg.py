@@ -177,6 +177,7 @@ class TxEpaybg(osv.Model):
         return dict1
 
     def _epaybg_form_get_tx_from_data(self, cr, uid, data, context=None):
+        _logger.critical(data)
         encoded, checksum = data.get('encoded'), data.get('checksum')
         if not encoded or not checksum:
             error_msg = _('epaybg: received data with missing encoded (%s) or missing checksum (%s)') % (
@@ -184,6 +185,7 @@ class TxEpaybg(osv.Model):
             _logger.info(error_msg)
             raise ValidationError(error_msg)
 
+        tx = False
         epay_result = self.epay_decoded_result(encoded)
         if epay_result['INVOICE']:
             tx = self.pool['payment.transaction'].browse(cr, uid, int(epay_result['INVOICE']), context=context)
@@ -195,15 +197,15 @@ class TxEpaybg(osv.Model):
     def _epaybg_form_get_invalid_parameters(self, cr, uid, tx, data, context=None):
         invalid_parameters = []
 
-        # reference at acquirer: pspReference
-        if tx.acquirer_reference and data.get('pspReference') != tx.acquirer_reference:
-            invalid_parameters.append(('pspReference', data.get('pspReference'), tx.acquirer_reference))
-        # seller
-        if data.get('skinCode') != tx.acquirer_id.epaybg_merchant_kin:
-            invalid_parameters.append(('skinCode', data.get('skinCode'), tx.acquirer_id.epaybg_merchant_kin))
-        # result
-        if not data.get('authResult'):
-            invalid_parameters.append(('authResult', data.get('authResult'), 'something'))
+        # # reference at acquirer: pspReference
+        # if tx.acquirer_reference and data.get('pspReference') != tx.acquirer_reference:
+        #     invalid_parameters.append(('pspReference', data.get('pspReference'), tx.acquirer_reference))
+        # # seller
+        # if data.get('skinCode') != tx.acquirer_id.epaybg_merchant_kin:
+        #     invalid_parameters.append(('skinCode', data.get('skinCode'), tx.acquirer_id.epaybg_merchant_kin))
+        # # result
+        # if not data.get('authResult'):
+        #     invalid_parameters.append(('authResult', data.get('authResult'), 'something'))
 
         return invalid_parameters
 
@@ -213,15 +215,17 @@ class TxEpaybg(osv.Model):
             tx.write({
                 'state': 'done',
                 'acquirer_reference': data.get('pspReference'),
-                # 'date_validate': data.get('payment_date', fields.datetime.now()),
-                # 'paypal_txn_type': data.get('express_checkout')
             })
+            _logger.critical('_epaybg_form_validate')
+            _logger.critical(tx)
             return True
         elif status == 'PENDING':
             tx.write({
                 'state': 'pending',
                 'acquirer_reference': data.get('pspReference'),
             })
+            _logger.critical('_epaybg_form_validate')
+            _logger.critical(tx)
             return True
         else:
             error = _('epaybg: feedback error')
@@ -230,4 +234,6 @@ class TxEpaybg(osv.Model):
                 'state': 'error',
                 'state_message': error
             })
+            _logger.critical('_epaybg_form_validate')
+            _logger.critical(tx)
             return False
