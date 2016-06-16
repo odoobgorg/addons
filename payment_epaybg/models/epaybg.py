@@ -147,6 +147,9 @@ class TxEpaybg(osv.Model):
         return dict1
 
     def _epaybg_form_get_tx_from_data(self, cr, uid, data, context=None):
+
+        _logger.critical(data)
+
         encoded, checksum = data.get('encoded'), data.get('checksum')
         if not encoded or not checksum:
             error_msg = _('epaybg: received data with missing encoded (%s) or missing checksum (%s)') % (
