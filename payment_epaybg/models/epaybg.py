@@ -40,36 +40,6 @@ class AcquirerEpaybg(osv.Model):
         'epaybg_merchant_kin': fields.char('Kin Code', required_if_provider='epaybg'),
     }
 
-    # def _epaybg_generate_merchant_sig(self, acquirer, inout, values):
-    #     """ Generate the shasign for incoming or outgoing communications.
-    #
-    #     :param browse acquirer: the payment.acquirer browse record. It should
-    #                             have a shakey in shaky out
-    #     :param string inout: 'in' (openerp contacting ogone) or 'out' (epaybg
-    #                          contacting openerp). In this last case only some
-    #                          fields should be contained (see e-Commerce basic)
-    #     :param dict values: transaction values
-    #
-    #     :return string: shasign
-    #     """
-    #     assert inout in ('in', 'out')
-    #     assert acquirer.provider == 'epaybg'
-    #
-    #     if inout == 'in':
-    #         keys = "paymentAmount currencyCode shipBeforeDate merchantReference skinCode merchantAccount sessionValidity shopperEmail shopperReference recurringContract allowedMethods blockedMethods shopperStatement merchantReturnData billingAddressType deliveryAddressType offset".split()
-    #     else:
-    #         keys = "authResult pspReference merchantReference skinCode merchantReturnData".split()
-    #
-    #     def get_value(key):
-    #         if values.get(key):
-    #             return values[key]
-    #         return ''
-    #
-    #     sign = ''.join('%s' % get_value(k) for k in keys).encode('ascii')
-    #     key = acquirer.epaybg_skin_hmac_key.encode('ascii')
-    #
-    #     return base64.b64encode(hmac.new(key, sign, sha1).digest())
-
     def _epaybg_generate_merchant_encoded(self, params):
         return base64.b64encode("\n".join(["%s=%s" % (k, v) for k, v in params.items()]).encode('utf-8').strip())
 
@@ -79,7 +49,7 @@ class AcquirerEpaybg(osv.Model):
     def _epaybg_generate_merchant_decoded(self, encoded):
         return base64.b64decode(encoded)
 
-    def epaybg_form_generate_values(self, cr, uid, id, values, context=None):
+    def epaybg_form_generate_values(self, cr, uid, id, values, environment, context=None):
         base_url = self.pool['ir.config_parameter'].get_param(cr, uid, 'web.base.url')
         acquirer = self.browse(cr, uid, id, context=context)
         # tmp
@@ -177,7 +147,6 @@ class TxEpaybg(osv.Model):
         return dict1
 
     def _epaybg_form_get_tx_from_data(self, cr, uid, data, context=None):
-        _logger.critical(data)
         encoded, checksum = data.get('encoded'), data.get('checksum')
         if not encoded or not checksum:
             error_msg = _('epaybg: received data with missing encoded (%s) or missing checksum (%s)') % (
