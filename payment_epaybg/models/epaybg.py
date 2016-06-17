@@ -185,8 +185,6 @@ class TxEpaybg(osv.Model):
             tx.write({
                 'state': 'done',
                 'acquirer_reference': data.get('pspReference'),
-                # 'date_validate': data.get('payment_date', fields.datetime.now()),
-                # 'paypal_txn_type': data.get('express_checkout')
             })
             return True
         elif status == 'PENDING':
@@ -196,7 +194,7 @@ class TxEpaybg(osv.Model):
             })
             return True
         else:
-            error = _('Adyen: feedback error')
+            error = _('Epaybg: feedback error')
             _logger.info(error)
             tx.write({
                 'state': 'error',
