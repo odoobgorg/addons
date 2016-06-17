@@ -43,6 +43,8 @@ class EpaybgController(http.Controller):
 
         info_data = "INVOICE=%s:STATUS=%s\n" % (tx_id, status)
 
+        _logger.critical(info_data)
+
         return info_data
 
     def _epaybg_generate_merchant_decoded(self, encoded):
