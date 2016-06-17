@@ -19,7 +19,6 @@ _logger = logging.getLogger(__name__)
 class EpaybgController(http.Controller):
     _return_url = '/shop/confirmation'
     # _return_url = '/payment/epaybg/return/'
-    _cancel_url = '/payment/epaybg/cancel/'
     _notify_url = '/payment/epaybg/notification/'
 
     def _get_return_url(self, **post):
@@ -54,14 +53,6 @@ class EpaybgController(http.Controller):
         _logger.info('Beginning epaybg_return form_feedback with post data %s', pprint.pformat(post))  # debug
         return_url = self._get_return_url(**post)
         request.registry['payment.transaction'].form_feedback(request.cr, SUPERUSER_ID, post, 'epaybg', context=request.context)
-        return werkzeug.utils.redirect(return_url)
-
-    @http.route('/payment/epaybg/cancel', type='http', auth="none", csrf=False)
-    def epaybg_cancel(self, **post):
-        """ When the user cancels its epaybg payment: GET on this route """
-        cr, uid, context = request.cr, SUPERUSER_ID, request.context
-        _logger.info('Beginning epaybg cancel with post data %s', pprint.pformat(post))  # debug
-        return_url = self._get_return_url(**post)
         return werkzeug.utils.redirect(return_url)
 
     @http.route([
