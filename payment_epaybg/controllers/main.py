@@ -34,12 +34,15 @@ class EpaybgController(http.Controller):
         if not tx:
             # XXX if not recognise this invoice
             info_data = "INVOICE=%s:STATUS=NO\n" % tx_id
+            tx.write({'state': 'pending'})
         elif epay_decoded_result['STATUS'] == 'PAID':
             # XXX if OK for this invoice
             info_data = "INVOICE=%s:STATUS=OK\n" % tx_id
+            tx.write({'state': 'done'})
         elif epay_decoded_result['STATUS'] == 'DENIED' or epay_decoded_result['STATUS'] == 'EXPIRED':
             # XXX if error for this invoice
             info_data = "INVOICE=%s:STATUS=ERR\n" % tx_id
+            tx.write({'state': 'pending'})
 
         # tx_id = post.get('merchantReference') and request.registry['payment.transaction'].search(request.cr, SUPERUSER_ID, [('reference', 'in', [post.get('merchantReference')])], limit=1, context=request.context)
         # if post.get('eventCode') in ['AUTHORISATION'] and tx_id:
