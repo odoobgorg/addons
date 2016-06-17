@@ -61,7 +61,6 @@ class AcquirerEpaybg(osv.Model):
         return_url = '%s' % urlparse.urljoin(base_url, EpaybgController._return_url)
 
         item_number = False
-        tx_id = False
         if values['reference']:
             tx_id = self.pool['payment.transaction'].search(cr, uid, [('reference', '=', values['reference'])],
                                                             context=context)
@@ -159,12 +158,27 @@ class TxEpaybg(osv.Model):
             _logger.info(error_msg)
             raise ValidationError(error_msg)
 
-        tx = False
-        epay_result = self.epay_decoded_result(encoded)
-        if epay_result['INVOICE']:
-            tx = self.pool['payment.transaction'].browse(cr, uid, int(epay_result['INVOICE']), context=context)
+        epay_decoded_result = self.epay_decoded_result(encoded)
+        invoice_num = int(epay_decoded_result['INVOICE'])
 
-        _logger.critical(tx)
+        tx_ids = self.pool['payment.transaction'].search(cr, uid, [('id', '=', invoice_num)], context=context)
+        if not tx_ids or len(tx_ids) > 1:
+            error_msg = _('epaybg: received data for epay_decoded_result: %s') % (epay_decoded_result)
+            if not tx_ids:
+                error_msg += _('; no order found')
+            else:
+                error_msg += _('; multiple order found')
+            _logger.info(error_msg)
+            raise ValidationError(error_msg)
+        tx = self.pool['payment.transaction'].browse(cr, uid, tx_ids[0], context=context)
+
+        hmac = self.pool['payment.acquirer']._epaybg_generate_merchant_checksum(
+            tx.acquirer_id.epaybg_merchant_account.encode('utf-8'), encoded)
+        if hmac != checksum:
+            error_msg = _('epaybg: Not valid CHECKSUM (%s) with hmac (%s)') % (checksum, hmac)
+            _logger.info(error_msg)
+            raise ValidationError(error_msg)
+
         _logger.critical('END _epaybg_form_get_tx_from_data')
 
         return tx
