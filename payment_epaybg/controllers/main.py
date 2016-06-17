@@ -8,6 +8,7 @@ import base64
 
 from openerp import http, SUPERUSER_ID
 from openerp.http import request
+from openerp.addons.payment.models.payment_acquirer import ValidationError
 
 _logger = logging.getLogger(__name__)
 
@@ -28,6 +29,9 @@ class EpaybgController(http.Controller):
 
     def _epaybg_generate_merchant_decoded(self, encoded):
         return base64.b64decode(encoded)
+
+    def _epaybg_generate_merchant_checksum(self, merchant_account, encoded):
+        return hmac.new(merchant_account, encoded, sha1).hexdigest()
 
     def epay_decoded_result(self, encoded):
         result = self._epaybg_generate_merchant_decoded(encoded)
@@ -71,6 +75,13 @@ class EpaybgController(http.Controller):
         request.registry['payment.transaction'].form_feedback(request.cr, SUPERUSER_ID, post, 'epaybg', context=request.context)
 
         tx = request.registry['payment.transaction'].browse(request.cr, SUPERUSER_ID, tx_id, context=request.context)
+
+        hmac = self._epaybg_generate_merchant_checksum(
+            tx.acquirer_id.epaybg_merchant_account.encode('utf-8'), encoded)
+        if hmac != checksum:
+            error_msg = _('epaybg: Not valid CHECKSUM (%s) with hmac (%s)') % (checksum, hmac)
+            _logger.info(error_msg)
+            raise ValidationError(error_msg)
 
         if not tx:
             # XXX if not recognise this invoice
