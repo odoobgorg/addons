@@ -4,6 +4,7 @@ import json
 import logging
 import pprint
 import werkzeug
+import base64
 
 from openerp import http, SUPERUSER_ID
 from openerp.http import request
@@ -55,8 +56,11 @@ class EpaybgController(http.Controller):
 
         return info_data
 
+    def _epaybg_generate_merchant_decoded(self, encoded):
+        return base64.b64decode(encoded)
+
     def epay_decoded_result(self, encoded):
-        result = AcquirerEpaybg._epaybg_generate_merchant_decoded(encoded)
+        result = self._epaybg_generate_merchant_decoded(encoded)
         words = result.split(":")
         dict1 = {}
         if len(words) > 0:
