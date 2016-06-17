@@ -25,8 +25,7 @@ class EpaybgController(http.Controller):
         if not encoded or not checksum:
             return ''
 
-        # epay_decoded_result = TxEpaybg.epay_decoded_result(encoded)
-        epay_decoded_result = self.pool['payment.transaction'].epay_decoded_result(encoded)
+        epay_decoded_result = self.epay_decoded_result(encoded)
         tx_id = int(epay_decoded_result['INVOICE'])
 
         tx = request.registry['payment.transaction'].browse(request.cr, SUPERUSER_ID, tx_id, context=request.context)
@@ -41,8 +40,9 @@ class EpaybgController(http.Controller):
             # XXX if error for this invoice
             info_data = "INVOICE=%s:STATUS=ERR\n" % tx_id
 
-        _logger.critical("info_data")
+        _logger.critical("start info_data")
         _logger.critical(info_data)
+        _logger.critical("end info_data")
 
         # tx_id = post.get('merchantReference') and request.registry['payment.transaction'].search(request.cr, SUPERUSER_ID, [('reference', 'in', [post.get('merchantReference')])], limit=1, context=request.context)
         # if post.get('eventCode') in ['AUTHORISATION'] and tx_id:
@@ -54,3 +54,14 @@ class EpaybgController(http.Controller):
         #         _logger.warning('Notification from epaybg for the reference %s: received %s but state is %s', states)
 
         return info_data
+
+    def epay_decoded_result(self, encoded):
+        result = AcquirerEpaybg._epaybg_generate_merchant_decoded(encoded)
+        words = result.split(":")
+        dict1 = {}
+        if len(words) > 0:
+            for word in words:
+                w = word.split("=")
+                if len(w) > 0:
+                    dict1[w[0]] = w[1]
+        return dict1
