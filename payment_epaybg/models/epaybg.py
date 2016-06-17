@@ -106,34 +106,6 @@ class TxEpaybg(osv.Model):
     # FORM RELATED METHODS
     # --------------------------------------------------
 
-    # def _epaybg_form_get_tx_from_data(self, cr, uid, data, context=None):
-    #     reference, pspReference = data.get('merchantReference'), data.get('pspReference')
-    #     if not reference or not pspReference:
-    #         error_msg = _('epaybg: received data with missing reference (%s) or missing pspReference (%s)') % (reference, pspReference)
-    #         _logger.info(error_msg)
-    #         raise ValidationError(error_msg)
-    #
-    #     # find tx -> @TDENOTE use pspReference ?
-    #     tx_ids = self.pool['payment.transaction'].search(cr, uid, [('reference', '=', reference)], context=context)
-    #     if not tx_ids or len(tx_ids) > 1:
-    #         error_msg = _('epaybg: received data for reference %s') % (reference)
-    #         if not tx_ids:
-    #             error_msg += _('; no order found')
-    #         else:
-    #             error_msg += _('; multiple order found')
-    #         _logger.info(error_msg)
-    #         raise ValidationError(error_msg)
-    #     tx = self.pool['payment.transaction'].browse(cr, uid, tx_ids[0], context=context)
-    #
-    #     # verify shasign
-    #     shasign_check = self.pool['payment.acquirer']._epaybg_generate_merchant_sig(tx.acquirer_id, 'out', data)
-    #     if shasign_check != data.get('merchantSig'):
-    #         error_msg = _('epaybg: invalid merchantSig, received %s, computed %s') % (data.get('merchantSig'), shasign_check)
-    #         _logger.warning(error_msg)
-    #         raise ValidationError(error_msg)
-    #
-    #     return tx
-
     def epay_decoded_result(self, encoded):
         result = AcquirerEpaybg._epaybg_generate_merchant_decoded(encoded)
         words = result.split(":")
@@ -143,7 +115,6 @@ class TxEpaybg(osv.Model):
                 w = word.split("=")
                 if len(w) > 0:
                     dict1[w[0]] = w[1]
-        _logger.critical(dict1)
         return dict1
 
     def _epaybg_form_get_tx_from_data(self, cr, uid, data, context=None):
@@ -159,9 +130,10 @@ class TxEpaybg(osv.Model):
             raise ValidationError(error_msg)
 
         epay_decoded_result = self.epay_decoded_result(encoded)
-        invoice_num = int(epay_decoded_result['INVOICE'])
+        _logger.critical(epay_decoded_result)
+        tx_id = int(epay_decoded_result['INVOICE'])
 
-        tx_ids = self.pool['payment.transaction'].search(cr, uid, [('id', '=', invoice_num)], context=context)
+        tx_ids = self.pool['payment.transaction'].search(cr, uid, [('id', '=', tx_id)], context=context)
         if not tx_ids or len(tx_ids) > 1:
             error_msg = _('epaybg: received data for epay_decoded_result: %s') % (epay_decoded_result)
             if not tx_ids:

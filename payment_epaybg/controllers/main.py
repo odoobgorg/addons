@@ -41,10 +41,6 @@ class EpaybgController(http.Controller):
             # XXX if error for this invoice
             info_data = "INVOICE=%s:STATUS=ERR\n" % tx_id
 
-        _logger.critical("start info_data")
-        _logger.critical(info_data)
-        _logger.critical("end info_data")
-
         # tx_id = post.get('merchantReference') and request.registry['payment.transaction'].search(request.cr, SUPERUSER_ID, [('reference', 'in', [post.get('merchantReference')])], limit=1, context=request.context)
         # if post.get('eventCode') in ['AUTHORISATION'] and tx_id:
         #     tx = request.registry['payment.transaction'].browse(request.cr, SUPERUSER_ID, tx_id, context=request.context)
@@ -53,6 +49,10 @@ class EpaybgController(http.Controller):
         #         _logger.info('Notification from epaybg for the reference %s: received %s, state is %s', states)
         #     else:
         #         _logger.warning('Notification from epaybg for the reference %s: received %s but state is %s', states)
+
+        _logger.critical("start info_data")
+        _logger.critical(info_data)
+        _logger.critical("end info_data")
 
         return info_data
 
