@@ -25,7 +25,8 @@ class EpaybgController(http.Controller):
         if not encoded or not checksum:
             return ''
 
-        epay_decoded_result = TxEpaybg.epay_decoded_result(encoded)
+        # epay_decoded_result = TxEpaybg.epay_decoded_result(encoded)
+        epay_decoded_result = self.pool['payment.transaction'].epay_decoded_result(encoded)
         tx_id = int(epay_decoded_result['INVOICE'])
 
         tx = request.registry['payment.transaction'].browse(request.cr, SUPERUSER_ID, tx_id, context=request.context)
@@ -41,7 +42,7 @@ class EpaybgController(http.Controller):
             info_data = "INVOICE=%s:STATUS=ERR\n" % tx_id
 
         _logger.critical("info_data")
-        _logger.info(info_data)
+        _logger.critical(info_data)
 
         # tx_id = post.get('merchantReference') and request.registry['payment.transaction'].search(request.cr, SUPERUSER_ID, [('reference', 'in', [post.get('merchantReference')])], limit=1, context=request.context)
         # if post.get('eventCode') in ['AUTHORISATION'] and tx_id:
