@@ -82,10 +82,10 @@ class EpaybgController(http.Controller):
             # XXX if OK for this invoice
             status = 'OK'
 
-            # tx.write({
-            #     'state': 'pending',
-            #     'acquirer_reference': epay_decoded_result,
-            # })
+            tx.write({
+                'state': 'pending',
+                'acquirer_reference': epay_decoded_result,
+            })
         else:
             # XXX if error for this invoice
             status = 'ERR'
