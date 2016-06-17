@@ -67,6 +67,9 @@ class EpaybgController(http.Controller):
             return ''
         epay_decoded_result = self.epay_decoded_result(encoded)
         tx_id = int(epay_decoded_result['INVOICE'])
+
+        request.registry['payment.transaction'].form_feedback(request.cr, SUPERUSER_ID, post, 'epaybg', context=request.context)
+
         tx = request.registry['payment.transaction'].browse(request.cr, SUPERUSER_ID, tx_id, context=request.context)
 
         if not tx:
