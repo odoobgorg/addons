@@ -41,7 +41,7 @@ class EpaybgController(http.Controller):
             # XXX if error for this invoice
             status = 'ERR'
 
-        info_data = "INVOICE=%s:STATUS=%s\n" % tx_id, status
+        info_data = "INVOICE=%s:STATUS=%s\n" % (tx_id, status)
 
         return info_data
 
