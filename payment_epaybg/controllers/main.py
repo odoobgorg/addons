@@ -68,15 +68,34 @@ class EpaybgController(http.Controller):
         epay_decoded_result = self.epay_decoded_result(encoded)
         tx_id = int(epay_decoded_result['INVOICE'])
         tx = request.registry['payment.transaction'].browse(request.cr, SUPERUSER_ID, tx_id, context=request.context)
+
         if not tx:
             # XXX if not recognise this invoice
             status = 'NO'
+
+            # error = _('Epaybg: feedback error')
+            tx.write({
+                'state': 'error',
+                'state_message': epay_decoded_result
+            })
         elif epay_decoded_result['STATUS'] == 'PAID':
             # XXX if OK for this invoice
             status = 'OK'
+
+            tx.write({
+                'state': 'pending',
+                'acquirer_reference': epay_decoded_result,
+            })
         else:
             # XXX if error for this invoice
             status = 'ERR'
+
+            tx.write({
+                'state': 'pending',
+                'acquirer_reference': epay_decoded_result,
+            })
+
         info_data = "INVOICE=%s:STATUS=%s\n" % (tx_id, status)
         _logger.critical(info_data)
+
         return info_data
