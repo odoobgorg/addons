@@ -8,7 +8,10 @@ import base64
 
 from openerp import http, SUPERUSER_ID
 from openerp.http import request
+
 from openerp.addons.payment.models.payment_acquirer import ValidationError
+from hashlib import sha1
+import hmac
 
 _logger = logging.getLogger(__name__)
 
