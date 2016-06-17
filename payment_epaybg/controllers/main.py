@@ -100,7 +100,7 @@ class EpaybgController(http.Controller):
             status = 'OK'
 
             tx.write({
-                'state': 'pending',
+                'state': 'done',
                 'acquirer_reference': epay_decoded_result,
             })
         else:
