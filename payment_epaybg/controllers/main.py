@@ -17,8 +17,8 @@ _logger = logging.getLogger(__name__)
 
 
 class EpaybgController(http.Controller):
-    _return_url = '/shop/confirmation'
-    # _return_url = '/payment/epaybg/return/'
+    # _return_url = '/shop/confirmation'
+    _return_url = '/payment/epaybg/return/'
     _notify_url = '/payment/epaybg/notification/'
 
     @http.route([
