@@ -2,6 +2,8 @@ import logging
 _logger = logging.getLogger(__name__)
 
 class websiteSale(http.Controller):
+
+    @http.route('/shop/payment/validate', type='http', auth="public", website=True)
     def payment_validate(self, transaction_id=None, sale_order_id=None, **post):
         """ Method that should be called by the server when receiving an update
         for a transaction. State at this point :
