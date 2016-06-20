@@ -106,12 +106,12 @@ class TxEpaybg(osv.Model):
     # FORM RELATED METHODS
     # --------------------------------------------------
 
-    def _epaybg_form_get_tx_from_data(self, cr, uid, data, context=None):
-        return True
-
-    def _epaybg_form_get_invalid_parameters(self, cr, uid, tx, data, context=None):
-        invalid_parameters = []
-        return invalid_parameters
-
-    def _epaybg_form_validate(self, cr, uid, tx, data, context=None):
-        return True
+    # def _epaybg_form_get_tx_from_data(self, cr, uid, data, context=None):
+    #     return True
+    #
+    # def _epaybg_form_get_invalid_parameters(self, cr, uid, tx, data, context=None):
+    #     invalid_parameters = []
+    #     return invalid_parameters
+    #
+    # def _epaybg_form_validate(self, cr, uid, tx, data, context=None):
+    #     return True

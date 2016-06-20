@@ -101,7 +101,7 @@ class EpaybgController(http.Controller):
             status = 'ERR'
 
             tx.write({
-                'state': 'cancel',
+                'state': 'error',
                 'acquirer_reference': epay_decoded_pformat,
             })
 
