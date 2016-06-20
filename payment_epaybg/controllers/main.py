@@ -14,7 +14,8 @@ _logger = logging.getLogger(__name__)
 
 class EpaybgController(http.Controller):
     # _return_url = '/shop/confirmation'
-    _return_url = '/shop/payment/validate'
+    # _return_url = '/shop/payment/validate'
+    _accept_url = '/payment/epaybg/feedback'
 
     @http.route([
         '/payment/epaybg/notification',
@@ -36,7 +37,18 @@ class EpaybgController(http.Controller):
         cr, uid, context = request.cr, request.uid, request.context
         tx_ids = request.registry['payment.transaction'].search(cr, uid, [('id', '=', tx_id), ('state', '=', 'done')], context=context)
 
-        _logger.info('END epaybg_notification form_feedback with info data %s', info_data)  # debug
         if not tx_ids:
             request.registry['payment.transaction'].form_feedback(request.cr, SUPERUSER_ID, post, 'epaybg', context=request.context)
-            return info_data
+
+        _logger.info('END epaybg_notification form_feedback with info data %s', info_data)  # debug
+
+        return info_data
+
+    @http.route([
+        '/payment/epaybg/feedback',
+    ], type='http', auth='none', csrf=False)
+    def epaybg_form_feedback(self, **post):
+        cr, uid, context = request.cr, SUPERUSER_ID, request.context
+        _logger.info('Beginning Epaybg form_feedback with post data %s', pprint.pformat(post))  # debug
+        # request.registry['payment.transaction'].form_feedback(cr, uid, post, 'epaybg', context)
+        return werkzeug.utils.redirect(post.pop('return_url', '/'))
