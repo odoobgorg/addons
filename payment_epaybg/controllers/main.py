@@ -30,7 +30,8 @@ class EpaybgController(http.Controller):
         epay_decoded_result = request.registry['payment.transaction'].epay_decoded_result(post.get('encoded'))
 
         tx_id = epay_decoded_result['INVOICE']
-        status = epay_decoded_result['STATUS']
+        # status = epay_decoded_result['STATUS']
+        status = 'OK'
 
         info_data = "INVOICE=%s:STATUS=%s\n" % (tx_id, status)
         _logger.critical(info_data)
