@@ -21,7 +21,7 @@ class EpaybgController(http.Controller):
         '/payment/epaybg/notification',
     ], type='http', auth='none', methods=['POST'], csrf=False)
     def epaybg_form_feedback(self, **post):
-        _logger.info('START epaybg_notification form_feedback with post data %s', pprint.pformat(post))  # debug
+        _logger.info('START epaybg_form_feedback with post data %s', pprint.pformat(post))  # debug
 
         epay_decoded_result = request.registry['payment.transaction'].epay_decoded_result(post.get('encoded'))
 
@@ -42,5 +42,29 @@ class EpaybgController(http.Controller):
         if not tx_ids:
             request.registry['payment.transaction'].form_feedback(request.cr, SUPERUSER_ID, post, 'epaybg', context=request.context)
 
-        _logger.info('END epaybg_notification form_feedback with info data %s', info_data)  # debug
+            cr, uid, context = request.cr, request.uid, request.context
+            tx = self.pool['payment.transaction'].browse(cr, uid, tx_id, context=context)
+            if status == 'PAID':
+                # XXX if OK for this invoice
+                tx.write({
+                    'state': 'done',
+                    'acquirer_reference': tx_id,
+                    'state_message': epay_decoded_pformat,
+                })
+            elif status == 'DENIED' or status == 'EXPIRED':
+                # XXX if OK for this invoice
+                tx.write({
+                    'state': 'cancel',
+                    'acquirer_reference': tx_id,
+                    'state_message': epay_decoded_pformat,
+                })
+            else:
+                # XXX if error for this invoice
+                tx.write({
+                    'state': 'error',
+                    'acquirer_reference': tx_id,
+                    'state_message': epay_decoded_pformat,
+                })
+
+        _logger.info('END epaybg_form_feedback with info data %s', info_data)  # debug
         return info_data
