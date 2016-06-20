@@ -178,8 +178,9 @@ class TxEpaybg(osv.Model):
         epay_decoded_result = self.epay_decoded_result(encoded)
         epay_decoded_pformat = pprint.pformat(epay_decoded_result)
 
-        status = epay_decoded_result['STATUS']
-        tx_id = epay_decoded_result['INVOICE']
+        import os
+        status = epay_decoded_result['STATUS'].rstrip(os.linesep)
+        tx_id = epay_decoded_result['INVOICE'].rstrip(os.linesep)
 
         if status == 'PAID':
             # XXX if OK for this invoice

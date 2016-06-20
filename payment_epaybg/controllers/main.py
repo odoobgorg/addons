@@ -16,7 +16,6 @@ _logger = logging.getLogger(__name__)
 class EpaybgController(http.Controller):
     # _return_url = '/shop/confirmation'
     _return_url = '/shop/payment/validate'
-    # _return_url = '/payment/epaybg/feedback'
 
     @http.route([
         '/payment/epaybg/notification',
@@ -26,14 +25,16 @@ class EpaybgController(http.Controller):
 
         epay_decoded_result = request.registry['payment.transaction'].epay_decoded_result(post.get('encoded'))
 
-        tx_id = epay_decoded_result['INVOICE']
+        import os
+        status = epay_decoded_result['STATUS'].rstrip(os.linesep)
+        tx_id = epay_decoded_result['INVOICE'].rstrip(os.linesep)
 
-        if epay_decoded_result['STATUS'] in ['PAID', 'DENIED', 'EXPIRED']:
-            status = 'OK'
+        if status in ['PAID', 'DENIED', 'EXPIRED']:
+            epay_status = 'OK'
         else:
-            status = 'ERR'
+            epay_status = 'ERR'
 
-        info_data = "INVOICE=%s:STATUS=%s\n" % (tx_id, status)
+        info_data = "INVOICE=%s:STATUS=%s\n" % (tx_id, epay_status)
 
         cr, uid, context = request.cr, request.uid, request.context
         tx_ids = request.registry['payment.transaction'].search(cr, uid, [('id', '=', tx_id), ('state', '=', 'done')], context=context)
@@ -43,10 +44,3 @@ class EpaybgController(http.Controller):
 
         _logger.info('END epaybg_notification form_feedback with info data %s', info_data)  # debug
         return info_data
-
-    # @http.route([
-    #     '/payment/epaybg/feedback',
-    # ], type='http', auth='none', csrf=False)
-    # def epaybg_form_feedback(self, **post):
-    #     _logger.info('Beginning Epaybg form_feedback with post data %s', pprint.pformat(post))  # debug
-    #     return werkzeug.utils.redirect(post.pop('return_url', '/'))
