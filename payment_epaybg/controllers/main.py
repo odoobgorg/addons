@@ -103,8 +103,14 @@ class EpaybgController(http.Controller):
         # _logger.critical(info_data)
 
         _logger.critical("START epaybg_notification")
-        state = request.registry['payment.acquirer']._epaybg_form_validate(self, cr, uid, tx, data, context=None)
-        _logger.critical(state)
+        epay_decoded_result = request.registry['payment.transaction'].epay_decoded_result(self, post.get('encoded'))
+        _logger.critical(epay_decoded_result)
         _logger.critical("END epaybg_notification")
+
+        tx_id = epay_decoded_result['INVOICE']
+        status = epay_decoded_result['STATUS']
+
+        info_data = "INVOICE=%s:STATUS=%s\n" % (tx_id, status)
+        _logger.critical(info_data)
 
         return info_data

@@ -171,20 +171,11 @@ class TxEpaybg(osv.Model):
         return invalid_parameters
 
     def _epaybg_form_validate(self, cr, uid, tx, data, context=None):
-
         encoded, checksum = data.get('encoded'), data.get('checksum')
         epay_decoded_result = self.epay_decoded_result(encoded)
-
         epay_decoded_pformat = pprint.pformat(epay_decoded_result)
 
-        if not tx:
-            # XXX if not recognise this invoice
-            tx.write({
-                'state': 'error',
-                'state_message': epay_decoded_pformat
-            })
-            return False
-        elif epay_decoded_result['STATUS'] == 'PAID':
+        if epay_decoded_result['STATUS'] == 'PAID':
             # XXX if OK for this invoice
             tx.write({
                 'state': 'done',
@@ -197,11 +188,11 @@ class TxEpaybg(osv.Model):
                 'state': 'cancel',
                 'acquirer_reference': epay_decoded_pformat,
             })
-            return True
+            return False
         else:
             # XXX if error for this invoice
             tx.write({
                 'state': 'error',
                 'acquirer_reference': epay_decoded_pformat,
             })
-            return True
+            return False
