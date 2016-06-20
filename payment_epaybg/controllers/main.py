@@ -49,21 +49,21 @@ class EpaybgController(http.Controller):
                 tx.write({
                     'state': 'done',
                     'acquirer_reference': tx_id,
-                    'state_message': epay_decoded_pformat,
+                    'state_message': epay_decoded_result,
                 })
             elif status == 'DENIED' or status == 'EXPIRED':
                 # XXX if OK for this invoice
                 tx.write({
                     'state': 'cancel',
                     'acquirer_reference': tx_id,
-                    'state_message': epay_decoded_pformat,
+                    'state_message': epay_decoded_result,
                 })
             else:
                 # XXX if error for this invoice
                 tx.write({
                     'state': 'error',
                     'acquirer_reference': tx_id,
-                    'state_message': epay_decoded_pformat,
+                    'state_message': epay_decoded_result,
                 })
 
         _logger.info('END epaybg_form_feedback with info data %s', info_data)  # debug
