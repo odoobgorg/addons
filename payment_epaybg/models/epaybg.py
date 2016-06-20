@@ -173,7 +173,11 @@ class TxEpaybg(osv.Model):
     def _epaybg_form_validate(self, cr, uid, tx, data, context=None):
         encoded, checksum = data.get('encoded'), data.get('checksum')
         epay_decoded_result = self.epay_decoded_result(encoded)
-        epay_decoded_pformat = pprint.pformat(epay_decoded_result)
+
+        # epay_decoded_pformat = pprint.pformat(epay_decoded_result)
+        epay_decoded_pformat = ''
+
+        _logger.critical(epay_decoded_pformat)
 
         if epay_decoded_result['STATUS'] == 'PAID':
             # XXX if OK for this invoice
@@ -181,6 +185,7 @@ class TxEpaybg(osv.Model):
                 'state': 'done',
                 'acquirer_reference': epay_decoded_pformat,
             })
+            _logger.critical('done')
             return True
         elif epay_decoded_result['STATUS'] == 'DENIED' or epay_decoded_result['STATUS'] == 'EXPIRED':
             # XXX if OK for this invoice
