@@ -43,7 +43,7 @@ class EpaybgController(http.Controller):
             request.registry['payment.transaction'].form_feedback(request.cr, SUPERUSER_ID, post, 'epaybg', context=request.context)
 
             cr, uid, context = request.cr, request.uid, request.context
-            tx = self.pool['payment.transaction'].browse(cr, uid, tx_id, context=context)
+            tx = request.registry['payment.transaction'].browse(cr, uid, tx_id, context=context)
             if status == 'PAID':
                 # XXX if OK for this invoice
                 tx.write({
