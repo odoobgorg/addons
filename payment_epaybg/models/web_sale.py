@@ -1,3 +1,4 @@
+from openerp import http
 import logging
 _logger = logging.getLogger(__name__)
 
