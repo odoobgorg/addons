@@ -25,15 +25,28 @@ class EpaybgController(http.Controller):
     ], type='http', auth='none', methods=['POST'], csrf=False)
     def epaybg_notification(self, **post):
         _logger.info('Beginning epaybg_notification form_feedback with post data %s', pprint.pformat(post))  # debug
-        request.registry['payment.transaction'].form_feedback(request.cr, SUPERUSER_ID, post, 'epaybg', context=request.context)
 
-        epay_decoded_result = request.registry['payment.transaction'].epay_decoded_result(post.get('encoded'))
+        cr, uid, context = request.cr, request.uid, request.context
 
-        tx_id = epay_decoded_result['INVOICE']
+        tx = request.registry['payment.transaction']._epaybg_form_get_tx_from_data(cr, uid, **post, context=None)
+        _logger.critical(tx)
+
+        # cr, uid, context = request.cr, request.uid, request.context
+        # encoded = post.get('encoded')
+        # tx = None
+        # if encoded:
+        #     tx_ids = request.registry['payment.transaction'].search(cr, uid, [('reference', '=', reference)], context=context)
+        #     if tx_ids:
+        #         tx = request.registry['payment.transaction'].browse(cr, uid, tx_ids[0], context=context)
+        #
+        # request.registry['payment.transaction'].form_feedback(request.cr, SUPERUSER_ID, post, 'epaybg', context=request.context)
+
+        # epay_decoded_result = request.registry['payment.transaction'].epay_decoded_result(post.get('encoded'))
+        #
+        # tx_id = epay_decoded_result['INVOICE']
         # status = epay_decoded_result['STATUS']
-        status = 'OK'
-
-        info_data = "INVOICE=%s:STATUS=%s\n" % (tx_id, status)
-        _logger.critical(info_data)
+        #
+        # info_data = "INVOICE=%s:STATUS=%s\n" % (tx_id, status)
+        # _logger.critical(info_data)
 
         return info_data
