@@ -28,7 +28,7 @@ class EpaybgController(http.Controller):
 
         cr, uid, context = request.cr, request.uid, request.context
 
-        tx = request.registry['payment.transaction']._epaybg_form_get_tx_from_data(cr, uid, **post, context=None)
+        tx = request.registry['payment.transaction']._epaybg_form_get_tx_from_data(cr, uid, post, context=None)
         _logger.critical(tx)
 
         # cr, uid, context = request.cr, request.uid, request.context
