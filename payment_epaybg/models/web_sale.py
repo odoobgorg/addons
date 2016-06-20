@@ -41,7 +41,7 @@ class websiteSale(http.Controller):
 
         # clean context and session, then redirect to the confirmation page
         request.website.sale_reset(context=context)
-        if tx and tx.state == 'draft':
+        if tx and tx.state == 'draft' and 1==2:
             _logger.critical(tx.state)
             return request.redirect('/shop')
 
