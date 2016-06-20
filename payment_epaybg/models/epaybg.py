@@ -6,6 +6,7 @@ from hashlib import sha1
 import hmac
 import logging
 import urlparse
+import pprint
 
 from openerp.addons.payment.models.payment_acquirer import ValidationError
 from openerp.addons.payment_epaybg.controllers.main import EpaybgController
@@ -171,28 +172,36 @@ class TxEpaybg(osv.Model):
 
     def _epaybg_form_validate(self, cr, uid, tx, data, context=None):
 
-        _logger.critical("START _epay_form_validate")
-        _logger.critical(data)
-        _logger.critical("END _epay_form_validate")
+        encoded, checksum = data.get('encoded'), data.get('checksum')
+        epay_decoded_result = self.epay_decoded_result(encoded)
 
-        status = data.get('authResult', 'PENDING')
-        if status == 'AUTHORISED':
+        epay_decoded_pformat = pprint.pformat(epay_decoded_result)
+
+        if not tx:
+            # XXX if not recognise this invoice
+            tx.write({
+                'state': 'error',
+                'state_message': epay_decoded_pformat
+            })
+            return False
+        elif epay_decoded_result['STATUS'] == 'PAID':
+            # XXX if OK for this invoice
             tx.write({
                 'state': 'done',
-                'acquirer_reference': data.get('encoded'),
+                'acquirer_reference': epay_decoded_pformat,
             })
             return True
-        elif status == 'PENDING':
+        elif epay_decoded_result['STATUS'] == 'DENIED' or epay_decoded_result['STATUS'] == 'EXPIRED':
+            # XXX if OK for this invoice
             tx.write({
-                'state': 'pending',
-                'acquirer_reference': data.get('checksum'),
+                'state': 'cancel',
+                'acquirer_reference': epay_decoded_pformat,
             })
             return True
         else:
-            error = _('Epaybg: feedback error')
-            _logger.info(error)
+            # XXX if error for this invoice
             tx.write({
                 'state': 'error',
-                'state_message': error
+                'acquirer_reference': epay_decoded_pformat,
             })
-            return False
+            return True
