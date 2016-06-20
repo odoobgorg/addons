@@ -106,12 +106,88 @@ class TxEpaybg(osv.Model):
     # FORM RELATED METHODS
     # --------------------------------------------------
 
-    # def _epaybg_form_get_tx_from_data(self, cr, uid, data, context=None):
-    #     return True
-    #
-    # def _epaybg_form_get_invalid_parameters(self, cr, uid, tx, data, context=None):
-    #     invalid_parameters = []
-    #     return invalid_parameters
-    #
-    # def _epaybg_form_validate(self, cr, uid, tx, data, context=None):
-    #     return True
+    def epaybg_generate_merchant_decoded(self, encoded):
+        return base64.b64decode(encoded)
+
+    def epay_decoded_result(self, encoded):
+        result = self.epaybg_generate_merchant_decoded(encoded)
+        words = result.split(":")
+        dict1 = {}
+        if len(words) > 0:
+            for word in words:
+                w = word.split("=")
+                if len(w) > 0:
+                    dict1[w[0]] = w[1]
+        return dict1
+
+    def _epaybg_form_get_tx_from_data(self, cr, uid, data, context=None):
+        encoded, checksum = data.get('encoded'), data.get('checksum')
+        if not encoded or not checksum:
+            error_msg = _('Epaybg: received data with missing encoded (%s) or missing checksum (%s)') % (encoded, checksum)
+            _logger.info(error_msg)
+            raise ValidationError(error_msg)
+
+        epay_decoded_result = self.epay_decoded_result(encoded)
+        payment_transaction_id = int(epay_decoded_result['INVOICE'])
+
+        # find tx
+        tx_ids = self.pool['payment.transaction'].search(cr, uid, [('id', '=', payment_transaction_id)], context=context)
+        if not tx_ids or len(tx_ids) > 1:
+            error_msg = _('Epaybg: received data for encoded %s') % (encoded)
+            if not tx_ids:
+                error_msg += _('; no order found')
+            else:
+                error_msg += _('; multiple order found')
+            _logger.info(error_msg)
+            raise ValidationError(error_msg)
+        tx = self.pool['payment.transaction'].browse(cr, uid, tx_ids[0], context=context)
+
+        # verify hmac
+        hmac = self._epaybg_generate_merchant_checksum(tx.acquirer_id.epaybg_merchant_account.encode('utf-8'), encoded)
+        if hmac != checksum:
+            error_msg = _('Epaybg: invalid checksum, received %s, computed %s') % (data.get('checksum'), hmac)
+            _logger.warning(error_msg)
+            raise ValidationError(error_msg)
+
+        return tx
+
+    def _epaybg_form_get_invalid_parameters(self, cr, uid, tx, data, context=None):
+        invalid_parameters = []
+
+        # # reference at acquirer: pspReference
+        # if tx.acquirer_reference and data.get('pspReference') != tx.acquirer_reference:
+        #     invalid_parameters.append(('pspReference', data.get('pspReference'), tx.acquirer_reference))
+        # # seller
+        # if data.get('skinCode') != tx.acquirer_id.adyen_skin_code:
+        #     invalid_parameters.append(('skinCode', data.get('skinCode'), tx.acquirer_id.adyen_skin_code))
+        # # result
+        # if not data.get('authResult'):
+        #     invalid_parameters.append(('authResult', data.get('authResult'), 'something'))
+
+        return invalid_parameters
+
+    def _epay_form_validate(self, cr, uid, tx, data, context=None):
+
+        _logger.critical(data)
+
+        status = data.get('authResult', 'PENDING')
+        if status == 'AUTHORISED':
+            tx.write({
+                'state': 'done',
+                'acquirer_reference': data.get('encoded'),
+            })
+            return True
+        elif status == 'PENDING':
+            tx.write({
+                'state': 'pending',
+                'acquirer_reference': data.get('checksum'),
+            })
+            return True
+        else:
+            error = _('Epaybg: feedback error')
+            _logger.info(error)
+            tx.write({
+                'state': 'error',
+                'state_message': error
+            })
+            return False
