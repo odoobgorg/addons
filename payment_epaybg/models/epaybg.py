@@ -145,7 +145,7 @@ class TxEpaybg(osv.Model):
             raise ValidationError(error_msg)
         tx = self.pool['payment.transaction'].browse(cr, uid, tx_ids[0], context=context)
 
-        # verify hmac
+        # verify hmac w
         hmac = self.epaybg_generate_merchant_checksum(tx.acquirer_id.epaybg_merchant_account.encode('utf-8'), encoded)
         if hmac != checksum:
             error_msg = _('Epaybg: invalid checksum, received %s, computed %s') % (data.get('checksum'), hmac)
