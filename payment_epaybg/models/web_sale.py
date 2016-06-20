@@ -18,12 +18,8 @@ class websiteSale(http.Controller):
 
         if transaction_id is None:
             tx = request.website.sale_get_transaction()
-            _logger.critical("if")
-            _logger.critical(tx)
         else:
             tx = request.registry['payment.transaction'].browse(cr, uid, transaction_id, context=context)
-            _logger.critical("else")
-            _logger.critical(tx)
 
         if sale_order_id is None:
             order = request.website.sale_get_order(context=context)
@@ -46,6 +42,7 @@ class websiteSale(http.Controller):
         # clean context and session, then redirect to the confirmation page
         request.website.sale_reset(context=context)
         if tx and tx.state == 'draft':
+            _logger.critical(tx.state)
             return request.redirect('/shop')
 
         return request.redirect('/shop/confirmation')
