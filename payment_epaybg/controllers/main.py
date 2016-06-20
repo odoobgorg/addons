@@ -77,6 +77,8 @@ class EpaybgController(http.Controller):
             _logger.info(error_msg)
             raise ValidationError(error_msg)
 
+        epay_decoded_result = pprint.pformat(epay_decoded_result)
+
         if not tx:
             # XXX if not recognise this invoice
             status = 'NO'
@@ -99,7 +101,7 @@ class EpaybgController(http.Controller):
             status = 'ERR'
 
             tx.write({
-                'state': 'pending',
+                'state': 'cancel',
                 'acquirer_reference': epay_decoded_result,
             })
 
