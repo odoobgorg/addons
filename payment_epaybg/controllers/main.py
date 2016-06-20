@@ -36,10 +36,8 @@ class EpaybgController(http.Controller):
         cr, uid, context = request.cr, request.uid, request.context
         tx_ids = request.registry['payment.transaction'].search(cr, uid, [('id', '=', tx_id), ('state', '=', 'done')], context=context)
 
-        res = False
         if not tx_ids:
-            res = request.registry['payment.transaction'].form_feedback(request.cr, SUPERUSER_ID, post, 'epaybg', context=request.context)
+            request.registry['payment.transaction'].form_feedback(request.cr, SUPERUSER_ID, post, 'epaybg', context=request.context)
 
-        _logger.critical(res)  # debug
         _logger.info('END epaybg_notification form_feedback with info data %s', info_data)  # debug
         return info_data

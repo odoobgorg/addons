@@ -174,29 +174,30 @@ class TxEpaybg(osv.Model):
         _logger.info('START _epaybg_form_validate')
         encoded, checksum = data.get('encoded'), data.get('checksum')
         epay_decoded_result = self.epay_decoded_result(encoded)
-        epay_decoded_pformat = pprint.pformat(epay_decoded_result)
+        # epay_decoded_pformat = pprint.pformat(epay_decoded_result)
 
         status = epay_decoded_result['STATUS']
+        tx_id = epay_decoded_result['INVOICE']
 
         if status == 'PAID':
             # XXX if OK for this invoice
             tx.write({
                 'state': 'done',
-                'acquirer_reference': epay_decoded_pformat,
+                'acquirer_reference': tx_id,
             })
             result = True
         elif status == 'DENIED' or status == 'EXPIRED':
             # XXX if OK for this invoice
             tx.write({
                 'state': 'cancel',
-                'acquirer_reference': epay_decoded_pformat,
+                'acquirer_reference': tx_id,
             })
             result = False
         else:
             # XXX if error for this invoice
             tx.write({
                 'state': 'error',
-                'acquirer_reference': epay_decoded_pformat,
+                'acquirer_reference': tx_id,
             })
             result = False
         _logger.info('END _epaybg_form_validate with result: %s', result)
