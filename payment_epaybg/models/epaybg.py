@@ -134,6 +134,8 @@ class TxEpaybg(osv.Model):
         epay_decoded_result = self.epay_decoded_result(encoded)
         payment_transaction_id = int(epay_decoded_result['INVOICE'])
 
+        _logger.critical(epay_decoded_result)
+
         # find tx
         tx_ids = self.pool['payment.transaction'].search(cr, uid, [('id', '=', payment_transaction_id)], context=context)
         if not tx_ids or len(tx_ids) > 1:
