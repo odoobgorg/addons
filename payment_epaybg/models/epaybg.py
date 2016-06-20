@@ -152,6 +152,10 @@ class TxEpaybg(osv.Model):
             _logger.warning(error_msg)
             raise ValidationError(error_msg)
 
+        _logger.critical("START _epaybg_form_get_tx_from_data")
+        _logger.critical(tx)
+        _logger.critical("END _epaybg_form_get_tx_from_data")
+
         return tx
 
     def _epaybg_form_get_invalid_parameters(self, cr, uid, tx, data, context=None):
