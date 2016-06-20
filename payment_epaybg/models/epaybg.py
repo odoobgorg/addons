@@ -106,6 +106,9 @@ class TxEpaybg(osv.Model):
     # FORM RELATED METHODS
     # --------------------------------------------------
 
+    def epaybg_generate_merchant_checksum(self, merchant_account, encoded):
+        return hmac.new(merchant_account, encoded, sha1).hexdigest()
+
     def epaybg_generate_merchant_decoded(self, encoded):
         return base64.b64decode(encoded)
 
@@ -143,7 +146,7 @@ class TxEpaybg(osv.Model):
         tx = self.pool['payment.transaction'].browse(cr, uid, tx_ids[0], context=context)
 
         # verify hmac
-        hmac = self._epaybg_generate_merchant_checksum(tx.acquirer_id.epaybg_merchant_account.encode('utf-8'), encoded)
+        hmac = self.epaybg_generate_merchant_checksum(tx.acquirer_id.epaybg_merchant_account.encode('utf-8'), encoded)
         if hmac != checksum:
             error_msg = _('Epaybg: invalid checksum, received %s, computed %s') % (data.get('checksum'), hmac)
             _logger.warning(error_msg)
