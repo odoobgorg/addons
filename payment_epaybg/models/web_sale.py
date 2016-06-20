@@ -12,18 +12,18 @@ class websiteSale(http.Controller):
 
          - UDPATE ME
         """
-
-        _logger.critical("websiteSale:")
-        _logger.critical(transaction_id)
-
         cr, uid, context = request.cr, request.uid, request.context
         email_act = None
         sale_order_obj = request.registry['sale.order']
 
         if transaction_id is None:
             tx = request.website.sale_get_transaction()
+            _logger.critical("if")
+            _logger.critical(tx)
         else:
             tx = request.registry['payment.transaction'].browse(cr, uid, transaction_id, context=context)
+            _logger.critical("else")
+            _logger.critical(tx)
 
         if sale_order_id is None:
             order = request.website.sale_get_order(context=context)
