@@ -33,4 +33,6 @@ class EpaybgController(http.Controller):
 
         info_data = "INVOICE=%s:STATUS=%s\n" % (epay_decoded_result['INVOICE'], status)
 
+        _logger.info(info_data)
+
         return info_data
