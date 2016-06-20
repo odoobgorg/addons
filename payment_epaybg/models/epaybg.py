@@ -145,16 +145,12 @@ class TxEpaybg(osv.Model):
             raise ValidationError(error_msg)
         tx = self.pool['payment.transaction'].browse(cr, uid, tx_ids[0], context=context)
 
-        # verify hmac w
+        # verify hmac
         hmac = self.epaybg_generate_merchant_checksum(tx.acquirer_id.epaybg_merchant_account.encode('utf-8'), encoded)
         if hmac != checksum:
             error_msg = _('Epaybg: invalid checksum, received %s, computed %s') % (data.get('checksum'), hmac)
             _logger.warning(error_msg)
             raise ValidationError(error_msg)
-
-        _logger.critical("START _epaybg_form_get_tx_from_data")
-        _logger.critical(tx)
-        _logger.critical("END _epaybg_form_get_tx_from_data")
 
         return tx
 
@@ -173,7 +169,7 @@ class TxEpaybg(osv.Model):
 
         return invalid_parameters
 
-    def _epay_form_validate(self, cr, uid, tx, data, context=None):
+    def _epaybg_form_validate(self, cr, uid, tx, data, context=None):
 
         _logger.critical("START _epay_form_validate")
         _logger.critical(data)
