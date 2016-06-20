@@ -77,7 +77,7 @@ class EpaybgController(http.Controller):
             _logger.info(error_msg)
             raise ValidationError(error_msg)
 
-        epay_decoded_result = pprint.pformat(epay_decoded_result)
+        epay_decoded_pformat = pprint.pformat(epay_decoded_result)
 
         if not tx:
             # XXX if not recognise this invoice
@@ -86,7 +86,7 @@ class EpaybgController(http.Controller):
             # error = _('Epaybg: feedback error')
             tx.write({
                 'state': 'error',
-                'state_message': epay_decoded_result
+                'state_message': epay_decoded_pformat
             })
         elif epay_decoded_result['STATUS'] == 'PAID':
             # XXX if OK for this invoice
@@ -94,7 +94,7 @@ class EpaybgController(http.Controller):
 
             tx.write({
                 'state': 'done',
-                'acquirer_reference': epay_decoded_result,
+                'acquirer_reference': epay_decoded_pformat,
             })
         else:
             # XXX if error for this invoice
@@ -102,7 +102,7 @@ class EpaybgController(http.Controller):
 
             tx.write({
                 'state': 'cancel',
-                'acquirer_reference': epay_decoded_result,
+                'acquirer_reference': epay_decoded_pformat,
             })
 
         info_data = "INVOICE=%s:STATUS=%s\n" % (tx_id, status)
