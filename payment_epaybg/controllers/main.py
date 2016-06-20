@@ -46,14 +46,14 @@ class EpaybgController(http.Controller):
                     dict1[w[0]] = w[1]
         return dict1
 
-    @http.route([
-        '/payment/epaybg/return',
-    ], type='http', auth='none', csrf=False)
-    def epaybg_return(self, **post):
-        _logger.info('Beginning epaybg_return form_feedback with post data %s', pprint.pformat(post))  # debug
-        return_url = self._get_return_url(**post)
-        request.registry['payment.transaction'].form_feedback(request.cr, SUPERUSER_ID, post, 'epaybg', context=request.context)
-        return werkzeug.utils.redirect(return_url)
+    # @http.route([
+    #     '/payment/epaybg/return',
+    # ], type='http', auth='none', csrf=False)
+    # def epaybg_return(self, **post):
+    #     _logger.info('Beginning epaybg_return form_feedback with post data %s', pprint.pformat(post))  # debug
+    #     return_url = self._get_return_url(**post)
+    #     request.registry['payment.transaction'].form_feedback(request.cr, SUPERUSER_ID, post, 'epaybg', context=request.context)
+    #     return werkzeug.utils.redirect(return_url)
 
     @http.route([
         '/payment/epaybg/notification',
