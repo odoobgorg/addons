@@ -28,10 +28,7 @@ class EpaybgController(http.Controller):
         _logger.info('Beginning epaybg_notification form_feedback with post data %s', pprint.pformat(post))  # debug
         request.registry['payment.transaction'].form_feedback(request.cr, SUPERUSER_ID, post, 'epaybg', context=request.context)
 
-        _logger.critical("START epaybg_notification")
         epay_decoded_result = request.registry['payment.transaction'].epay_decoded_result(post.get('encoded'))
-        _logger.critical(epay_decoded_result)
-        _logger.critical("END epaybg_notification")
 
         tx_id = epay_decoded_result['INVOICE']
         status = epay_decoded_result['STATUS']
