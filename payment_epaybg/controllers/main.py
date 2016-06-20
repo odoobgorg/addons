@@ -39,7 +39,7 @@ class EpaybgController(http.Controller):
         resp = uopen.read()
         if resp == 'VERIFIED':
             _logger.info('Paypal: validated data')
-            res = request.registry['payment.transaction'].form_feedback(cr, SUPERUSER_ID, post, 'paypal', context=context)
+            res = request.registry['payment.transaction'transaction].form_feedback(cr, SUPERUSER_ID, post, 'paypal', context=context)
         elif resp == 'INVALID':
             _logger.warning('Paypal: answered INVALID on data verification')
         else:
@@ -54,7 +54,7 @@ class EpaybgController(http.Controller):
         request.registry['payment.transaction'].form_feedback(request.cr, SUPERUSER_ID, post, 'epaybg', context=request.context)
 
         _logger.critical("START epaybg_notification")
-        epay_decoded_result = request.registry['payment.transaction'].epay_decoded_result(self, post.get('encoded'))
+        epay_decoded_result = request.registry['payment.transaction'].epay_decoded_result(post.get('encoded'))
         _logger.critical(epay_decoded_result)
         _logger.critical("END epaybg_notification")
 
