@@ -29,11 +29,11 @@ class EpaybgController(http.Controller):
             return_url = custom.get('return_url', '/')
         return return_url
 
-    def _epaybg_generate_merchant_decoded(self, encoded):
-        return base64.b64decode(encoded)
-
-    def _epaybg_generate_merchant_checksum(self, merchant_account, encoded):
-        return hmac.new(merchant_account, encoded, sha1).hexdigest()
+    # def _epaybg_generate_merchant_decoded(self, encoded):
+    #     return base64.b64decode(encoded)
+    #
+    # def _epaybg_generate_merchant_checksum(self, merchant_account, encoded):
+    #     return hmac.new(merchant_account, encoded, sha1).hexdigest()
 
     # def epay_decoded_result(self, encoded):
     #     result = self._epaybg_generate_merchant_decoded(encoded)
@@ -59,6 +59,8 @@ class EpaybgController(http.Controller):
         # tx_id = int(epay_decoded_result['INVOICE'])
 
         request.registry['payment.transaction'].form_feedback(request.cr, SUPERUSER_ID, post, 'epaybg', context=request.context)
+
+        info_data = False
 
         # tx = request.registry['payment.transaction'].browse(request.cr, SUPERUSER_ID, tx_id, context=request.context)
         #

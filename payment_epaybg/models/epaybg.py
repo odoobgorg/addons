@@ -171,7 +171,9 @@ class TxEpaybg(osv.Model):
 
     def _epay_form_validate(self, cr, uid, tx, data, context=None):
 
+        _logger.critical("START _epay_form_validate")
         _logger.critical(data)
+        _logger.critical("END _epay_form_validate")
 
         status = data.get('authResult', 'PENDING')
         if status == 'AUTHORISED':
