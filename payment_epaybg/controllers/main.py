@@ -38,6 +38,28 @@ class EpaybgController(http.Controller):
         if tx_ids:
             tx = request.registry['payment.transaction'].browse(cr, uid, tx_ids[0], context=context)
             _logger.critical(tx.state)
+            if status == 'PAID':
+                # XXX if OK for this invoice
+                tx.write({
+                    'state': 'done',
+                    'acquirer_reference': tx_id,
+                    'state_message': epay_decoded_pformat,
+                })
+            elif status == 'DENIED' or status == 'EXPIRED':
+                # XXX if OK for this invoice
+                tx.write({
+                    'state': 'cancel',
+                    'acquirer_reference': tx_id,
+                    'state_message': epay_decoded_pformat,
+                })
+            else:
+                # XXX if error for this invoice
+                tx.write({
+                    'state': 'error',
+                    'acquirer_reference': tx_id,
+                    'state_message': epay_decoded_pformat,
+                })
+            _logger.critical(tx.state)
 
         if status == 'PAID':
             epay_status = 'OK'

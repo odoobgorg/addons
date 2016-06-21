@@ -176,27 +176,27 @@ class TxEpaybg(osv.Model):
 
         if status == 'PAID':
             # XXX if OK for this invoice
-            tx.write({
-                'state': 'done',
-                'acquirer_reference': tx_id,
-                'state_message': epay_decoded_pformat,
-            })
+            # tx.write({
+            #     'state': 'done',
+            #     'acquirer_reference': tx_id,
+            #     'state_message': epay_decoded_pformat,
+            # })
             result = True
         elif status == 'DENIED' or status == 'EXPIRED':
             # XXX if OK for this invoice
-            tx.write({
-                'state': 'cancel',
-                'acquirer_reference': tx_id,
-                'state_message': epay_decoded_pformat,
-            })
+            # tx.write({
+            #     'state': 'cancel',
+            #     'acquirer_reference': tx_id,
+            #     'state_message': epay_decoded_pformat,
+            # })
             result = False
         else:
-            # XXX if error for this invoice
-            tx.write({
-                'state': 'error',
-                'acquirer_reference': tx_id,
-                'state_message': epay_decoded_pformat,
-            })
+            # # XXX if error for this invoice
+            # tx.write({
+            #     'state': 'error',
+            #     'acquirer_reference': tx_id,
+            #     'state_message': epay_decoded_pformat,
+            # })
             result = False
 
         _logger.info(tx.state)
