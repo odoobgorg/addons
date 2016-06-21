@@ -91,7 +91,8 @@ class AcquirerEpaybg(osv.Model):
             'checksum': self._epaybg_generate_merchant_checksum(acquirer.epaybg_merchant_account.encode('utf-8'),
                                                                 encoded),
             'urlOK': return_url,
-            'urlCancel': return_url,
+            # 'urlCancel': return_url,
+            'urlCancel': '%s' % urlparse.urljoin(base_url, EpaybgController._cancel_url),
         })
 
         return values

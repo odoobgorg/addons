@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# import json
+import json
 import logging
 import pprint
 import werkzeug
@@ -48,7 +48,7 @@ class EpaybgController(http.Controller):
         _logger.info('Beginning epaybg_notification form_feedback with post data %s', pprint.pformat(post))  # debug
         return self.epaybg_validate_data(**post)
 
-    @http.route('/payment/epaybg/feedback', type='http', auth="none", methods=['GET'], csrf=False)
+    @http.route('/payment/epaybg/feedback', type='http', auth="none", methods=['POST'], csrf=False)
     def epaybg_feedback(self, **post):
         _logger.info('Beginning epaybg_feedback form_feedback with post data %s', pprint.pformat(post))  # debug
         return_url = self._get_return_url(**post)
