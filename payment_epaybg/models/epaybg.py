@@ -174,6 +174,7 @@ class TxEpaybg(osv.Model):
 
     def _epaybg_form_validate(self, cr, uid, tx, data, context=None):
         _logger.info('START _epaybg_form_validate')
+        _logger.info(context)
 
         encoded, checksum = data.get('encoded'), data.get('checksum')
         epay_decoded_result = self.epay_decoded_result(encoded)
