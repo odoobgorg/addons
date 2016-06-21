@@ -91,8 +91,8 @@ class AcquirerEpaybg(osv.Model):
             'checksum': self._epaybg_generate_merchant_checksum(acquirer.epaybg_merchant_account.encode('utf-8'),
                                                                 encoded),
             'urlOK': return_url,
-            # 'urlCancel': return_url,
-            'urlCancel': '%s' % urlparse.urljoin(base_url, EpaybgController._cancel_url),
+            'urlCancel': return_url,
+            # 'urlCancel': '%s' % urlparse.urljoin(base_url, EpaybgController._cancel_url),
         })
 
         return values
@@ -161,17 +161,6 @@ class TxEpaybg(osv.Model):
 
     def _epaybg_form_get_invalid_parameters(self, cr, uid, tx, data, context=None):
         invalid_parameters = []
-
-        # # reference at acquirer: pspReference
-        # if tx.acquirer_reference and data.get('pspReference') != tx.acquirer_reference:
-        #     invalid_parameters.append(('pspReference', data.get('pspReference'), tx.acquirer_reference))
-        # # seller
-        # if data.get('skinCode') != tx.acquirer_id.adyen_skin_code:
-        #     invalid_parameters.append(('skinCode', data.get('skinCode'), tx.acquirer_id.adyen_skin_code))
-        # # result
-        # if not data.get('authResult'):
-        #     invalid_parameters.append(('authResult', data.get('authResult'), 'something'))
-
         return invalid_parameters
 
     def _epaybg_form_validate(self, cr, uid, tx, data, context=None):
