@@ -39,6 +39,8 @@ class websiteSale(http.Controller):
             # cancel the quotation
             sale_order_obj.action_cancel(cr, SUPERUSER_ID, [order.id], context=request.context)
 
+        _logger.info(tx.state)
+
         # clean context and session, then redirect to the confirmation page
         request.website.sale_reset(context=context)
         if tx and tx.state == 'draft':
