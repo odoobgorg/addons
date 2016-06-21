@@ -28,15 +28,15 @@ class EpaybgController(http.Controller):
 
         if status == 'PAID':
             epay_status = 'OK'
-            our_status = 'done'
+            our_status = done
         elif status in ['DENIED', 'EXPIRED']:
             epay_status = 'OK'
-            our_status = 'cancel'
+            our_status = cancel
         else:
             epay_status = 'ERR'
-            our_status = 'error'
+            our_status = 'error
 
-        request.registry['payment.transaction'].form_feedback(request.cr, SUPERUSER_ID, post, 'epaybg', context=our_status)
+        request.registry['payment.transaction'].form_feedback(request.cr, SUPERUSER_ID, post, 'epaybg', our_status)
 
         info_data = "INVOICE=%s:STATUS=%s\n" % (tx_id, epay_status)
 
