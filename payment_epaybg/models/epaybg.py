@@ -59,14 +59,14 @@ class AcquirerEpaybg(osv.Model):
         # tmp_date = datetime.date.today() + relativedelta.relativedelta(days=1)
         tmp_date = datetime.datetime.now() + relativedelta.relativedelta(days=1)
 
-        return_url = '%s' % urlparse.urljoin(base_url, EpaybgController._return_url)
-
+        return_url = False
         item_number = False
         if values['reference']:
             tx_id = self.pool['payment.transaction'].search(cr, uid, [('reference', '=', values['reference'])],
                                                             context=context)
             if tx_id and len(tx_id) == 1:
                 item_number = str(tx_id[0])
+                return_url = '%s/%s' % (urlparse.urljoin(base_url, EpaybgController._return_url), item_number)
 
         item_name = '%s: %s /%s' % (
             acquirer.company_id.name,
