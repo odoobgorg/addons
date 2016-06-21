@@ -36,7 +36,7 @@ class EpaybgController(http.Controller):
             epay_status = 'ERR'
             our_state = 'error'
 
-        request.registry['payment.transaction'].form_feedback(request.cr, SUPERUSER_ID, post, 'epaybg', {'our_state': our_state})
+        request.registry['payment.transaction'].form_feedback(request.cr, SUPERUSER_ID, post, 'epaybg', context={'our_state': our_state})
 
         info_data = "INVOICE=%s:STATUS=%s\n" % (tx_id, epay_status)
 
