@@ -52,7 +52,7 @@ class EpaybgController(http.Controller):
     def epaybg_feedback(self, **post):
         _logger.info('Beginning epaybg_feedback form_feedback with post data %s', pprint.pformat(post))  # debug
         return_url = self._get_return_url(**post)
-        self.epaybg_validate_data(**post)
+        # self.epaybg_validate_data(**post)
         return werkzeug.utils.redirect(return_url)
 
     @http.route('/payment/epaybg/cancel', type='http', auth="none", csrf=False)
