@@ -37,7 +37,7 @@ class EpaybgController(http.Controller):
             our_status = 'error'
 
         cr, uid, context = request.cr, request.uid, request.context
-        tx = request.registry['payment.transaction'].browse(cr, uid, [('id', '=', tx_id)], context=context)
+        tx = request.registry['payment.transaction'].browse(cr, uid, tx_id, context=context)
 
         if tx and tx.state != our_status:
             request.registry['payment.transaction'].form_feedback(request.cr, SUPERUSER_ID, post, 'epaybg', context=context)
