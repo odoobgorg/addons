@@ -38,6 +38,8 @@ class EpaybgController(http.Controller):
         if tx_ids:
             tx = request.registry['payment.transaction'].browse(cr, uid, tx_ids[0], context=context)
             _logger.critical(tx.state)
+
+            epay_decoded_pformat = pprint.pformat(epay_decoded_result)
             if status == 'PAID':
                 # XXX if OK for this invoice
                 tx.write({
