@@ -59,7 +59,7 @@ class AcquirerEpaybg(osv.Model):
         # tmp_date = datetime.date.today() + relativedelta.relativedelta(days=1)
         tmp_date = datetime.datetime.now() + relativedelta.relativedelta(days=1)
 
-        return_url = '%s' % urlparse.urljoin(base_url, EpaybgController._accept_url)
+        return_url = '%s' % urlparse.urljoin(base_url, EpaybgController._return_url)
 
         item_number = False
         if values['reference']:
