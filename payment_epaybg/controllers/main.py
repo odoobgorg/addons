@@ -25,6 +25,10 @@ class EpaybgController(http.Controller):
 
         cr, uid, context = request.cr, request.uid, request.context
         request.registry['payment.transaction']._epaybg_form_get_tx_from_data(cr, uid, post, context=None)
+
+        import time
+        time.sleep(3)
+
         request.registry['payment.transaction'].form_feedback(request.cr, SUPERUSER_ID, post, 'epaybg', context=context)
 
         epay_decoded_result = request.registry['payment.transaction'].epay_decoded_result(post.get('encoded'))
