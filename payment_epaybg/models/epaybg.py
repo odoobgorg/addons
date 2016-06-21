@@ -125,6 +125,7 @@ class TxEpaybg(osv.Model):
         return dict1
 
     def _epaybg_form_get_tx_from_data(self, cr, uid, data, context=None):
+        _logger.info('START _epaybg_form_get_tx_from_data')
         encoded, checksum = data.get('encoded'), data.get('checksum')
         if not encoded or not checksum:
             error_msg = _('Epaybg: received data with missing encoded (%s) or missing checksum (%s)') % (encoded, checksum)
@@ -155,6 +156,7 @@ class TxEpaybg(osv.Model):
             _logger.warning(error_msg)
             raise ValidationError(error_msg)
 
+        _logger.info('END _epaybg_form_get_tx_from_data')
         return tx
 
     def _epaybg_form_get_invalid_parameters(self, cr, uid, tx, data, context=None):
@@ -174,6 +176,7 @@ class TxEpaybg(osv.Model):
 
     def _epaybg_form_validate(self, cr, uid, tx, data, context=None):
         _logger.info('START _epaybg_form_validate')
+        _logger.critical(tx)
         encoded, checksum = data.get('encoded'), data.get('checksum')
         epay_decoded_result = self.epay_decoded_result(encoded)
         epay_decoded_pformat = pprint.pformat(epay_decoded_result)
