@@ -23,9 +23,12 @@ class EpaybgController(http.Controller):
     def epaybg_form_feedback(self, **post):
         _logger.info('START epaybg_form_feedback with post data %s', pprint.pformat(post))  # debug
 
+        cr, uid, context = request.cr, request.uid, request.context
+        request.registry['payment.transaction'].form_feedback(cr, uid, post, 'epaybg', context)
+
         # cr, uid, context = request.cr, request.uid, request.context
         # request.registry['payment.transaction']._epaybg_form_get_tx_from_data(cr, uid, post, context=None)
-        request.registry['payment.transaction'].form_feedback(request.cr, SUPERUSER_ID, post, 'epaybg', context=request.context)
+        # request.registry['payment.transaction'].form_feedback(request.cr, SUPERUSER_ID, post, 'epaybg', context=request.context)
 
         epay_decoded_result = request.registry['payment.transaction'].epay_decoded_result(post.get('encoded'))
         status = epay_decoded_result['STATUS'].rstrip(os.linesep)
