@@ -34,7 +34,7 @@ class EpaybgController(http.Controller):
             our_status = cancel
         else:
             epay_status = 'ERR'
-            our_status = 'error
+            our_status = 'error'
 
         request.registry['payment.transaction'].form_feedback(request.cr, SUPERUSER_ID, post, 'epaybg', our_status)
 
