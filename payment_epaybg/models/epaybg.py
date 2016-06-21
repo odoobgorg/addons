@@ -66,7 +66,8 @@ class AcquirerEpaybg(osv.Model):
                                                             context=context)
             if tx_id and len(tx_id) == 1:
                 item_number = str(tx_id[0])
-                return_url = '%s/%s' % (urlparse.urljoin(base_url, EpaybgController._return_url), item_number)
+                # return_url = '%s/%s' % (urlparse.urljoin(base_url, EpaybgController._return_url), item_number)
+                return_url = '%s' % urlparse.urljoin(base_url, EpaybgController._return_url)
 
         item_name = '%s: %s /%s' % (
             acquirer.company_id.name,
