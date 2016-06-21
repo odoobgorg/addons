@@ -39,6 +39,7 @@ class websiteSale(http.Controller):
             # cancel the quotation
             sale_order_obj.action_cancel(cr, SUPERUSER_ID, [order.id], context=request.context)
 
+        _logger.info('payment_validate')
         _logger.info(tx.state)
 
         # clean context and session, then redirect to the confirmation page
