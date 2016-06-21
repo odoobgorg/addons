@@ -32,6 +32,13 @@ class EpaybgController(http.Controller):
         epay_decoded_result = request.registry['payment.transaction'].epay_decoded_result(post.get('encoded'))
         status = epay_decoded_result['STATUS'].rstrip(os.linesep)
         tx_id = epay_decoded_result['INVOICE'].rstrip(os.linesep)
+
+        cr, uid, context = request.cr, request.uid, request.context
+        tx_ids = request.registry['payment.transaction'].search(cr, uid, [('id', '=', tx_id)], context=context)
+        if tx_ids:
+            tx = request.registry['payment.transaction'].browse(cr, uid, tx_id, context=context)
+        _logger.critical(tx.state)
+
         if status == 'PAID':
             epay_status = 'OK'
         elif status in ['DENIED', 'EXPIRED']:
@@ -48,16 +55,16 @@ class EpaybgController(http.Controller):
         _logger.info('Beginning epaybg_notification form_feedback with post data %s', pprint.pformat(post))  # debug
         return self.epaybg_validate_data(**post)
 
-    @http.route('/payment/epaybg/feedback', type='http', auth="none", methods=['POST'], csrf=False)
-    def epaybg_feedback(self, **post):
-        _logger.info('Beginning epaybg_feedback form_feedback with post data %s', pprint.pformat(post))  # debug
-        return_url = self._get_return_url(**post)
-        # self.epaybg_validate_data(**post)
-        return werkzeug.utils.redirect(return_url)
+    # @http.route('/payment/epaybg/feedback', type='http', auth="none", methods=['POST'], csrf=False)
+    # def epaybg_feedback(self, **post):
+    #     _logger.info('Beginning epaybg_feedback form_feedback with post data %s', pprint.pformat(post))  # debug
+    #     return_url = self._get_return_url(**post)
+    #     # self.epaybg_validate_data(**post)
+    #     return werkzeug.utils.redirect(return_url)
 
-    @http.route('/payment/epaybg/cancel', type='http', auth="none", csrf=False)
-    def epaybg_cancel(self, **post):
-        cr, uid, context = request.cr, SUPERUSER_ID, request.context
-        _logger.info('Beginning epaybg_cancel with post data %s', pprint.pformat(post))  # debug
-        return_url = self._get_return_url(**post)
-        return werkzeug.utils.redirect(return_url)
+    # @http.route('/payment/epaybg/cancel', type='http', auth="none", csrf=False)
+    # def epaybg_cancel(self, **post):
+    #     cr, uid, context = request.cr, SUPERUSER_ID, request.context
+    #     _logger.info('Beginning epaybg_cancel with post data %s', pprint.pformat(post))  # debug
+    #     return_url = self._get_return_url(**post)
+    #     return werkzeug.utils.redirect(return_url)
