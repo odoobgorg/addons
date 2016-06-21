@@ -36,12 +36,13 @@ class EpaybgController(http.Controller):
         cr, uid, context = request.cr, request.uid, request.context
         tx_ids = request.registry['payment.transaction'].search(cr, uid, [('id', '=', tx_id)], context=context)
         if tx_ids:
-            tx = request.registry['payment.transaction'].browse(cr, uid, tx_ids[0], context=context)
-            _logger.critical(tx.state)
 
             request.registry['payment.transaction'].form_feedback(request.cr, SUPERUSER_ID, post, 'epaybg', request.context)
 
+            tx = request.registry['payment.transaction'].browse(request.cr, SUPERUSER_ID, tx_ids[0], context=context)
+
             epay_decoded_pformat = pprint.pformat(epay_decoded_result)
+            _logger.critical(tx.state)
             if status == 'PAID':
                 # XXX if OK for this invoice
                 tx.write({
