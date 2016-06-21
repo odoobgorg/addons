@@ -5,7 +5,6 @@ import logging
 import pprint
 # import werkzeug
 # import base64
-import werkzeug
 
 from openerp import http, SUPERUSER_ID
 from openerp.http import request
