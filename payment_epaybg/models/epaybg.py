@@ -135,8 +135,6 @@ class TxEpaybg(osv.Model):
         epay_decoded_result = self.epay_decoded_result(encoded)
         payment_transaction_id = int(epay_decoded_result['INVOICE'])
 
-        _logger.critical(epay_decoded_result)
-
         # find tx
         tx_ids = self.pool['payment.transaction'].search(cr, uid, [('id', '=', payment_transaction_id)], context=context)
         if not tx_ids or len(tx_ids) > 1:
@@ -176,7 +174,6 @@ class TxEpaybg(osv.Model):
 
     def _epaybg_form_validate(self, cr, uid, tx, data, context=None):
         _logger.info('START _epaybg_form_validate')
-        _logger.critical(tx)
         encoded, checksum = data.get('encoded'), data.get('checksum')
         epay_decoded_result = self.epay_decoded_result(encoded)
         epay_decoded_pformat = pprint.pformat(epay_decoded_result)
