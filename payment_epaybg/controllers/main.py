@@ -31,7 +31,7 @@ class EpaybgController(http.Controller):
             our_status = done
         elif status in ['DENIED', 'EXPIRED']:
             epay_status = 'OK'
-            our_status = cancel
+            our_status = 'cancel'
         else:
             epay_status = 'ERR'
             our_status = 'error'
