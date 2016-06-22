@@ -172,14 +172,14 @@ class TxEpaybg(osv.Model):
         tx_id = int(epay_decoded_result['INVOICE'].rstrip(os.linesep))
 
         if status == 'PAID':
-            our_status = 'done'
+            epaybg_status = 'done'
         elif status == 'DENIED' or status == 'EXPIRED':
-            our_status = 'cancel'
+            epaybg_status = 'cancel'
         else:
-            our_status = 'error'
+            epaybg_status = 'error'
 
         result = False
-        if tx and tx.state != our_status:
+        if tx and tx.state != epaybg_status:
             _logger.info('OLD transaction state %s', tx.state)
             epay_decoded_pformat = pprint.pformat(epay_decoded_result)
             if status == 'PAID':
