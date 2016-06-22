@@ -47,9 +47,9 @@ class EpaybgController(http.Controller):
                     epay_status = 'ERR'
 
                 request.registry['payment.transaction'].form_feedback(cr, SUPERUSER_ID, post, 'epaybg', context)
-                tx = request.registry['payment.transaction'].browse(request.cr, SUPERUSER_ID, [('id', '=', tx_ids[0]), ('state', '!=', 'draft')], context=context)
+                tx = request.registry['payment.transaction'].browse(request.cr, SUPERUSER_ID, tx_ids[0], context=context)
 
-                if tx:
+                if tx and tx.state != 'draft':
                     epay_decoded_pformat = pprint.pformat(epay_decoded_result)
                     if status == 'PAID':
                         # XXX if OK for this invoice
