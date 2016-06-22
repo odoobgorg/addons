@@ -50,6 +50,7 @@ class EpaybgController(http.Controller):
                 tx = request.registry['payment.transaction'].browse(request.cr, SUPERUSER_ID, tx_ids[0], context=context)
 
                 if tx and tx.state != 'draft':
+                    _logger.info('OLD transaction state %s', tx.state)
                     epay_decoded_pformat = pprint.pformat(epay_decoded_result)
                     if status == 'PAID':
                         # XXX if OK for this invoice
@@ -72,6 +73,7 @@ class EpaybgController(http.Controller):
                             'acquirer_reference': tx_id,
                             'state_message': epay_decoded_pformat,
                         })
+                    _logger.info('New transaction state %s', tx.state)
 
                 info_data = "INVOICE=%s:STATUS=%s\n" % (tx_id, epay_status)
 
