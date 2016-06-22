@@ -53,8 +53,8 @@ class EpaybgController(http.Controller):
         _logger.info('Beginning epaybg_notification form_feedback with post data %s', pprint.pformat(post))  # debug
         return self.epaybg_validate_data(**post)
 
-    @http.route('/payment/epaybg/feedback/<id>', type='http', auth="none", csrf=False)
-    def epaybg_feedback(self, id):
+    @http.route('/payment/epaybg/feedback/<tx_id>', type='http', auth="none", csrf=False)
+    def epaybg_feedback(self, tx_id):
         # _logger.info('Beginning Epay.bg feedback with post data %s', pprint.pformat(post))  # debug
         _logger.info('Beginning Epay.bg feedback with tx_id %s', id)  # debug
 
