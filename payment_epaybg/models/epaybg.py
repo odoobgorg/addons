@@ -178,6 +178,7 @@ class TxEpaybg(osv.Model):
         else:
             our_status = 'error'
 
+        result = False
         if tx and tx.state != our_status:
             _logger.info('OLD transaction state %s', tx.state)
             epay_decoded_pformat = pprint.pformat(epay_decoded_result)
