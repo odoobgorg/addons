@@ -1,13 +1,19 @@
+# import werkzeug
+
 from openerp import SUPERUSER_ID
 from openerp import http
+# from openerp import tools
 from openerp.http import request
+# from openerp.tools.translate import _
+# from openerp.addons.website.models.website import slug
+
 import logging
 _logger = logging.getLogger(__name__)
 
 class websiteSale(http.Controller):
 
-    @http.route('/shop/payment/validate', type='http', auth="public", website=True)
-    def payment_validate(self, transaction_id=None, sale_order_id=None, **post):
+    @http.route('/payment/epaybg/feedback2', type='http', auth="public", website=True)
+    def epaybg_payment_validate(self, transaction_id=None, sale_order_id=None, **post):
         """ Method that should be called by the server when receiving an update
         for a transaction. State at this point :
 
@@ -40,12 +46,10 @@ class websiteSale(http.Controller):
             # cancel the quotation
             sale_order_obj.action_cancel(cr, SUPERUSER_ID, [order.id], context=request.context)
 
-        _logger.info('payment_validate')
-        _logger.info(tx.state)
-
         # clean context and session, then redirect to the confirmation page
         request.website.sale_reset(context=context)
         if tx and tx.state == 'draft':
             return request.redirect('/shop')
 
         return request.redirect('/shop/confirmation')
+

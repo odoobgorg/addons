@@ -199,6 +199,7 @@ class TxEpaybg(osv.Model):
                 'state_message': epay_decoded_pformat,
             })
             result = False
+
         _logger.info('state: %s acquirer_reference: %s state_message: %s', (tx.state, tx.acquirer_reference, tx.state_message))
 
         _logger.info('END _epaybg_form_validate with result: %s', result)

@@ -53,6 +53,10 @@ class EpaybgController(http.Controller):
     def epaybg_feedback(self, **post):
         _logger.info('Beginning Epay.bg feedback with post data %s', pprint.pformat(post))  # debug
         return_url = self._get_return_url()
+
         import time
         time.sleep(1)
+
+        request.website.sale_reset(context=context)
+
         return werkzeug.utils.redirect(return_url)
