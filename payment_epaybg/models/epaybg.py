@@ -91,7 +91,6 @@ class AcquirerEpaybg(osv.Model):
                                                                 encoded),
             'urlOK': return_url,
             'urlCancel': return_url,
-            # 'urlCancel': '%s' % urlparse.urljoin(base_url, EpaybgController._cancel_url),
         })
 
         return values
