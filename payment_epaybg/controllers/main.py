@@ -20,13 +20,18 @@ class EpaybgController(http.Controller):
     def _get_return_url(self, **post):
         """ Extract the return URL from the data coming from epaybg. """
         return_url = post.pop('return_url', '')
+
         if not return_url:
             custom = json.loads(post.pop('custom', False) or '{}')
             return_url = custom.get('return_url', '/')
+            _logger.critical(return_url)
+
+        _logger.critical(return_url)
+
         return return_url
 
     def epaybg_validate_data(self, **post):
-        _logger.info('START epaybg_form_feedback with post data %s', pprint.pformat(post))  # debug
+        _logger.info('START epaybg_validate_data with post data %s', pprint.pformat(post))  # debug
 
         info_data = None
         encoded, checksum = post.get('encoded'), post.get('checksum')
@@ -81,7 +86,7 @@ class EpaybgController(http.Controller):
 
                 info_data = "INVOICE=%s:STATUS=%s\n" % (tx_id, epay_status)
 
-        _logger.info('END epaybg_form_feedback with info data %s', info_data)  # debug
+        _logger.info('END epaybg_validate_data with info data %s', info_data)  # debug
         return info_data
 
     @http.route('/payment/epaybg/notification/', type='http', auth='none', methods=['POST'], csrf=False)
@@ -90,7 +95,6 @@ class EpaybgController(http.Controller):
         return self.epaybg_validate_data(**post)
 
     @http.route('/payment/epaybg/feedback', type='http', auth="none", csrf=False)
-    # @http.route('/shop/payment/validate', type='http', auth="public", website=True)
     def epaybg_feedback(self, **post):
         _logger.info('Beginning Epay.bg feedback with post data %s', pprint.pformat(post))  # debug
         return_url = self._get_return_url(**post)
