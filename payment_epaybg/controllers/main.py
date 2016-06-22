@@ -41,15 +41,18 @@ class EpaybgController(http.Controller):
 
                 if status == 'PAID':
                     epay_status = 'OK'
+                    our_status = 'done'
                 elif status == 'DENIED' or status == 'EXPIRED':
                     epay_status = 'OK'
+                    our_status = 'cancel'
                 else:
                     epay_status = 'ERR'
+                    our_status = 'error'
 
                 request.registry['payment.transaction'].form_feedback(cr, SUPERUSER_ID, post, 'epaybg', context)
                 tx = request.registry['payment.transaction'].browse(request.cr, SUPERUSER_ID, tx_ids[0], context=context)
 
-                if tx and tx.state != 'draft':
+                if tx and tx.state != our_status:
                     _logger.info('OLD transaction state %s', tx.state)
                     epay_decoded_pformat = pprint.pformat(epay_decoded_result)
                     if status == 'PAID':
