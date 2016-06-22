@@ -15,9 +15,6 @@ _logger = logging.getLogger(__name__)
 
 class EpaybgController(http.Controller):
     _return_url = '/shop/payment/validate'
-    # _notify_url = '/payment/epaybg/notification'
-    # _return_url = '/payment/epaybg/feedback'
-    # _cancel_url = '/payment/epaybg/cancel'
 
     def _get_return_url(self, **post):
         """ Extract the return URL from the data coming from epaybg. """
@@ -38,7 +35,7 @@ class EpaybgController(http.Controller):
             tx_id = int(epay_decoded_result['INVOICE'].rstrip(os.linesep))
 
             cr, uid, context = request.cr, request.uid, request.context
-            tx_ids = request.registry['payment.transaction'].search(cr, uid, [('id', '=', tx_id)], context=context)
+            tx_ids = request.registry['payment.transaction'].search(cr, uid, [('id', '=', tx_id), ('state', '!=', 'draft')], context=context)
 
             if tx_ids and len(tx_ids) == 1:
                 request.registry['payment.transaction'].form_feedback(cr, SUPERUSER_ID, post, 'epaybg', context)
