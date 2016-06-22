@@ -173,7 +173,7 @@ class TxEpaybg(osv.Model):
         if status == 'PAID':
             result = True
         elif status == 'DENIED' or status == 'EXPIRED':
-            result = False
+            result = True
         else:
             result = False
 
