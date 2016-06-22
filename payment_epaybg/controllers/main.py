@@ -30,11 +30,10 @@ class EpaybgController(http.Controller):
             tx_id = int(epay_decoded_result['INVOICE'].rstrip(os.linesep))
 
             cr, uid, context = request.cr, request.uid, request.context
-            tx_ids = request.registry['payment.transaction'].search(cr, uid, [('id', '=', tx_id), ('state', '!=', 'draft')], context=context)
+            tx_ids = request.registry['payment.transaction'].search(cr, uid, [('id', '=', tx_id), ('state', '=', 'draft')], context=context)
 
             epay_status = 'ERR'
             if tx_ids and len(tx_ids) == 1 and tx_id == tx_ids[0]:
-
                 request.registry['payment.transaction'].form_feedback(cr, SUPERUSER_ID, post, 'epaybg', context)
                 tx = request.registry['payment.transaction'].browse(request.cr, SUPERUSER_ID, tx_ids[0], context=context)
                 if not tx:
