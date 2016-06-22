@@ -73,7 +73,7 @@ class EpaybgController(http.Controller):
                             'state_message': epay_decoded_pformat,
                         })
 
-            info_data = "INVOICE=%s:STATUS=%s\n" % (tx_id, epay_status)
+                info_data = "INVOICE=%s:STATUS=%s\n" % (tx_id, epay_status)
 
         _logger.info('END epaybg_form_feedback with info data %s', info_data)  # debug
         return info_data
