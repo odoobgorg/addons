@@ -32,46 +32,17 @@ class EpaybgController(http.Controller):
             cr, uid, context = request.cr, request.uid, request.context
             tx_ids = request.registry['payment.transaction'].search(cr, uid, [('id', '=', tx_id)], context=context)
 
-            if tx_ids and len(tx_ids) == 1:
-
-                if status == 'PAID':
-                    epay_status = 'OK'
-                    our_status = 'done'
-                elif status == 'DENIED' or status == 'EXPIRED':
-                    epay_status = 'OK'
-                    our_status = 'cancel'
-                else:
-                    epay_status = 'ERR'
-                    our_status = 'error'
+            if tx_ids and len(tx_ids) == 1 and tx_id == tx_ids[0]:
 
                 request.registry['payment.transaction'].form_feedback(cr, SUPERUSER_ID, post, 'epaybg', context)
+
                 tx = request.registry['payment.transaction'].browse(request.cr, SUPERUSER_ID, tx_ids[0], context=context)
 
-                if tx and tx.state != our_status:
-                    _logger.info('OLD transaction state %s', tx.state)
-                    epay_decoded_pformat = pprint.pformat(epay_decoded_result)
-                    if status == 'PAID':
-                        # XXX if OK for this invoice
-                        tx.write({
-                            'state': 'done',
-                            'acquirer_reference': tx_id,
-                            'state_message': epay_decoded_pformat,
-                        })
-                    elif status == 'DENIED' or status == 'EXPIRED':
-                        # XXX if OK for this invoice
-                        tx.write({
-                            'state': 'cancel',
-                            'acquirer_reference': tx_id,
-                            'state_message': epay_decoded_pformat,
-                        })
-                    else:
-                        # XXX if error for this invoice
-                        tx.write({
-                            'state': 'error',
-                            'acquirer_reference': tx_id,
-                            'state_message': epay_decoded_pformat,
-                        })
-                    _logger.info('New transaction state %s', tx.state)
+                epay_status = 'ERR'
+                if not tx:
+                    epay_status = 'NO'
+                elif tx.state in ['done', 'cancel']:
+                    epay_status = 'OK'
 
                 info_data = "INVOICE=%s:STATUS=%s\n" % (tx_id, epay_status)
 

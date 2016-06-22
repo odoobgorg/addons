@@ -6,7 +6,7 @@ from hashlib import sha1
 import hmac
 import logging
 import urlparse
-# import pprint
+import pprint
 
 from openerp.addons.payment.models.payment_acquirer import ValidationError
 from openerp.addons.payment_epaybg.controllers.main import EpaybgController
@@ -169,13 +169,40 @@ class TxEpaybg(osv.Model):
 
         import os
         status = epay_decoded_result['STATUS'].rstrip(os.linesep)
+        tx_id = int(epay_decoded_result['INVOICE'].rstrip(os.linesep))
 
         if status == 'PAID':
-            result = True
+            our_status = 'done'
         elif status == 'DENIED' or status == 'EXPIRED':
-            result = True
+            our_status = 'cancel'
         else:
-            result = False
+            our_status = 'error'
+
+        if tx and tx.state != our_status:
+            _logger.info('OLD transaction state %s', tx.state)
+            epay_decoded_pformat = pprint.pformat(epay_decoded_result)
+            if status == 'PAID':
+                tx.write({
+                    'state': 'done',
+                    'acquirer_reference': tx_id,
+                    'state_message': epay_decoded_pformat,
+                })
+                result = True
+            elif status == 'DENIED' or status == 'EXPIRED':
+                tx.write({
+                    'state': 'cancel',
+                    'acquirer_reference': tx_id,
+                    'state_message': epay_decoded_pformat,
+                })
+                result = True
+            else:
+                tx.write({
+                    'state': 'error',
+                    'acquirer_reference': tx_id,
+                    'state_message': epay_decoded_pformat,
+                })
+                result = False
+            _logger.info('New transaction state %s', tx.state)
 
         _logger.info('END _epaybg_form_validate with result: %s', result)
         return result
