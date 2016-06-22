@@ -68,10 +68,11 @@ class AcquirerEpaybg(osv.Model):
                 item_number = str(tx_id[0])
                 return_url = '%s' % urlparse.urljoin(base_url, EpaybgController._return_url)
 
-        item_name = '%s: %s /%s' % (
+        item_name = '%s: %s /%s /%s' % (
             acquirer.company_id.name,
             values['reference'],
-            values.get('partner_email'),
+            item_number,
+            values.get('partner_email')
         )
 
         if item_name and len(item_name) > 100:
