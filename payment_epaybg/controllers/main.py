@@ -87,3 +87,10 @@ class EpaybgController(http.Controller):
     def epaybg_notification(self, **post):
         _logger.info('Beginning epaybg_notification form_feedback with post data %s', pprint.pformat(post))  # debug
         return self.epaybg_validate_data(**post)
+
+    @http.route('/payment/epaybg/feedback', type='http', auth="none", csrf=False)
+    # @http.route('/shop/payment/validate', type='http', auth="public", website=True)
+    def epaybg_feedback(self, **post):
+        _logger.info('Beginning Epay.bg feedback with post data %s', pprint.pformat(post))  # debug
+        return_url = self._get_return_url(**post)
+        return werkzeug.utils.redirect(return_url)
