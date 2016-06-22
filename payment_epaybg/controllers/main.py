@@ -14,7 +14,8 @@ _logger = logging.getLogger(__name__)
 
 
 class EpaybgController(http.Controller):
-    _return_url = '/shop/payment/validate'
+    # _return_url = '/shop/payment/validate'
+    _return_url = '/payment/epaybg/feedback'
 
     def _get_return_url(self, **post):
         """ Extract the return URL from the data coming from epaybg. """
