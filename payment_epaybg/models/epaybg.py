@@ -86,12 +86,17 @@ class AcquirerEpaybg(osv.Model):
 
         encoded = self._epaybg_generate_merchant_encoded(params)
 
+        site_lang = 'bg'
+        if values.get('partner_lang')[:2] == 'en':
+            site_lang = 'en'
+
         values.update({
             'encoded': encoded,
             'checksum': self._epaybg_generate_merchant_checksum(acquirer.epaybg_merchant_account.encode('utf-8'),
                                                                 encoded),
             'urlOK': return_url,
             'urlCancel': return_url,
+            'siteLang': site_lang
         })
 
         return values

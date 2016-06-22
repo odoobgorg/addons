@@ -17,7 +17,8 @@ class EpaybgController(http.Controller):
     _return_url = '/payment/epaybg/feedback'
 
     def _get_return_url(self):
-        return '/shop/payment/validate'
+        # return '/shop/payment/validate'
+        return '/shop/confirmation'
 
     def epaybg_validate_data(self, **post):
         _logger.info('START epaybg_validate_data with post data %s', pprint.pformat(post))  # debug
@@ -57,7 +58,5 @@ class EpaybgController(http.Controller):
     def epaybg_feedback(self, tx_id):
         # _logger.info('Beginning Epay.bg feedback with post data %s', pprint.pformat(post))  # debug
         _logger.info('Beginning Epay.bg feedback with tx_id %s', id)  # debug
-
         return_url = self._get_return_url()
-
         return werkzeug.utils.redirect(return_url)
