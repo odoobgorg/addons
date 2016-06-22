@@ -6,7 +6,7 @@ from hashlib import sha1
 import hmac
 import logging
 import urlparse
-import pprint
+# import pprint
 
 from openerp.addons.payment.models.payment_acquirer import ValidationError
 from openerp.addons.payment_epaybg.controllers.main import EpaybgController
@@ -135,12 +135,12 @@ class TxEpaybg(osv.Model):
             raise ValidationError(error_msg)
 
         epay_decoded_result = self.epay_decoded_result(encoded)
-        payment_transaction_id = int(epay_decoded_result['INVOICE'])
+        tx_id = int(epay_decoded_result['INVOICE'])
 
         # find tx
-        tx_ids = self.pool['payment.transaction'].search(cr, uid, [('id', '=', payment_transaction_id)], context=context)
+        tx_ids = self.pool['payment.transaction'].search(cr, uid, [('id', '=', tx_id)], context=context)
         if not tx_ids or len(tx_ids) > 1:
-            error_msg = _('Epaybg: received data for encoded %s') % (encoded)
+            error_msg = _('Epaybg: received data for encoded %s') % encoded
             if not tx_ids:
                 error_msg += _('; no order found')
             else:
@@ -168,37 +168,16 @@ class TxEpaybg(osv.Model):
 
         encoded, checksum = data.get('encoded'), data.get('checksum')
         epay_decoded_result = self.epay_decoded_result(encoded)
-        epay_decoded_pformat = pprint.pformat(epay_decoded_result)
 
         import os
         status = epay_decoded_result['STATUS'].rstrip(os.linesep)
-        tx_id = epay_decoded_result['INVOICE'].rstrip(os.linesep)
 
         if status == 'PAID':
-            # XXX if OK for this invoice
-            # tx.write({
-            #     'state': 'done',
-            #     'acquirer_reference': tx_id,
-            #     'state_message': epay_decoded_pformat,
-            # })
             result = True
         elif status == 'DENIED' or status == 'EXPIRED':
-            # XXX if OK for this invoice
-            # tx.write({
-            #     'state': 'cancel',
-            #     'acquirer_reference': tx_id,
-            #     'state_message': epay_decoded_pformat,
-            # })
             result = False
         else:
-            # # XXX if error for this invoice
-            # tx.write({
-            #     'state': 'error',
-            #     'acquirer_reference': tx_id,
-            #     'state_message': epay_decoded_pformat,
-            # })
             result = False
 
-        _logger.info(tx.state)
         _logger.info('END _epaybg_form_validate with result: %s', result)
         return result
