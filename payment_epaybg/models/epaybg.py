@@ -176,39 +176,29 @@ class TxEpaybg(osv.Model):
         status = epay_decoded_result['STATUS'].rstrip(os.linesep)
         tx_id = int(epay_decoded_result['INVOICE'].rstrip(os.linesep))
 
+        epay_decoded_pformat = pprint.pformat(epay_decoded_result)
         if status == 'PAID':
-            epaybg_status = 'done'
+            tx.write({
+                'state': 'done',
+                'acquirer_reference': tx_id,
+                'state_message': epay_decoded_pformat,
+            })
+            result = True
         elif status == 'DENIED' or status == 'EXPIRED':
-            epaybg_status = 'cancel'
+            tx.write({
+                'state': 'cancel',
+                'acquirer_reference': tx_id,
+                'state_message': epay_decoded_pformat,
+            })
+            result = False
         else:
-            epaybg_status = 'error'
-
-        result = False
-        if tx and tx.state != epaybg_status:
-            _logger.info('OLD transaction state %s', tx.state)
-            epay_decoded_pformat = pprint.pformat(epay_decoded_result)
-            if status == 'PAID':
-                tx.write({
-                    'state': 'done',
-                    'acquirer_reference': tx_id,
-                    'state_message': epay_decoded_pformat,
-                })
-                result = True
-            elif status == 'DENIED' or status == 'EXPIRED':
-                tx.write({
-                    'state': 'cancel',
-                    'acquirer_reference': tx_id,
-                    'state_message': epay_decoded_pformat,
-                })
-                result = True
-            else:
-                tx.write({
-                    'state': 'error',
-                    'acquirer_reference': tx_id,
-                    'state_message': epay_decoded_pformat,
-                })
-                result = False
-            _logger.info('New transaction state %s', tx.state)
+            tx.write({
+                'state': 'error',
+                'acquirer_reference': tx_id,
+                'state_message': epay_decoded_pformat,
+            })
+            result = False
+        _logger.info('state: %s acquirer_reference: %s state_message: %s', (tx.state, tx.acquirer_reference, tx.state_message))
 
         _logger.info('END _epaybg_form_validate with result: %s', result)
         return result
