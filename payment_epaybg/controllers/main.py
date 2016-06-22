@@ -27,15 +27,11 @@ class EpaybgController(http.Controller):
         encoded, checksum = post.get('encoded'), post.get('checksum')
         if encoded and checksum:
             epay_decoded_result = request.registry['payment.transaction'].epay_decoded_result(encoded)
-            status = str(epay_decoded_result['STATUS'].rstrip(os.linesep))
+            # status = str(epay_decoded_result['STATUS'].rstrip(os.linesep))
             tx_id = int(epay_decoded_result['INVOICE'].rstrip(os.linesep))
 
             cr, uid, context = request.cr, request.uid, request.context
-            tx_ids = request.registry['payment.transaction'].search(cr, uid, [('id', '=', tx_id), ('state', '=', 'draft')], context=context)
-
-            if tx_ids and len(tx_ids) == 1 and tx_id == tx_ids[0]:
-                request.registry['payment.transaction'].form_feedback(cr, SUPERUSER_ID, post, 'epaybg', context)
-
+            request.registry['payment.transaction'].form_feedback(cr, SUPERUSER_ID, post, 'epaybg', context)
             tx = request.registry['payment.transaction'].browse(request.cr, SUPERUSER_ID, tx_id, context=context)
 
             epay_status = 'ERR'
@@ -53,9 +49,10 @@ class EpaybgController(http.Controller):
     def epaybg_notification(self, **post):
         return self.epaybg_validate_data(**post)
 
-    @http.route('/payment/epaybg/feedback/<tx_id>', type='http', auth="none", csrf=False)
-    def epaybg_feedback(self, tx_id):
-        # _logger.info('Beginning Epay.bg feedback with post data %s', pprint.pformat(post))  # debug
-        _logger.info('Beginning Epay.bg feedback with tx_id %s', tx_id)  # debug
+    @http.route('/payment/epaybg/feedback', type='http', auth="none", csrf=False)
+    def epaybg_feedback(self, **post):
+        _logger.info('Beginning Epay.bg feedback with post data %s', pprint.pformat(post))  # debug
         return_url = self._get_return_url()
+        import time
+        time.sleep(1)
         return werkzeug.utils.redirect(return_url)
