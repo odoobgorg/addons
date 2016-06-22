@@ -16,7 +16,7 @@ _logger = logging.getLogger(__name__)
 class EpaybgController(http.Controller):
     _return_url = '/payment/epaybg/feedback'
 
-    def _get_return_url(self, **post):
+    def _get_return_url(self):
         return '/shop/payment/validate'
 
     def epaybg_validate_data(self, **post):
@@ -53,13 +53,11 @@ class EpaybgController(http.Controller):
         _logger.info('Beginning epaybg_notification form_feedback with post data %s', pprint.pformat(post))  # debug
         return self.epaybg_validate_data(**post)
 
-    @http.route('/payment/epaybg/feedback/{id}', type='http', auth="none", csrf=False)
-    def epaybg_feedback(self, **post):
-        _logger.info('Beginning Epay.bg feedback with post data %s', pprint.pformat(post))  # debug
-        return_url = self._get_return_url(**post)
+    @http.route('/payment/epaybg/feedback/<id>', type='http', auth="none", csrf=False)
+    def epaybg_feedback(self, tx_id):
+        # _logger.info('Beginning Epay.bg feedback with post data %s', pprint.pformat(post))  # debug
+        _logger.info('Beginning Epay.bg feedback with tx_id %s', tx_id)  # debug
 
-        # import time
-        # while True:
-        #     time.sleep(60)  # Delay for 1 minute (60 seconds)
+        return_url = self._get_return_url()
 
         return werkzeug.utils.redirect(return_url)
