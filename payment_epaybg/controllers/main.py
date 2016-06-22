@@ -21,7 +21,7 @@ class EpaybgController(http.Controller):
         return '/shop/confirmation'
 
     def epaybg_validate_data(self, **post):
-        _logger.info('START epaybg_validate_data with post data %s', pprint.pformat(post))  # debug
+        _logger.info('Start epaybg_validate_data with post data %s', pprint.pformat(post))  # debug
 
         info_data = None
         encoded, checksum = post.get('encoded'), post.get('checksum')
@@ -51,12 +51,11 @@ class EpaybgController(http.Controller):
 
     @http.route('/payment/epaybg/notification/', type='http', auth='none', methods=['POST'], csrf=False)
     def epaybg_notification(self, **post):
-        _logger.info('Beginning epaybg_notification form_feedback with post data %s', pprint.pformat(post))  # debug
         return self.epaybg_validate_data(**post)
 
     @http.route('/payment/epaybg/feedback/<tx_id>', type='http', auth="none", csrf=False)
     def epaybg_feedback(self, tx_id):
         # _logger.info('Beginning Epay.bg feedback with post data %s', pprint.pformat(post))  # debug
-        _logger.info('Beginning Epay.bg feedback with tx_id %s', id)  # debug
+        _logger.info('Beginning Epay.bg feedback with tx_id %s', tx_id)  # debug
         return_url = self._get_return_url()
         return werkzeug.utils.redirect(return_url)
