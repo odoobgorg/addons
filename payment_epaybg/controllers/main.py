@@ -20,14 +20,10 @@ class EpaybgController(http.Controller):
     def _get_return_url(self, **post):
         """ Extract the return URL from the data coming from epaybg. """
         return_url = post.pop('return_url', '')
-
         if not return_url:
-            custom = json.loads(post.pop('custom', False) or '{}')
-            return_url = custom.get('return_url', '/')
-            _logger.critical(return_url)
-
-        _logger.critical(return_url)
-
+            # custom = json.loads(post.pop('custom', False) or '{}')
+            # return_url = custom.get('return_url', '/')
+            return_url = '/shop/payment/validate'
         return return_url
 
     def epaybg_validate_data(self, **post):
