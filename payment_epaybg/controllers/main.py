@@ -35,41 +35,45 @@ class EpaybgController(http.Controller):
             tx_id = int(epay_decoded_result['INVOICE'].rstrip(os.linesep))
 
             cr, uid, context = request.cr, request.uid, request.context
-            tx_ids = request.registry['payment.transaction'].search(cr, uid, [('id', '=', tx_id), ('state', '!=', 'draft')], context=context)
+            tx_ids = request.registry['payment.transaction'].search(cr, uid, [('id', '=', tx_id)], context=context)
 
             if tx_ids and len(tx_ids) == 1:
-                request.registry['payment.transaction'].form_feedback(cr, SUPERUSER_ID, post, 'epaybg', context)
-                tx = request.registry['payment.transaction'].browse(request.cr, SUPERUSER_ID, tx_ids[0], context=context)
 
-                epay_decoded_pformat = pprint.pformat(epay_decoded_result)
                 if status == 'PAID':
-                    # XXX if OK for this invoice
-                    tx.write({
-                        'state': 'done',
-                        'acquirer_reference': tx_id,
-                        'state_message': epay_decoded_pformat,
-                    })
                     epay_status = 'OK'
                 elif status == 'DENIED' or status == 'EXPIRED':
-                    # XXX if OK for this invoice
-                    tx.write({
-                        'state': 'cancel',
-                        'acquirer_reference': tx_id,
-                        'state_message': epay_decoded_pformat,
-                    })
                     epay_status = 'OK'
                 else:
-                    # XXX if error for this invoice
-                    tx.write({
-                        'state': 'error',
-                        'acquirer_reference': tx_id,
-                        'state_message': epay_decoded_pformat,
-                    })
                     epay_status = 'ERR'
 
-                info_data = "INVOICE=%s:STATUS=%s\n" % (tx_id, epay_status)
-            else:
-                _logger.warning('No order found %s', tx_ids)  # debug
+                request.registry['payment.transaction'].form_feedback(cr, SUPERUSER_ID, post, 'epaybg', context)
+                tx = request.registry['payment.transaction'].browse(request.cr, SUPERUSER_ID, [('id', '=', tx_ids[0]), ('state', '!=', 'draft')], context=context)
+
+                if tx:
+                    epay_decoded_pformat = pprint.pformat(epay_decoded_result)
+                    if status == 'PAID':
+                        # XXX if OK for this invoice
+                        tx.write({
+                            'state': 'done',
+                            'acquirer_reference': tx_id,
+                            'state_message': epay_decoded_pformat,
+                        })
+                    elif status == 'DENIED' or status == 'EXPIRED':
+                        # XXX if OK for this invoice
+                        tx.write({
+                            'state': 'cancel',
+                            'acquirer_reference': tx_id,
+                            'state_message': epay_decoded_pformat,
+                        })
+                    else:
+                        # XXX if error for this invoice
+                        tx.write({
+                            'state': 'error',
+                            'acquirer_reference': tx_id,
+                            'state_message': epay_decoded_pformat,
+                        })
+
+            info_data = "INVOICE=%s:STATUS=%s\n" % (tx_id, epay_status)
 
         _logger.info('END epaybg_form_feedback with info data %s', info_data)  # debug
         return info_data
