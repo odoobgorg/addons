@@ -57,6 +57,8 @@ class EpaybgController(http.Controller):
         else:
             return request.redirect('/shop')
 
+        _logger.info(order)
+
         _logger.info('END epaybg_confirmation')
         return request.website.render("website_sale.confirmation", {'order': order})
 
