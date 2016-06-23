@@ -23,7 +23,7 @@ class EpaybgController(http.Controller):
         encoded, checksum = post.get('encoded'), post.get('checksum')
         if encoded and checksum:
             epay_decoded_result = request.registry['payment.transaction'].epay_decoded_result(encoded)
-            status = str(epay_decoded_result['STATUS'].rstrip(os.linesep))
+            # status = str(epay_decoded_result['STATUS'].rstrip(os.linesep))
             tx_id = int(epay_decoded_result['INVOICE'].rstrip(os.linesep))
 
             cr, uid, context = request.cr, request.uid, request.context
@@ -62,6 +62,10 @@ class EpaybgController(http.Controller):
             order = request.registry['sale.order'].browse(cr, SUPERUSER_ID, sale_order_id, context=context)
         else:
             return request.redirect('/shop')
+
+        cr, uid, context = request.cr, request.uid, request.context
+        tx = request.registry['payment.transaction'].browse(cr, uid, tx_id, context=context)
+        _logger.warning('epaybg_confirmation tx: %s', pprint.pformat(tx))
 
         _logger.info('END epaybg_confirmation')
         return request.website.render("website_sale.confirmation", {'order': order})
