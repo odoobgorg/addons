@@ -39,13 +39,14 @@ class EpaybgController(http.Controller):
                     epaybg_state = 'error'
 
                 tx = request.registry['payment.transaction'].browse(cr, uid, tx_id, context=context)
-                epay_status = 'ERR'
-                if tx.state in ['done', 'cancel']:
-                    epay_status = 'OK'
+                _logger.warning('tx: %s', tx.state)  # debug
 
                 if tx.state != epaybg_state:
-                    res = request.registry['payment.transaction'].form_feedback(cr, SUPERUSER_ID, post, 'epaybg', context)
-                    _logger.warning(res)
+                    request.registry['payment.transaction'].form_feedback(cr, SUPERUSER_ID, post, 'epaybg', context)
+
+                    epay_status = 'ERR'
+                    if tx.state in ['done', 'cancel']:
+                        epay_status = 'OK'
 
             else:
                 epay_status = 'NO'
