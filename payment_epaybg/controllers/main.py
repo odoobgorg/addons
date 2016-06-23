@@ -30,23 +30,10 @@ class EpaybgController(http.Controller):
             has_tx_id = request.registry['payment.transaction'].search(cr, uid, [('id', '=', tx_id)], context=context)
 
             if has_tx_id:
-
-                if status == 'PAID':
-                    epaybg_state = 'done'
-                elif status in ['DENIED', 'EXPIRED']:
-                    epaybg_state = 'cancel'
-                else:
-                    epaybg_state = 'error'
-
+                epay_status = 'OK'
                 tx = request.registry['payment.transaction'].browse(cr, uid, tx_id, context=context)
-                _logger.warning('tx: %s', tx.state)  # debug
-
-                if tx.state != epaybg_state:
+                if tx.state != 'draft':
                     request.registry['payment.transaction'].form_feedback(cr, SUPERUSER_ID, post, 'epaybg', context)
-
-                epay_status = 'ERR'
-                if tx.state in ['done', 'cancel']:
-                    epay_status = 'OK'
             else:
                 epay_status = 'NO'
 
