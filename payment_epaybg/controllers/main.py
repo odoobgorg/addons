@@ -23,18 +23,21 @@ class EpaybgController(http.Controller):
         encoded, checksum = post.get('encoded'), post.get('checksum')
         if encoded and checksum:
             epay_decoded_result = request.registry['payment.transaction'].epay_decoded_result(encoded)
-            # status = str(epay_decoded_result['STATUS'].rstrip(os.linesep))
+            status = str(epay_decoded_result['STATUS'].rstrip(os.linesep))
             tx_id = int(epay_decoded_result['INVOICE'].rstrip(os.linesep))
 
             cr, uid, context = request.cr, request.uid, request.context
-            request.registry['payment.transaction'].form_feedback(cr, SUPERUSER_ID, post, 'epaybg', context)
-            tx = request.registry['payment.transaction'].browse(request.cr, SUPERUSER_ID, tx_id, context=context)
+            tx = request.registry['payment.transaction'].search(cr, uid, [('id', '=', tx_id)], context=context)
 
-            epay_status = 'ERR'
-            if not tx:
+            if tx:
+                epay_status = 'ERR'
+                if tx.state in ['done', 'cancel']:
+                    epay_status = 'OK'
+
+                if epay_status != status:
+                    request.registry['payment.transaction'].form_feedback(cr, SUPERUSER_ID, post, 'epaybg', context)
+            else:
                 epay_status = 'NO'
-            elif tx.state in ['done', 'cancel']:
-                epay_status = 'OK'
 
             info_data = "INVOICE=%s:STATUS=%s\n" % (tx_id, epay_status)
 
