@@ -59,10 +59,6 @@ class AcquirerEpaybg(osv.Model):
 
     def epaybg_form_generate_values(self, cr, uid, id, values, context=None):
         _logger.info('START epaybg_form_generate_values')
-
-        if self.provider != 'epaybg':
-            raise ValidationError(_('Incorrect payment acquirer provider: epaybg'))
-
         base_url = self.pool['ir.config_parameter'].get_param(cr, uid, 'web.base.url')
         acquirer = self.browse(cr, uid, id, context=context)
         # tmp
@@ -98,11 +94,11 @@ class AcquirerEpaybg(osv.Model):
         _logger.info('params: %s' % pprint.pformat(params))
 
         # write state message with params
-        if item_number:
-            tx = self.pool['payment.transaction'].browse(cr, uid, item_number, context=context)
-            tx.write({
-                'state_message': "REQUEST: %s" % pprint.pformat(params),
-            })
+        # if item_number:
+        #     tx = self.pool['payment.transaction'].browse(cr, uid, item_number, context=context)
+        #     tx.write({
+        #         'state_message': "REQUEST: %s" % pprint.pformat(params),
+        #     })
 
         encoded = self._epaybg_generate_merchant_encoded(params)
 
