@@ -196,17 +196,17 @@ class TxEpaybg(osv.Model):
         tx_id = int(epay_decoded_result['INVOICE'].rstrip(os.linesep))
 
         if status == 'PAID':
-            state = 'done'
+            epaybg_state = 'done'
             result = True
         elif status in ['DENIED', 'EXPIRED']:
-            state = 'cancel'
+            epaybg_state = 'cancel'
             result = False
         else:
-            state = 'error'
+            epaybg_state = 'error'
             result = False
 
         tx.write({
-            'state': state,
+            'state': epaybg_state,
             'acquirer_reference': tx_id,
             'state_message': "%s RESPONSE: %s" % (tx.state_message, pprint.pformat(epay_decoded_result)),
         })

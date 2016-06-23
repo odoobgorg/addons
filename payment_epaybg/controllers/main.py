@@ -31,12 +31,22 @@ class EpaybgController(http.Controller):
 
             if has_tx_id:
                 tx = request.registry['payment.transaction'].browse(cr, uid, tx_id, context=context)
-                epay_status = 'ERR'
-                if tx.state in ['done', 'cancel']:
-                    epay_status = 'OK'
 
-                if epay_status != status:
-                    request.registry['payment.transaction'].form_feedback(cr, SUPERUSER_ID, post, 'epaybg', context)
+                if status == 'PAID':
+                    epaybg_state = 'done'
+                elif status in ['DENIED', 'EXPIRED']:
+                    epaybg_state = 'cancel'
+                else:
+                    epaybg_state = 'error'
+
+                # epay_status = 'ERR'
+                # if tx.state in ['done', 'cancel']:
+                #     epay_status = 'OK'
+
+                if tx.state != epaybg_state:
+                    res = request.registry['payment.transaction'].form_feedback(cr, SUPERUSER_ID, post, 'epaybg', context)
+                    _logger.info(res)
+
             else:
                 epay_status = 'NO'
 
@@ -52,16 +62,14 @@ class EpaybgController(http.Controller):
     @http.route(['/payment/epaybg/feedback'], type='http', auth="public", website=True)
     def epaybg_confirmation(self, **post):
         _logger.info('START epaybg_confirmation')
-        cr, uid, context = request.cr, request.uid, request.context
 
+        cr, uid, context = request.cr, request.uid, request.context
         sale_order_id = request.session.get('sale_last_order_id')
         request.website.sale_reset(context=context)
         if sale_order_id:
             order = request.registry['sale.order'].browse(cr, SUPERUSER_ID, sale_order_id, context=context)
         else:
             return request.redirect('/shop')
-
-        _logger.info(order)
 
         _logger.info('END epaybg_confirmation')
         return request.website.render("website_sale.confirmation", {'order': order})
