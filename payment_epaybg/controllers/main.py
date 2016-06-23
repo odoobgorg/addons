@@ -30,10 +30,15 @@ class EpaybgController(http.Controller):
             has_tx_id = request.registry['payment.transaction'].search(cr, uid, [('id', '=', tx_id)], context=context)
 
             if has_tx_id:
-                epay_status = 'OK'
                 tx = request.registry['payment.transaction'].browse(cr, uid, tx_id, context=context)
-                if tx.state != 'draft':
+                _logger.info('tx.state: %s', tx.state)
+                if tx.state == 'draft':
                     request.registry['payment.transaction'].form_feedback(cr, SUPERUSER_ID, post, 'epaybg', context)
+
+                tx = request.registry['payment.transaction'].browse(cr, uid, tx_id, context=context)
+                epay_status = 'OK'
+                if tx.state == 'error':
+                    epay_status = 'ERR'
             else:
                 epay_status = 'NO'
 
