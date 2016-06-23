@@ -63,8 +63,7 @@ class EpaybgController(http.Controller):
         else:
             return request.redirect('/shop')
 
-        cr, uid, context = request.cr, request.uid, request.context
-        tx = request.registry['payment.transaction'].browse(cr, uid, tx_id, context=context)
+        tx = request.registry['payment.transaction'].browse(cr, uid, [('sale_order_id', '=', sale_order_id)], context=context)
         _logger.warning('epaybg_confirmation tx: %s', pprint.pformat(tx))
 
         _logger.info('END epaybg_confirmation')
