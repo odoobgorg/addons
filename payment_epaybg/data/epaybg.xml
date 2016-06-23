@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data noupdate="1">
-
         <record id="payment_acquirer_epaybg" model="payment.acquirer">
-            <field name="name">epaybg</field>
+            <field name="name">Epay.bg</field>
             <field name="image" type="base64" file="payment_epaybg/static/description/icon.png"/>
             <field name="provider">epaybg</field>
             <field name="company_id" ref="base.main_company"/>
@@ -14,6 +13,5 @@
             <field name="epaybg_merchant_account">dummy</field>
             <field name="epaybg_merchant_kin">dummy</field>
         </record>
-
     </data>
 </openerp>

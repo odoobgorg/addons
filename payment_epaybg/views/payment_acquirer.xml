@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
-    <data>
-
+    <data noupdate="1">
         <record id="acquirer_form_epaybg" model="ir.ui.view">
             <field name="name">acquirer.form.epaybg</field>
             <field name="model">payment.acquirer</field>
@@ -9,6 +8,7 @@
             <field name="arch" type="xml">
                 <xpath expr='//group[@name="acquirer"]' position='after'>
                     <group attrs="{'invisible': [('provider', '!=', 'epaybg')]}">
+                        <field name="epaybg_merchant_pay_type"/>
                         <field name="epaybg_merchant_account"/>
                         <field name="epaybg_merchant_kin"/>
                         <a colspan="2" href="https://www.epay.bg/v3main/front?p=mrcs_tech" target="_blank">How to configure your epaybg account?</a>
@@ -16,6 +16,5 @@
                 </xpath>
             </field>
         </record>
-
     </data>
 </openerp>

@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data noupdate="1">
-
         <template id="epaybg_acquirer_button">
             <form t-if="acquirer.epaybg_merchant_account" t-att-action="tx_url" method="post" target="_self">
-
-                <input type="hidden" name="PAGE" value="credit_paydirect"/>
-                <input type="hidden" name="LANG" t-att-value="siteLang"/>
+                <input type="hidden" name="PAGE" t-att-value="payType"/>
+                <t t-if="payType == credit_paydirect">
+                    <input type="hidden" name="LANG" t-att-value="siteLang"/>
+                </t>
                 <input type="hidden" name="ENCODED" t-att-value="encoded"/>
                 <input type="hidden" name="CHECKSUM" t-att-value="checksum"/>
                 <input type="hidden" name="URL_OK" t-att-value="urlOK"/>
                 <input type="hidden" name="URL_CANCEL" t-att-value="urlCancel"/>
-
                 <!-- submit -->
                 <button type="submit" width="100px"
                     t-att-class="submit_class">
@@ -20,6 +19,5 @@
                 </button>
             </form>
         </template>
-
     </data>
 </openerp>

@@ -37,8 +37,15 @@ class AcquirerEpaybg(osv.Model):
         return providers
 
     _columns = {
+        'epaybg_merchant_pay_type': fields.selection(
+            [('credit_paydirect', 'Credit card'), ('paylogin', 'Web merchant')],
+            string='Payment type'),
         'epaybg_merchant_account': fields.char('Merchant Account', required_if_provider='epaybg'),
         'epaybg_merchant_kin': fields.char('Kin Code', required_if_provider='epaybg'),
+    }
+
+    _defaults = {
+        'epaybg_merchant_pay_type': 'credit_paydirect',
     }
 
     def _epaybg_generate_merchant_encoded(self, params):
@@ -86,9 +93,9 @@ class AcquirerEpaybg(osv.Model):
 
         encoded = self._epaybg_generate_merchant_encoded(params)
 
-        site_lang = 'bg'
-        if values.get('partner_lang')[:2] == 'en':
-            site_lang = 'en'
+        site_lang = 'en'
+        if values.get('partner_lang')[:2] == 'bg':
+            site_lang = 'bg'
 
         values.update({
             'encoded': encoded,
@@ -96,7 +103,8 @@ class AcquirerEpaybg(osv.Model):
                                                                 encoded),
             'urlOK': return_url,
             'urlCancel': return_url,
-            'siteLang': site_lang
+            'siteLang': site_lang,
+            'payType': acquirer.epaybg_merchant_pay_type.encode('utf-8')
         })
 
         return values
