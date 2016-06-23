@@ -211,9 +211,9 @@ class TxEpaybg(osv.Model):
             # 'state_message': "RESPONSE: %s" % pprint.pformat(epay_decoded_result),
         })
 
-        tx.update({
-            'state_message': "RESPONSE: %s" % pprint.pformat(epay_decoded_result),
-        })
+        # tx.update({
+        #     'state_message': "RESPONSE: %s" % pprint.pformat(epay_decoded_result),
+        # })
 
         _logger.info('END _epaybg_form_validate with result: %s', result)
         return result
