@@ -198,7 +198,7 @@ class TxEpaybg(osv.Model):
         if status == 'PAID':
             state = 'done'
             result = True
-        elif status == 'DENIED' or status == 'EXPIRED':
+        elif status in ['DENIED', 'EXPIRED']:
             state = 'cancel'
             result = False
         else:
