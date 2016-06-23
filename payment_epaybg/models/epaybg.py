@@ -95,7 +95,7 @@ class AcquirerEpaybg(osv.Model):
 
         if item_number:
             _logger.info('params: %s' % pprint.pformat(params))
-            tx = self.pool['payment.transaction'].browse(cr, uid, item_number, context=context)
+            tx = self.pool['payment.transaction'].browse(cr, uid, int(item_number), context=context)
             tx.write({
                 'state_message': "REQUEST: %s" % pprint.pformat(params),
             })
