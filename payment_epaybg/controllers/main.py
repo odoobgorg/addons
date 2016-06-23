@@ -46,23 +46,17 @@ class EpaybgController(http.Controller):
         return self.epaybg_validate_data(**post)
 
     @http.route(['/payment/epaybg/feedback'], type='http', auth="public", website=True)
-    def payment_confirmation(self, **post):
+    def epaybg_confirmation(self, **post):
+        _logger.info('START epaybg_confirmation')
         cr, uid, context = request.cr, request.uid, request.context
 
         sale_order_id = request.session.get('sale_last_order_id')
+        request.website.sale_reset(context=context)
         if sale_order_id:
             order = request.registry['sale.order'].browse(cr, SUPERUSER_ID, sale_order_id, context=context)
         else:
             return request.redirect('/shop')
 
+        _logger.info('END epaybg_confirmation')
         return request.website.render("website_sale.confirmation", {'order': order})
 
-    # @http.route('/payment/epaybg/feedback', type='http', auth="none", csrf=False)
-    # def epaybg_feedback(self, **post):
-    #     _logger.info('Beginning Epay.bg feedback with post data %s', pprint.pformat(post))  # debug
-    #     return_url = self._get_return_url()
-    #
-    #     # import time
-    #     # time.sleep(1)
-    #
-    #     return werkzeug.utils.redirect(return_url)
