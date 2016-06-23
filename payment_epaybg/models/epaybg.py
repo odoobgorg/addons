@@ -95,12 +95,14 @@ class AcquirerEpaybg(osv.Model):
         params = {"MIN": acquirer.epaybg_merchant_kin or '', "INVOICE": item_number,
                   "AMOUNT": float_round(values['amount'], 2) or '', "EXP_TIME": tmp_date.strftime("%d.%m.%Y %H:%M"),
                   "DESCR": item_name or '', "CURRENCY": currency_code}
+        _logger.info('params: %s' % pprint.pformat(params))
 
         # write state message with params
-        tx = self.pool['payment.transaction'].browse(cr, uid, [('id', '=', item_number)], context=context)
-        tx.write({
-            'state_message': "REQUEST: %s" % pprint.pformat(params),
-        })
+        if item_number:
+            tx = self.pool['payment.transaction'].browse(cr, uid, item_number, context=context)
+            tx.write({
+                'state_message': "REQUEST: %s" % pprint.pformat(params),
+            })
 
         encoded = self._epaybg_generate_merchant_encoded(params)
 
