@@ -94,8 +94,11 @@ class AcquirerEpaybg(osv.Model):
         _logger.info('params: %s' % pprint.pformat(params))
 
         if item_number:
+            _logger.info('params: %s' % pprint.pformat(params))
             tx = self.pool['payment.transaction'].browse(cr, uid, item_number, context=context)
-            _logger.info('tx_ids: %s' % pprint.pformat(tx))
+            tx.write({
+                'state_message': "REQUEST: %s" % pprint.pformat(params),
+            })
 
         encoded = self._epaybg_generate_merchant_encoded(params)
 
@@ -113,7 +116,6 @@ class AcquirerEpaybg(osv.Model):
             'payType': acquirer.epaybg_merchant_pay_type.encode('utf-8')
         })
 
-        _logger.info('values: %s' % pprint.pformat(values))
         _logger.info('START epaybg_form_generate_values')
         return values
 
