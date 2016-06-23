@@ -91,7 +91,7 @@ class AcquirerEpaybg(osv.Model):
         params = {"MIN": acquirer.epaybg_merchant_kin or '', "INVOICE": item_number,
                   "AMOUNT": float_round(values['amount'], 2) or '', "EXP_TIME": tmp_date.strftime("%d.%m.%Y %H:%M"),
                   "DESCR": item_name or '', "CURRENCY": currency_code}
-        _logger.info('params: %s' % pprint.pformat(params))
+        # _logger.info('params: %s' % pprint.pformat(params))
 
         if item_number:
             _logger.info('params: %s' % pprint.pformat(params))
@@ -208,12 +208,8 @@ class TxEpaybg(osv.Model):
         tx.write({
             'state': state,
             'acquirer_reference': tx_id,
-            # 'state_message': "RESPONSE: %s" % pprint.pformat(epay_decoded_result),
+            'state_message': "%s RESPONSE: %s" % (tx.state_message, pprint.pformat(epay_decoded_result)),
         })
-
-        # tx.update({
-        #     'state_message': "RESPONSE: %s" % pprint.pformat(epay_decoded_result),
-        # })
 
         _logger.info('END _epaybg_form_validate with result: %s', result)
         return result
