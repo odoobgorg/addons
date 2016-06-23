@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import json
+# import json
 import logging
 import pprint
 import werkzeug
@@ -15,10 +15,6 @@ _logger = logging.getLogger(__name__)
 
 class EpaybgController(http.Controller):
     _return_url = '/payment/epaybg/feedback'
-
-    def _get_return_url(self):
-        # return '/shop/payment/validate'
-        return '/shop/confirmation'
 
     def epaybg_validate_data(self, **post):
         _logger.info('Start epaybg_validate_data with post data %s', pprint.pformat(post))  # debug
@@ -49,10 +45,24 @@ class EpaybgController(http.Controller):
     def epaybg_notification(self, **post):
         return self.epaybg_validate_data(**post)
 
-    @http.route('/payment/epaybg/feedback', type='http', auth="none", csrf=False)
-    def epaybg_feedback(self, **post):
-        _logger.info('Beginning Epay.bg feedback with post data %s', pprint.pformat(post))  # debug
-        return_url = self._get_return_url()
-        import time
-        time.sleep(1)
-        return werkzeug.utils.redirect(return_url)
+    @http.route(['/payment/epaybg/feedback'], type='http', auth="public", website=True)
+    def payment_confirmation(self, **post):
+        cr, uid, context = request.cr, request.uid, request.context
+
+        sale_order_id = request.session.get('sale_last_order_id')
+        if sale_order_id:
+            order = request.registry['sale.order'].browse(cr, SUPERUSER_ID, sale_order_id, context=context)
+        else:
+            return request.redirect('/shop')
+
+        return request.website.render("website_sale.confirmation", {'order': order})
+
+    # @http.route('/payment/epaybg/feedback', type='http', auth="none", csrf=False)
+    # def epaybg_feedback(self, **post):
+    #     _logger.info('Beginning Epay.bg feedback with post data %s', pprint.pformat(post))  # debug
+    #     return_url = self._get_return_url()
+    #
+    #     # import time
+    #     # time.sleep(1)
+    #
+    #     return werkzeug.utils.redirect(return_url)
