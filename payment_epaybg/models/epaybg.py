@@ -58,6 +58,11 @@ class AcquirerEpaybg(osv.Model):
         return base64.b64decode(encoded)
 
     def epaybg_form_generate_values(self, cr, uid, id, values, context=None):
+        _logger.info('START epaybg_form_generate_values')
+
+        if self.provider != 'epaybg':
+            raise ValidationError(_('Incorrect payment acquirer provider: epaybg'))
+
         base_url = self.pool['ir.config_parameter'].get_param(cr, uid, 'web.base.url')
         acquirer = self.browse(cr, uid, id, context=context)
         # tmp
@@ -91,6 +96,12 @@ class AcquirerEpaybg(osv.Model):
                   "AMOUNT": float_round(values['amount'], 2) or '', "EXP_TIME": tmp_date.strftime("%d.%m.%Y %H:%M"),
                   "DESCR": item_name or '', "CURRENCY": currency_code}
 
+        # write state message with params
+        tx = self.pool['payment.transaction'].browse(cr, uid, [('id', '=', item_number)], context=context)
+        tx.write({
+            'state_message': "REQUEST: %s" % pprint.pformat(params),
+        })
+
         encoded = self._epaybg_generate_merchant_encoded(params)
 
         site_lang = 'en'
@@ -107,6 +118,8 @@ class AcquirerEpaybg(osv.Model):
             'payType': acquirer.epaybg_merchant_pay_type.encode('utf-8')
         })
 
+        _logger.info('values: %s' % pprint.pformat(values))
+        _logger.info('START epaybg_form_generate_values')
         return values
 
     def epaybg_get_form_action_url(self, cr, uid, id, context=None):
@@ -185,30 +198,25 @@ class TxEpaybg(osv.Model):
         status = epay_decoded_result['STATUS'].rstrip(os.linesep)
         tx_id = int(epay_decoded_result['INVOICE'].rstrip(os.linesep))
 
-        epay_decoded_pformat = pprint.pformat(epay_decoded_result)
         if status == 'PAID':
-            tx.write({
-                'state': 'done',
-                'acquirer_reference': tx_id,
-                'state_message': epay_decoded_pformat,
-            })
+            state = 'done'
             result = True
         elif status == 'DENIED' or status == 'EXPIRED':
-            tx.write({
-                'state': 'cancel',
-                'acquirer_reference': tx_id,
-                'state_message': epay_decoded_pformat,
-            })
+            state = 'cancel'
             result = False
         else:
-            tx.write({
-                'state': 'error',
-                'acquirer_reference': tx_id,
-                'state_message': epay_decoded_pformat,
-            })
+            state = 'error'
             result = False
 
-        _logger.info('state: %s acquirer_reference: %s state_message: %s', (tx.state, tx.acquirer_reference, tx.state_message))
+        tx.write({
+            'state': state,
+            'acquirer_reference': tx_id,
+            # 'state_message': "RESPONSE: %s" % pprint.pformat(epay_decoded_result),
+        })
+
+        tx.update({
+            'state_message': "RESPONSE: %s" % pprint.pformat(epay_decoded_result),
+        })
 
         _logger.info('END _epaybg_form_validate with result: %s', result)
         return result
