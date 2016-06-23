@@ -30,7 +30,6 @@ class EpaybgController(http.Controller):
             has_tx_id = request.registry['payment.transaction'].search(cr, uid, [('id', '=', tx_id)], context=context)
 
             if has_tx_id:
-                tx = request.registry['payment.transaction'].browse(cr, uid, tx_id, context=context)
 
                 if status == 'PAID':
                     epaybg_state = 'done'
@@ -39,6 +38,7 @@ class EpaybgController(http.Controller):
                 else:
                     epaybg_state = 'error'
 
+                tx = request.registry['payment.transaction'].browse(cr, uid, tx_id, context=context)
                 epay_status = 'ERR'
                 if tx.state in ['done', 'cancel']:
                     epay_status = 'OK'
