@@ -44,10 +44,9 @@ class EpaybgController(http.Controller):
                 if tx.state != epaybg_state:
                     request.registry['payment.transaction'].form_feedback(cr, SUPERUSER_ID, post, 'epaybg', context)
 
-                    epay_status = 'ERR'
-                    if tx.state in ['done', 'cancel']:
-                        epay_status = 'OK'
-
+                epay_status = 'ERR'
+                if tx.state in ['done', 'cancel']:
+                    epay_status = 'OK'
             else:
                 epay_status = 'NO'
 
