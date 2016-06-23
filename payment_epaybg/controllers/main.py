@@ -27,9 +27,10 @@ class EpaybgController(http.Controller):
             tx_id = int(epay_decoded_result['INVOICE'].rstrip(os.linesep))
 
             cr, uid, context = request.cr, request.uid, request.context
-            tx = request.registry['payment.transaction'].search(cr, uid, [('id', '=', tx_id)], context=context)
+            has_tx_id = request.registry['payment.transaction'].search(cr, uid, [('id', '=', tx_id)], context=context)
 
-            if tx:
+            if has_tx_id:
+                tx = request.registry['payment.transaction'].browse(cr, uid, tx_id, context=context)
                 epay_status = 'ERR'
                 if tx.state in ['done', 'cancel']:
                     epay_status = 'OK'
