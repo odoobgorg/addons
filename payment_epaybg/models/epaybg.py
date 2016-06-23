@@ -97,7 +97,7 @@ class AcquirerEpaybg(osv.Model):
             _logger.info('params: %s' % pprint.pformat(params))
             tx = self.pool['payment.transaction'].browse(cr, uid, int(item_number), context=context)
             tx.write({
-                'state_message': "REQUEST: %s" % pprint.pformat(params),
+                'state_message': "REQUEST: %s\n" % pprint.pformat(params),
             })
 
         encoded = self._epaybg_generate_merchant_encoded(params)
