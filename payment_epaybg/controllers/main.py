@@ -26,11 +26,6 @@ class EpaybgController(http.Controller):
             # status = str(epay_decoded_result['STATUS'].rstrip(os.linesep))
             tx_id = int(epay_decoded_result['INVOICE'].rstrip(os.linesep))
 
-            epay_status = 'OK'
-            info_data = "INVOICE=%s:STATUS=%s\n" % (tx_id, epay_status)
-            _logger.info('END epaybg_validate_data with info data %s', info_data)
-            return info_data
-
             cr, uid, context = request.cr, request.uid, request.context
             has_tx_id = request.registry['payment.transaction'].search(cr, uid, [('id', '=', tx_id)], context=context)
 
