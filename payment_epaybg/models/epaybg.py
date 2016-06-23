@@ -82,6 +82,7 @@ class AcquirerEpaybg(osv.Model):
             item_number,
             values.get('partner_email')
         )
+        item_name = item_name.encode('utf-8')
 
         if item_name and len(item_name) > 100:
             item_name = item_name[:100]
