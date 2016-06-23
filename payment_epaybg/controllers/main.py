@@ -45,7 +45,7 @@ class EpaybgController(http.Controller):
 
                 if tx.state != epaybg_state:
                     res = request.registry['payment.transaction'].form_feedback(cr, SUPERUSER_ID, post, 'epaybg', context)
-                    _logger.critical(res)
+                    _logger.warning(res)
 
             else:
                 epay_status = 'NO'
