@@ -4,7 +4,7 @@
         <template id="epaybg_acquirer_button">
             <form t-if="acquirer.epaybg_merchant_account" t-att-action="tx_url" method="post" target="_self">
                 <input type="hidden" name="PAGE" t-att-value="payType"/>
-                <t t-if="payType == credit_paydirect">
+                <t t-if="payType == 'credit_paydirect'">
                     <input type="hidden" name="LANG" t-att-value="siteLang"/>
                 </t>
                 <input type="hidden" name="ENCODED" t-att-value="encoded"/>
