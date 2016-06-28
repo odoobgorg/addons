@@ -25,7 +25,7 @@
     'category': 'e-commerce',
     'author': "Serpent Consulting Services Pvt. Ltd,"
               "Odoo Community Association (OCA)",
-    'website': 'http://www.serpentcs.com',
+    'website': 'http://www.serpentcs.com, http://www.bgosoftware.com',
     'version': '8.0.1.0.0',
     'depends': [
         # 'product_brand',
