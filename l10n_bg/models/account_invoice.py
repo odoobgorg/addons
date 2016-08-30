@@ -40,8 +40,8 @@ class AccountInvoice(models.Model):
 
     amount_in_word = fields.Char(readonly=True, default=False, copy=False, compute='_compute_text')
 
-    comment_template1_id = fields.Many2one('base.comment.template', string='Comment Template 1')
-    comment_template2_id = fields.Many2one('base.comment.template', string='Comment Template 2')
+    comment_template1_id = fields.Many2one('base.comment.template', string=_('Comment Template 1'))
+    comment_template2_id = fields.Many2one('base.comment.template', string=_('Comment Template 2'))
     note1 = fields.Html('Comment 1')
     note2 = fields.Html('Comment 2')
     comment = fields.Text(translate=True)
@@ -58,17 +58,17 @@ class AccountInvoice(models.Model):
         if comment:
             self.note2 = comment.get_value(self.partner_id.id)
 
-    place_of_deal_id = fields.Many2one(comodel_name='res.partner', store=True, required=False,
-                                       string="Place of deal",
-                                       default=lambda self: self.env.user.partner_id)
+    # @api.one
+    # @api.depends('company_id')
+    # def _compute_place_of_deal(self):
+    #     print '_compute_place_of_deal'
+    #     print self.place_of_deal
+    #     self.place_of_deal = "%s, %s" % (self.company_id.partner_id.city, self.company_id.partner_id.country_id.name)
 
-    place_of_deal = fields.Char(store=True, required=False)
+    place_of_deal = fields.Char(compute='_compute_place_of_deal', store=True, translate=True)
 
-    @api.onchange('place_of_deal_id')
-    def _set_place_of_deal(self):
-        place = self.place_of_deal_id
-        if place:
-            self.place_of_deal = self.place_of_deal_id.city
-            if self.place_of_deal_id.country_id.name:
-                self.place_of_deal += ", "
-                self.place_of_deal += self.place_of_deal_id.country_id.name
+    @api.onchange('place_of_deal')
+    def onchange_place_of_deal(self):
+        print 'onchange_place_of_deal'
+        if not self.place_of_deal:
+            self.place_of_deal = "%s, %s" % (self.company_id.partner_id.city, self.company_id.partner_id.country_id.name)
