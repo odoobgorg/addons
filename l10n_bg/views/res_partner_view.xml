@@ -12,12 +12,6 @@
                         <field name="bg_egn" placeholder="Type Bulgarian EGN" />
                     </div>
                 </field>
-                <!--<field name="name" position="after">-->
-                    <!--<label for="bg_invoice_name" string="Name for Invoice" attrs="{'invisible': [('is_company','=',False)]}" />-->
-                    <!--<div id="bg_invoice_name" class="o_row" attrs="{'invisible': [('is_company','=',False)]}">-->
-                        <!--<field name="bg_invoice_name" placeholder="Name for Invoice"/>-->
-                    <!--</div>-->
-                <!--</field>-->
             </field>
         </record>
 
