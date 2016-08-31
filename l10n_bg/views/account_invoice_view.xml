@@ -33,6 +33,7 @@
 
                 <xpath expr="//field[@name='payment_term_id']" position="after">
                     <field name="place_of_deal" attrs = "{'readonly': [('state', '!=', 'draft')]}"/>
+                    <field name="proforma_number"/>
                 </xpath>
 
             </field>

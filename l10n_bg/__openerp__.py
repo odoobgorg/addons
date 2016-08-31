@@ -52,6 +52,7 @@
         'views/base_comment_template.xml',
         # 'views/account_invoice_report_view.xml',
         'security/ir.model.access.csv',
+        'views/sequences.xml',
     ],
     'sequence': 1,
     'installable': True,
