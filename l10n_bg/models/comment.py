@@ -28,7 +28,7 @@ class BaseCommentTemplate(models.Model):
     _name = "base.comment.template"
     _description = "Base Comment template"
 
-    name = fields.Char('Comment summary', required=True)
+    name = fields.Char('Comment summary', required=True, translate=True)
     position = fields.Selection([('comment_1', 'Reason for not charging VAT'),
                                  ('comment_2', 'Pay Method')],
                                 'Position',

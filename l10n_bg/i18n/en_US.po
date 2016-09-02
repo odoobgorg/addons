@@ -702,3 +702,18 @@ msgstr "e.g. BULSTAT or EIK"
 #: model:ir.ui.view,arch_db:l10n_bg.view_partner_form_2
 msgid "e.g. Ivan Ivanov"
 msgstr "e.g. Ivan Ivanov"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.account_invoice_form_fields
+msgid "Comment label"
+msgstr "Comment label info"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.account_invoice_form_fields
+msgid "CommentTemplate1Group"
+msgstr "Reason for not charging VAT"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.account_invoice_form_fields
+msgid "CommentTemplate2Group"
+msgstr "Payment method"

@@ -477,3 +477,18 @@ msgstr "e.g. Булстат или Единен идентификационен
 #: model:ir.ui.view,arch_db:l10n_bg.view_partner_form_2
 msgid "e.g. Ivan Ivanov"
 msgstr "e.g. Иван Иванов"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.account_invoice_form_fields
+msgid "Comment label"
+msgstr "Условията ще бъдат показани на отпечатания документ. Можете да заредите предварително определен шаблон, да напишете собствен текст или да заредите шаблон и след това да го промените само за този документ."
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.account_invoice_form_fields
+msgid "CommentTemplate1Group"
+msgstr "Основание за неначисляване на ДДС"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.account_invoice_form_fields
+msgid "CommentTemplate2Group"
+msgstr "Начин на плащане"

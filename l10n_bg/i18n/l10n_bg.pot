@@ -702,6 +702,16 @@ msgid "e.g. Ivan Ivanov"
 msgstr ""
 
 #. module: l10n_bg
-#: model:ir.ui.view,arch_db:l10n_bg.view_company_form_1
-msgid "e.g. Иван Иванов"
+#: model:ir.ui.view,arch_db:l10n_bg.account_invoice_form_fields
+msgid "Comment label"
+msgstr ""
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.account_invoice_form_fields
+msgid "CommentTemplate1Group"
+msgstr ""
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.account_invoice_form_fields
+msgid "CommentTemplate2Group"
 msgstr ""

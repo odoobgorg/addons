@@ -13,15 +13,15 @@
 
                 <xpath expr="/form/sheet/notebook/page[2]" position="inside">
                   <page string="Comments" name="comments">
-                    <label string="Условията ще бъдат показани на отпечатания документ. Можете да заредите предварително определен шаблон, да напишете собствен текст или да заредите шаблон и след това да го промените само за този документ." colspan="2"/>
-                    <group string="Основание за неначисляване на ДДС">
+                    <label string="Comment label" colspan="2"/>
+                    <group string="CommentTemplate1Group">
                       <field name="comment_template1_id"
                         string="Load a template"
                         domain="[('position','=','comment_1')]"
                         context="{'default_position': 'comment_1'}"/>
                       <field name="note1" nolabel="1" colspan="2"/>
                     </group>
-                    <group string="Начин на плащане">
+                    <group string="CommentTemplate2Group">
                       <field name="comment_template2_id"
                         string="Load a template"
                         context="{'default_position': 'comment_2'}"
