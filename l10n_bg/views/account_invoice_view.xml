@@ -2,7 +2,7 @@
 <openerp>
     <data noupdate="0">
 
-        <record id="bg_account_invoice_form_amount_text" model="ir.ui.view">
+        <record id="account_invoice_form_fields" model="ir.ui.view">
             <field name="name">account.invoice_form.fields</field>
             <field name="model">account.invoice</field>
             <field name="inherit_id" ref="account.invoice_form"/>
