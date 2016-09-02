@@ -76,8 +76,6 @@ class AccountInvoice(models.Model):
         if 'proforma_number' not in vals:
             vals['proforma_number'] = self.env['ir.sequence'].next_by_code('account.invoice.proforma')
             _logger.info("Proforma number created: %s" % vals['proforma_number'])
-        else:
-            _logger.critical("Proforma number already exists: %s" % vals['proforma_number'])
 
         if 'place_of_deal' not in vals:
             company = self.env['res.company'].browse(vals['company_id'])

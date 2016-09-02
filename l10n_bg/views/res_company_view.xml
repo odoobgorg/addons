@@ -12,9 +12,6 @@
 				<field position="after" name="bg_uic">
 					<field name="bg_mol" placeholder="e.g. Ivan Ivanov"/>
 				</field>
-				<!--<field position="after" name="bg_uic">-->
-					<!--<field name="bg_invoice_name" placeholder="Invoice Name"/>-->
-				<!--</field>-->
 			</field>
 		</record>
 	</data>

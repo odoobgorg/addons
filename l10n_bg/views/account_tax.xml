@@ -4,8 +4,8 @@
 
         <!--sale-->
         <record id="account_tax_bg_1" model="account.tax">
-            <field name="name">TAX BG 20%</field>
-            <field name="description">TAX BG 20 %</field>
+            <field name="name">ДДС продажби на територията на страната 20.00%</field>
+            <field name="description">ДДС продажби на територията на страната 20.00%</field>
             <field name="tax_group_id">1</field>
             <field name="type_tax_use">sale</field>
             <field name="amount">20</field>
@@ -31,8 +31,8 @@
         </record>
 
         <record id="account_tax_bg_2" model="account.tax">
-            <field name="name">TAX BG 0%</field>
-            <field name="description">TAX BG 0%</field>
+            <field name="name">Вътреобщностни доставки - ВОД (0%)</field>
+            <field name="description">Вътреобщностни доставки - ВОД (0%)</field>
             <field name="tax_group_id">1</field>
             <field name="type_tax_use">sale</field>
             <field name="amount">0</field>
@@ -58,8 +58,8 @@
         </record>
 
         <record id="account_tax_bg_3" model="account.tax">
-            <field name="description">TS TAX BG 9%</field>
-            <field name="name">TS TAX BG 9%</field>
+            <field name="description">Туристически услуги (9%)</field>
+            <field name="name">Туристически услуги (9%)</field>
             <field name="tax_group_id">1</field>
             <field name="type_tax_use">sale</field>
             <field name="amount">9</field>
@@ -86,8 +86,8 @@
 
         <!--purchase-->
         <record id="account_tax_bg_4" model="account.tax">
-            <field name="description">VOP TAX BG 0%</field>
-            <field name="name">VOP TAX BG 0%</field>
+            <field name="description">Вътреобщностното придобиване - ВОП (0%)</field>
+            <field name="name">Вътреобщностното придобиване - ВОП (0%)</field>
             <field name="tax_group_id">1</field>
             <field name="type_tax_use">purchase</field>
             <field name="amount">0</field>
@@ -113,8 +113,8 @@
         </record>
 
         <record id="account_tax_bg_5" model="account.tax">
-            <field name="description">TD TAX BG 0%</field>
-            <field name="name">TD TAX BG 0%</field>
+            <field name="description">Облагаеми доставки с нулева ставка (глава 3)</field>
+            <field name="name">Облагаеми доставки с нулева ставка (глава 3)</field>
             <field name="tax_group_id">1</field>
             <field name="type_tax_use">purchase</field>
             <field name="amount">0</field>
@@ -140,8 +140,8 @@
         </record>
 
         <record id="account_tax_bg_6" model="account.tax">
-            <field name="description">DEAL TAX BG 0%</field>
-            <field name="name">DEAL TAX BG 0%</field>
+            <field name="description">Необлагаеми сделки и без право на ДК</field>
+            <field name="name">Необлагаеми сделки и без право на ДК</field>
             <field name="tax_group_id">1</field>
             <field name="type_tax_use">purchase</field>
             <field name="amount">0</field>
@@ -167,8 +167,8 @@
         </record>
 
         <record id="account_tax_bg_7" model="account.tax">
-            <field name="description">DDS TAX BG 20%</field>
-            <field name="name">DDS TAX BG 20%</field>
+            <field name="description">ДДС на покупките пълен ДК 20.00%</field>
+            <field name="name">ДДС на покупките пълен ДК 20.00%</field>
             <field name="tax_group_id">1</field>
             <field name="type_tax_use">purchase</field>
             <field name="amount">20</field>
@@ -194,8 +194,8 @@
         </record>
 
         <record id="account_tax_bg_8" model="account.tax">
-            <field name="description">IMORT TAX</field>
-            <field name="name">IMORT TAX</field>
+            <field name="description">Внос от държави извън ЕС</field>
+            <field name="name">Внос от държави извън ЕС</field>
             <field name="tax_group_id">1</field>
             <field name="type_tax_use">purchase</field>
             <field name="amount">0</field>

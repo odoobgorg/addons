@@ -50,7 +50,6 @@
         'views/comment_view.xml',
         'views/report_invoice_comments.xml',
         'views/base_comment_template.xml',
-        # 'views/account_invoice_report_view.xml',
         'security/ir.model.access.csv',
         'views/sequences.xml',
     ],

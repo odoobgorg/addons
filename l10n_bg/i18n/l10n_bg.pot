@@ -502,7 +502,6 @@ msgstr ""
 
 #. module: l10n_bg
 #: model:ir.model.fields,field_description:l10n_bg.field_account_invoice_place_of_deal
-#: model:ir.model.fields,field_description:l10n_bg.field_account_invoice_place_of_deal_id
 msgid "Place of deal"
 msgstr ""
 
