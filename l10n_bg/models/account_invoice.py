@@ -61,7 +61,7 @@ class AccountInvoice(models.Model):
 
     def _set_place_of_deal(self):
         place_of_deal = ''
-        if self.company_id.partner_id:
+        if self.company_id.partner_id and (self.company_id.partner_id.city or self.company_id.partner_id.country_id.name):
             place_of_deal = "%s, %s" % (self.company_id.partner_id.city, self.company_id.partner_id.country_id.name)
         return place_of_deal
 
@@ -79,7 +79,7 @@ class AccountInvoice(models.Model):
 
         if 'place_of_deal' not in vals:
             company = self.env['res.company'].browse(vals['company_id'])
-            if company.partner_id:
+            if company.partner_id and (company.partner_id.city or company.partner_id.country_id.name):
                 vals['place_of_deal'] = "%s, %s" % (company.partner_id.city, company.partner_id.country_id.name)
                 _logger.info("Place of deal created (on model create): %s" % vals['place_of_deal'])
 
