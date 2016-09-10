@@ -59,16 +59,20 @@ class AccountInvoice(models.Model):
         if comment:
             self.note2 = comment.get_value(self.partner_id.id)
 
-    def _set_place_of_deal(self):
-        place_of_deal = ''
-        if self.company_id.partner_id and (self.company_id.partner_id.city or self.company_id.partner_id.country_id.name):
-            place_of_deal = "%s, %s" % (self.company_id.partner_id.city, self.company_id.partner_id.country_id.name)
-        return place_of_deal
+    @staticmethod
+    def _set_place_of_deal(partner_id, city, country):
+        place_of_deal = []
+        if int(partner_id) > 0:
+            if city:
+                place_of_deal.append(city)
+            if country:
+                place_of_deal.append(country)
+        return ', '.join(place_of_deal)
 
     @api.onchange('place_of_deal')
     def onchange_place_of_deal(self):
         if not self.place_of_deal:
-            self.place_of_deal = self._set_place_of_deal()
+            self.place_of_deal = self._set_place_of_deal(self.company_id.partner_id, self.company_id.partner_id.city, self.company_id.partner_id.country_id.name)
             _logger.info("Place of deal created (onchange): %s" % self.place_of_deal)
 
     @api.model
@@ -79,8 +83,7 @@ class AccountInvoice(models.Model):
 
         if 'place_of_deal' not in vals:
             company = self.env['res.company'].browse(vals['company_id'])
-            if company.partner_id and (company.partner_id.city or company.partner_id.country_id.name):
-                vals['place_of_deal'] = "%s, %s" % (company.partner_id.city, company.partner_id.country_id.name)
-                _logger.info("Place of deal created (on model create): %s" % vals['place_of_deal'])
+            vals['place_of_deal'] = self._set_place_of_deal(company.partner_id, company.partner_id.city, company.partner_id.country_id.name)
+            _logger.info("Place of deal created (on model create): %s" % vals['place_of_deal'])
 
         return super(AccountInvoice, self).create(vals)
