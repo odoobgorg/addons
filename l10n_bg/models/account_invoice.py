@@ -62,7 +62,7 @@ class AccountInvoice(models.Model):
     @staticmethod
     def _set_place_of_deal(partner_id, city, country):
         place_of_deal = []
-        if int(partner_id) > 0:
+        if partner_id:
             if city:
                 place_of_deal.append(city)
             if country:
@@ -72,7 +72,10 @@ class AccountInvoice(models.Model):
     @api.onchange('place_of_deal')
     def onchange_place_of_deal(self):
         if not self.place_of_deal:
-            self.place_of_deal = self._set_place_of_deal(self.company_id.partner_id, self.company_id.partner_id.city, self.company_id.partner_id.country_id.name)
+            self.place_of_deal = self._set_place_of_deal(self.company_id.partner_id,
+                                                         self.company_id.partner_id.city,
+                                                         self.company_id.partner_id.country_id.name
+                                                         )
             _logger.info("Place of deal created (onchange): %s" % self.place_of_deal)
 
     @api.model
@@ -83,7 +86,9 @@ class AccountInvoice(models.Model):
 
         if 'place_of_deal' not in vals:
             company = self.env['res.company'].browse(vals['company_id'])
-            vals['place_of_deal'] = self._set_place_of_deal(company.partner_id, company.partner_id.city, company.partner_id.country_id.name)
+            vals['place_of_deal'] = self._set_place_of_deal(company.partner_id, company.partner_id.city,
+                                                            company.partner_id.country_id.name
+                                                            )
             _logger.info("Place of deal created (on model create): %s" % vals['place_of_deal'])
 
         return super(AccountInvoice, self).create(vals)
