@@ -25,5 +25,4 @@ import res_company
 import account_invoice
 import amount_to_text_bg
 import comment
-# import account_tax
-import res_users
+import account_tax

@@ -32,8 +32,8 @@ _logger = logging.getLogger(__name__)
 class AccountInvoice(models.Model):
     _inherit = 'account.invoice'
 
-    comment_template1_id = fields.Many2one('base.comment.template', string=_('Comment Template 1'))
-    comment_template2_id = fields.Many2one('base.comment.template', string=_('Comment Template 2'))
+    comment_template1_id = fields.Many2one('base.comment.template', string=_('Comment Template 1'), ondelete='cascade')
+    comment_template2_id = fields.Many2one('base.comment.template', string=_('Comment Template 2'), ondelete='cascade')
     note1 = fields.Html(_('Comment 1'))
     note2 = fields.Html(_('Comment 2'))
     comment = fields.Text(translate=True)
@@ -93,15 +93,3 @@ class AccountInvoice(models.Model):
 
         return super(AccountInvoice, self).create(vals)
 
-    # @api.multi
-    # def name_get(self):
-    #     TYPES = {
-    #         'out_invoice': _('Invoice'),
-    #         'in_invoice': _('Vendor Bill'),
-    #         'out_refund': _('Refund'),
-    #         'in_refund': _('Vendor Refund'),
-    #     }
-    #     result = []
-    #     for inv in self:
-    #         result.append((inv.id, "%s %s" % (inv.number or TYPES[inv.type], inv.name or '')))
-    #     return result

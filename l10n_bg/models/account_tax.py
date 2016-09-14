@@ -32,4 +32,5 @@ _logger = logging.getLogger(__name__)
 class AccountTax(models.Model):
     _inherit = "account.tax"
 
-    name = fields.Text(translate=True)
+    name = fields.Char(translate=True)
+    description = fields.Char(translate=True)
