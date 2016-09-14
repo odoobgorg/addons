@@ -276,5 +276,6 @@
             <field name="res_id" ref="account_tax_bg_8"/>
         </record>
 
+
     </data>
 </openerp>
