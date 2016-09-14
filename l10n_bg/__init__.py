@@ -44,8 +44,13 @@ def l10n_bg_install_lang(registry, cr, uid, lang):
     if not lang_ids:
         lang_ids.append(res_lang.load_lang(cr, uid, lang))
 
+    res_lang_data = {
+        'date_format': '%d.%m.%Y г.',
+        'thousands_sep': '.',
+        'decimal_point': '.',
+    }
     for lang_id in lang_ids:
-        res_lang.write(cr, uid, lang_id, {'date_format': '%d.%m.%Y г.'}, context={})
+        res_lang.write(cr, uid, lang_id, res_lang_data, context={})
 
     ir_values_obj = res_lang.pool.get('ir.values')
     default_value = ir_values_obj.get(cr, uid, 'default', False, ['res.partner'])
