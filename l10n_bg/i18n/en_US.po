@@ -717,3 +717,8 @@ msgstr "Reason for not charging VAT"
 #: model:ir.ui.view,arch_db:l10n_bg.account_invoice_form_fields
 msgid "CommentTemplate2Group"
 msgstr "Payment method"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "<strong>EGN: </strong>"
+msgstr "<strong>EGN: </strong>"

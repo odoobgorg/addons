@@ -492,3 +492,8 @@ msgstr "Основание за неначисляване на ДДС"
 #: model:ir.ui.view,arch_db:l10n_bg.account_invoice_form_fields
 msgid "CommentTemplate2Group"
 msgstr "Начин на плащане"
+
+#. module: l10n_bg
+#: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
+msgid "<strong>EGN: </strong>"
+msgstr "<strong>ЕГН: </strong>"
