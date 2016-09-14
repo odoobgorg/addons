@@ -18,7 +18,7 @@
             <field name="value">ДДС продажби на територията на страната 20.00%</field>
             <field name="type">model</field>
             <field name="module">l10n_bg</field>
-            <field name="res_id" ref="l10n_bg.account_tax_bg_1"/>
+            <field name="res_id" ref="account_tax_bg_1"/>
         </record>
         <record id="ir_translation_account_tax_bg_12" model="ir.translation">
             <field name="name">account.tax,description</field>
@@ -27,7 +27,7 @@
             <field name="value">ДДС продажби на територията на страната 20.00%</field>
             <field name="type">model</field>
             <field name="module">l10n_bg</field>
-            <field name="res_id" ref="l10n_bg.account_tax_bg_1"/>
+            <field name="res_id" ref="account_tax_bg_1"/>
         </record>
 
         <record id="account_tax_bg_2" model="account.tax">
@@ -45,7 +45,7 @@
             <field name="value">Вътреобщностни доставки - ВОД (0%)</field>
             <field name="type">model</field>
             <field name="module">l10n_bg</field>
-            <field name="res_id" ref="l10n_bg.account_tax_bg_2"/>
+            <field name="res_id" ref="account_tax_bg_2"/>
         </record>
         <record id="ir_translation_account_tax_bg_22" model="ir.translation">
             <field name="name">account.tax,description</field>
@@ -54,7 +54,7 @@
             <field name="value">Вътреобщностни доставки - ВОД (0%)</field>
             <field name="type">model</field>
             <field name="module">l10n_bg</field>
-            <field name="res_id" ref="l10n_bg.account_tax_bg_2"/>
+            <field name="res_id" ref="account_tax_bg_2"/>
         </record>
 
         <record id="account_tax_bg_3" model="account.tax">
@@ -72,7 +72,7 @@
             <field name="value">Туристически услуги (9%)</field>
             <field name="type">model</field>
             <field name="module">l10n_bg</field>
-            <field name="res_id" ref="l10n_bg.account_tax_bg_3"/>
+            <field name="res_id" ref="account_tax_bg_3"/>
         </record>
         <record id="ir_translation_account_tax_bg_32" model="ir.translation">
             <field name="name">account.tax,description</field>
@@ -81,7 +81,63 @@
             <field name="value">Туристически услуги (9%)</field>
             <field name="type">model</field>
             <field name="module">l10n_bg</field>
-            <field name="res_id" ref="l10n_bg.account_tax_bg_3"/>
+            <field name="res_id" ref="account_tax_bg_3"/>
+        </record>
+
+        <!--Необлагаеми Продажби-->
+        <record id="account_tax_bg_sale_4" model="account.tax">
+            <field name="description">Необлагаеми сделки (0%)</field>
+            <field name="name">Необлагаеми сделки (0%)</field>
+            <field name="tax_group_id">1</field>
+            <field name="type_tax_use">sale</field>
+            <field name="amount">9</field>
+            <field name="sequence">3</field>
+        </record>
+        <record id="ir_translation_account_tax_bg_31" model="ir.translation">
+            <field name="name">account.tax,name</field>
+            <field name="state">translated</field>
+            <field name="lang">bg_BG</field>
+            <field name="value">Необлагаеми сделки (0%)</field>
+            <field name="type">model</field>
+            <field name="module">l10n_bg</field>
+            <field name="res_id" ref="account_tax_bg_sale_4"/>
+        </record>
+        <record id="ir_translation_account_tax_bg_32" model="ir.translation">
+            <field name="name">account.tax,description</field>
+            <field name="state">translated</field>
+            <field name="lang">bg_BG</field>
+            <field name="value">Необлагаеми сделки (0%)</field>
+            <field name="type">model</field>
+            <field name="module">l10n_bg</field>
+            <field name="res_id" ref="account_tax_bg_sale_4"/>
+        </record>
+
+        <!--Облагаеми сделки за нерегистриран по ЗДДС търговец-->
+        <record id="account_tax_bg_sale_5" model="account.tax">
+            <field name="description">Облагаеми сделки за нерегистриран по ЗДДС търговец (0%)</field>
+            <field name="name">Облагаеми сделки за нерегистриран по ЗДДС търговец (0%)</field>
+            <field name="tax_group_id">1</field>
+            <field name="type_tax_use">sale</field>
+            <field name="amount">9</field>
+            <field name="sequence">3</field>
+        </record>
+        <record id="ir_translation_account_tax_bg_31" model="ir.translation">
+            <field name="name">account.tax,name</field>
+            <field name="state">translated</field>
+            <field name="lang">bg_BG</field>
+            <field name="value">Облагаеми сделки за нерегистриран по ЗДДС търговец (0%)</field>
+            <field name="type">model</field>
+            <field name="module">l10n_bg</field>
+            <field name="res_id" ref="account_tax_bg_sale_5"/>
+        </record>
+        <record id="ir_translation_account_tax_bg_32" model="ir.translation">
+            <field name="name">account.tax,description</field>
+            <field name="state">translated</field>
+            <field name="lang">bg_BG</field>
+            <field name="value">Облагаеми сделки за нерегистриран по ЗДДС търговец (0%)</field>
+            <field name="type">model</field>
+            <field name="module">l10n_bg</field>
+            <field name="res_id" ref="account_tax_bg_sale_5"/>
         </record>
 
         <!--purchase-->
@@ -100,7 +156,7 @@
             <field name="value">Вътреобщностното придобиване - ВОП (0%)</field>
             <field name="type">model</field>
             <field name="module">l10n_bg</field>
-            <field name="res_id" ref="l10n_bg.account_tax_bg_4"/>
+            <field name="res_id" ref="account_tax_bg_4"/>
         </record>
         <record id="ir_translation_account_tax_bg_42" model="ir.translation">
             <field name="name">account.tax,description</field>
@@ -109,7 +165,7 @@
             <field name="value">Вътреобщностното придобиване - ВОП (0%)</field>
             <field name="type">model</field>
             <field name="module">l10n_bg</field>
-            <field name="res_id" ref="l10n_bg.account_tax_bg_4"/>
+            <field name="res_id" ref="account_tax_bg_4"/>
         </record>
 
         <record id="account_tax_bg_5" model="account.tax">
@@ -127,7 +183,7 @@
             <field name="value">Облагаеми доставки с нулева ставка (глава 3)</field>
             <field name="type">model</field>
             <field name="module">l10n_bg</field>
-            <field name="res_id" ref="l10n_bg.account_tax_bg_5"/>
+            <field name="res_id" ref="account_tax_bg_5"/>
         </record>
         <record id="ir_translation_account_tax_bg_52" model="ir.translation">
             <field name="name">account.tax,description</field>
@@ -136,7 +192,7 @@
             <field name="value">Облагаеми доставки с нулева ставка (глава 3)</field>
             <field name="type">model</field>
             <field name="module">l10n_bg</field>
-            <field name="res_id" ref="l10n_bg.account_tax_bg_5"/>
+            <field name="res_id" ref="account_tax_bg_5"/>
         </record>
 
         <record id="account_tax_bg_6" model="account.tax">
@@ -154,7 +210,7 @@
             <field name="value">Необлагаеми сделки и без право на ДК</field>
             <field name="type">model</field>
             <field name="module">l10n_bg</field>
-            <field name="res_id" ref="l10n_bg.account_tax_bg_6"/>
+            <field name="res_id" ref="account_tax_bg_6"/>
         </record>
         <record id="ir_translation_account_tax_bg_62" model="ir.translation">
             <field name="name">account.tax,description</field>
@@ -163,7 +219,7 @@
             <field name="value">Необлагаеми сделки и без право на ДК</field>
             <field name="type">model</field>
             <field name="module">l10n_bg</field>
-            <field name="res_id" ref="l10n_bg.account_tax_bg_6"/>
+            <field name="res_id" ref="account_tax_bg_6"/>
         </record>
 
         <record id="account_tax_bg_7" model="account.tax">
@@ -181,7 +237,7 @@
             <field name="value">ДДС на покупките пълен ДК 20.00%</field>
             <field name="type">model</field>
             <field name="module">l10n_bg</field>
-            <field name="res_id" ref="l10n_bg.account_tax_bg_7"/>
+            <field name="res_id" ref="account_tax_bg_7"/>
         </record>
         <record id="ir_translation_account_tax_bg_72" model="ir.translation">
             <field name="name">account.tax,description</field>
@@ -190,7 +246,7 @@
             <field name="value">ДДС на покупките пълен ДК 20.00%</field>
             <field name="type">model</field>
             <field name="module">l10n_bg</field>
-            <field name="res_id" ref="l10n_bg.account_tax_bg_7"/>
+            <field name="res_id" ref="account_tax_bg_7"/>
         </record>
 
         <record id="account_tax_bg_8" model="account.tax">
@@ -208,7 +264,7 @@
             <field name="value">Внос от държави извън ЕС</field>
             <field name="type">model</field>
             <field name="module">l10n_bg</field>
-            <field name="res_id" ref="l10n_bg.account_tax_bg_8"/>
+            <field name="res_id" ref="account_tax_bg_8"/>
         </record>
         <record id="ir_translation_account_tax_bg_82" model="ir.translation">
             <field name="name">account.tax,description</field>
@@ -217,7 +273,7 @@
             <field name="value">Внос от държави извън ЕС</field>
             <field name="type">model</field>
             <field name="module">l10n_bg</field>
-            <field name="res_id" ref="l10n_bg.account_tax_bg_8"/>
+            <field name="res_id" ref="account_tax_bg_8"/>
         </record>
 
     </data>

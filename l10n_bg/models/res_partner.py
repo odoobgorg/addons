@@ -42,13 +42,20 @@ class ResPartner(models.Model):
     @api.one
     @api.constrains('bg_egn')
     def _check_egn(self):
+
+        if not self.bg_egn:
+            return True
+
+        if self.country_id.id != 23:
+            _logger.info("We check only BG contacts. %s, %s" % (self.display_name, self.country_id.name))
+            return True
+
         if not self.egn_checker(self.bg_egn):
             _logger.error(self.bg_egn)
             raise Exception("EGN isn't valid.")
 
-    def egn_checker(self, egn):
-        if not egn:
-            return True
+    @staticmethod
+    def egn_checker(egn):
 
         def get_checksum(weights, digits):
             checksum = sum([weight * digit for weight, digit in zip(weights, digits)])
@@ -72,13 +79,18 @@ class ResPartner(models.Model):
     @api.one
     @api.constrains('bg_uic')
     def _check_uic(self):
+        if not self.bg_uic:
+            return True
+
+        if self.country_id.id != 23:
+            _logger.info("We check only BG contacts. %s, %s" % (self.display_name, self.country_id.name))
+            return True
+
         if not self.bg_uic_checker(self.bg_uic):
             raise ValidationError(_("BULSTAT/EIK isn't valid"))
 
-    def bg_uic_checker(self, uic):
-
-        if not uic:
-            return True
+    @staticmethod
+    def bg_uic_checker(uic):
 
         def get_checksum(weights, digits):
             checksum = sum([weight * digit for weight, digit in zip(weights, digits)])

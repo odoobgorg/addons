@@ -92,3 +92,16 @@ class AccountInvoice(models.Model):
             _logger.info("Place of deal created (on model create): %s" % vals['place_of_deal'])
 
         return super(AccountInvoice, self).create(vals)
+
+    # @api.multi
+    # def name_get(self):
+    #     TYPES = {
+    #         'out_invoice': _('Invoice'),
+    #         'in_invoice': _('Vendor Bill'),
+    #         'out_refund': _('Refund'),
+    #         'in_refund': _('Vendor Refund'),
+    #     }
+    #     result = []
+    #     for inv in self:
+    #         result.append((inv.id, "%s %s" % (inv.number or TYPES[inv.type], inv.name or '')))
+    #     return result

@@ -30,7 +30,6 @@
     'images': ['static/description/icon.png', 'images/main_screenshot.png'],
     'depends': ['account',
                 'base_vat',
-                # 'l10n_multilang',
                 ],
     'demo': [],
     'data': [
@@ -50,11 +49,12 @@
         'views/comment_view.xml',
         'views/report_invoice_comments.xml',
         'views/base_comment_template.xml',
-        'security/ir.model.access.csv',
         'views/sequences.xml',
+        'security/ir.model.access.csv',
     ],
     'sequence': 1,
     'installable': True,
     'doc': ['doc/index.rst'],
-    "application": True,
+    'application': True,
+    'post_init_hook': 'post_init_l10n_bg',
 }

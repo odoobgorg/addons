@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
-  <data noupdate="0">
+  <data noupdate="1">
     <template id="report_invoice_bg_document_comments" inherit_id="report_invoice_bg">
       <xpath expr="//p[@t-if='o.comment']" position="after">
         <p t-if="o.comment_template2_id">

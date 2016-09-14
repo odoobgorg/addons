@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data noupdate="0">
+    <data noupdate="1">
 
         <!--<record id="tax_tag_sale_dds_00" model="account.account.tag">-->
             <!--<field name="name">ДДС продажби 0%</field>-->

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <openerp>
-    <data noupdate="0">
+    <data noupdate="1">
 
         <!--Начин на плащане-->
         <record id="base_comment_template_x1" model="base.comment.template">
