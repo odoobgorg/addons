@@ -118,11 +118,11 @@
                                     <td><span t-field="o.partner_id.bg_mol"/></td>
                                 </t>
                                 <t t-if="not o.partner_id.is_company">
-                                    <t t-if="o.partner_id.country_id == 23">
+                                    <t t-if="o.partner_id.country_id.id == 23">
                                         <td><strong>EGN: </strong></td>
                                         <td><span t-field="o.partner_id.bg_egn"/></td>
                                     </t>
-                                    <t t-if="o.partner_id.country_id != 23">
+                                    <t t-if="o.partner_id.country_id.id != 23">
                                         <td/>
                                         <td/>
                                     </t>
