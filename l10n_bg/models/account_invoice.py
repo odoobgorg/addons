@@ -22,7 +22,7 @@
 
 from openerp import models, fields, api, _
 from amount_to_text_bg import *
-# from openerp.tools import amount_to_text_en
+from openerp.tools import amount_to_text_en
 
 import logging
 
@@ -44,8 +44,11 @@ class AccountInvoice(models.Model):
     @api.one
     @api.depends('amount_total')
     def _compute_text(self):
-        # self.amount_in_word_en = amount_to_text_en.amount_to_text(self.amount_total, lang='en', currency='')
-        self.amount_in_word = amount_to_text_bg(self.amount_total, self.currency_id.name)
+        if self.partner_id.lang == 'bg_BG':
+            self.amount_in_word = amount_to_text_bg(self.amount_total, self.currency_id.name)
+        else:
+            self.amount_in_word = amount_to_text_en.amount_to_text(self.amount_total, lang='en', currency='')
+        _logger.info("Amount in word: %s" % self.amount_in_word)
 
     @api.onchange('comment_template1_id')
     def _set_note1(self):
