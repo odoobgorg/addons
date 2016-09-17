@@ -31,6 +31,7 @@ _logger = logging.getLogger(__name__)
 class ResPartner(models.Model):
     _inherit = "res.partner"
 
+    name = fields.Char(translate=True)
     bg_egn = fields.Char(string=_('EGN'), store=True, size=10, help=_('EGN'))
     bg_uic = fields.Char(string=_('BULSTAT'), store=True, size=13, help=_('BULSTAT by Bulgarian register agency'))
     bg_mol = fields.Char(string=_('MOL'), translate=True, store=True, size=100, help=_('MOL'))

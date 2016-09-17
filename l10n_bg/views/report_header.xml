@@ -6,14 +6,14 @@
                 <div class="header">
                     <div class="row">
                         <div class="col-xs-6">
-                            <img  t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo" style="max-height: 100px; vertical-align: bottom;"/>
+                            <img  t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % o.company_id.logo" style="max-height: 100px; vertical-align: bottom;"/>
                         </div>
                         <div class="col-xs-6"  style="text-align:right;">
                                <br /><br />
                                <strong>
                                    <span style="font-size:18px;" t-field="o.company_id.name"/>
                                </strong><br />
-                               <span t-field="company.rml_header1"/>
+                               <span t-field="o.company_id.rml_header1"/>
                         </div>
                     </div>
                     <div class="row zero_min_height">

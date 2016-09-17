@@ -90,14 +90,14 @@
                                 <td><span t-field="o.company_id.name"/></td>
                             </tr>
                             <tr>
-                                <td></td>
+                                <td/>
                                 <td><strong>City/Village </strong></td>
                                 <td><span t-field="o.partner_id.zip"/> <span t-field="o.partner_id.city"/><span t-if="o.partner_id.country_id">, <span t-field="o.partner_id.country_id"/></span></td>
                                 <td><strong>City/Village </strong></td>
                                 <td><span t-field="o.company_id.zip"/> <span t-field="o.company_id.city"/><span t-if="o.company_id.country_id">, <span t-field="o.company_id.country_id"/></span></td>
                             </tr>
                             <tr>
-                                <td></td>
+                                <td/>
                                 <td><strong>Address: </strong></td>
                                 <td><span t-field="o.partner_id.street"/></td>
                                 <td><strong>Address: </strong></td>

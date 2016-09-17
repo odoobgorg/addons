@@ -32,6 +32,7 @@ _logger = logging.getLogger(__name__)
 class ResCompany(models.Model):
     _inherit = "res.company"
 
+    name = fields.Char(translate=True)
     bg_uic = fields.Char(related='partner_id.bg_uic')
     bg_mol = fields.Char(related='partner_id.bg_mol')
     rml_header1 = fields.Char(translate=True)
