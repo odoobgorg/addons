@@ -81,11 +81,18 @@ class AccountInvoice(models.Model):
                                                          )
             _logger.info("Place of deal created (onchange): %s" % self.place_of_deal)
 
+    @api.one
+    @api.constrains('type', 'state')
+    def _check_proforma2(self):
+        if self.proforma_number is False and self.type == 'out_invoice' and self.state == 'proforma2':
+            self.proforma_number = self.env['ir.sequence'].next_by_code('account.invoice.proforma')
+            _logger.info("Proforma number created: %s" % self.proforma_number)
+
     @api.model
     def create(self, vals):
-        if 'proforma_number' not in vals:
-            vals['proforma_number'] = self.env['ir.sequence'].next_by_code('account.invoice.proforma')
-            _logger.info("Proforma number created: %s" % vals['proforma_number'])
+        # if self.type == 'out_invoice' and self.state == 'proforma2' and 'proforma_number' not in vals:
+        #     vals['proforma_number'] = self.env['ir.sequence'].next_by_code('account.invoice.proforma')
+        #     _logger.info("Proforma number created: %s" % vals['proforma_number'])
 
         if 'place_of_deal' not in vals:
             company = self.env['res.company'].browse(vals['company_id'])
