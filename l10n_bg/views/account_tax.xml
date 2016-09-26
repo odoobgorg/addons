@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <openerp>
-    <data noupdate="1">
+    <data noupdate="0">
 
         <!--sale-->
         <record id="account_tax_bg_1" model="account.tax">

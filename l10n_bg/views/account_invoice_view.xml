@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
-    <data noupdate="1">
+    <data noupdate="0">
 
         <record id="account_invoice_form_fields" model="ir.ui.view">
             <field name="name">account.invoice_form.fields</field>

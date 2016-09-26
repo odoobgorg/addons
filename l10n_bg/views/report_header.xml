@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
-    <data noupdate="1">
+    <data noupdate="0">
         <template id="external_layout_header_bg" inherit_id="report.external_layout_header">
             <xpath expr="//div[@class='header']" position="replace">
                 <div class="header">

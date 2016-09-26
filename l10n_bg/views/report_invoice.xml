@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <openerp>
-    <data noupdate="1">
+    <data noupdate="0">
 
         <template id="report_invoice_bg" inherit_id="account.report_invoice_document">
             <xpath expr="//div[@class='page']" position="replace">
