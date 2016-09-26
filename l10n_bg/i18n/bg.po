@@ -301,7 +301,7 @@ msgstr "Фактура"
 
 #. module: l10n_bg
 #: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
-msgid "Invoice<span> N° </span>"
+msgid "Invoice<span> # </span>"
 msgstr "Фактура<span> N° </span>"
 
 #. module: l10n_bg
@@ -354,7 +354,7 @@ msgstr "Open Account Dashboard Menu"
 
 #. module: l10n_bg
 #: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
-msgid "PRO-FORMA<span> N° </span>"
+msgid "PRO-FORMA<span> # </span>"
 msgstr "Проформа<span> N° </span>"
 
 #. module: l10n_bg
@@ -409,12 +409,12 @@ msgstr "Кредитно известие"
 
 #. module: l10n_bg
 #: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
-msgid "Supplier Invoice<span> N° </span>"
+msgid "Supplier Invoice<span> # </span>"
 msgstr "Supplier Invoice<span> N° </span>"
 
 #. module: l10n_bg
 #: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
-msgid "Supplier Refund<span> N° </span>"
+msgid "Supplier Refund<span> # </span>"
 msgstr "Supplier Refund<span> N° </span>"
 
 #. module: l10n_bg

@@ -395,8 +395,8 @@ msgstr "Invoice"
 
 #. module: l10n_bg
 #: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
-msgid "Invoice<span> N° </span>"
-msgstr "Invoice<span> N° </span>"
+msgid "Invoice<span> # </span>"
+msgstr "Invoice<span> # </span>"
 
 #. module: l10n_bg
 #: model:ir.model.fields,field_description:l10n_bg.field_res_users_invoice_ids
@@ -464,8 +464,8 @@ msgstr "Open Account Dashboard Menu"
 
 #. module: l10n_bg
 #: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
-msgid "PRO-FORMA<span> N° </span>"
-msgstr "PRO-FORMA<span> N° </span>"
+msgid "PRO-FORMA<span> # </span>"
+msgstr "PRO-FORMA<span> # </span>"
 
 #. module: l10n_bg
 #: model:ir.ui.view,arch_db:l10n_bg.external_layout_footer_bg
@@ -549,13 +549,13 @@ msgstr "Supplier Currency"
 
 #. module: l10n_bg
 #: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
-msgid "Supplier Invoice<span> N° </span>"
-msgstr "Supplier Invoice<span> N° </span>"
+msgid "Supplier Invoice<span> # </span>"
+msgstr "Supplier Invoice<span> # </span>"
 
 #. module: l10n_bg
 #: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
-msgid "Supplier Refund<span> N° </span>"
-msgstr "Supplier Refund<span> N° </span>"
+msgid "Supplier Refund<span> # </span>"
+msgstr "Supplier Refund<span> # </span>"
 
 #. module: l10n_bg
 #: model:ir.ui.view,arch_db:l10n_bg.report_invoice_bg
