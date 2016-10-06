@@ -30,6 +30,7 @@
     'images': ['static/description/icon.png', 'images/main_screenshot.png'],
     'depends': ['account',
                 'base_vat',
+                'sale_layout',
                 ],
     'demo': [],
     'data': [
