@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from odoo import api
-from odoo.osv import osv, fields
+from odoo import models, api, fields
 from itertools import groupby
 
 
@@ -21,26 +20,33 @@ def grouplines(self, ordered_lines, sortkey):
     return grouped_lines
 
 
-class SaleLayoutCategory(osv.Model):
+class SaleLayoutCategory(models.Model):
     _name = 'sale_layout.category'
     _order = 'sequence, id'
-    _columns = {
-        'name': fields.char('Name', required=True, translate=True),
-        'sequence': fields.integer('Sequence', required=True),
-        'subtotal': fields.boolean('Add subtotal'),
-        'separator': fields.boolean('Add separator'),
-        'pagebreak': fields.boolean('Add pagebreak')
-    }
 
-    _defaults = {
-        'subtotal': True,
-        'separator': True,
-        'pagebreak': False,
-        'sequence': 10
-    }
+    # _columns = {
+    #     'name': fields.char('Name', required=True, translate=True),
+    #     'sequence': fields.integer('Sequence', required=True),
+    #     'subtotal': fields.boolean('Add subtotal'),
+    #     'separator': fields.boolean('Add separator'),
+    #     'pagebreak': fields.boolean('Add pagebreak')
+    # }
+    #
+    # _defaults = {
+    #     'subtotal': True,
+    #     'separator': True,
+    #     'pagebreak': False,
+    #     'sequence': 10
+    # }
+
+    name = fields.Char(string='Name', required=True, translate=True)
+    sequence = fields.Integer(string='Sequence', required=True, default=10)
+    subtotal = fields.Boolean(string='Add subtotal', default=True)
+    separator = fields.Boolean(string='Add separator', default=True)
+    pagebreak = fields.Boolean(string='Add pagebreak', default=False)
 
 
-class AccountInvoice(osv.Model):
+class AccountInvoice(models.Model):
     _inherit = 'account.invoice'
 
     def sale_layout_lines(self, cr, uid, ids, invoice_id=None, context=None):
@@ -58,17 +64,16 @@ class AccountInvoice(osv.Model):
         return grouplines(self, ordered_lines, sortkey)
 
 
-import odoo
+# import odoo
 
-class AccountInvoiceLine(osv.Model):
+class AccountInvoiceLine(models.Model):
     _inherit = 'account.invoice.line'
     _order = 'invoice_id, categ_sequence, sequence, id'
 
-    sale_layout_cat_id = odoo.fields.Many2one('sale_layout.category', string='Section')
-    categ_sequence = odoo.fields.Integer(related='sale_layout_cat_id.sequence',
-                                            string='Layout Sequence', store=True)
+    sale_layout_cat_id = fields.Many2one('sale_layout.category', string='Section')
+    categ_sequence = fields.Integer(related='sale_layout_cat_id.sequence', string='Layout Sequence', store=True)
 
-class SaleOrder(osv.Model):
+class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
     def sale_layout_lines(self, cr, uid, ids, order_id=None, context=None):
@@ -85,16 +90,19 @@ class SaleOrder(osv.Model):
         return grouplines(self, ordered_lines, sortkey)
 
 
-class SaleOrderLine(osv.Model):
+class SaleOrderLine(models.Model):
     _inherit = 'sale.order.line'
-    _columns = {
-        'sale_layout_cat_id': fields.many2one('sale_layout.category',
-                                              string='Section'),
-        'categ_sequence': fields.related('sale_layout_cat_id',
-                                         'sequence', type='integer',
-                                         string='Layout Sequence', store=True)
-        #  Store is intentionally set in order to keep the "historic" order.
-    }
+    # _columns = {
+    #     'sale_layout_cat_id': fields.many2one('sale_layout.category',
+    #                                           string='Section'),
+    #     'categ_sequence': fields.related('sale_layout_cat_id',
+    #                                      'sequence', type='integer',
+    #                                      string='Layout Sequence', store=True)
+    #     #  Store is intentionally set in order to keep the "historic" order.
+    # }
+
+    sale_layout_cat_id = fields.Many2one('sale_layout.category', string='Section')
+    categ_sequence = fields.Integer(related='sale_layout_cat_id.sequence', string='Layout Sequence', store=True)
 
     _order = 'order_id, categ_sequence, sale_layout_cat_id, sequence, id'
 
