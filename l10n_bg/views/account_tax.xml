@@ -4,8 +4,8 @@
 
         <!--sale-->
         <record id="account_tax_bg_1" model="account.tax">
-            <field name="name">ДДС продажби на територията на страната 20.00%</field>
-            <field name="description">ДДС продажби на територията на страната 20.00%</field>
+            <field name="name">ДДС продажби 20.00%</field>
+            <field name="description">ДДС продажби 20.00%</field>
             <field name="tax_group_id">1</field>
             <field name="type_tax_use">sale</field>
             <field name="amount">20</field>
@@ -15,7 +15,7 @@
             <field name="name">account.tax,name</field>
             <field name="state">translated</field>
             <field name="lang">bg_BG</field>
-            <field name="value">ДДС продажби на територията на страната 20.00%</field>
+            <field name="value">ДДС продажби 20.00%</field>
             <field name="type">model</field>
             <field name="module">l10n_bg</field>
             <field name="res_id" ref="account_tax_bg_1"/>
@@ -24,7 +24,7 @@
             <field name="name">account.tax,description</field>
             <field name="state">translated</field>
             <field name="lang">bg_BG</field>
-            <field name="value">ДДС продажби на територията на страната 20.00%</field>
+            <field name="value">ДДС продажби 20.00%</field>
             <field name="type">model</field>
             <field name="module">l10n_bg</field>
             <field name="res_id" ref="account_tax_bg_1"/>
@@ -224,7 +224,7 @@
 
         <record id="account_tax_bg_7" model="account.tax">
             <field name="description">ДДС на покупките пълен ДК 20.00%</field>
-            <field name="name">ДДС на покупките пълен ДК 20.00%</field>
+            <field name="name">ДДС покупки 20.00%</field>
             <field name="tax_group_id">1</field>
             <field name="type_tax_use">purchase</field>
             <field name="amount">20</field>
@@ -234,7 +234,7 @@
             <field name="name">account.tax,name</field>
             <field name="state">translated</field>
             <field name="lang">bg_BG</field>
-            <field name="value">ДДС на покупките пълен ДК 20.00%</field>
+            <field name="value">ДДС покупки 20.00%</field>
             <field name="type">model</field>
             <field name="module">l10n_bg</field>
             <field name="res_id" ref="account_tax_bg_7"/>
@@ -243,7 +243,7 @@
             <field name="name">account.tax,description</field>
             <field name="state">translated</field>
             <field name="lang">bg_BG</field>
-            <field name="value">ДДС на покупките пълен ДК 20.00%</field>
+            <field name="value">ДДС покупки 20.00%</field>
             <field name="type">model</field>
             <field name="module">l10n_bg</field>
             <field name="res_id" ref="account_tax_bg_7"/>
