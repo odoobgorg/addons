@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<openerp>
-    <data noupdate="1">
-
+<odoo noupdate="1">
     <!-- Customize header  -->
     <template id="custom_header" inherit_id="website.layout" name="Custom Header">
 
@@ -19,6 +17,4 @@
         </div>
       </xpath>
     </template>
-
-  </data>
-</openerp>
+</odoo>

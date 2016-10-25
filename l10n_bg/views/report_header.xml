@@ -1,49 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
-    <data noupdate="0">
-        <template id="external_layout_header_bg" inherit_id="report.external_layout_header">
-            <xpath expr="//div[@class='header']" position="replace">
-                <div class="header">
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <img  t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % o.company_id.logo" style="max-height: 100px; vertical-align: bottom;"/>
-                        </div>
-                        <div class="col-xs-6"  style="text-align:right;">
-                               <br /><br />
-                               <strong>
-                                   <span style="font-size:18px;" t-field="o.company_id.name"/>
-                               </strong><br />
-                               <span t-field="o.company_id.rml_header1"/>
-                        </div>
+<odoo noupdate="0">
+    <template id="external_layout_header_bg" inherit_id="report.external_layout_header">
+        <xpath expr="//div[@class='header']" position="replace">
+            <div class="header">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <img  t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % o.company_id.logo" style="max-height: 100px; vertical-align: bottom;"/>
                     </div>
-                    <div class="row zero_min_height">
-                        <div class="col-xs-12">
-                            <div style="border-bottom: 1px solid black;"/>
-                        </div>
+                    <div class="col-xs-6"  style="text-align:right;">
+                           <br /><br />
+                           <strong>
+                               <span style="font-size:18px;" t-field="o.company_id.name"/>
+                           </strong><br />
+                           <span t-field="o.company_id.rml_header1"/>
                     </div>
-                    <div class="row">
-                       <div class="col-xs-4">
-                             <span t-field="o.company_id.website"/><br />
-                            e-mail: <span t-field="o.company_id.email"/>
-                       </div>
-                       <div class="col-xs-4" style="text-align:center;">
-                            Phone.: <span t-field="o.company_id.phone"/><br />
-                            Fax: <span t-field="o.company_id.fax"/>
-                       </div>
-                       <div class="col-xs-4" style="text-align:right">
-                            <span t-field="o.company_id.zip"/>
-                            <span t-field="o.company_id.city"/>,
-                            <span t-field="o.company_id.country_id"/><br />
-                            <span t-field="o.company_id.street"/><br />
-                       </div>
-                    </div>
-                    <div class="row">
-                       <div class="col-xs-4" name="company_address">
-                       </div>
-                    </div>
-                    <p></p>
                 </div>
-            </xpath>
-        </template>
-    </data>
-</openerp>
+                <div class="row zero_min_height">
+                    <div class="col-xs-12">
+                        <div style="border-bottom: 1px solid black;"/>
+                    </div>
+                </div>
+                <div class="row">
+                   <div class="col-xs-4">
+                         <span t-field="o.company_id.website"/><br />
+                        e-mail: <span t-field="o.company_id.email"/>
+                   </div>
+                   <div class="col-xs-4" style="text-align:center;">
+                        Phone.: <span t-field="o.company_id.phone"/><br />
+                        Fax: <span t-field="o.company_id.fax"/>
+                   </div>
+                   <div class="col-xs-4" style="text-align:right">
+                        <span t-field="o.company_id.zip"/>
+                        <span t-field="o.company_id.city"/>,
+                        <span t-field="o.company_id.country_id"/><br />
+                        <span t-field="o.company_id.street"/><br />
+                   </div>
+                </div>
+                <div class="row">
+                   <div class="col-xs-4" name="company_address">
+                   </div>
+                </div>
+                <p></p>
+            </div>
+        </xpath>
+    </template>
+</odoo>

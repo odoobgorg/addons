@@ -20,9 +20,9 @@
 #
 ##############################################################################
 
-from openerp import models, fields, api, _
+from odoo import models, fields, api, _
 from amount_to_text_bg import *
-from openerp.tools import amount_to_text_en
+from odoo.tools import amount_to_text_en
 
 import logging
 

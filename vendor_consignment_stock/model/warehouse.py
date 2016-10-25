@@ -14,8 +14,8 @@
 #
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-from openerp import models, api, fields, exceptions
-from openerp.tools.translate import _
+from odoo import models, api, fields, exceptions
+from odoo.tools.translate import _
 
 
 class Warehouse(models.Model):

@@ -4,7 +4,7 @@
 {
     "name": "X-Forwarded-For IPs in log",
     "summary": "Displays source IPs in log when behind a reverse proxy",
-    "version": "9.0.1.0.0",
+    "version": "10.0.1.0.0",
     "category": "Tools",
     "website": "https://odoo-community.org/,http://www.odoobg.net",
     "author": "Aserti Global Solutions, Lumnus LTD, Odoo Community Association (OCA)",

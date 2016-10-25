@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from . import model
 
-from openerp import SUPERUSER_ID
+from odoo import SUPERUSER_ID
 
 
 def workaround_create_initial_rules(cr, registry):

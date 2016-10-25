@@ -4,7 +4,7 @@
 
 from werkzeug.serving import WSGIRequestHandler
 from mimetools import Message
-from openerp import models
+from odoo import models
 
 
 def address_string(self):
@@ -18,9 +18,9 @@ def address_string(self):
 class LogForwardedForIpInstalled(models.AbstractModel):
     _name = 'log.forwarded.for.ip.installed'
 
-    def _register_hook(self, cr):
-        if not hasattr(WSGIRequestHandler, '_address_string_org'):
-            WSGIRequestHandler._address_string_org = \
-                WSGIRequestHandler.address_string
-            WSGIRequestHandler.address_string = address_string
-        return super(LogForwardedForIpInstalled, self)._register_hook(cr)
+    # def _register_hook(self, cr):
+    #     if not hasattr(WSGIRequestHandler, '_address_string_org'):
+    #         WSGIRequestHandler._address_string_org = \
+    #             WSGIRequestHandler.address_string
+    #         WSGIRequestHandler.address_string = address_string
+    #     return super(LogForwardedForIpInstalled, self)._register_hook(cr)

@@ -28,41 +28,47 @@ _logger = logging.getLogger(__name__)
 
 
 def post_init_l10n_bg(cr, registry):
-    from openerp import SUPERUSER_ID
+    from odoo import api, SUPERUSER_ID
+    env = api.Environment(cr, SUPERUSER_ID, {})
+
     _logger.info("Post hook bg start")
-    if l10n_bg_install_lang(registry, cr, SUPERUSER_ID, 'bg_BG'):
+    if l10n_bg_install_lang(env, 'bg_BG'):
         _logger.info("BG Lang created/updated")
 
-    if l10n_bg_change_customer_invoice_data(registry, cr, SUPERUSER_ID):
-        _logger.info("Customer invoice updated")
+    # if l10n_bg_change_customer_invoice_data(env):
+    #     _logger.info("Customer invoice updated")
     _logger.info("Post hook bg end")
 
 
-def l10n_bg_install_lang(registry, cr, uid, lang):
+def l10n_bg_install_lang(registry, lang):
     res_lang = registry['res.lang']
-    lang_ids = res_lang.search(cr, uid, [('code', '=', lang)])
+    lang_ids = res_lang.search([('code', '=', lang)])
+
     if not lang_ids:
-        lang_ids.append(res_lang.load_lang(cr, uid, lang))
+        lang_ids.append(res_lang.load_lang(lang))
 
     res_lang_data = {
         'date_format': '%d.%m.%Y г.',
         'thousands_sep': '.',
         'decimal_point': '.',
     }
-    for lang_id in lang_ids:
-        res_lang.write(cr, uid, lang_id, res_lang_data, context={})
 
-    ir_values_obj = res_lang.pool.get('ir.values')
-    default_value = ir_values_obj.get(cr, uid, 'default', False, ['res.partner'])
-    if not default_value:
-        ir_values_obj.set(cr, uid, 'default', False, 'lang', ['res.partner'], lang)
+    for lang_id in lang_ids:
+        res_lang_data.update({'id': lang_id})
+
+    res_lang.write(res_lang_data)
+
+    # ir_values_obj = res_lang.pool.get('ir.values')
+    # default_value = ir_values_obj.get(cr, uid, 'default', False, ['res.partner'])
+    # if not default_value:
+    #     ir_values_obj.set(cr, uid, 'default', False, 'lang', ['res.partner'], lang)
 
     return True
 
 
-def l10n_bg_change_customer_invoice_data(registry, cr, uid):
+def l10n_bg_change_customer_invoice_data(registry):
     account_journal = registry['account.journal']
-    account_journal_ids = account_journal.search(cr, uid, [('code', '=', 'INV')])
+    account_journal_ids = account_journal.search([('code', '=', 'INV')])
 
     if account_journal_ids:
         ir_sequence_data = {
@@ -75,13 +81,15 @@ def l10n_bg_change_customer_invoice_data(registry, cr, uid):
             'implementation': 'no_gap',
         }
 
-        for account_journal in account_journal.browse(cr, uid, account_journal_ids, context={}):
+        for account_journal in account_journal.browse(account_journal_ids):
             ir_sequence = registry['ir.sequence']
-            ir_sequence_ids = ir_sequence.search(cr, uid, [('name', '=', account_journal.name)])
+            ir_sequence_ids = ir_sequence.search([('name', '=', account_journal.name)])
 
             if ir_sequence_ids:
                 for ir_sequence_id in ir_sequence_ids:
-                    ir_sequence.write(cr, uid, ir_sequence_id, ir_sequence_data, context={})
-                    _logger.info("account journal %s, ir sequence %s" % (account_journal.id, ir_sequence_id))
+                    ir_sequence.update({'id': ir_sequence_id})
+                ir_sequence.write(ir_sequence_data)
 
+                import pprint
+                _logger.info("Change sequence data: %s" % pprint.pformat(ir_sequence))
     return True

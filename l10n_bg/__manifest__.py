@@ -22,7 +22,7 @@
 
 {
     'name': 'Bulgaria - Accounting',
-    'version': '9.0.2.3',
+    'version': '10.0.1.0.0',
     'category': 'Localization/Account',
     'description': """Bulgarian Chart of Accounts and Invoicing in Odoo v9""",
     'author': 'BGO Software, Lumnus LTD, Prodax LTD',
@@ -30,7 +30,7 @@
     'images': ['static/description/icon.png', 'images/main_screenshot.png'],
     'depends': ['account',
                 'base_vat',
-                'sale_layout',
+                # 'sale_layout',
                 ],
     'demo': [],
     'data': [
@@ -53,7 +53,7 @@
         'views/sequences.xml',
         'security/ir.model.access.csv',
     ],
-    'sequence': 1,
+    # 'sequence': 1,
     'installable': True,
     'doc': ['doc/index.rst'],
     'application': True,

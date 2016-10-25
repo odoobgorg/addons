@@ -1,53 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<openerp>
-    <data noupdate="0">
+<odoo noupdate="0">
 
-        <record id="account_invoice_form_fields" model="ir.ui.view">
-            <field name="name">account.invoice_form.fields</field>
-            <field name="model">account.invoice</field>
-            <field name="inherit_id" ref="account.invoice_form"/>
-            <field name="arch" type="xml">
-                <xpath expr="//field[@name='user_id']" position="after">
-                    <field name="amount_in_word"/>
-                </xpath>
+    <record id="account_invoice_form_fields" model="ir.ui.view">
+        <field name="name">account.invoice_form.fields</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field name="amount_in_word"/>
+            </xpath>
 
-                <xpath expr="/form/sheet/notebook/page[2]" position="inside">
-                  <page string="Comments" name="comments">
-                    <label string="Comment label" colspan="2"/>
-                    <group string="CommentTemplate1Group">
-                      <field name="comment_template1_id"
-                        string="Load a template"
-                        domain="[('position','=','comment_1')]"
-                        context="{'default_position': 'comment_1'}"/>
-                      <field name="note1" nolabel="1" colspan="2"/>
-                    </group>
-                    <group string="CommentTemplate2Group">
-                      <field name="comment_template2_id"
-                        string="Load a template"
-                        context="{'default_position': 'comment_2'}"
-                        domain="[('position','=','comment_2')]"/>
-                      <field name="note2" nolabel="1" colspan="2" />
-                    </group>
-                  </page>
-                </xpath>
+            <xpath expr="/form/sheet/notebook/page[2]" position="inside">
+              <page string="Comments" name="comments">
+                <label string="Comment label" colspan="2"/>
+                <group string="CommentTemplate1Group">
+                  <field name="comment_template1_id"
+                    string="Load a template"
+                    domain="[('position','=','comment_1')]"
+                    context="{'default_position': 'comment_1'}"/>
+                  <field name="note1" nolabel="1" colspan="2"/>
+                </group>
+                <group string="CommentTemplate2Group">
+                  <field name="comment_template2_id"
+                    string="Load a template"
+                    context="{'default_position': 'comment_2'}"
+                    domain="[('position','=','comment_2')]"/>
+                  <field name="note2" nolabel="1" colspan="2" />
+                </group>
+              </page>
+            </xpath>
 
-                <xpath expr="//field[@name='payment_term_id']" position="after">
-                    <field name="proforma_number"/>
-                </xpath>
+            <xpath expr="//field[@name='payment_term_id']" position="after">
+                <field name="proforma_number"/>
+            </xpath>
 
-            </field>
-        </record>
+        </field>
+    </record>
 
-        <record id="bg_account_invoice_form_place_of_deal" model="ir.ui.view">
-            <field name="name">account.invoice_form_place_of_deal</field>
-            <field name="model">account.invoice</field>
-            <field name="inherit_id" ref="account.invoice_form"/>
-            <field name="arch" type="xml">
-                <xpath expr="//field[@name='payment_term_id']" position="after">
-                    <field name="place_of_deal" attrs = "{'readonly': [('state', '!=', 'draft')]}"/>
-                </xpath>
-            </field>
-        </record>
+    <record id="bg_account_invoice_form_place_of_deal" model="ir.ui.view">
+        <field name="name">account.invoice_form_place_of_deal</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='payment_term_id']" position="after">
+                <field name="place_of_deal" attrs = "{'readonly': [('state', '!=', 'draft')]}"/>
+            </xpath>
+        </field>
+    </record>
 
-    </data>
-</openerp>
+</odoo>

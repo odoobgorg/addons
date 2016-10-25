@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<openerp>
-<data noupdate="1">
+<odoo noupdate="1">
 
   <!-- === Services Page === -->
   <template name="Services page" id="website.services" page="True">
@@ -20,5 +19,4 @@
     </t>
   </template>
 
-</data>
-</openerp>
+</odoo>

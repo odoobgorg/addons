@@ -4,7 +4,7 @@
 
 {
     "name": "ISO 3166",
-    "version": "9.0.1.0.0",
+    "version": "10.0.1.0.0",
     "author": "Serv. Tecnol. Avanzados - Pedro M. Baeza, "
               "Odoo Community Association (OCA)",
     "category": "Localization",
