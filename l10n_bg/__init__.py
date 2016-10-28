@@ -38,11 +38,7 @@ def post_init_l10n_bg(cr, registry):
 
 
 def l10n_bg_install_lang(registry, lang):
-    res_lang = registry['res.lang']
-    lang_ids = res_lang.search([('code', '=', lang)])
-
-    if not lang_ids:
-        lang_ids.append(res_lang.load_lang(lang))
+    lang_ids = registry['res.lang'].search([('code', '=', lang)])
 
     res_lang_data = {
         'date_format': '%d.%m.%Y г.',
@@ -51,9 +47,7 @@ def l10n_bg_install_lang(registry, lang):
     }
 
     for lang_id in lang_ids:
-        res_lang_data.update({'id': lang_id})
-
-    res_lang.write(res_lang_data)
+        lang_id.write(res_lang_data)
 
     return True
 
