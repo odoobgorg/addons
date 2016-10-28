@@ -17,11 +17,8 @@
 #
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
-
+##########################################################
 import models
-
 import logging
 
 _logger = logging.getLogger(__name__)
@@ -35,8 +32,8 @@ def post_init_l10n_bg(cr, registry):
     if l10n_bg_install_lang(env, 'bg_BG'):
         _logger.info("BG Lang created/updated")
 
-    # if l10n_bg_change_customer_invoice_data(env):
-    #     _logger.info("Customer invoice updated")
+    if l10n_bg_change_customer_invoice_data(env):
+        _logger.info("Customer invoice updated")
     _logger.info("Post hook bg end")
 
 
@@ -58,19 +55,13 @@ def l10n_bg_install_lang(registry, lang):
 
     res_lang.write(res_lang_data)
 
-    # ir_values_obj = res_lang.pool.get('ir.values')
-    # default_value = ir_values_obj.get(cr, uid, 'default', False, ['res.partner'])
-    # if not default_value:
-    #     ir_values_obj.set(cr, uid, 'default', False, 'lang', ['res.partner'], lang)
-
     return True
 
 
 def l10n_bg_change_customer_invoice_data(registry):
-    account_journal = registry['account.journal']
-    account_journal_ids = account_journal.search([('code', '=', 'INV')])
+    account_journal_ids = registry['account.journal'].sudo().search([('code', '=', 'INV')])
 
-    if account_journal_ids:
+    if len(account_journal_ids) > 0:
         ir_sequence_data = {
             'prefix': '',
             'suffix': '',
@@ -81,15 +72,12 @@ def l10n_bg_change_customer_invoice_data(registry):
             'implementation': 'no_gap',
         }
 
-        for account_journal in account_journal.browse(account_journal_ids):
-            ir_sequence = registry['ir.sequence']
-            ir_sequence_ids = ir_sequence.search([('name', '=', account_journal.name)])
+        for account_journal_id in account_journal_ids:
+            ir_sequence_ids = registry['ir.sequence'].sudo().search([('name', '=', account_journal_id.name)])
+            print ir_sequence_ids
 
-            if ir_sequence_ids:
+            if len(ir_sequence_ids) > 0:
                 for ir_sequence_id in ir_sequence_ids:
-                    ir_sequence.update({'id': ir_sequence_id})
-                ir_sequence.write(ir_sequence_data)
+                    ir_sequence_id.write(ir_sequence_data)
 
-                import pprint
-                _logger.info("Change sequence data: %s" % pprint.pformat(ir_sequence))
     return True
