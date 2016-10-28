@@ -2,146 +2,94 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="460f2266-6e0b-4bbd-81b4-c98d2423418d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/__manifest__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/data/sale_layout_category_data.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/af.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/am.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/ar.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/bg.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/bs.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/ca.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/cs.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/da.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/de.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/el.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/en_AU.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/en_GB.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/es.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/es_AR.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/es_BO.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/es_CL.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/es_CO.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/es_CR.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/es_DO.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/es_EC.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/es_MX.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/es_PA.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/es_PE.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/es_PY.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/es_VE.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/et.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/eu.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/fa.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/fi.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/fo.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/fr.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/fr_BE.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/fr_CA.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/gl.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/gu.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/he.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/hi.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/hr.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/hu.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/id.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/is.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/it.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/ja.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/ka.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/kab.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/ko.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/lo.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/lt.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/lv.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/mk.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/ml_IN.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/mn.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/nb.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/nl.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/nl_BE.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/pl.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/pt.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/pt_BR.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/ro.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/ru.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/sk.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/sl.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/sq.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/sr.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/sr@latin.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/sv.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/ta.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/te.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/th.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/tr.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/uk.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/vi.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/zh_CN.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/i18n/zh_TW.po" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/models/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/models/sale_layout.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/security/ir.model.access.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/views/report_invoice_layouted.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/views/report_quotation_layouted.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/views/sale_layout_category_view.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sale_layout/views/sale_layout_template.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/base_iso3166/__openerp__.py" afterPath="$PROJECT_DIR$/base_iso3166/__manifest__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/l10n_bg/__openerp__.py" afterPath="$PROJECT_DIR$/l10n_bg/__manifest__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/log_forwarded_for_ip/__openerp__.py" afterPath="$PROJECT_DIR$/log_forwarded_for_ip/__manifest__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sale_owner_stock_sourcing/__openerp__.py" afterPath="$PROJECT_DIR$/sale_owner_stock_sourcing/__manifest__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/stock_ownership_availability_rules/__openerp__.py" afterPath="$PROJECT_DIR$/stock_ownership_availability_rules/__manifest__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/theme_semka/__openerp__.py" afterPath="$PROJECT_DIR$/theme_semka/__manifest__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/vendor_consignment_stock/__openerp__.py" afterPath="$PROJECT_DIR$/vendor_consignment_stock/__manifest__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/website_sale_default_country_city/__openerp__.py" afterPath="$PROJECT_DIR$/website_sale_default_country_city/__manifest__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/base_iso3166/models/res_country.py" afterPath="$PROJECT_DIR$/base_iso3166/models/res_country.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/base_iso3166/views/country_view.xml" afterPath="$PROJECT_DIR$/base_iso3166/views/country_view.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/l10n_bg/__init__.py" afterPath="$PROJECT_DIR$/l10n_bg/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/l10n_bg/models/account_invoice.py" afterPath="$PROJECT_DIR$/l10n_bg/models/account_invoice.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/l10n_bg/models/account_tax.py" afterPath="$PROJECT_DIR$/l10n_bg/models/account_tax.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/l10n_bg/models/comment.py" afterPath="$PROJECT_DIR$/l10n_bg/models/comment.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/l10n_bg/models/res_company.py" afterPath="$PROJECT_DIR$/l10n_bg/models/res_company.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/l10n_bg/models/res_partner.py" afterPath="$PROJECT_DIR$/l10n_bg/models/res_partner.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/l10n_bg/static/description/index.html" afterPath="$PROJECT_DIR$/l10n_bg/static/description/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/l10n_bg/views/account_chart.xml" afterPath="$PROJECT_DIR$/l10n_bg/views/account_chart.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/l10n_bg/views/account_fiscal_position.xml" afterPath="$PROJECT_DIR$/l10n_bg/views/account_fiscal_position.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/l10n_bg/views/account_invoice_report_view.xml" afterPath="$PROJECT_DIR$/l10n_bg/views/account_invoice_report_view.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/l10n_bg/views/account_invoice_view.xml" afterPath="$PROJECT_DIR$/l10n_bg/views/account_invoice_view.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/l10n_bg/views/account_tax.xml" afterPath="$PROJECT_DIR$/l10n_bg/views/account_tax.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/l10n_bg/views/account_tax_template.xml" afterPath="$PROJECT_DIR$/l10n_bg/views/account_tax_template.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/l10n_bg/views/base_comment_template.xml" afterPath="$PROJECT_DIR$/l10n_bg/views/base_comment_template.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/l10n_bg/views/comment_view.xml" afterPath="$PROJECT_DIR$/l10n_bg/views/comment_view.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/l10n_bg/views/fiscal_position_template.xml" afterPath="$PROJECT_DIR$/l10n_bg/views/fiscal_position_template.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/l10n_bg/views/report_footer.xml" afterPath="$PROJECT_DIR$/l10n_bg/views/report_footer.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/l10n_bg/views/report_header.xml" afterPath="$PROJECT_DIR$/l10n_bg/views/report_header.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/l10n_bg/views/report_invoice_invoice_address.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/__manifest__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/data/sale_layout_category_data.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/af.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/am.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/ar.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/bg.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/bs.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/ca.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/cs.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/da.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/de.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/el.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/en_AU.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/en_GB.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/es.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/es_AR.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/es_BO.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/es_CL.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/es_CO.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/es_CR.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/es_DO.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/es_EC.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/es_MX.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/es_PA.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/es_PE.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/es_PY.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/es_VE.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/et.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/eu.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/fa.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/fi.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/fo.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/fr.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/fr_BE.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/fr_CA.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/gl.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/gu.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/he.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/hi.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/hr.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/hu.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/id.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/is.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/it.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/ja.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/ka.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/kab.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/ko.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/lo.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/lt.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/lv.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/mk.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/ml_IN.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/mn.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/nb.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/nl.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/nl_BE.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/pl.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/pt.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/pt_BR.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/ro.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/ru.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/sk.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/sl.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/sq.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/sr.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/sr@latin.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/sv.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/ta.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/te.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/th.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/tr.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/uk.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/vi.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/zh_CN.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/i18n/zh_TW.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/models/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/models/sale_layout.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/security/ir.model.access.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/views/report_invoice_layouted.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/views/report_quotation_layouted.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/views/sale_layout_category_view.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sale_layout/views/sale_layout_template.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/l10n_bg/__manifest__.py" afterPath="$PROJECT_DIR$/l10n_bg/__manifest__.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/l10n_bg/views/report_invoice.xml" afterPath="$PROJECT_DIR$/l10n_bg/views/report_invoice.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/l10n_bg/views/report_invoice_amount_to_text.xml" afterPath="$PROJECT_DIR$/l10n_bg/views/report_invoice_amount_to_text.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/l10n_bg/views/report_invoice_comments.xml" afterPath="$PROJECT_DIR$/l10n_bg/views/report_invoice_comments.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/l10n_bg/views/res_company_view.xml" afterPath="$PROJECT_DIR$/l10n_bg/views/res_company_view.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/l10n_bg/views/res_partner_view.xml" afterPath="$PROJECT_DIR$/l10n_bg/views/res_partner_view.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/l10n_bg/views/sequences.xml" afterPath="$PROJECT_DIR$/l10n_bg/views/sequences.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log_forwarded_for_ip/models/log_forwarded_for_ip_installed.py" afterPath="$PROJECT_DIR$/log_forwarded_for_ip/models/log_forwarded_for_ip_installed.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sale_owner_stock_sourcing/model/procurement.py" afterPath="$PROJECT_DIR$/sale_owner_stock_sourcing/model/procurement.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sale_owner_stock_sourcing/model/sale_order.py" afterPath="$PROJECT_DIR$/sale_owner_stock_sourcing/model/sale_order.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sale_owner_stock_sourcing/view/sale_order.xml" afterPath="$PROJECT_DIR$/sale_owner_stock_sourcing/view/sale_order.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock_ownership_availability_rules/view/move.xml" afterPath="$PROJECT_DIR$/stock_ownership_availability_rules/view/move.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stock_ownership_availability_rules/view/quant.xml" afterPath="$PROJECT_DIR$/stock_ownership_availability_rules/view/quant.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme_semka/views/assets.xml" afterPath="$PROJECT_DIR$/theme_semka/views/assets.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme_semka/views/layout.xml" afterPath="$PROJECT_DIR$/theme_semka/views/layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme_semka/views/pages.xml" afterPath="$PROJECT_DIR$/theme_semka/views/pages.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme_semka/views/snippets.xml" afterPath="$PROJECT_DIR$/theme_semka/views/snippets.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor_consignment_stock/__init__.py" afterPath="$PROJECT_DIR$/vendor_consignment_stock/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor_consignment_stock/data/route.xml" afterPath="$PROJECT_DIR$/vendor_consignment_stock/data/route.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor_consignment_stock/model/procurement.py" afterPath="$PROJECT_DIR$/vendor_consignment_stock/model/procurement.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor_consignment_stock/model/purchase_order.py" afterPath="$PROJECT_DIR$/vendor_consignment_stock/model/purchase_order.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor_consignment_stock/model/rule.py" afterPath="$PROJECT_DIR$/vendor_consignment_stock/model/rule.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor_consignment_stock/model/sale_order.py" afterPath="$PROJECT_DIR$/vendor_consignment_stock/model/sale_order.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor_consignment_stock/model/warehouse.py" afterPath="$PROJECT_DIR$/vendor_consignment_stock/model/warehouse.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor_consignment_stock/view/purchase_order.xml" afterPath="$PROJECT_DIR$/vendor_consignment_stock/view/purchase_order.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor_consignment_stock/view/warehouse.xml" afterPath="$PROJECT_DIR$/vendor_consignment_stock/view/warehouse.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website_sale_default_country_city/controllers/main.py" afterPath="$PROJECT_DIR$/website_sale_default_country_city/controllers/main.py" />
     </list>
     <ignored path="odoobg.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -163,14 +111,54 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="__manifest__.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/l10n_bg/__manifest__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="57" column="18" selection-start-line="57" selection-start-column="18" selection-end-line="57" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/l10n_bg/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.22737819">
-              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="49" column="29" selection-start-line="49" selection-start-column="29" selection-end-line="49" selection-end-column="29" />
               <folding>
-                <element signature="e#1094#1107#0" expanded="true" />
+                <element signature="e#1071#1084#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="report_invoice.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/l10n_bg/views/report_invoice.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-21.592592">
+              <caret line="284" column="65" selection-start-line="284" selection-start-column="65" selection-end-line="284" selection-end-column="65" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="report_invoice_invoice_address.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/l10n_bg/views/report_invoice_invoice_address.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.6666665">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="invoice_report_templates.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../odoo/odoo-10.0/addons/sale/report/invoice_report_templates.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.36646706">
+              <caret line="17" column="73" selection-start-line="17" selection-start-column="73" selection-end-line="17" selection-end-column="73" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -188,11 +176,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/l10n_bg/views/comment_view.xml" />
-        <option value="$PROJECT_DIR$/l10n_bg/views/fiscal_position_template.xml" />
-        <option value="$PROJECT_DIR$/l10n_bg/views/report_footer.xml" />
-        <option value="$PROJECT_DIR$/l10n_bg/views/report_header.xml" />
-        <option value="$PROJECT_DIR$/l10n_bg/views/report_invoice.xml" />
         <option value="$PROJECT_DIR$/l10n_bg/views/report_invoice_amount_to_text.xml" />
         <option value="$PROJECT_DIR$/l10n_bg/views/report_invoice_comments.xml" />
         <option value="$PROJECT_DIR$/l10n_bg/views/res_company_view.xml" />
@@ -234,11 +217,16 @@
         <option value="$PROJECT_DIR$/sale_layout/views/report_quotation_layouted.xml" />
         <option value="$PROJECT_DIR$/sale_layout/views/sale_layout_category_view.xml" />
         <option value="$PROJECT_DIR$/sale_layout/views/sale_layout_template.xml" />
-        <option value="$PROJECT_DIR$/sale_layout/models/sale_layout.py" />
         <option value="$PROJECT_DIR$/sale_layout/data/sale_layout_category_data.xml" />
         <option value="$PROJECT_DIR$/log_forwarded_for_ip/models/log_forwarded_for_ip_installed.py" />
-        <option value="$PROJECT_DIR$/l10n_bg/__manifest__.py" />
+        <option value="$PROJECT_DIR$/sale_layout/models/sale_layout.py" />
+        <option value="$PROJECT_DIR$/../odoo/odoo-10.0/addons/account/models/chart_template.py" />
         <option value="$PROJECT_DIR$/l10n_bg/__init__.py" />
+        <option value="$PROJECT_DIR$/l10n_bg/views/report_header.xml" />
+        <option value="$PROJECT_DIR$/l10n_bg/views/report_invoice_sale.xml" />
+        <option value="$PROJECT_DIR$/l10n_bg/__manifest__.py" />
+        <option value="$PROJECT_DIR$/l10n_bg/views/report_invoice_invoice_address.xml" />
+        <option value="$PROJECT_DIR$/l10n_bg/views/report_invoice.xml" />
       </list>
     </option>
   </component>
@@ -307,6 +295,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../odoo/odoo-10.0" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/l10n_bg/views" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="BashConfigurationType" factoryName="Bash">
@@ -555,26 +548,44 @@
       <option name="project" value="LOCAL" />
       <updated>1475753312795</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="#ODOO-66 #comment porting l10n_bg">
+      <created>1477409237514</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1477409237514</updated>
+    </task>
+    <task id="LOCAL-00007" summary="#ODOO-66 #comment sale_order not present in new odoo 10">
+      <created>1477410430556</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1477410430556</updated>
+    </task>
+    <task id="LOCAL-00008" summary="#ODOO-66 #comment fix post_init">
+      <created>1477643803545</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1477643803545</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="44" width="1920" height="1036" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20685959" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18649517" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="YouTrack" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6510591" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.57525086" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32887402" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -600,358 +611,39 @@
     <MESSAGE value="#ODOO-53 #comment remove place_of_deal_id" />
     <MESSAGE value="#ODOO-54 #comment done" />
     <MESSAGE value="#ODOO-58 #comment depends: sale_layout" />
-    <option name="LAST_COMMIT_MESSAGE" value="#ODOO-58 #comment depends: sale_layout" />
+    <MESSAGE value="#ODOO-66 #comment porting l10n_bg" />
+    <MESSAGE value="#ODOO-66 #comment sale_order not present in new odoo 10" />
+    <MESSAGE value="#ODOO-66 #comment fix post_init" />
+    <option name="LAST_COMMIT_MESSAGE" value="#ODOO-66 #comment fix post_init" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/l10n_bg/__init__.py</url>
-          <line>55</line>
+          <url>file://$PROJECT_DIR$/l10n_bg/models/account_invoice.py</url>
+          <line>22</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/sale_layout/models/sale_layout.py</url>
+          <line>94</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/../odoo/odoo-10.0/addons/account/models/account.py</url>
+          <line>221</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="1" />
+      <option name="time" value="5" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/sale_owner_stock_sourcing/model/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#24#48#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sale_owner_stock_sourcing/model/procurement.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3549884">
-          <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sale_owner_stock_sourcing/model/sale_order.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39675173">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="28" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sale_owner_stock_sourcing/security/group.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17245509">
-          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stock_ownership_availability_rules/__manifest__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45939675">
-          <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stock_ownership_availability_rules/view/move.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8706587">
-          <caret line="49" column="9" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stock_ownership_availability_rules/view/quant.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40958083">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/theme_semka/views/assets.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1508982">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/theme_semka/views/layout.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40958083">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/theme_semka/views/pages.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.06467066">
-          <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/theme_semka/views/snippets.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.021556886">
-          <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/theme_semka/__manifest__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29234338">
-          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/theme_semka/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor_consignment_stock/data/route.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17245509">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor_consignment_stock/model/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor_consignment_stock/model/procurement.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.19025522">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor_consignment_stock/model/rule.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3549884">
-          <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
-          <folding>
-            <element signature="e#775#803#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor_consignment_stock/model/sale_order.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43851507">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor_consignment_stock/model/warehouse.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45823666">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <element signature="e#775#823#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor_consignment_stock/view/purchase_order.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19401197">
-          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor_consignment_stock/model/purchase_order.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48027843">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor_consignment_stock/view/warehouse.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3233533">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor_consignment_stock/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2088167">
-          <caret line="10" column="44" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
-          <folding>
-            <element signature="e#24#43#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website_sale_default_country_city/controllers/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website_sale_default_country_city/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website_sale_default_country_city/controllers/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29234338">
-          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
-          <folding>
-            <element signature="e#209#230#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../odoo/odoo-10.0/addons/website_sale/controllers/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13075061">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log_forwarded_for_ip/__manifest__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33410674">
-          <caret line="16" column="46" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log_forwarded_for_ip/hooks.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14617169">
-          <caret line="7" column="26" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../odoo/odoo-10.0/addons/website_issue/__manifest__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.041763343">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="19" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/l10n_bg/static/description/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.06467066">
-          <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sale_layout/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sale_layout/views/sale_layout_template.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8622754">
-          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sale_layout/data/sale_layout_category_data.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12934132">
-          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/log_forwarded_for_ip/models/log_forwarded_for_ip_installed.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.083526686">
           <caret line="4" column="47" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sale_layout/views/sale_layout_category_view.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2155689">
-          <caret line="98" column="13" selection-start-line="98" selection-start-column="13" selection-end-line="98" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sale_layout/views/report_invoice_layouted.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15928143">
-          <caret line="35" column="20" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sale_layout/__manifest__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18793504">
-          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sale_layout/views/report_quotation_layouted.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2994012">
-          <caret line="42" column="30" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sale_layout/security/ir.model.access.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12529002">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sale_layout/models/sale_layout.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.41995358">
-          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-          <folding>
-            <element signature="e#100#120#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -959,7 +651,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.16705337">
           <caret line="13" column="47" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -967,7 +658,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7410072">
           <caret line="54" column="62" selection-start-line="54" selection-start-column="62" selection-end-line="54" selection-end-column="62" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -975,9 +665,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7194245">
           <caret line="564" column="39" selection-start-line="564" selection-start-column="33" selection-end-line="564" selection-end-column="39" />
-          <folding>
-            <marker date="1477387949242" expanded="true" signature="42510:42914" placeholder="SELECT m.id,... mail_message" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -985,38 +672,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.39568347">
           <caret line="692" column="25" selection-start-line="692" selection-start-column="25" selection-end-line="692" selection-end-column="25" />
-          <folding>
-            <marker date="1477387951854" expanded="true" signature="3588:3882" placeholder="INSERT INTO missing_value... " />
-            <marker date="1477387951854" expanded="true" signature="4106:4127" placeholder="SELECT count... missing_value" />
-            <marker date="1477387951854" expanded="true" signature="4358:4722" placeholder="UPDATE missi... " />
-            <marker date="1477387951854" expanded="true" signature="4795:4908" placeholder="SELECT modul... " />
-            <marker date="1477387951854" expanded="true" signature="5202:5260" placeholder="DELETE FROM " />
-            <marker date="1477387951854" expanded="true" signature="5936:6224" placeholder="UPDATE ONLY " />
-            <marker date="1477387951854" expanded="true" signature="6365:6650" placeholder="INSERT INTO missing_value... " />
-            <marker date="1477387951854" expanded="true" signature="6466:6510" placeholder="SELECT name,... " />
-            <marker date="1477387951854" expanded="true" signature="6790:6816" placeholder="SELECT COUNT... ONLY" />
-            <marker date="1477387951854" expanded="true" signature="6902:6954" placeholder="SELECT COUNT... ONLY" />
-            <marker date="1477387951854" expanded="true" signature="7241:7252" placeholder="DROP TABLE m... " />
-            <marker date="1477387951854" expanded="true" signature="11221:11293" placeholder="SELECT index... pg_indexes" />
-            <marker date="1477387951854" expanded="true" signature="13189:13316" placeholder="SELECT res_i... ir_translation" />
-            <marker date="1477387951854" expanded="true" signature="14741:14949" placeholder="UPDATE ir_tr... " />
-            <marker date="1477387951854" expanded="true" signature="15725:15841" placeholder="SELECT value... ir_translation" />
-            <marker date="1477387951854" expanded="true" signature="16191:16288" placeholder="SELECT value... ir_translation" />
-            <marker date="1477387951854" expanded="true" signature="18544:18647" placeholder="SELECT * FRO... ir_translation" />
-            <marker date="1477387951854" expanded="true" signature="25985:26455" placeholder="INSERT INTO ir_translation... " />
-            <marker date="1477387951854" expanded="true" signature="26083:26106" placeholder="SELECT l.cod... " />
-            <marker date="1477387951854" expanded="true" signature="27043:27519" placeholder="INSERT INTO ir_translation... " />
-            <marker date="1477387951854" expanded="true" signature="27141:27164" placeholder="SELECT l.cod... " />
-            <marker date="1477387951854" expanded="true" signature="27545:27665" placeholder="UPDATE ir_tr... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../odoo/odoo-10.0/odoo/addons/base/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64748204">
-          <caret line="15" column="47" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1024,7 +679,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.64028776">
           <caret line="258" column="27" selection-start-line="258" selection-start-column="16" selection-end-line="258" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1032,7 +686,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.10672854">
           <caret line="77" column="41" selection-start-line="77" selection-start-column="34" selection-end-line="77" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1040,25 +693,272 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.22969837">
           <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/l10n_bg/models/account_invoice.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45939675">
+          <caret line="22" column="23" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/l10n_bg/views/report_invoice_comments.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28023952">
+          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/l10n_bg/views/report_footer.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06467066">
+          <caret line="3" column="41" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/l10n_bg/views/res_company_view.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.10778443">
+          <caret line="5" column="38" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/l10n_bg/i18n/l10n_bg.pot">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06264501">
+          <caret line="18" column="38" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/l10n_bg/security/ir.model.access.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.020881671">
+          <caret line="1" column="57" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../odoo/odoo/addons/account/models/chart_template.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23201856">
+          <caret line="116" column="39" selection-start-line="116" selection-start-column="8" selection-end-line="116" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../odoo/odoo-10.0/addons/l10n_fr/models/l10n_fr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22969837">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../odoo/odoo-10.0/addons/l10n_fr/views/report_l10nfrbilan.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.025149">
+          <caret line="4" column="36" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../odoo/odoo-10.0/addons/l10n_ec/data/account_chart_template_data.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.041763343">
+          <caret line="2" column="45" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/l10n_bg/views/account_chart.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8491018">
+          <caret line="3300" column="0" selection-start-line="3300" selection-start-column="0" selection-end-line="3300" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../odoo/odoo-10.0/addons/l10n_ec/data/account_tax_data.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0">
+          <caret line="196" column="59" selection-start-line="196" selection-start-column="59" selection-end-line="196" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../odoo/odoo-10.0/addons/l10n_uy/data/l10n_uy_chart_data.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-25.911377">
+          <caret line="2" column="52" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../odoo/odoo-10.0/addons/l10n_uy/data/account_tax_data.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6550898">
+          <caret line="87" column="20" selection-start-line="87" selection-start-column="16" selection-end-line="87" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../odoo/odoo-10.0/addons/l10n_uy/data/account_chart_template_data.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.020881671">
+          <caret line="1" column="63" selection-start-line="1" selection-start-column="46" selection-end-line="1" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/l10n_bg/views/account_chart_template.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.020881671">
+          <caret line="1" column="63" selection-start-line="1" selection-start-column="46" selection-end-line="1" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../odoo/odoo-10.0/addons/account/models/chart_template.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37819025">
+          <caret line="323" column="80" selection-start-line="323" selection-start-column="80" selection-end-line="323" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../odoo/odoo-10.0/addons/account/report/account_journal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.64748204">
+          <caret line="11" column="39" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../odoo/odoo-10.0/addons/account/report/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37931034">
+          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../odoo/odoo-10.0/addons/purchase/models/purchase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.59248555">
+          <caret line="480" column="13" selection-start-line="480" selection-start-column="13" selection-end-line="480" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../odoo/odoo-10.0/odoo/addons/base/res/res_config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.04988399">
+          <caret line="609" column="11" selection-start-line="609" selection-start-column="11" selection-end-line="609" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../odoo/odoo-10.0/addons/account/models/account_bank_statement.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21693735">
+          <caret line="859" column="65" selection-start-line="859" selection-start-column="65" selection-end-line="859" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../odoo/odoo-10.0/addons/account/models/account_journal_dashboard.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06264501">
+          <caret line="10" column="32" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../odoo/odoo-10.0/odoo/addons/base/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="74" selection-start-line="1" selection-start-column="74" selection-end-line="1" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/l10n_bg/models/res_partner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.5011601">
+          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="40" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../odoo/odoo-10.0/addons/account/models/account.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21693735">
+          <caret line="328" column="39" selection-start-line="328" selection-start-column="33" selection-end-line="328" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/l10n_bg/views/report_header.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3748503">
+          <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/l10n_bg/views/comment_view.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3017964">
+          <caret line="14" column="62" selection-start-line="14" selection-start-column="62" selection-end-line="14" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/l10n_bg/views/report_invoice_amount_to_text.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17245509">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../odoo/odoo-10.0/addons/account/report/account_invoice_report_view.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.9101796">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/l10n_bg/__manifest__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16473317">
-          <caret line="27" column="53" selection-start-line="27" selection-start-column="53" selection-end-line="27" selection-end-column="53" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="57" column="18" selection-start-line="57" selection-start-column="18" selection-end-line="57" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/l10n_bg/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22737819">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="49" column="29" selection-start-line="49" selection-start-column="29" selection-end-line="49" selection-end-column="29" />
           <folding>
-            <element signature="e#1094#1107#0" expanded="true" />
+            <element signature="e#1071#1084#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/l10n_bg/views/report_invoice.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-21.592592">
+          <caret line="284" column="65" selection-start-line="284" selection-start-column="65" selection-end-line="284" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/l10n_bg/views/report_invoice_invoice_address.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.6666665">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../odoo/odoo-10.0/addons/account/views/report_invoice.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.56886226">
+          <caret line="138" column="84" selection-start-line="138" selection-start-column="84" selection-end-line="138" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../odoo/odoo-10.0/addons/sale/report/invoice_report_templates.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36646706">
+          <caret line="17" column="73" selection-start-line="17" selection-start-column="73" selection-end-line="17" selection-end-column="73" />
+          <folding />
         </state>
       </provider>
     </entry>

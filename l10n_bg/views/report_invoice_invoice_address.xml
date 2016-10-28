@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <template id="report_invoice_bg_invoice_address" inherit_id="report_invoice_bg">
+        <xpath expr="//div[@class='row']" position="before">
+            <div name="invoice_address">
+
+            </div>
+        </xpath>
+    </template>
+
+</odoo>
