@@ -68,7 +68,6 @@ def l10n_bg_change_customer_invoice_data(registry):
 
         for account_journal_id in account_journal_ids:
             ir_sequence_ids = registry['ir.sequence'].sudo().search([('name', '=', account_journal_id.name)])
-            print ir_sequence_ids
 
             if len(ir_sequence_ids) > 0:
                 for ir_sequence_id in ir_sequence_ids:
