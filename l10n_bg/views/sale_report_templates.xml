@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <template id="report_saleorder_document_bg" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//div[@class='page']/div[@class='row'][1]" position="replace">
+
+        </xpath>
+    </template>
+
+</odoo>

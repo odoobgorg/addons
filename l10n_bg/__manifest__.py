@@ -30,7 +30,6 @@
     'images': ['static/description/icon.png', 'images/main_screenshot.png'],
     'depends': ['account',
                 'base_vat',
-                # 'sale_layout',
                 ],
     'demo': [],
     'data': [
@@ -52,6 +51,7 @@
         'views/comment_view.xml',
         'views/base_comment_template.xml',
         'views/sequences.xml',
+        'views/sale_report_templates.xml',
         'security/ir.model.access.csv',
     ],
     'sequence': 1,
