@@ -38,7 +38,7 @@ class AccountInvoice(models.Model):
     note2 = fields.Html(_('Comment 2'))
     comment = fields.Text(translate=True)
     amount_in_word = fields.Char(readonly=True, default=False, copy=False, compute='_compute_text')
-    place_of_deal = fields.Char(compute='_compute_place_of_deal', store=True, translate=True)
+    place_of_deal = fields.Char(store=True, translate=True)
     proforma_number = fields.Char(store=True, readonly=True, copy=False)
 
     @api.one
