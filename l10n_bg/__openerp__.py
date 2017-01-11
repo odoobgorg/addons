@@ -56,6 +56,6 @@
     'sequence': 1,
     'installable': True,
     'doc': ['doc/index.rst'],
-    'application': True,
-    'post_init_hook': 'post_init_l10n_bg',
+    'application': True
+    # 'post_init_hook': 'post_init_l10n_bg',
 }
