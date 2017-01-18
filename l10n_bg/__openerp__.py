@@ -31,6 +31,7 @@
     'depends': ['account',
                 'base_vat',
                 'sale_layout',
+                'sale'
                 ],
     'demo': [],
     'data': [
