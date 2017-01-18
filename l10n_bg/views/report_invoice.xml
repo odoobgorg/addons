@@ -2,6 +2,14 @@
 <openerp>
     <data noupdate="0">
 
+        <template id="report_saleorder_document_bg" inherit_id="sale.report_saleorder_document">
+            <xpath expr="//div[@class='row'][1]" position="replace">
+                <div class="row">
+                    <div class="col-xs-4"/>
+                </div>
+            </xpath>
+        </template>
+
         <template id="report_invoice_bg" inherit_id="account.report_invoice_document">
             <xpath expr="//div[@class='page']" position="replace">
                 <div class="page">
