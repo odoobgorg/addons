@@ -5,14 +5,14 @@
             <div class="header">
                 <div class="row">
                     <div class="col-xs-6">
-                        <img  t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % o.company_id.logo" style="max-height: 100px; vertical-align: bottom;"/>
+                        <img  t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo" style="max-height: 100px; vertical-align: bottom;"/>
                     </div>
                     <div class="col-xs-6"  style="text-align:right;">
                            <br /><br />
                            <strong>
-                               <span style="font-size:18px;" t-field="o.company_id.name"/>
+                               <span style="font-size:18px;" t-field="company.name"/>
                            </strong><br />
-                           <span t-field="o.company_id.rml_header1"/>
+                           <span t-field="company.rml_header1"/>
                     </div>
                 </div>
                 <div class="row zero_min_height">
@@ -22,18 +22,18 @@
                 </div>
                 <div class="row">
                    <div class="col-xs-4">
-                         <span t-field="o.company_id.website"/><br />
-                        e-mail: <span t-field="o.company_id.email"/>
+                         <span t-field="company.website"/><br />
+                        e-mail: <span t-field="company.email"/>
                    </div>
                    <div class="col-xs-4" style="text-align:center;">
-                        Phone.: <span t-field="o.company_id.phone"/><br />
-                        Fax: <span t-field="o.company_id.fax"/>
+                        Phone.: <span t-field="company.phone"/><br />
+                        Fax: <span t-field="company.fax"/>
                    </div>
                    <div class="col-xs-4" style="text-align:right">
-                        <span t-field="o.company_id.zip"/>
-                        <span t-field="o.company_id.city"/>,
-                        <span t-field="o.company_id.country_id"/><br />
-                        <span t-field="o.company_id.street"/><br />
+                        <span t-field="company.zip"/>
+                        <span t-field="company.city"/>,
+                        <span t-field="company.country_id"/><br />
+                        <span t-field="company.street"/><br />
                    </div>
                 </div>
                 <div class="row">
