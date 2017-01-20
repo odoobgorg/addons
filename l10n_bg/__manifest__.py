@@ -28,9 +28,10 @@
     'author': 'BGO Software, Lumnus LTD, Prodax LTD',
     'website': 'http://bgosoftware.com, http://www.lumnus.net, http://www.prodax.bg',
     'images': ['static/description/icon.png', 'images/main_screenshot.png'],
-    'depends': ['account',
-                'base_vat',
+    'depends': [
                 'sale',
+                'account',
+                'base_vat'
                 ],
     'demo': [],
     'data': [
